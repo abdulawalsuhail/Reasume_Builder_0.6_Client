@@ -7,6 +7,8 @@ function App() {
     <div>
       <Navbar />
       <Home />
+      <button className="btn btn-primary">hello</button>
+      <h3 className="text-primary">how are you</h3>
     </div>
   );
 }
