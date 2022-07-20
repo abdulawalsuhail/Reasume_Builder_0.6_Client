@@ -5,6 +5,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      <h1>Ashik</h1>
     </div>
   );
 }
