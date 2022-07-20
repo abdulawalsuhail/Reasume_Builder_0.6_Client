@@ -1,10 +1,10 @@
 import "./App.css";
-import Login from "./Pages/Login";
 
 function App() {
   return (
     <div>
-    <Login></Login>
+      <h3 className="text-3xl text-center">Hello React</h3>
+      <h1>shariar</h1>
     </div>
   );
 }
