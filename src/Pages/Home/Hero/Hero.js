@@ -37,8 +37,8 @@ const hero = () => {
           </h1>
 
           <p class="max-w-lg mt-4 text-left sm:text-xl">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
-            illo tenetur fuga ducimus numquam ea!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            quis cumque minus, officiis odio obcaecati!
           </p>
 
           <div class="flex  gap-4 mt-8 text-center">
