@@ -9,7 +9,7 @@ const Navbar = () => {
             <li className="hover:bg-primary hover:text-white rounded-md"><a>COVER LETTER</a></li>
             <li className="hover:bg-primary hover:text-white rounded-md"><a>CAREER COUNSELLING</a></li>
             <li className="hover:bg-primary hover:text-white rounded-md"><a>PRICING</a></li>
-            
+            <a class="btn btn-primary btn-outline btn-sm md:btn-md mr-6 md:hidden">Create My Resume</a>
   </>
 
   return (
@@ -41,7 +41,7 @@ const Navbar = () => {
         {/* Navbar end portion */}
         <div class="navbar-end">
           
-          <a class="btn btn-primary btn-outline btn-sm md:btn-md mr-6">Create My Resume</a>
+          <a class="btn btn-primary btn-outline btn-sm md:btn-md mr-6 hidden md:flex"><p>Create My Resume</p></a>
           {
             user
               ? 
