@@ -13,9 +13,6 @@ const Login = () => {
   const onSubmit = (data) => console.log(data);
   return (
     <div>
-      <label htmlFor="login-modal_1" className="btn modal-button">
-        open modal
-      </label>
       <input type="checkbox" id="login-modal_1" className="modal-toggle" />
       <div className="modal modal-top sm:modal-middle">
         <div className="modal-box  [width:95%] relative">
