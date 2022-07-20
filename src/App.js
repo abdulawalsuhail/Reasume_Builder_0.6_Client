@@ -1,11 +1,11 @@
 import "./App.css";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
     <div>
-      <h3 className="text-3xl text-center">Hello React</h3>
-      <h1>shariar</h1>
-      <h1>Suhail</h1>
+      <Navbar />
+      <h1>Ashik</h1>
     </div>
   );
 }
