@@ -1,4 +1,5 @@
 import "./App.css";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
         exercitationem laborum saepe et earum facere.
       </p>
       <p>SADNAN</p>
+      <Navbar />
+      <h1>Ashik</h1>
     </div>
   );
 }
