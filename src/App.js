@@ -1,10 +1,14 @@
 import "./App.css";
+import Login from "./Components/Navbar/Login";
+import Navbar from "./Components/Navbar/Navbar";
+import Home from "./Pages/Home/Home";
 
 function App() {
   return (
     <div>
-      <h3 className="text-3xl text-center">Hello React</h3>
-      <h1>shariar</h1>
+      <Navbar />
+      <Home />
+      <Login/>
     </div>
   );
 }
