@@ -4,7 +4,7 @@ import Hero from "./Hero";
 const Home = () => {
   return (
     <div>
-      <h3>This is home</h3>
+      <h3 className="text-primary">This is home</h3>
       <Hero/>
     </div>
   );
