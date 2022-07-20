@@ -3,20 +3,19 @@ import React, { useState } from "react";
 const Navbar = () => {
   const [user, setUser] = useState(true);
   const navItem = <>
-            <li><a>FEATURE</a></li>
-            <li><a>RESUME</a></li>
-            <li><a>CV</a></li>
-            <li><a>COVER LETTER</a></li>
-            <li><a>CAREER COUNSELLING</a></li>
-            <li><a>PRICING</a></li>
-            <a class="btn btn-primary btn-outline btn-xs md:btn-sm mt-2">Create My Resume</a>
+            <li className="hover:bg-primary hover:text-white rounded-md"><a>FEATURE</a></li>
+            <li className="hover:bg-primary hover:text-white rounded-md"><a>RESUME</a></li>
+            <li className="hover:bg-primary hover:text-white rounded-md"><a>CV</a></li>
+            <li className="hover:bg-primary hover:text-white rounded-md"><a>COVER LETTER</a></li>
+            <li className="hover:bg-primary hover:text-white rounded-md"><a>CAREER COUNSELLING</a></li>
+            <li className="hover:bg-primary hover:text-white rounded-md"><a>PRICING</a></li>
             
   </>
 
   return (
     <div className="mx-4">
       {/* Navbar start source code from Daisy UI */}
-      <div class="navbar">
+      <div class="navbar py-4">
         {/* Navbar left portion */}
         <div class="navbar-start">
           <div class="dropdown">
@@ -41,6 +40,8 @@ const Navbar = () => {
 
         {/* Navbar end portion */}
         <div class="navbar-end">
+          
+          <a class="btn btn-primary btn-outline btn-sm md:btn-md mr-6">Create My Resume</a>
           {
             user
               ? 
