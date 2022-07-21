@@ -68,7 +68,7 @@ const Signup = () => {
 
         {/* signup */}
 
-        <div className="md:bg-white shadow-lg md:[width:70%] py-8 rounded">
+        <div className="bg-white shadow-lg md:[width:70%] py-8 rounded">
           <h3 className=" mt-6 text-3xl [color:#2d3639] text-center">
             Create Your Account
           </h3>
@@ -151,7 +151,8 @@ const Signup = () => {
                 />
                 <label className="label">
                   {errors.email?.type === "required" && (
-                    <span className="label-text-alt text-red-500 md:[margin-left:75px]">
+                    <span className="label-text-alt text-red-500 md:[margin-left:75px]
+                    ">
                       {errors.email.message}
                     </span>
                   )}
