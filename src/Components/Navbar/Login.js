@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaGithubSquare, FaGooglePlusSquare, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../../Css/login.css";
 
 const Login = () => {
+  const [popup,setPopup] = useState(true)
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
+
+  const navigate = useNavigate()
+  const handleClick = ()=>{
+  }
+  console.log(popup);
 
   const onSubmit = (data) => console.log(data);
   return (
@@ -136,7 +142,9 @@ const Login = () => {
             <p className=" font-semibold text-center mt-16 [color:#777b7e]">Forgotten password?</p>
           </div>
           <div className="pb-4 mt-2">
-            <p className="text-center">Don't have an account?la <Link  to='/signup'     className="font-semibold [color:#65696d]"> Create an account</Link></p>
+            <p className="text-center">Don't have an account?
+            <span>Create an account</span>
+            {/* <Link  to='/signup'     className="font-semibold [color:#65696d]"> Create an account</Link>*/}</p> 
           </div>
         </div>
       </div>

@@ -7,11 +7,13 @@ import icon1 from "../../assets/icon/save-time.png";
 import '../../Css/login.css';
 
 const Signup = () => {
+   
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
+
 
   const onSubmit = (data) => console.log(data);
   return (
