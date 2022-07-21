@@ -9,7 +9,7 @@ import image_6 from '../../../assets/Business_deals/logo-yahoo.png'
 
 const Review = () => {
     return (
-        <div className='py-24 bg-[#a2b2c736]'>
+        <div className='pt-24 bg-[#a2b2c736]'>
             <div className='mx-24'>
                 <h1
                     style={{letterSpacing:"4px"}}
