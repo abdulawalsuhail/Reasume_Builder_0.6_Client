@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FaGithubSquare, FaGooglePlusSquare, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import "../../Css/login.css";
 
 const Login = () => {
@@ -29,6 +30,7 @@ const Login = () => {
           {/* social login */}
 
           <div className="flex items-center gap-3 justify-center mt-10 px-4">
+            
             {/* linkedin login*/}
 
             <div className="flex items-center border-2 [border-color:##b3b3b3] rounded-md px-4 py-1 linkedin-btn">
@@ -125,7 +127,7 @@ const Login = () => {
                 </label>
               </div>
 
-              <input className="btn btn-primary input input-bordered w-full max-w-xs mx-auto" type="submit" value="sign in"/>
+              <input className="btn btn-primary input input-bordered w-full max-w-xs mx-auto text-white" type="submit" value="sign in"/>
             </form>
           </div>
                 
@@ -134,7 +136,7 @@ const Login = () => {
             <p className=" font-semibold text-center mt-16 [color:#777b7e]">Forgotten password?</p>
           </div>
           <div className="pb-4 mt-2">
-            <p className="text-center">Don't have an account?<span className="font-semibold"> Create an account</span></p>
+            <p className="text-center">Don't have an account?la <Link  to='/signup'     className="font-semibold [color:#65696d]"> Create an account</Link></p>
           </div>
         </div>
       </div>
