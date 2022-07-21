@@ -14,8 +14,11 @@ const Signup = () => {
     <div className="grid md:grid-cols-2 mx-auto [background-color:#fbfafd]">
 
     {/* left side */}
-      <div className="hidden md:block">
-        <h1>Left side</h1>
+      <div className="hidden md:block mx-auto w-72">
+        <h3 className="text-3xl [color:#2d3639]">Create a resume you are proud of</h3>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
 
       {/* signup */}
