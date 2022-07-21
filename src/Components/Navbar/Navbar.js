@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Navbar = () => {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
   const navItem = <>
             <li className="hover:bg-primary hover:text-white rounded-md"><a>FEATURE</a></li>
             <li className="hover:bg-primary hover:text-white rounded-md"><a>RESUME</a></li>
@@ -63,7 +63,7 @@ const Navbar = () => {
                 </ul>
               </div>
               :
-              <a class="btn btn-secondary btn-xs md:btn-sm mr-2 ">Login</a>
+              <a class="btn btn-secondary btn-xs md:btn-md mr-2 ">Login</a>
           }
         </div>
         {/* End navbar end portion */}
