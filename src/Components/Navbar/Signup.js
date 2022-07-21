@@ -1,9 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FaGithubSquare, FaGooglePlusSquare, FaLinkedin } from "react-icons/fa";
-import icon2 from "../../assets/icon/hand.png";
-import icon3 from "../../assets/icon/hot-deal.png";
-import icon1 from "../../assets/icon/save-time.png";
+import icon2 from "../../assets/icon/handshake.png";
+import icon3 from "../../assets/icon/hto-deal.png";
+import icon1 from "../../assets/icon/saving.png";
 import whyWe from "../../../src/assets/why-we.jpg";
 import "../../Css/login.css";
 
@@ -32,7 +32,7 @@ const Signup = () => {
             </h3>
             <div className="flex items-center justify-center mt-8">
               <span>
-                <img className="w-10" src={icon1} alt="" />
+                <img className="w-20" src={icon1} alt="" />
               </span>
               <h4 className="text-white signup-text">
                 Save time with hassle free templates
@@ -40,7 +40,7 @@ const Signup = () => {
             </div>
             <div className="flex items-center justify-center mt-6">
               <span>
-                <img className="w-16" src={icon2} alt="" />
+                <img className="w-28" src={icon2} alt="" />
               </span>
               <h4 className="text-white signup-text">
                 Beat the competition using actionable, contextual advise
@@ -48,7 +48,7 @@ const Signup = () => {
             </div>
             <div className="flex items-center justify-center mt-6">
               <span>
-                <img className="w-16" src={icon3} alt="" />
+                <img className="w-28" src={icon3} alt="" />
               </span>
               <h4 className="text-white signup-text">
                 Highlight key achievements with memorable visuals
