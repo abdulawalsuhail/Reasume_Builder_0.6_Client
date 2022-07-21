@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import logo from "../../../src/assets/logo.png";
+// import "../../Pages/Home/WriteResume/WriteResume.css";
 
 const Navbar = () => {
   const [user, setUser] = useState(false);
   const navItem = (
     <>
-      <li className="hover:bg-primary hover:text-white rounded-md">
+      <li className="hover:bg-primary  hover:text-white rounded-md">
         <a>FEATURE</a>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
@@ -58,7 +60,12 @@ const Navbar = () => {
               {navItem}
             </ul>
           </div>
-          <a class="btn btn-ghost normal-case text-xl">Resume Builder</a>
+          <div className="flex items-center">
+            <img className="w-14" src={logo} alt="logo" />
+            <p className="text-2xl font-semibold front-crimson">
+              Resume Builder
+            </p>
+          </div>
         </div>
         {/* End Navbar left Portion */}
 
