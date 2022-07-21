@@ -1,7 +1,6 @@
 import React from 'react';
 import img_1 from '../../../assets/Business_deals/bg_shape1.svg';
 import img_2 from '../../../assets/Business_deals/bg_shape2.svg';
-
 import img_3 from '../../../assets/Business_deals/template-step-01.svg';
 import img_4 from '../../../assets/Business_deals/template-step-02.svg';
 import img_5 from '../../../assets/Business_deals/template-step-03.svg';

@@ -5,14 +5,14 @@ import './ResumeTemplate.css';
 
 const ResumeTemplate = () => {
     return (
-        < div className = 'pt-32 pb-8 bg-[#f4f7f8]' >
+        <div className = 'pt-32 pb-8 bg-[#f4f7f8]' >
             {/* menu section */}
-            <div style={{maxWidth:"500px"}} class="border border-blue-300 rounded-full md:mx-auto mx-8">
+            <div class="border md:w-1/2 border-blue-300 md:rounded-full mx-auto">
                 <div class="">
-                    <ul class="flex justify-around md:py-1">
-                        <li className='py-2 px-4 cursor-pointer hover:bg-primary hover:text-white font-bold rounded-full text-primary'><a>Resume Templates</a></li>
-                        <li className='py-2 px-4 cursor-pointer hover:bg-primary hover:text-white font-bold rounded-full text-primary'><a>CV Templates</a></li>
-                        <li className='py-2 px-4 cursor-pointer hover:bg-primary hover:text-white font-bold rounded-full text-primary'><a>Cover Letter Templates</a></li>
+                    <ul class="flex flex-col md:flex-row justify-around p-4 md:py-1">
+                        <li className='py-2 px-4 cursor-pointer hover:bg-primary hover:text-white font-bold rounded-full text-primary text-center'><a>Resume Templates</a></li>
+                        <li className='py-2 px-4 cursor-pointer hover:bg-primary hover:text-white font-bold rounded-full text-primary text-center'><a>CV Templates</a></li>
+                        <li className='py-2 px-4 cursor-pointer hover:bg-primary hover:text-white font-bold rounded-full text-primary text-center'><a>Cover Letter Templates</a></li>
                     </ul>
                 </div>
             </div>
