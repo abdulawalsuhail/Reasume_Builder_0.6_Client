@@ -14,20 +14,20 @@ const Guideline = () => {
                 <img className='w-1/2' src={img_2} alt="" />
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 mx-16 pb-28'>
-                <div>
+                <div className='mb-12 md:mb-0'>
                     <img className='mx-auto' style={{width:"60%"}} src={img_3} alt="" srcset="" />
                     <h1 className='text-center pt-4 pb-2 text-4xl font-semibold text-secondary'>Step 1</h1>
-                    <p className='px-6 mx-auto text-lg'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, cumque?</p>
+                    <p className='px-6 mx-auto text-lg text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, cumque?</p>
                 </div>
-                <div>
+                <div className='mb-16 md:mb-0'>
                     <img className='mx-auto' style={{width:"50%"}} src={img_4} alt="" srcset="" />
                     <h1 className='text-center pt-4 pb-2 text-4xl font-semibold text-secondary'>Step 2</h1>
-                    <p className='px-6 mx-auto text-lg'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, cumque?</p>
+                    <p className='px-6 mx-auto text-lg text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, cumque?</p>
                 </div>
                 <div>
                     <img className='mx-auto' style={{width:"40%"}} src={img_5} alt="" srcset="" />
                     <h1 className='text-center pt-4 pb-2 text-4xl font-semibold text-secondary'>Step 3</h1>
-                    <p className='px-6 mx-auto text-lg'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, cumque?</p>
+                    <p className='px-6 mx-auto text-lg text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, cumque?</p>
                 </div>
                 
             </div>
