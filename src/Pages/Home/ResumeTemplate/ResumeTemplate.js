@@ -7,7 +7,7 @@ const ResumeTemplate = () => {
     return (
         <div className = 'pt-32 pb-8 bg-[#f4f7f8]' >
             {/* menu section */}
-            <div class="border md:1/2 border-blue-300 md:rounded-full mx-auto">
+            <div class="border md:w-1/2 border-blue-300 md:rounded-full mx-auto">
                 <div class="">
                     <ul class="flex flex-col md:flex-row justify-around p-4 md:py-1">
                         <li className='py-2 px-4 cursor-pointer hover:bg-primary hover:text-white font-bold rounded-full text-primary text-center'><a>Resume Templates</a></li>
