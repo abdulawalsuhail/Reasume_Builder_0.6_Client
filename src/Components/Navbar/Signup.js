@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FaGithubSquare, FaGooglePlusSquare, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 const Signup = () => {
   const {
@@ -19,7 +18,7 @@ const Signup = () => {
 
       {/* signup */}
 
-      <div className="md:bg-white shadow-lg md:[width:70%]">
+      <div className="md:bg-white shadow-lg md:[width:70%] py-8 rounded">
         <h3 className=" mt-6 text-3xl [color:#2d3639] text-center">
           Create Your Account
         </h3>
@@ -62,7 +61,7 @@ const Signup = () => {
 
         {/* Form signup */}
 
-        <div className="mt-6  text-center">
+        <div className="mt-6 text-center">
           <form className="" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control">
               <input
@@ -77,7 +76,7 @@ const Signup = () => {
               />
               <label className="label">
                 {errors.name?.type === "required" && (
-                  <span className="label-text-alt text-red-500 md:[margin-left:75px]">
+                  <span className="label-text-alt text-red-500  md:[margin-left:75px]">
                     {errors.name.message}
                   </span>
                 )}
@@ -148,13 +147,15 @@ const Signup = () => {
           </form>
         </div>
 
-        <div className="pb-4 mt-2">
+        <div className="pb-4 mt-8">
           <p className="text-center">
             Already have an account?
-            <Link to="/login" className="font-semibold [color:#65696d]">
-              {" "}
-              Login
-            </Link>
+            <label
+              htmlFor="login-modal_1"
+            className="font-semibold [color:#65696d]"
+            >
+              Log in
+            </label>
           </p>
         </div>
       </div>
