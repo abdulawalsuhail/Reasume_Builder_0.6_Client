@@ -5,7 +5,7 @@ import template_2 from '../../../assets/demo2.png'
 
 const ResumeTemplate = () => {
     return (
-        <div className='mt-32'>
+        < div className = 'pt-32 pb-8 bg-[#f4f7f8]' >
             {/* menu section */}
             <div style={{maxWidth:"500px"}} class="border border-blue-300 rounded-full md:mx-auto mx-8">
                 <div class="">
@@ -40,6 +40,14 @@ const ResumeTemplate = () => {
                         <img className='w-full' src={template_1} alt="" />
                     </div>
                     <div style={{letterSpacing:"3px"}} className='hover:drop-shadow-[0_20px_15px_rgba(65,105,144,.6)]'>
+                        <h1 className='mb-4 text-md text-primary mt-1'>Professional</h1>
+                        <img className='w-full' src={template_2} alt="" />
+                    </div>
+                    <div style={{ letterSpacing: "3px" }} className='hover:drop-shadow-[0_20px_15px_rgba(65,105,144,.6)]'>
+                        <h1 className='mb-4 text-md text-primary mt-1'>Professional</h1>
+                        <img className='w-full' src={template_1} alt="" />
+                    </div>
+                    <div style={{ letterSpacing: "3px" }} className='hover:drop-shadow-[0_20px_15px_rgba(65,105,144,.6)]'>
                         <h1 className='mb-4 text-md text-primary mt-1'>Professional</h1>
                         <img className='w-full' src={template_2} alt="" />
                     </div>
