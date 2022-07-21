@@ -4,15 +4,31 @@ import logo from "../../../src/assets/logo.png";
 
 const Navbar = () => {
   const [user, setUser] = useState(false);
-  const navItem = <>
-            <li className="hover:bg-primary hover:text-white rounded-md"><a>FEATURE</a></li>
-            <li className="hover:bg-primary hover:text-white rounded-md"><a>RESUME</a></li>
-            <li className="hover:bg-primary hover:text-white rounded-md"><a>CV</a></li>
-            <li className="hover:bg-primary hover:text-white rounded-md"><a>COVER LETTER</a></li>
-            <li className="hover:bg-primary hover:text-white rounded-md"><a>CAREER COUNSELLING</a></li>
-            <li className="hover:bg-primary hover:text-white rounded-md"><a>PRICING</a></li>
-            <a class="btn btn-primary btn-outline btn-sm md:btn-md mr-6 md:hidden">Create My Resume</a>
-  </>
+  const navItem = (
+    <>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <a>FEATURE</a>
+      </li>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <a>RESUME</a>
+      </li>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <a>CV</a>
+      </li>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <a>COVER LETTER</a>
+      </li>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <a>CAREER COUNSELLING</a>
+      </li>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <a>PRICING</a>
+      </li>
+      <a class="btn btn-primary btn-outline btn-sm md:btn-md mr-6 md:hidden">
+        Create My Resume
+      </a>
+    </>
+  );
 
   return (
     <div className="px-4 bg-[#f4f7f8]">
@@ -61,31 +77,42 @@ const Navbar = () => {
 
         {/* Navbar end portion */}
         <div class="navbar-end">
-          
-          <a class="btn btn-primary btn-outline btn-sm md:btn-md hidden md:flex"><p>Create My Resume</p></a>
-          {
-            user
-              ? 
-              <div class="dropdown dropdown-end">
-                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                  <div class="w-10 rounded-full">
-                    <img src="https://placeimg.com/80/80/people" />
-                  </div>
-                </label>
-                <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-                  <li>
-                    <a class="justify-between">
-                      Profile
-                      <span class="badge">New</span>
-                    </a>
-                  </li>
-                  <li><a>Settings</a></li>
-                  <li><a>Logout</a></li>
-                </ul>
-              </div>
-              :
-              <a class="btn btn-secondary btn-xs md:btn-md ml-2 ">Login</a>
-          }
+          <a class="btn btn-primary btn-outline btn-sm md:btn-md hidden md:flex">
+            <p>Create My Resume</p>
+          </a>
+          {user ? (
+            <div class="dropdown dropdown-end">
+              <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                <div class="w-10 rounded-full">
+                  <img src="https://placeimg.com/80/80/people" />
+                </div>
+              </label>
+              <ul
+                tabindex="0"
+                class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a class="justify-between">
+                    Profile
+                    <span class="badge">New</span>
+                  </a>
+                </li>
+                <li>
+                  <a>Settings</a>
+                </li>
+                <li>
+                  <a>Logout</a>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <label
+              for="login-modal_1"
+              class="btn btn-secondary btn-xs md:btn-md ml-2 modal-button"
+            >
+              Login
+            </label>
+          )}
         </div>
         {/* End navbar end portion */}
       </div>
