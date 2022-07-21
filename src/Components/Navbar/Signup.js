@@ -1,35 +1,32 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React from 'react';
+import { useForm } from 'react-hook-form';
 import { FaGithubSquare, FaGooglePlusSquare, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import "../../Css/login.css";
+import { Link } from 'react-router-dom';
 
-const Login = () => {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
+const Signup = () => {
+const {
+        register,
+        formState: { errors },
+        handleSubmit,
+      } = useForm();
+    
+      const onSubmit = (data) => console.log(data);
+    return (
+        <div className='grid md:grid-cols-2 mx-auto [background-color:#fbfafd]'>
+            <div>
+                <h1>left side</h1>
+            </div>
 
-  const onSubmit = (data) => console.log(data);
-  return (
-    <div>
-      <input type="checkbox" id="login-modal_1" className="modal-toggle" />
-      <div className="modal modal-top sm:modal-middle">
-        <div className="modal-box  [width:95%] relative">
-          <label
-            htmlFor="login-modal_1"
-            className="btn btn-sm btn-circle absolute right-2 top-2 "
-          >
-            ✕
-          </label>
-          <h3 className=" mt-6 text-3xl [color:#2d3639] text-center">
-            Sign in to your account
+            {/* signup */}
+            
+            <div className='md:bg-white shadow-lg md:[width:70%]'>
+            <h3 className=" mt-6 text-3xl [color:#2d3639] text-center">
+            Create Your Account
           </h3>
+                {/* social login */}
 
-          {/* social login */}
 
-          <div className="flex items-center gap-3 justify-center mt-10 px-4">
+            <div className="flex items-center gap-3 justify-center mt-10 px-4">
             
             {/* linkedin login*/}
 
@@ -60,15 +57,16 @@ const Login = () => {
               <h1 className="[font-weight:500] text">Github</h1>
             </div>
           </div>
+
           <div>
             <p className="text-center [color:#bdbfc1] mt-6 [font-weight:400]">
-              or sign in with email
+              or sign up with email
             </p>
           </div>
 
-          {/* form login */}
+        {/* Form signup */}
 
-          <div className="mt-6  text-center">
+        <div className="mt-6  text-center">
             <form className="" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control">
                 <input
@@ -127,21 +125,16 @@ const Login = () => {
                 </label>
               </div>
 
-              <input className="btn btn-primary input input-bordered w-full max-w-xs mx-auto text-white" type="submit" value="sign in"/>
+              <input className="btn btn-primary input input-bordered w-full max-w-xs mx-auto text-white" type="submit" value="create your account"/>
             </form>
           </div>
-                
-        {/* Forget password */}
-          <div>
-            <p className=" font-semibold text-center mt-16 [color:#777b7e]">Forgotten password?</p>
-          </div>
+
           <div className="pb-4 mt-2">
-            <p className="text-center">Don't have an account?<Link to='/signup'     className="font-semibold [color:#65696d]"> Create an account</Link></p>
+            <p className="text-center">Already have an account?<Link to='/login'     className="font-semibold [color:#65696d]"> Login</Link></p>
           </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
-export default Login;
+export default Signup;
