@@ -10,11 +10,11 @@ import image_2 from '../../../assets/reviewer/michael.jpg';
 const Review = () => {
     return (
         <div className='pt-24 bg-[#a2b2c736]'>
-            <div className='mx-24'>
+            <div className='mx-6 md:mx-24'>
                 <h1
                     style={{letterSpacing:"4px"}}
                     className='text-center text-2xl text-secondary mb-8'>See what others say about Resume Builder</h1>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-12'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 mb-12'>
                     <div className='shadow-xl p-12'>
                         <div>
                             <p className='text-center'>I am very pleased to have found Resume Builder when I needed to update my resume. A lot had happened since the last time I had been looking for a job and I also wanted a nicer layout. Everything was simple and straightforward and there were some great templates to choose from. The final result with my resume turned out well.</p>
@@ -51,15 +51,14 @@ const Review = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
+                    </div> 
                 </div>
             </div>
-            <div className='w-2/3 mx-auto flex justify-around items-center py-12'>
-                <img className='w-32' src={image_3} alt="" srcset="" />
-                <img className='w-32' src={image_4} alt="" srcset="" />
-                <img className='w-48' src={image_5} alt="" srcset="" />
-                <img className='w-36' src={image_6} alt="" srcset="" />
+            <div className='w-2/3 mx-auto flex justify-around items-center py-6 md:py-12 shadow-lg'>
+                <img className='w-16 md:w-32' src={image_3} alt="" srcset="" />
+                <img className='w-16 md:w-32' src={image_4} alt="" srcset="" />
+                <img className='w-16 md:w-48' src={image_5} alt="" srcset="" />
+                <img className='w-16 md:w-36' src={image_6} alt="" srcset="" />
             </div>
         </div>
     );
