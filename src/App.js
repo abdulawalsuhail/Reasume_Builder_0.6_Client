@@ -1,11 +1,22 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Login from "./Components/Navbar/Login";
+import Navbar from "./Components/Navbar/Navbar";
+import Signup from "./Components/Navbar/Signup";
+import Home from "./Pages/Home/Home";
+import Footer from "./Shared/Footer/Footer";
 
 function App() {
   return (
     <div>
-      <h3 className="text-3xl text-center">Hello React</h3>
-      <h1>shariar</h1>
-      <h1>Suhail</h1>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+        <Route path="/signup"element={<Signup></Signup>}></Route>
+      </Routes>
+      <Login />
+      <Footer />
     </div>
   );
 }
