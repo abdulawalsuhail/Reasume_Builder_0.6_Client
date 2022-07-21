@@ -8,7 +8,7 @@ const WhyResumeBuilder = () => {
       <img
         class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25 sm:opacity-100"
         src={whyWe}
-        alt="Couple on a bed with a dog"
+        alt="resume"
       />
       <div class="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-slate-800 sm:to-slate-600 opacity-75"></div>
       <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8 relative">
