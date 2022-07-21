@@ -10,7 +10,7 @@ import image_6 from '../../../assets/Business_deals/logo-yahoo.png'
 const Review = () => {
     return (
         <div className='pt-24 bg-[#a2b2c736]'>
-            <div className='mx-24'>
+            <div className='mx-6 md:mx-24'>
                 <h1
                     style={{letterSpacing:"4px"}}
                     className='text-center text-2xl text-secondary mb-8'>See what others say about Resume Builder</h1>
@@ -51,8 +51,7 @@ const Review = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
+                    </div> 
                 </div>
             </div>
             <div className='w-2/3 mx-auto flex justify-around items-center py-6 md:py-12 shadow-lg'>
