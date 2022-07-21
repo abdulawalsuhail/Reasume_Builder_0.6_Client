@@ -28,6 +28,9 @@
 }
 
 /* github btn style */
+.github-btn{
+  color:"black"
+}
 .github-btn:hover {
   background-color: #24292f;
   transition: 0.6s;
@@ -41,4 +44,11 @@
   transition: 0.6s;
 }
 
-/* input */
+/* signup */
+
+.signup-text {
+  font-size: 18px;
+  line-height: 20px;
+  margin-left: 9px;
+  font-weight: 500;
+}
