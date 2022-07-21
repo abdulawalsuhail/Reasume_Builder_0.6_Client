@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "./Hero/Hero";
+import WhyResumeBuilder from "./WhyResumeBuilder/WhyResumeBuilder";
 import WriteResume from "./WriteResume/WriteResume";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <div>
       <Hero />
       <WriteResume />
+      <WhyResumeBuilder />
     </div>
   );
 };

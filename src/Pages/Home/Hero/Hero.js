@@ -21,7 +21,7 @@ const hero = () => {
       <img
         class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25 sm:opacity-100"
         src={Banner}
-        alt="Couple on a bed with a dog"
+        alt="Resume of a job"
       />
 
       <div class="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-slate-800 sm:to-transparent"></div>
