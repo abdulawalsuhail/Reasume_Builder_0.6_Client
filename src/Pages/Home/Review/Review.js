@@ -1,11 +1,11 @@
 import React from 'react';
-import image_1 from '../../../assets/reviewer/lukas.jpg'
-import image_2 from '../../../assets/reviewer/michael.jpg'
 import { AiFillStar } from "react-icons/ai";
-import image_3 from '../../../assets/Business_deals/logo-businessnewsdaily.svg'
-import image_4 from '../../../assets/Business_deals/logo-hubspot.svg'
-import image_5 from '../../../assets/Business_deals/logo-careerguide.png'
-import image_6 from '../../../assets/Business_deals/logo-yahoo.png'
+import image_3 from '../../../assets/Business_deals/logo-businessnewsdaily.svg';
+import image_5 from '../../../assets/Business_deals/logo-careerguide.png';
+import image_4 from '../../../assets/Business_deals/logo-hubspot.svg';
+import image_6 from '../../../assets/Business_deals/logo-yahoo.png';
+import image_1 from '../../../assets/reviewer/lukas.jpg';
+import image_2 from '../../../assets/reviewer/michael.jpg';
 
 const Review = () => {
     return (

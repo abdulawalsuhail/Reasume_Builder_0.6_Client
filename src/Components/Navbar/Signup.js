@@ -1,10 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FaGithubSquare, FaGooglePlusSquare, FaLinkedin } from "react-icons/fa";
+import whyWe from "../../../src/assets/why-we.jpg";
 import icon2 from "../../assets/icon/hand.png";
 import icon3 from "../../assets/icon/hot-deal.png";
 import icon1 from "../../assets/icon/save-time.png";
-import whyWe from "../../../src/assets/why-we.jpg";
 import "../../Css/login.css";
 
 const Signup = () => {
@@ -99,9 +99,9 @@ const Signup = () => {
 
             <div className="flex items-center border-2 [border-color:##b3b3b3] rounded-md px-4 py-1 github-btn">
               <span>
-                <FaGithubSquare className="text-xl logo"></FaGithubSquare>
+                <FaGithubSquare className="text-xl logo text-black"></FaGithubSquare>
               </span>
-              <h1 className="[font-weight:500] text">Github</h1>
+              <h1 className="[font-weight:500] text text-black">Github</h1>
             </div>
           </div>
 
@@ -200,13 +200,13 @@ const Signup = () => {
           </div>
 
           <div className="pb-4 mt-8">
-            <p className="text-center">
+            <p className="text-center text-black">
               Already have an account?
               <label
                 htmlFor="login-modal_1"
-                className="font-semibold [color:#65696d]"
+                className="font-semibold [color:#65696d] ml-1"
               >
-                Log in
+                 Log in
               </label>
             </p>
           </div>

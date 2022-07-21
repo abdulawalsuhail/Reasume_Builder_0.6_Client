@@ -1,7 +1,7 @@
 import React from 'react';
-import './ResumeTemplate.css'
-import template_1 from '../../../assets/demo1.png'
-import template_2 from '../../../assets/demo2.png'
+import template_1 from '../../../assets/demo1.png';
+import template_2 from '../../../assets/demo2.png';
+import './ResumeTemplate.css';
 
 const ResumeTemplate = () => {
     return (

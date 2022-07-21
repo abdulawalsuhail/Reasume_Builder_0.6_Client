@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaGithubSquare, FaGooglePlusSquare, FaLinkedin } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../Css/login.css";
 
 const Login = () => {
@@ -143,8 +143,7 @@ const Login = () => {
           </div>
           <div className="pb-4 mt-2">
             <p className="text-center">Don't have an account?
-            <span>Create an account</span>
-            {/* <Link  to='/signup'     className="font-semibold [color:#65696d]"> Create an account</Link>*/}</p> 
+            <Link  to='/signup'     className="font-semibold [color:#65696d]"> Create an account</Link></p> 
           </div>
         </div>
       </div>

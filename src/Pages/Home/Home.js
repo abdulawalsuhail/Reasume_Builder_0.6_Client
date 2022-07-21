@@ -9,8 +9,8 @@ import WriteResume from "./WriteResume/WriteResume";
 const Home = () => {
   return (
     <div>
-      <Hero />
-      <WriteResume />
+      <Hero/>
+      <WriteResume/>
       <WhyResumeBuilder />
       <ResumeTemplate />
       <Guideline/>
