@@ -1,6 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FaGithubSquare, FaGooglePlusSquare, FaLinkedin } from "react-icons/fa";
+import icon2 from "../../assets/icon/hand.png";
+import icon3 from "../../assets/icon/hot-deal.png";
+import icon1 from "../../assets/icon/save-time.png";
+import '../../Css/login.css';
 
 const Signup = () => {
   const {
@@ -12,13 +16,32 @@ const Signup = () => {
   const onSubmit = (data) => console.log(data);
   return (
     <div className="grid md:grid-cols-2 mx-auto [background-color:#fbfafd]">
-
-    {/* left side */}
-      <div className="hidden md:block mx-auto w-72">
-        <h3 className="text-3xl [color:#2d3639]">Create a resume you are proud of</h3>
-        <div></div>
-        <div></div>
-        <div></div>
+      {/* left side */}
+      <div className="hidden md:block mx-auto my-auto w-72">
+      <div >
+        <h3 className="text-3xl [color:#2d3639]">
+          Create a resume you are proud of
+        </h3>
+        <div className="flex items-center justify-center mt-8">
+          <span>
+            <img className="w-10" src={icon1} alt="" />
+          </span>
+          <h4 className="[color:#65696d] signup-text">Save time with hassle free templates</h4>
+        </div>
+        <div className="flex items-center justify-center mt-6">
+        <span>
+            <img className="w-16" src={icon2} alt="" />
+          </span>
+          <h4 className="[color:#65696d] signup-text">Beat the competition using actionable, contextual advise</h4>
+        </div>
+        <div className="flex items-center justify-center mt-6">
+        <span>
+            <img className="w-16" src={icon3} alt="" />
+          </span>
+          <h4 className="[color:#65696d] signup-text">Highlight key achievements with memorable visuals</h4>
+        </div>
+      </div>
+      <h3 className="mt-6 [color:#65696d]">Get inspired by<span className="[font-weight:600]"> 200+ Free Resume Examples and Templates</span></h3>
       </div>
 
       {/* signup */}
@@ -157,7 +180,7 @@ const Signup = () => {
             Already have an account?
             <label
               htmlFor="login-modal_1"
-            className="font-semibold [color:#65696d]"
+              className="font-semibold [color:#65696d]"
             >
               Log in
             </label>
