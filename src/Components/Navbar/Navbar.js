@@ -13,16 +13,32 @@ const Navbar = () => {
   </>
 
   return (
-    <div className="mx-4">
+    <div className="px-4 bg-[#f4f7f8]">
       {/* Navbar start source code from Daisy UI */}
       <div class="navbar py-4">
         {/* Navbar left portion */}
         <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
             </label>
-            <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            <ul
+              tabindex="0"
+              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            >
               {navItem}
             </ul>
           </div>
@@ -32,16 +48,14 @@ const Navbar = () => {
 
         {/* Navbar center portion */}
         <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal p-0">
-            {navItem}
-          </ul>
+          <ul class="menu menu-horizontal p-0">{navItem}</ul>
         </div>
         {/* End Navbar center portion */}
 
         {/* Navbar end portion */}
         <div class="navbar-end">
           
-          <a class="btn btn-primary btn-outline btn-sm md:btn-md mr-6 hidden md:flex"><p>Create My Resume</p></a>
+          <a class="btn btn-primary btn-outline btn-sm md:btn-md hidden md:flex"><p>Create My Resume</p></a>
           {
             user
               ? 
@@ -63,7 +77,7 @@ const Navbar = () => {
                 </ul>
               </div>
               :
-              <a class="btn btn-secondary btn-xs md:btn-md mr-2 ">Login</a>
+              <a class="btn btn-secondary btn-xs md:btn-md ml-2 ">Login</a>
           }
         </div>
         {/* End navbar end portion */}

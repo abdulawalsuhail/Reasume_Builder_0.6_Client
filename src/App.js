@@ -1,7 +1,8 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Login from "./Components/Navbar/Login";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
-import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
       </Routes>
+      <Login/>
     </div>
   );
 }
