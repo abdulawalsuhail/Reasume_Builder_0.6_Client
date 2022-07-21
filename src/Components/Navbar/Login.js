@@ -29,6 +29,7 @@ const Login = () => {
           {/* social login */}
 
           <div className="flex items-center gap-3 justify-center mt-10 px-4">
+            
             {/* linkedin login*/}
 
             <div className="flex items-center border-2 [border-color:##b3b3b3] rounded-md px-4 py-1 linkedin-btn">
