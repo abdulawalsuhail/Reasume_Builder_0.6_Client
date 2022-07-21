@@ -28,6 +28,9 @@
 }
 
 /* github btn style */
+.github-btn{
+  color:"black"
+}
 .github-btn:hover {
   background-color: #24292f;
   transition: 0.6s;
