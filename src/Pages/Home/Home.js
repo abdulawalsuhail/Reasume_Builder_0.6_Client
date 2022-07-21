@@ -1,11 +1,14 @@
 import React from "react";
-import Hero from "./Hero";
+import Hero from "./Hero/Hero";
+import WhyResumeBuilder from "./WhyResumeBuilder/WhyResumeBuilder";
+import WriteResume from "./WriteResume/WriteResume";
 
 const Home = () => {
   return (
     <div>
-      <h3 className="text-primary">This is home</h3>
-      <Hero/>
+      <Hero />
+      <WriteResume />
+      <WhyResumeBuilder />
     </div>
   );
 };
