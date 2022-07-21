@@ -12,8 +12,10 @@ const Signup = () => {
   const onSubmit = (data) => console.log(data);
   return (
     <div className="grid md:grid-cols-2 mx-auto [background-color:#fbfafd]">
-      <div>
-        <h1>left side</h1>
+
+    {/* left side */}
+      <div className="hidden md:block">
+        <h1>Left side</h1>
       </div>
 
       {/* signup */}

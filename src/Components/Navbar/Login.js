@@ -136,7 +136,7 @@ const Login = () => {
             <p className=" font-semibold text-center mt-16 [color:#777b7e]">Forgotten password?</p>
           </div>
           <div className="pb-4 mt-2">
-            <p className="text-center">Don't have an account?<Link  to='/signup'     className="font-semibold [color:#65696d]"> Create an account</Link></p>
+            <p className="text-center">Don't have an account?la <Link  to='/signup'     className="font-semibold [color:#65696d]"> Create an account</Link></p>
           </div>
         </div>
       </div>
