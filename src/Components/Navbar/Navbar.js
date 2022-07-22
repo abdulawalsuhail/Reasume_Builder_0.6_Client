@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../../../src/assets/logo.png";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
+import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const Navbar = () => {
@@ -117,12 +118,12 @@ const Navbar = () => {
               </ul>
             </div>
           ) : (
-            <label
-              for="login-modal_1"
+            <Link
+              to="/login"
               class="btn btn-secondary btn-xs md:btn-md ml-2 modal-button"
             >
               Login
-            </label>
+            </Link>
           )}
         </div>
         {/* End navbar end portion */}
