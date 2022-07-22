@@ -10,6 +10,7 @@ import Social from "./Social";
 import auth from "../../firebase.init";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import Alert from "./Alert";
+import Loading from "../../Shared/Loading/Loading";
 
 const Signup = () => {
   const [customError, setCustomError] = useState("");
@@ -29,6 +30,9 @@ const Signup = () => {
       toast.error("please input the same password !");
     }
   };
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <section className="text-white bg-gray-900 relative">
       <img

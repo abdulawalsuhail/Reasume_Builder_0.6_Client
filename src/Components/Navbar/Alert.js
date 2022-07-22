@@ -3,7 +3,7 @@ import React from "react";
 const Alert = ({ error, setCustomError, customError }) => {
   return (
     <div
-      class="flex items-center justify-between gap-4 p-4 text-red-700 border rounded border-red-900/10 bg-red-50 bg-opacity-75"
+      class="flex items-center justify-between gap-4 p-4 text-red-700 border rounded border-red-900/10 bg-red-50 bg-opacity-75 mt-3"
       role="alert"
     >
       <div class="flex items-center gap-4">
