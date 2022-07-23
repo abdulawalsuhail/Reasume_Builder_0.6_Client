@@ -8,6 +8,7 @@ import auth from "../../firebase.init";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import Alert from "./Alert";
 import Loading from "../../Shared/Loading/Loading";
+import loginImg from "../../../src/assets/login2.png";
 
 const Login = () => {
   const [customError, setCustomError] = useState("");
@@ -40,8 +41,12 @@ const Login = () => {
       <div class="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-slate-800 sm:to-slate-600 opacity-75"></div>
       <div className="grid md:grid-cols-2 mx-auto relative py-10">
         {/* left side */}
-        <div className="hidden md:block mx-auto my-auto w-72">
-          <h2 className="text-4xl text-center">Image Hare</h2>
+        <div className="hidden md:block mx-auto my-auto">
+          <img
+            className="w-[80%] mx-auto opacity-[90%] bg-transparent"
+            src={loginImg}
+            alt="This is login page img"
+          />
         </div>
 
         {/* signup */}
