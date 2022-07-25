@@ -26,20 +26,19 @@ const CoverLetter = () => {
         },
     ]
     return (
-        <div className="mx-12 my-12 ">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <>
             {
                 coverLetter_Templates.map(tem => {
                 return <div
-                    style={{ letterSpacing: "3px" }}
-                    className="hover:drop-shadow-[0_20px_15px_rgba(65,105,144,.6)]">
-                    <h1 className="mb-4 text-md text-primary mt-1">{tem.name}</h1>
+                    style={{ letterSpacing: "3px", position:"relative"  }}
+                    className="customDiv hover:drop-shadow-[0_20px_15px_rgba(65,105,144,.6)]">
+                    <h1 className="mb-2 text-md text-accent mt-1">{tem.name}</h1>
                     <img className="w-full" src={tem.image} alt="" />
+                    <a href='#' style={{position:"absolute", left:"20%", right:"20%", bottom:"50%"}} className='customButton  border p-2 border-0 hidden bg-accent text-white hover:translate-x-2'>Edit Template</a>
                 </div>
                 })
             }
-            </div>
-      </div>
+         </>
     );
 };
 
