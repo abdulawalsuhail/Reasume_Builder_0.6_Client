@@ -1,9 +1,19 @@
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { MdCancel } from "react-icons/md";
+import { Link } from "react-router-dom";
 import logo from "../../../src/assets/logo.png";
 
 const CarrerHeader = () => {
+  const articleMenu = (
+    <>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <Link className="uppercase" to="/career-counselling/all-article">
+          All Articles
+        </Link>
+      </li>
+    </>
+  );
   return (
     <div>
       {/* sidebar */}
@@ -33,19 +43,16 @@ const CarrerHeader = () => {
 
               {/* Navbar center portion */}
               <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal p-0"></ul>
+                <ul class="menu menu-horizontal p-0">{articleMenu}</ul>
               </div>
               {/* End Navbar center portion */}
 
               {/* Navbar end portion */}
               <div class="navbar-end">
-                <label
-                  htmlFor="career-drawer"
-                  class=" swap swap-rotate"
-                >
+                <label htmlFor="career-drawer" class=" swap swap-rotate">
                   <input type="checkbox" />
 
-                <AiOutlineMenu className="text-4xl"></AiOutlineMenu>
+                  <AiOutlineMenu className="text-4xl"></AiOutlineMenu>
                 </label>
               </div>
               {/* End navbar end portion */}
@@ -54,11 +61,8 @@ const CarrerHeader = () => {
         </div>
         <div class="drawer-side">
           <label for="career-drawer" class="drawer-overlay"></label>
-          <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-            <label
-              htmlFor="career-drawer"
-              class=" btn-circle swap swap-rotate"
-            >
+          <ul class="menu p-4 overflow-y-auto w-80 bg-[#f4f7f8] text-base-content">
+            <label htmlFor="career-drawer" class=" btn-circle swap swap-rotate">
               <MdCancel className="text-4xl"></MdCancel>
             </label>
             <li>
