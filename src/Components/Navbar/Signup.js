@@ -1,16 +1,16 @@
 import React, { useState } from "react";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { toast } from "react-hot-toast";
+import { Link } from "react-router-dom";
+import whyWe from "../../../src/assets/why-we.jpg";
 import icon2 from "../../assets/icon/handshake.png";
 import icon3 from "../../assets/icon/hto-deal.png";
 import icon1 from "../../assets/icon/saving.png";
-import whyWe from "../../../src/assets/why-we.jpg";
 import "../../Css/login.css";
-import { toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
-import Social from "./Social";
 import auth from "../../firebase.init";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import Alert from "./Alert";
 import Loading from "../../Shared/Loading/Loading";
+import Alert from "./Alert";
+import Social from "./Social";
 
 const Signup = () => {
   const [customError, setCustomError] = useState("");

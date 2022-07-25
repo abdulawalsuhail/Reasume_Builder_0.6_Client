@@ -1,10 +1,10 @@
-import React from "react";
-import logo from "../../../src/assets/logo.png";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
-import { Link } from "react-router-dom";
+import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
+import logo from "../../../src/assets/logo.png";
+import auth from "../../firebase.init";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
@@ -22,8 +22,24 @@ const Navbar = () => {
       <li className="hover:bg-primary hover:text-white rounded-md">
         <a>COVER LETTER</a>
       </li>
-      <li className="hover:bg-primary hover:text-white rounded-md">
+      {/* <li className="hover:bg-primary hover:text-white rounded-md">
         <a>CAREER COUNSELLING</a>
+        
+      </li> */}
+     <li tabindex="0">
+        <a className="hover:bg-primary hover:text-white">
+        CAREER COUNSELLING
+          <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+        <ul class="p-2 bg-base-100 z-50 md:w-60">
+          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling'>All-Articles</Link></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><Link to='career-counselling/resume-write'>Resume Writing</Link></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/cv-write'>CV Writing</Link></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/examples'>Examples</Link></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/personal-development'>Personal Development </Link></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/inspiring-stories'>Inspiring Stories </Link></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/interview-preparation'>Interview Prep </Link></li>
+        </ul>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
         <a>PRICING</a>
