@@ -194,7 +194,7 @@ const WhyResumeBuilder = () => {
 
         <div className="mt-12 text-center">
           <Link
-            className="inline-flex items-center px-8 py-3 mt-8 text-white bg-primary border border-primary rounded hover:bg-transparent active:text-primary focus:outline-none focus:ring"
+            className="inline-flex items-center px-8 py-3 mt-8 text-white bg-primary border border-primary rounded hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150"
             to="/"
           >
             <span className="text-sm font-medium"> Get Started </span>

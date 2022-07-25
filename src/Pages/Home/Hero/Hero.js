@@ -43,14 +43,14 @@ const hero = () => {
 
           <div class="flex  gap-4 mt-8 text-center">
             <a
-              class="block w-full px-12 py-3 text-sm font-medium text-white rounded shadow bg-sky-600 sm:w-auto active:bg-sky-500 hover:bg-sky-700 focus:outline-none focus:ring"
+              class="block w-full px-12 py-3 text-sm font-medium bg-sky-600 border border-sky-600 text-white rounded sm:w-auto hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150"
               href="/get-started"
             >
               Get Started
             </a>
 
             <a
-              class="block w-full px-12 py-3 text-sm font-medium bg-white rounded shadow text-sky-600 sm:w-auto hover:text-sky-700 active:text-sky-500 focus:outline-none focus:ring"
+              class="block w-full px-12 py-3 text-sm font-medium bg-white text-sky-600 border border-white rounded sm:w-auto hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150"
               href="/about"
             >
               Learn More
