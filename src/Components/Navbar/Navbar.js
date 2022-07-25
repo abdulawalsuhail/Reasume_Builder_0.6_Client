@@ -34,11 +34,11 @@ const Navbar = () => {
         <ul class="p-2 bg-base-100 z-50 md:w-60">
           <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling'>All-Articles</Link></li>
           <li className="hover:bg-primary hover:text-white uppercase"><Link to='career-counselling/resume-write'>Resume Writing</Link></li>
-          <li className="hover:bg-primary hover:text-white uppercase"><a>CV Writing</a></li>
-          <li className="hover:bg-primary hover:text-white uppercase"><a>Examples</a></li>
-          <li className="hover:bg-primary hover:text-white uppercase"><a>Personal Development </a></li>
-          <li className="hover:bg-primary hover:text-white uppercase"><a>Inspiring Stories </a></li>
-          <li className="hover:bg-primary hover:text-white uppercase"><a>Interview Prep </a></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/cv-write'>CV Writing</Link></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/examples'>Examples</Link></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/personal-development'>Personal Development </Link></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/inspiring-stories'>Inspiring Stories </Link></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/interview-preparation'>Interview Prep </Link></li>
         </ul>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">

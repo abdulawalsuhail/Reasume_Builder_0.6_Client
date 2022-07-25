@@ -12,6 +12,36 @@ const CarrerHeader = () => {
           All Articles
         </Link>
       </li>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <Link className="uppercase" to="/career-counselling/resume-write">
+          resume Writing
+        </Link>
+      </li>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <Link className="uppercase" to="/career-counselling/cv-write">
+          cv Writing
+        </Link>
+      </li>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <Link className="uppercase" to="/career-counselling/examples">
+          Examples
+        </Link>
+      </li>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <Link className="uppercase" to="/career-counselling/personal-development">
+          personal development
+        </Link>
+      </li>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <Link className="uppercase" to="/career-counselling/inspiring-stories">
+            inspiring stories
+        </Link>
+      </li>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <Link className="uppercase" to="/career-counselling/interview-preparation">
+            interview preparation
+        </Link>
+      </li>
     </>
   );
   return (
@@ -48,7 +78,7 @@ const CarrerHeader = () => {
               {/* End Navbar center portion */}
 
               {/* Navbar end portion */}
-              <div class="navbar-end">
+              <div class="navbar navbar-end">
                 <label htmlFor="career-drawer" class=" swap swap-rotate">
                   <input type="checkbox" />
 
