@@ -13,7 +13,7 @@ const Review = () => {
             <div className='mx-6 md:mx-24'>
                 <h1
                     style={{letterSpacing:"4px"}}
-                    className='text-center text-2xl text-secondary mb-8'>See what others say about Resume Builder</h1>
+                    className='text-center text-2xl text-secondary mb-10'>See what others say about Resume Builder</h1>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 mb-12'>
                     <div className='shadow-xl p-12'>
                         <div>

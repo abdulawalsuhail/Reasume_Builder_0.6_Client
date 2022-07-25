@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import { signOut } from "firebase/auth";
+import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 import logo from "../../../src/assets/logo.png";
-// import "../../Pages/Home/WriteResume/WriteResume.css";
+import auth from "../../firebase.init";
 
 const Navbar = () => {
-  const [user, setUser] = useState(false);
+  const [user] = useAuthState(auth);
   const navItem = (
     <>
       <li className="hover:bg-primary hover:text-white rounded-md">
@@ -18,8 +22,24 @@ const Navbar = () => {
       <li className="hover:bg-primary hover:text-white rounded-md">
         <a>COVER LETTER</a>
       </li>
-      <li className="hover:bg-primary hover:text-white rounded-md">
+      {/* <li className="hover:bg-primary hover:text-white rounded-md">
         <a>CAREER COUNSELLING</a>
+        
+      </li> */}
+     <li tabindex="0">
+        <a className="hover:bg-primary hover:text-white">
+        CAREER COUNSELLING
+          <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+        </a>
+        <ul class="p-2 bg-base-100 z-50 md:w-96">
+          <li className="hover:bg-primary hover:text-white uppercase"><a>All      Articles</a></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><a>Resume Writing</a></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><a>CV Writing</a></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><a>Examples</a></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><a>Personal Development </a></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><a>Inspiring Stories </a></li>
+          <li className="hover:bg-primary hover:text-white uppercase"><a>Interview Prep </a></li>
+        </ul>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
         <a>PRICING</a>
@@ -62,9 +82,10 @@ const Navbar = () => {
           </div>
           <div className="flex items-center">
             <img className="w-14" src={logo} alt="logo" />
-            <p className="text-2xl font-semibold front-crimson">
-              Resume Builder
-            </p>
+            <div className="flex gap-2 text-xl">
+              <p>Resume</p>
+              <p>Builder</p>
+            </div>
           </div>
         </div>
         {/* End Navbar left Portion */}
@@ -81,7 +102,7 @@ const Navbar = () => {
             <p>Create My Resume</p>
           </a>
           {user ? (
-            <div class="dropdown dropdown-end">
+            <div class="dropdown dropdown-end ml-2">
               <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                 <div class="w-10 rounded-full">
                   <img src="https://placeimg.com/80/80/people" />
@@ -101,17 +122,24 @@ const Navbar = () => {
                   <a>Settings</a>
                 </li>
                 <li>
-                  <a>Logout</a>
+                  <p
+                    onClick={async () => {
+                      await signOut(auth);
+                      toast.success("Sign Out Successfully");
+                    }}
+                  >
+                    Sign Out
+                  </p>
                 </li>
               </ul>
             </div>
           ) : (
-            <label
-              for="login-modal_1"
+            <Link
+              to="/login"
               class="btn btn-secondary btn-xs md:btn-md ml-2 modal-button"
             >
               Login
-            </label>
+            </Link>
           )}
         </div>
         {/* End navbar end portion */}

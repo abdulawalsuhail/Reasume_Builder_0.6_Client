@@ -5,6 +5,7 @@ import ResumeTemplate from "./ResumeTemplate/ResumeTemplate";
 import Review from "./Review/Review";
 import WhyResumeBuilder from "./WhyResumeBuilder/WhyResumeBuilder";
 import WriteResume from "./WriteResume/WriteResume";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 
 const Home = () => {
   return (
@@ -13,8 +14,13 @@ const Home = () => {
       <WriteResume/>
       <WhyResumeBuilder />
       <ResumeTemplate />
-      <Guideline/>
+      <Guideline />
       <Review />
+      <MessengerCustomerChat
+        pageId="105555438910537"
+        appId="1225310258009219"
+      />
+      ,
     </div>
   );
 };

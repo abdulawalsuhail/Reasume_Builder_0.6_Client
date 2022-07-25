@@ -1,153 +1,131 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { FaGithubSquare, FaGooglePlusSquare, FaLinkedin } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { toast } from "react-hot-toast";
+import { Link } from "react-router-dom";
+import loginImg from "../../../src/assets/login2.png";
+import whyWe from "../../../src/assets/why-we.jpg";
 import "../../Css/login.css";
+import auth from "../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
+import Alert from "./Alert";
+import Social from "./Social";
 
 const Login = () => {
-  const [popup,setPopup] = useState(true)
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
+  const [customError, setCustomError] = useState("");
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
 
-  const navigate = useNavigate()
-  const handleClick = ()=>{
+  const handelSubmit = async (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    await signInWithEmailAndPassword(email, password);
+    if (error) {
+      setCustomError(error?.message);
+    } else {
+      setCustomError("");
+      toast.success("Login Successfully");
+    }
+  };
+
+  if (loading) {
+    return <Loading />;
   }
-  console.log(popup);
-
-  const onSubmit = (data) => console.log(data);
   return (
-    <div>
-      <input type="checkbox" id="login-modal_1" className="modal-toggle" />
-      <div className="modal modal-top sm:modal-middle">
-        <div className="modal-box  [width:95%] relative">
-          <label
-            htmlFor="login-modal_1"
-            className="btn btn-sm btn-circle absolute right-2 top-2 "
-          >
-            ✕
-          </label>
-          <h3 className=" mt-6 text-3xl [color:#2d3639] text-center">
-            Sign in to your account
-          </h3>
+    <section className="text-white bg-gray-900 relative">
+      <img
+        class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25 sm:opacity-100"
+        src={whyWe}
+        alt="resume"
+      />
+      <div class="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-slate-800 sm:to-slate-600 opacity-75"></div>
+      <div className="grid md:grid-cols-2 mx-auto relative py-10">
+        {/* left side */}
+        <div className="hidden md:block mx-auto my-auto">
+          <img
+            className="w-[80%] mx-auto opacity-[90%] bg-transparent"
+            src={loginImg}
+            alt="This is login page img"
+          />
+        </div>
 
-          {/* social login */}
+        {/* signup */}
 
-          <div className="flex items-center gap-3 justify-center mt-10 px-4">
-            
-            {/* linkedin login*/}
+        <div className="lg:[width:70%] md:w-[90%] py-8 rounded">
+          {/* Form signup */}
 
-            <div className="flex items-center border-2 [border-color:##b3b3b3] rounded-md px-4 py-1 linkedin-btn">
-              <span>
-                <FaLinkedin className=" [color:#0a66c2] logo"></FaLinkedin>
-              </span>
-              <h1 className="[font-weight:500] [color:#0a66c2] text">
-                Linkedin
-              </h1>
-            </div>
-
-            {/* google login */}
-
-            <div className="flex items-center border-2 [border-color:##b3b3b3] rounded-md px-4 py-1 google-btn">
-              <span>
-                <FaGooglePlusSquare className=" [color:#dd4b39] logo"></FaGooglePlusSquare>
-              </span>
-              <h1 className="[font-weight:500] [color:#dd4b39] text">Google</h1>
-            </div>
-
-            {/* github login */}
-
-            <div className="flex items-center border-2 [border-color:##b3b3b3] rounded-md px-4 py-1 github-btn">
-              <span>
-                <FaGithubSquare className="text-xl logo"></FaGithubSquare>
-              </span>
-              <h1 className="[font-weight:500] text">Github</h1>
-            </div>
-          </div>
           <div>
-            <p className="text-center [color:#bdbfc1] mt-6 [font-weight:400]">
-              or sign in with email
+            <h2 className="text-3xl mb-2 pl-12 md:pl-0">
+              Find a job With Me 🔐
+            </h2>
+            <p className="opacity-50 md:mb-8 pl-12 md:pl-0">
+              Please login here !
             </p>
-          </div>
-
-          {/* form login */}
-
-          <div className="mt-6  text-center">
-            <form className="" onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-control">
-                <input
-                  {...register("email", {
-                    required: {
-                      value: true,
-                      message: "Email can't be blank",
-                    },
-                    pattern: {
-                      value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                      message: "invalid email",
-                    },
-                  })}
-                  placeholder="Your Email"
-                  className="input input-bordered w-full max-w-xs mx-auto input-text"
-                />
-                <label className="label">
-                  {errors.email?.type === "required" && (
-                    <span className="label-text-alt text-red-500 sm:[margin-left:65px]">
-                      {errors.email.message}
-                    </span>
-                  )}
-                  {errors.email?.type === "pattern" && (
-                    <span className="label-text-alt text-red-500 sm:[margin-left:65px]">
-                      {errors.email.message}
-                    </span>
-                  )}
-                </label>
+            <div className="bg-opacity-30 p-5 pt-10 rounded-lg bg-slate-700">
+              <Social setCustomError={setCustomError} />
+              <div className="flex items-center gap-3 mx-7 text-lg mt-5 -mb-4 ">
+                <div className="w-full h-[1px] bg-gray-400"></div>
+                or
+                <div className="w-full h-[1px] bg-gray-400"></div>
               </div>
-              <div className="form-control">
-                <input
-                  {...register("password", {
-                    required: {
-                      value: true,
-                      message: "Password can't be blank",
-                    },
-                    minLength: {
-                      value: 6,
-                      message: "password must be 6 character",
-                    },
-                  })}
-                  placeholder="Password"
-                  className="input input-bordered w-full max-w-xs mx-auto input-text"
-                />
-                <label className="label">
-                  {errors.password?.type === "required" && (
-                    <span className="label-text-alt text-red-500 sm:[margin-left:65px]">
-                      {errors.password.message}
-                    </span>
-                  )}
-                  {errors.password?.type === "minLength" && (
-                    <span className="label-text-alt text-red-500 sm:[margin-left:65px]">
-                      {errors.password.message}
-                    </span>
-                  )}
-                </label>
+              {/* error message */}
+              {customError ||
+                (error && (
+                  <Alert
+                    error={error}
+                    setCustomError={setCustomError}
+                    customError={customError}
+                  ></Alert>
+                ))}
+              {/* sign up from */}
+              <div class="card flex-shrink-0 w-full">
+                <form onSubmit={(e) => handelSubmit(e)} class="card-body">
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text text-white">
+                        Email <span className="text-warning">*</span>
+                      </span>
+                    </label>
+                    <input
+                      type="text"
+                      name="email"
+                      required
+                      placeholder="email"
+                      class="input border border-slate-400 bg-slate-800  text-white"
+                    />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text text-white">
+                        Password <span className="text-warning">*</span>
+                      </span>
+                    </label>
+                    <input
+                      type="text"
+                      name="password"
+                      required
+                      placeholder="password"
+                      class="input border border-slate-400 bg-slate-800  text-white"
+                    />
+                  </div>
+                  <div class="form-control mt-5">
+                    <button type="submit" class="btn btn-primary">
+                      Sign Up
+                    </button>
+                    <p className="mt-2">
+                      I am new?{" "}
+                      <Link className="text-primary link" to="/signUp">
+                        create account
+                      </Link>
+                    </p>
+                  </div>
+                </form>
               </div>
-
-              <input className="btn btn-primary input input-bordered w-full max-w-xs mx-auto text-white" type="submit" value="sign in"/>
-            </form>
-          </div>
-                
-        {/* Forget password */}
-          <div>
-            <p className=" font-semibold text-center mt-16 [color:#777b7e]">Forgotten password?</p>
-          </div>
-          <div className="pb-4 mt-2">
-            <p className="text-center">Don't have an account?
-            <Link  to='/signup'     className="font-semibold [color:#65696d]"> Create an account</Link></p> 
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

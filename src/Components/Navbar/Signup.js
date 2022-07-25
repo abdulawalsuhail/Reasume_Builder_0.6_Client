@@ -8,6 +8,7 @@ import icon3 from "../../assets/icon/hto-deal.png";
 import icon1 from "../../assets/icon/saving.png";
 import "../../Css/login.css";
 import auth from "../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 import Alert from "./Alert";
 import Social from "./Social";
 
@@ -29,6 +30,9 @@ const Signup = () => {
       toast.error("please input the same password !");
     }
   };
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <section className="text-white bg-gray-900 relative">
       <img
