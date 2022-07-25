@@ -1,14 +1,14 @@
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { MdCancel } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import logo from "../../../src/assets/logo.png";
 
 const CarrerHeader = () => {
   const articleMenu = (
     <>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase" to="/career-counselling/all-article">
+        <Link className="uppercase" to="/career-counselling">
           All Articles
         </Link>
       </li>
@@ -58,6 +58,7 @@ const CarrerHeader = () => {
               {/* End navbar end portion */}
             </div>
           </div>
+            <Outlet/>
         </div>
         <div class="drawer-side">
           <label for="career-drawer" class="drawer-overlay"></label>
@@ -65,12 +66,7 @@ const CarrerHeader = () => {
             <label htmlFor="career-drawer" class=" btn-circle swap swap-rotate">
               <MdCancel className="text-4xl"></MdCancel>
             </label>
-            <li>
-              <span>Sidebar Item 1</span>
-            </li>
-            <li>
-              <span>Sidebar Item 2</span>
-            </li>
+            {articleMenu}
           </ul>
         </div>
       </div>

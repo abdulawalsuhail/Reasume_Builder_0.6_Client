@@ -4,7 +4,8 @@ import "./App.css";
 import Login from "./Components/Navbar/Login";
 import Signup from "./Components/Navbar/Signup";
 import AllArticle from "./Pages/CarrerCounceling/AllArticle";
-import CarrerConselling from "./Pages/CarrerCounceling/CarrerConselling";
+import CarrerHeader from "./Pages/CarrerCounceling/CarrerHeader";
+import Resume from "./Pages/CarrerCounceling/Resume";
 import Home from "./Pages/Home/Home";
 import Footer from "./Shared/Footer/Footer";
 
@@ -18,9 +19,10 @@ function App() {
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/login" element={<Login />}></Route>
 
-        {/* nested route */}
-        <Route path="/career-counselling" element={<CarrerConselling/>}>
-          <Route path="all-article" element={<AllArticle/>}></Route>
+        {/* nested route career counselling */}
+        <Route path="/career-counselling" element={<CarrerHeader/>}>
+          <Route index element={<AllArticle/>}></Route>
+          <Route path="resume-write" element={<Resume/>}/>
         </Route>
       </Routes>
       <Footer />

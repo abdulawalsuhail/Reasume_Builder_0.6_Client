@@ -1,12 +1,12 @@
 import React from 'react';
 import AllArticle from './AllArticle';
-import CarrerHeader from './CarrerHeader';
+import Resume from './Resume';
 
 const CarrerConselling = () => {
     return (
         <div>
-            <CarrerHeader/>
             <AllArticle/>
+            <Resume/>
         </div>
     );
 };
