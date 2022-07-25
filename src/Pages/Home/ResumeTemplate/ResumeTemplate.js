@@ -3,6 +3,7 @@ import "./ResumeTemplate.css";
 import template_1 from "../../../assets/demo1.png";
 import template_2 from "../../../assets/demo2.png";
 import { Link, Outlet } from "react-router-dom";
+import './ResumeTemplate.css'
 
 const ResumeTemplate = () => {
 
@@ -19,7 +20,11 @@ const ResumeTemplate = () => {
         </div>
       </div>
       {/* template section */}
-      <Outlet/>
+      <div className="mx-12 my-12 ">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 };
