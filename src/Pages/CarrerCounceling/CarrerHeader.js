@@ -1,44 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { MdCancel } from "react-icons/md";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../../../src/assets/logo.png";
 
 const CarrerHeader = () => {
+  const [click,setClick]  = useState(false)
+
   const articleMenu = (
     <>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase" to="/career-counselling">
+        <Link className="uppercase pl-1 pr-1" to="/career-counselling">
           All Articles
         </Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase" to="/career-counselling/resume-write">
+        <Link className="uppercase pl-1 pr-1" to="/career-counselling/resume-write">
           resume Writing
         </Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase" to="/career-counselling/cv-write">
+        <Link className="uppercase pl-1 pr-1" to="/career-counselling/cv-write">
           cv Writing
         </Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase" to="/career-counselling/examples">
+        <Link className="uppercase pl-1 pr-1" to="/career-counselling/examples">
           Examples
         </Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase" to="/career-counselling/personal-development">
+        <Link className="uppercase pl-1 pr-1" to="/career-counselling/personal-development">
           personal development
         </Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase" to="/career-counselling/inspiring-stories">
+        <Link className="uppercase pl-1 pr-1" to="/career-counselling/inspiring-stories">
             inspiring stories
         </Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase" to="/career-counselling/interview-preparation">
+        <Link className="uppercase pl-1 pr-1" to="/career-counselling/interview-preparation">
             interview preparation
         </Link>
       </li>
@@ -72,20 +74,18 @@ const CarrerHeader = () => {
               {/* End Navbar left Portion */}
 
               {/* Navbar center portion */}
-              <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal p-0">{articleMenu}</ul>
+              <div class="navbar-center ml-[100px] hidden lg:flex">
+                <ul class="menu horizontal">{click ? "": articleMenu}</ul>
               </div>
               {/* End Navbar center portion */}
 
-              {/* Navbar end portion */}
               <div class="navbar navbar-end">
                 <label htmlFor="career-drawer" class=" swap swap-rotate">
                   <input type="checkbox" />
 
-                  <AiOutlineMenu className="text-4xl"></AiOutlineMenu>
+                  <AiOutlineMenu onClick={()=> setClick(!false)} className="text-4xl"></AiOutlineMenu>
                 </label>
               </div>
-              {/* End navbar end portion */}
             </div>
           </div>
             <Outlet/>
@@ -94,7 +94,7 @@ const CarrerHeader = () => {
           <label for="career-drawer" class="drawer-overlay"></label>
           <ul class="menu p-4 overflow-y-auto w-80 bg-[#f4f7f8] text-base-content">
             <label htmlFor="career-drawer" class=" btn-circle swap swap-rotate">
-              <MdCancel className="text-4xl"></MdCancel>
+              <MdCancel onClick={()=> setClick(false) } className="text-4xl"></MdCancel>
             </label>
             {articleMenu}
           </ul>
