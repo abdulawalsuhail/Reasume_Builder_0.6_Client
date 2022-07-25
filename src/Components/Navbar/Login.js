@@ -8,6 +8,7 @@ import "../../Css/login.css";
 import auth from "../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import Alert from "./Alert";
+import Navbar from "./Navbar";
 import Social from "./Social";
 
 const Login = () => {
@@ -32,7 +33,9 @@ const Login = () => {
     return <Loading />;
   }
   return (
-    <section className="text-white bg-gray-900 relative">
+    <div>
+      <Navbar/>
+      <section className="text-white bg-gray-900 relative">
       <img
         class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25 sm:opacity-100"
         src={whyWe}
@@ -126,6 +129,7 @@ const Login = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

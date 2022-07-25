@@ -13,17 +13,17 @@ const CarrerHeader = () => {
         </Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase" to="/career-counselling/resume-write">
+        <Link className="uppercase pl-1 pr-1" to="/career-counselling/resume-write">
           resume Writing
         </Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase" to="/career-counselling/cv-write">
+        <Link className="uppercase pl-1 pr-1" to="/career-counselling/cv-write">
           cv Writing
         </Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase" to="/career-counselling/examples">
+        <Link className="uppercase pl-1 pr-1" to="/career-counselling/examples">
           Examples
         </Link>
       </li>
@@ -33,12 +33,12 @@ const CarrerHeader = () => {
         </Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase" to="/career-counselling/inspiring-stories">
+        <Link className="uppercase pl-1 pr-1" to="/career-counselling/inspiring-stories">
             inspiring stories
         </Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase" to="/career-counselling/interview-preparation">
+        <Link className="uppercase pl-1 pr-1" to="/career-counselling/interview-preparation">
             interview preparation
         </Link>
       </li>
@@ -72,12 +72,13 @@ const CarrerHeader = () => {
               {/* End Navbar left Portion */}
 
               {/* Navbar center portion */}
-              <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal p-0">{articleMenu}</ul>
+              <div class="navbar-center ml-[100px] hidden lg:flex">
+                <ul class="menu horizontal">{articleMenu}</ul>
               </div>
               {/* End Navbar center portion */}
 
               {/* Navbar end portion */}
+              {/* End navbar end portion */}
               <div class="navbar navbar-end">
                 <label htmlFor="career-drawer" class=" swap swap-rotate">
                   <input type="checkbox" />
@@ -85,7 +86,6 @@ const CarrerHeader = () => {
                   <AiOutlineMenu className="text-4xl"></AiOutlineMenu>
                 </label>
               </div>
-              {/* End navbar end portion */}
             </div>
           </div>
             <Outlet/>
