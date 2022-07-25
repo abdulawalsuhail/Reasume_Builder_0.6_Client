@@ -8,10 +8,10 @@ import {
   BsTwitter,
 } from "react-icons/bs";
 
-const Interview = () => {
-    return (
-        <div>
-        <h1 className="text-3xl font-extrabold text-black-300 text-center mt-8">All Interview Tips</h1>
+const CarrerResume = () => {
+     return (
+          <div>
+        <h1 className="text-3xl font-extrabold text-black-300 text-center mt-8">Resume Carrer</h1>
       <div className=" m-12">
       <hr className=" " style={{height:"2px",background:"#c6c6c6"}}/>
       </div>
@@ -544,7 +544,7 @@ const Interview = () => {
           </div>
         </div>
       </div>
-    );
+     );
 };
 
-export default Interview;
+export default CarrerResume;

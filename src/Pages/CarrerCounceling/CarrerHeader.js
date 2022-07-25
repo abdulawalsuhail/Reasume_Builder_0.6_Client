@@ -63,13 +63,18 @@ const CarrerHeader = () => {
                     class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                   ></ul>
                 </div>
+                <Link to="/">
                 <div className="flex items-center">
-                  <img className="w-14" src={logo} alt="logo" />
+                
+
+               <img className="w-14" src={logo} alt="logo" /> 
+              
                   <div className="flex gap-2 text-xl">
                     <p>Resume</p>
                     <p>Builder</p>
                   </div>
                 </div>
+                </Link>
               </div>
               {/* End Navbar left Portion */}
 
