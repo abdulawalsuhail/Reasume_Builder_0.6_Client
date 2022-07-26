@@ -12,6 +12,7 @@ import step1 from '../../assets/CVSectionImages/step1.webp'
 import step2 from '../../assets/CVSectionImages/step2.webp'
 import step3 from '../../assets/CVSectionImages/step3.webp'
 import step4 from '../../assets/CVSectionImages/step4.webp'
+import professionalCV from '../../assets/CVSectionImages/professionalCV.webp'
 import drag_drop from '../../assets/CVSectionImages/drag-drop.webp'
 import contentSugest from '../../assets/CVSectionImages/contentSugest.webp'
 import generate from '../../assets/CVSectionImages/generate.webp'
@@ -96,12 +97,12 @@ const CvTemplate = () => {
                 </div>
             </div>
             {/* Learning curve */}
-            <div className='bg-slate-50 pt-24'>
+            <div className='bg-slate-50 pt-32'>
                 <div className=' mx-32'>
-                    <h1 className='text-4xl font-bold text-center pb-12'>A CV Builder with no learning curve:</h1>
+                    <h1 className='text-4xl font-bold text-center pb-20'>A CV Builder with no learning curve:</h1>
                     <div class="hero">
                         <div class="hero-content flex-col lg:flex-row-reverse">
-                            <img src={step1} class="max-w-sm rounded-lg" />
+                            <img src={professionalCV} class="max-w-sm rounded-lg" />
                             <div>
                             <h1 class="text-3xl">Professional CV templates for every industry</h1>
                             <p class="py-6 text-lg">You'll get to choose between 11 fully editable templates. You can pick one depending on the industry you work in, your level of experience, or the culture of the company you're applying to.</p>
