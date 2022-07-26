@@ -1,9 +1,10 @@
 import React from 'react';
+import CouncellingBanner from './CouncellingBanner';
 
 const CarrerConselling = () => {
     return (
         <div>
-          hello
+          <CouncellingBanner/>
         </div>
     );
 };
