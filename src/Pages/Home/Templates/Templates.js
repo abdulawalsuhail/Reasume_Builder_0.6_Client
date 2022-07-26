@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import './ResumeTemplate.css';
+import './Templates.css';
 
-const ResumeTemplate = () => {
+const Templates = () => {
 
   return (
     <div className="pt-32 pb-8 bg-[#f4f7f8]">
@@ -26,4 +26,4 @@ const ResumeTemplate = () => {
   );
 };
 
-export default ResumeTemplate;
+export default Templates;

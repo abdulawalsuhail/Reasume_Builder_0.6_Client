@@ -10,18 +10,20 @@ import Interview from "./Pages/CarrerCounceling/Interview";
 import PersonalDev from "./Pages/CarrerCounceling/PersonalDev";
 import Stories from "./Pages/CarrerCounceling/Stories";
 import Home from "./Pages/Home/Home";
-import CoverLetter from "./Pages/Home/ResumeTemplate/CoverLetter";
-import Cv from "./Pages/Home/ResumeTemplate/Cv";
-import Resume from "./Pages/Home/ResumeTemplate/Resume";
-import ResumeTemplate from "./Pages/Home/ResumeTemplate/ResumeTemplate";
+import CoverLetter from "./Pages/Home/Templates/CoverLetter";
+import Cv from "./Pages/Home/Templates/Cv";
+import Resume from "./Pages/Home/Templates/Resume";
 import Footer from "./Shared/Footer/Footer";
 import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
 import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
+import Templates from "./Pages/Home/Templates/Templates";
+import CvTemplate from "./Pages/CvTemplate/CvTemplate";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
     <div>
-  
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />}>
           <Route index element={<Resume />}></Route>
@@ -42,9 +44,10 @@ function App() {
           <Route path="inspiring-stories" element={<Stories/>}/>
           <Route path="interview-preparation" element={<Interview/>}/>
         </Route>
-        <Route path="resumeTemplate" element={<ResumeTemplate />} />
+        <Route path="template" element={<Templates />} />
+        <Route path="cvTemplate" element={<CvTemplate/>}></Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
       <Toaster />
     </div>
   );
