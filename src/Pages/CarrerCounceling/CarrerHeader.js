@@ -74,7 +74,7 @@ const CarrerHeader = () => {
               {/* End Navbar left Portion */}
 
               {/* Navbar center portion */}
-              <div class="navbar-center  ml-[75px] hidden lg:flex">
+              <div class="navbar-center  ml-[85px] hidden lg:flex">
                 <ul class="menu horizontal">{click ? "": articleMenu}</ul>
               </div>
               {/* End Navbar center portion */}
