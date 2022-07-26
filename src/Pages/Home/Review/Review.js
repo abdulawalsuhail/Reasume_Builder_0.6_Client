@@ -12,7 +12,7 @@ const Review = () => {
         <div className='pt-24 bg-[#a2b2c736]'>
             <div className='mx-6 md:mx-24'>
                 <h1
-                    style={{letterSpacing:"4px"}}
+                    style={{ letterSpacing: "4px" }}
                     className='text-center text-2xl text-secondary mb-10'>See what others say about Resume Builder</h1>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 mb-12'>
                     <div className='shadow-lg p-12'>
@@ -28,7 +28,7 @@ const Review = () => {
                                     < AiFillStar className='text-primary text-xl' />
                                     < AiFillStar className='text-primary text-xl' />
                                     < AiFillStar className='text-primary text-xl' />
-                                    < AiFillStar className='text-primary text-xl'/>
+                                    < AiFillStar className='text-primary text-xl' />
                                 </div>
                             </div>
                         </div>
@@ -47,11 +47,11 @@ const Review = () => {
                                     < AiFillStar className='text-primary text-xl' />
                                     < AiFillStar className='text-primary text-xl' />
                                     < AiFillStar className='text-primary text-xl' />
-                                    < AiFillStar className='text-primary text-xl'/>
+                                    < AiFillStar className='text-primary text-xl' />
                                 </div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </div>
             <div className='w-2/3 mx-auto flex justify-around items-center py-6 md:py-12'>
