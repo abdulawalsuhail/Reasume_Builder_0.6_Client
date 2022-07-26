@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import whyWe from "../../../src/assets/why-we.jpg";
-import "../../Css/login.css";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
-import Social from "./Social";
-import auth from "../../firebase.init";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import Alert from "./Alert";
-import Loading from "../../Shared/Loading/Loading";
 import loginImg from "../../../src/assets/login2.png";
+import whyWe from "../../../src/assets/why-we.jpg";
+import "../../Css/login.css";
+import auth from "../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
+import Alert from "./Alert";
+import Navbar from "./Navbar";
+import Social from "./Social";
 
 const Login = () => {
   const [customError, setCustomError] = useState("");
@@ -32,7 +33,9 @@ const Login = () => {
     return <Loading />;
   }
   return (
-    <section className="text-white bg-gray-900 relative">
+    <div>
+      <Navbar/>
+      <section className="text-white bg-gray-900 relative">
       <img
         class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25 sm:opacity-100"
         src={whyWe}
@@ -126,6 +129,7 @@ const Login = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 
