@@ -57,6 +57,7 @@ const CvTemplate = () => {
                 <h1 className='text-center text-4xl font-bold mt-20 pb-12'>Create a CV online. First, select a template:</h1>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mx-8">
                     <Cv></Cv>
+                    <p>testing</p>
                 </div>
             </div>
             <div className='flex mt-24 justify-between mx-24 mb-16'>
