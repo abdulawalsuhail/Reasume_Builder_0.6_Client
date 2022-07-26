@@ -20,8 +20,9 @@ const Navbar = () => {
         <a>CV</a>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <a>COVER LETTER</a>
+        <Link to="/latter">Cover Latter</Link>
       </li>
+
       {/* <li className="hover:bg-primary hover:text-white rounded-md">
         <a>CAREER COUNSELLING</a>
         
@@ -68,6 +69,9 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
+      </li>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <Link to="/quiz">Quiz</Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
         <a>PRICING</a>
