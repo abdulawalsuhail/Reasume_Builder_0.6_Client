@@ -8,9 +8,7 @@ import CarrerConselling from "./Pages/CarrerCounceling/CarrerConselling";
 import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import CarrerHeader from "./Pages/CarrerCounceling/CarrerHeader";
 import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
-import Example from "./Pages/CarrerCounceling/Example";
 import Interview from "./Pages/CarrerCounceling/Interview";
-import PersonalDev from "./Pages/CarrerCounceling/PersonalDev";
 import Stories from "./Pages/CarrerCounceling/Stories";
 import Home from "./Pages/Home/Home";
 import CoverLetterDemo from "./Pages/Home/DemoTemplate/CoverLetterDemo";
@@ -41,8 +39,6 @@ function App() {
           <Route path="all-article" element={<AllArticle />}></Route>
           <Route path="resume-write" element={<CarrerResume />}></Route>
           <Route path="cv-write" element={<CarrerCv />}></Route>
-          <Route path="examples" element={<Example />} />
-          <Route path="personal-development" element={<PersonalDev />} />
           <Route path="inspiring-stories" element={<Stories />} />
           <Route path="interview-preparation" element={<Interview />} />
         </Route>
