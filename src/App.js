@@ -4,7 +4,10 @@ import "./App.css";
 import Login from "./Components/Navbar/Login";
 import Signup from "./Components/Navbar/Signup";
 import AllArticle from "./Pages/CarrerCounceling/AllArticle";
+import CarrerConselling from "./Pages/CarrerCounceling/CarrerConselling";
+import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import CarrerHeader from "./Pages/CarrerCounceling/CarrerHeader";
+import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
 import Example from "./Pages/CarrerCounceling/Example";
 import Interview from "./Pages/CarrerCounceling/Interview";
 import PersonalDev from "./Pages/CarrerCounceling/PersonalDev";
@@ -15,8 +18,6 @@ import CvDemo from "./Pages/Home/DemoTemplate/CvDemo";
 import ResumeDemo from "./Pages/Home/DemoTemplate/ResumeDemo";
 import DemoTemplate from "./Pages/Home/DemoTemplate/DemoTemplate";
 import Footer from "./Shared/Footer/Footer";
-import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
-import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import Resume from "./Pages/Resume/Resume";
 
 function App() {
@@ -36,7 +37,8 @@ function App() {
 
         {/* nested route career counselling */}
         <Route path="/career-counselling" element={<CarrerHeader />}>
-          <Route index element={<AllArticle />}></Route>
+          <Route index element={<CarrerConselling />}></Route>
+          <Route path="all-article" element={<AllArticle />}></Route>
           <Route path="resume-write" element={<CarrerResume />}></Route>
           <Route path="cv-write" element={<CarrerCv />}></Route>
           <Route path="examples" element={<Example />} />

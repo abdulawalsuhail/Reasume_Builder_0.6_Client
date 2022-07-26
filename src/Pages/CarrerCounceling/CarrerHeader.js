@@ -11,6 +11,11 @@ const CarrerHeader = () => {
     <>
       <li className="hover:bg-primary hover:text-white rounded-md">
         <Link className="uppercase pl-1 pr-1" to="/career-counselling">
+          Counselling
+        </Link>
+      </li>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <Link className="uppercase pl-1 pr-1" to="/career-counselling/all-article">
           All Articles
         </Link>
       </li>
@@ -26,8 +31,8 @@ const CarrerHeader = () => {
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
         <Link className="uppercase pl-1 pr-1" to="/career-counselling/examples">
-          Examples
-        </Link>
+          Example
+      </Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
         <Link className="uppercase pl-1 pr-1" to="/career-counselling/personal-development">
@@ -40,7 +45,7 @@ const CarrerHeader = () => {
         </Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase pl-1 pr-1" to="/career-counselling/interview-preparation">
+        <Link className="uppercase pl-2 pr-2" to="/career-counselling/interview-preparation">
             interview preparation
         </Link>
       </li>
@@ -79,7 +84,7 @@ const CarrerHeader = () => {
               {/* End Navbar left Portion */}
 
               {/* Navbar center portion */}
-              <div class="navbar-center ml-[100px] hidden lg:flex">
+              <div class="navbar-center ml-[65px] hidden lg:flex">
                 <ul class="menu horizontal">{click ? "": articleMenu}</ul>
               </div>
               {/* End Navbar center portion */}
