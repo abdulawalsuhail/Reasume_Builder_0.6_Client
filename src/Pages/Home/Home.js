@@ -1,6 +1,7 @@
 import React from "react";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import Navbar from "../../Components/Navbar/Navbar";
+import Business from "./Business/Business";
 import Guideline from "./Guideline/Guideline";
 import Hero from "./Hero/Hero";
 import ResumeTemplate from "./ResumeTemplate/ResumeTemplate";
@@ -11,9 +12,10 @@ import WriteResume from "./WriteResume/WriteResume";
 const Home = () => {
   return (
     <div>
-      <Navbar/>
-      <Hero/>
-      <WriteResume/>
+      <Navbar />
+      <Hero />
+      <Business />
+      <WriteResume />
       <WhyResumeBuilder />
       <ResumeTemplate />
       <Guideline />
