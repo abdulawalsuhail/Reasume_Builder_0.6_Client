@@ -1,5 +1,6 @@
 import React from 'react';
 import CarrerCouncelingPrice from './CarrerCouncelingPrice';
+import CarrerGuide from './CarrerGuide';
 import CouncellingBanner from './CouncellingBanner';
 import CouncellingSteps from './CouncellingSteps';
 import CounsellingServices from './CounsellingServices';
@@ -9,7 +10,8 @@ const CarrerConselling = () => {
         <div>
           <CouncellingBanner/>
           <CounsellingServices/>
-          <CouncellingSteps></CouncellingSteps>
+          <CarrerGuide/>
+          <CouncellingSteps/>
           <CarrerCouncelingPrice></CarrerCouncelingPrice>
         </div>
     );

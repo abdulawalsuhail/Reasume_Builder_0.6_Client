@@ -4,7 +4,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Business from "./Business/Business";
 import Guideline from "./Guideline/Guideline";
 import Hero from "./Hero/Hero";
-import ResumeTemplate from "./ResumeTemplate/ResumeTemplate";
+import DemoTemplate from "./DemoTemplate/DemoTemplate";
 import Review from "./Review/Review";
 import WhyResumeBuilder from "./WhyResumeBuilder/WhyResumeBuilder";
 import WriteResume from "./WriteResume/WriteResume";
@@ -17,7 +17,7 @@ const Home = () => {
       <Business />
       <WriteResume />
       <WhyResumeBuilder />
-      <ResumeTemplate />
+      <DemoTemplate />
       <Guideline />
       <Review />
       <MessengerCustomerChat
