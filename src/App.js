@@ -10,26 +10,29 @@ import Interview from "./Pages/CarrerCounceling/Interview";
 import PersonalDev from "./Pages/CarrerCounceling/PersonalDev";
 import Stories from "./Pages/CarrerCounceling/Stories";
 import Home from "./Pages/Home/Home";
-import CoverLetter from "./Pages/Home/DemoTemplate/CoverLetter";
-import Cv from "./Pages/Home/DemoTemplate/Cv";
-import Resume from "./Pages/Home/DemoTemplate/Resume";
+import CoverLetterDemo from "./Pages/Home/DemoTemplate/CoverLetterDemo";
+import CvDemo from "./Pages/Home/DemoTemplate/CvDemo";
+import ResumeDemo from "./Pages/Home/DemoTemplate/ResumeDemo";
 import DemoTemplate from "./Pages/Home/DemoTemplate/DemoTemplate";
 import Footer from "./Shared/Footer/Footer";
 import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
 import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
+import Resume from "./Pages/Resume/Resume";
 
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route index element={<Resume />}></Route>
-          <Route path="cv" element={<Cv />}></Route>
-          <Route path="coverLetter" element={<CoverLetter />}></Route>
+          <Route index element={<ResumeDemo />}></Route>
+          <Route path="cv" element={<CvDemo />}></Route>
+          <Route path="coverLetter" element={<CoverLetterDemo />}></Route>
         </Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="resumeTemplate" element={<DemoTemplate />} />
+        <Route path="/resume" element={<Resume />}></Route>
 
         {/* nested route career counselling */}
         <Route path="/career-counselling" element={<CarrerHeader />}>
@@ -41,7 +44,6 @@ function App() {
           <Route path="inspiring-stories" element={<Stories />} />
           <Route path="interview-preparation" element={<Interview />} />
         </Route>
-        <Route path="resumeTemplate" element={<DemoTemplate />} />
       </Routes>
       <Footer />
       <Toaster />

@@ -14,7 +14,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <a>RESUME</a>
+        <Link to="/resume">Resume</Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
         <a>CV</a>
