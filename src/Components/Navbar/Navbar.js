@@ -11,23 +11,24 @@ const Navbar = () => {
   const navItem = (
     <>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <a>FEATURE</a>
+        <Link to="/">Home</Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <a>RESUME</a>
+        <Link to="/resume">Resume</Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
         <a>CV</a>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <a>COVER LETTER</a>
+        <Link to="/latter">Cover Latter</Link>
       </li>
+
       {/* <li className="hover:bg-primary hover:text-white rounded-md">
         <a>CAREER COUNSELLING</a>
         
       </li> */}
       <li tabindex="0">
-        <a className="hover:bg-primary hover:text-white">
+        <Link to='/career-counselling' className="hover:bg-primary hover:text-white">
           CAREER COUNSELLING
           <svg
             class="fill-current"
@@ -38,10 +39,10 @@ const Navbar = () => {
           >
             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
           </svg>
-        </a>
+        </Link>
         <ul class="p-2 bg-base-100 z-50 md:w-60">
           <li className="hover:bg-primary hover:text-white uppercase">
-            <Link to="/career-counselling">All-Articles</Link>
+            <Link to="/career-counselling/all-article">All-Articles</Link>
           </li>
           <li className="hover:bg-primary hover:text-white uppercase">
             <Link to="career-counselling/resume-write">Resume Writing</Link>
@@ -68,6 +69,9 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
+      </li>
+      <li className="hover:bg-primary hover:text-white rounded-md">
+        <Link to="/quiz">Quiz</Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
         <a>PRICING</a>

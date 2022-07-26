@@ -1,12 +1,14 @@
 import React from 'react';
-import AllArticle from './AllArticle';
-import Resume from './Resume';
+import CarrerGuide from './CarrerGuide';
+import CouncellingBanner from './CouncellingBanner';
+import CounsellingServices from './CounsellingServices';
 
 const CarrerConselling = () => {
     return (
         <div>
-            <AllArticle/>
-            <Resume/>
+          <CouncellingBanner/>
+          <CounsellingServices/>
+          <CarrerGuide/>
         </div>
     );
 };
