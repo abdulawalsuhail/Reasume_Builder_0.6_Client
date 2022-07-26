@@ -9,33 +9,33 @@ const CarrerHeader = () => {
 
   const articleMenu = (
     <>
-      <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase pl-2 pr-2 mx-2" to="/career-counselling">
+      <li className=" hover:text-white rounded-md">
+        <Link className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2" to="/career-counselling">
           Counselling
         </Link>
       </li>
-      <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase pl-2 pr-2 mx-2" to="/career-counselling/all-article">
+      <li className=" hover:text-white rounded-md">
+        <Link className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2" to="/career-counselling/all-article">
           All Articles
         </Link>
       </li>
-      <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase pl-2 pr-2 mx-2" to="/career-counselling/resume-write">
+      <li className=" hover:text-white rounded-md">
+        <Link className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2" to="/career-counselling/resume-write">
           resume Writing
         </Link>
       </li>
-      <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase pl-2 pr-2 mx-2" to="/career-counselling/cv-write">
+      <li className=" hover:text-white rounded-md">
+        <Link className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2" to="/career-counselling/cv-write">
           cv Writing
         </Link>
       </li>
-      <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase pl-2 pr-2 mx-2" to="/career-counselling/inspiring-stories">
+      <li className=" hover:text-white rounded-md">
+        <Link className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2" to="/career-counselling/inspiring-stories">
             inspiring stories
         </Link>
       </li>
-      <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link className="uppercase pl-2 pr-2 mx-2" to="/career-counselling/interview-preparation">
+      <li className=" hover:text-white rounded-md">
+        <Link className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2" to="/career-counselling/interview-preparation">
             interview preparation
         </Link>
       </li>
