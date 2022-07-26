@@ -47,7 +47,7 @@ function App() {
         <Route path="template" element={<Templates />} />
         <Route path="cvTemplate" element={<CvTemplate/>}></Route>
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
       <Toaster />
     </div>
   );
