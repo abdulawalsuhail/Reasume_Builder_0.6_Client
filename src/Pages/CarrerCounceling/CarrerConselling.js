@@ -1,12 +1,18 @@
 import React from 'react';
-import AllArticle from './AllArticle';
-import Resume from './Resume';
+import CarrerCouncelingPrice from './CarrerCouncelingPrice';
+import CarrerGuide from './CarrerGuide';
+import CouncellingBanner from './CouncellingBanner';
+import CouncellingSteps from './CouncellingSteps';
+import CounsellingServices from './CounsellingServices';
 
 const CarrerConselling = () => {
     return (
         <div>
-            <AllArticle/>
-            <Resume/>
+          <CouncellingBanner/>
+          <CounsellingServices/>
+          <CarrerGuide/>
+          <CouncellingSteps/>
+          <CarrerCouncelingPrice></CarrerCouncelingPrice>
         </div>
     );
 };
