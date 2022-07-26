@@ -28,7 +28,11 @@ const hero = () => {
 
       <div className="relative max-w-screen-xl px-4 py-32 mx-auto lg:h-screen grid lg:grid-cols-2 grid-cols-1 gap-5">
         <div className="max-w-xl text-center sm:text-left text-white md:ml-8 lg:order-1 order-2">
-          <h1 className="text-3xl font-extrabold sm:text-5xl text-left">
+          <h1
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="text-3xl font-extrabold sm:text-5xl text-left"
+          >
             Build your brand-new resume in as
             <span className="font-extrabold text-primary ">
               {" "}
@@ -38,7 +42,7 @@ const hero = () => {
 
           <p
             data-aos="fade-up"
-            data-aos-duration="3000"
+            data-aos-duration="2000"
             className="max-w-lg mt-4 text-left sm:text-xl"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
