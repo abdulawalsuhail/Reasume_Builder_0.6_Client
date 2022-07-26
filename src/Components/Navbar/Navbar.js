@@ -26,19 +26,47 @@ const Navbar = () => {
         <a>CAREER COUNSELLING</a>
         
       </li> */}
-     <li tabindex="0">
+      <li tabindex="0">
         <a className="hover:bg-primary hover:text-white">
-        CAREER COUNSELLING
-          <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+          CAREER COUNSELLING
+          <svg
+            class="fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+          >
+            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+          </svg>
         </a>
         <ul class="p-2 bg-base-100 z-50 md:w-60">
-          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling'>All-Articles</Link></li>
-          <li className="hover:bg-primary hover:text-white uppercase"><Link to='career-counselling/resume-write'>Resume Writing</Link></li>
-          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/cv-write'>CV Writing</Link></li>
-          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/examples'>Examples</Link></li>
-          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/personal-development'>Personal Development </Link></li>
-          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/inspiring-stories'>Inspiring Stories </Link></li>
-          <li className="hover:bg-primary hover:text-white uppercase"><Link to='/career-counselling/interview-preparation'>Interview Prep </Link></li>
+          <li className="hover:bg-primary hover:text-white uppercase">
+            <Link to="/career-counselling">All-Articles</Link>
+          </li>
+          <li className="hover:bg-primary hover:text-white uppercase">
+            <Link to="career-counselling/resume-write">Resume Writing</Link>
+          </li>
+          <li className="hover:bg-primary hover:text-white uppercase">
+            <Link to="/career-counselling/cv-write">CV Writing</Link>
+          </li>
+          <li className="hover:bg-primary hover:text-white uppercase">
+            <Link to="/career-counselling/examples">Examples</Link>
+          </li>
+          <li className="hover:bg-primary hover:text-white uppercase">
+            <Link to="/career-counselling/personal-development">
+              Personal Development{" "}
+            </Link>
+          </li>
+          <li className="hover:bg-primary hover:text-white uppercase">
+            <Link to="/career-counselling/inspiring-stories">
+              Inspiring Stories{" "}
+            </Link>
+          </li>
+          <li className="hover:bg-primary hover:text-white uppercase">
+            <Link to="/career-counselling/interview-preparation">
+              Interview Prep{" "}
+            </Link>
+          </li>
         </ul>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
@@ -80,13 +108,16 @@ const Navbar = () => {
               {navItem}
             </ul>
           </div>
-          <div className="flex items-center">
-            <img className="w-14" src={logo} alt="logo" />
-            <div className="flex gap-2 text-xl">
-              <p>Resume</p>
-              <p>Builder</p>
+          <Link to="/">
+            <div className="flex items-center">
+              <img className="w-14" src={logo} alt="logo" />
+
+              <div className="flex gap-2 text-xl">
+                <p>Resume</p>
+                <p>Builder</p>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
         {/* End Navbar left Portion */}
 
