@@ -1,17 +1,15 @@
-import Collapse from "@kunukn/react-collapse";
 import React, { useEffect, useState } from "react";
-import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
+import CounsellingCard from "./CounsellingCard";
 const CounsellingServices = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [data,setData] = useState([])
+  const [services,setServices] = useState([])
 
   useEffect(()=>{
-    fetch("counselling.json").then(res => res.json()).then(res => setData(res))
+    fetch("counselling.json")
+    .then(res => res.json())
+    .then(res => setServices(res))
   },[])
 
-  const onInit = ({ state, style, node }) => {
-    setIsOpen(true);
-  };
+ 
   return (
     <section className="px-12">
       <div className="grid md:grid-cols-4  mt-16 gap-10">
@@ -24,43 +22,11 @@ const CounsellingServices = () => {
             your dream job. That’s a guarantee.
           </p>
 
-          {/* professional resume */}
-          <div className="mt-6">
-            <div
-              className="flex items-center"
-              onClick={() => setIsOpen((state) => !state)}
-            >
-              <div>
-                <img src="" alt="" />
-              </div>
-              <div>
-                <div className="flex items-center ">
-                  <div>
-                    <h4 className="text-[16px] font-semibold text-gray-600">
-                      Professional Resume
-                    </h4>
-                  </div>
-                  <div className="ml-14">
-                    {isOpen ? (
-                      <AiOutlineDown className="text-[15px] font-[900] text-gray-600" />
-                    ) : (
-                      <AiOutlineRight className="text-[15px] font-bold text-gray-600" />
-                    )}
-                  </div>
-                </div>
-                <p>Written by a resume expert</p>
-              </div>
-            </div>
-            <Collapse onInit={onInit} isOpen={isOpen}>
-              <p className="mt-4 ml-2">
-                Together with you, we will write the perfect resume! Using your
-                experiences and strengths, we collaborate to build an adaptable
-                resume tailored to your specific career. We then show you how to
-                independently use the resume for an efficient and effective job
-                search.
-              </p>
-            </Collapse>
-          </div>
+
+          {
+            services.map(service => <CounsellingCard key={service.id} service={service}/>)
+          }
+          
         </div>
 
         {/*  */}
