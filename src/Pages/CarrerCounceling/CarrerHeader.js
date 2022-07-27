@@ -45,8 +45,8 @@ const CarrerHeader = () => {
     <div>
       {/* sidebar */}
       <div class="drawer drawer-end">
-        <input id="career-drawer" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content">
+        <input id="career-drawer" type="checkbox" class=" drawer-toggle" />
+        <div class="drawer-content no-scroll">
           <div className="px-4 bg-[#f4f7f8]">
             {/* Navbar start source code from Daisy UI */}
             <div class="navbar py-4">

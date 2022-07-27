@@ -10,13 +10,13 @@ import CarrerHeader from "./Pages/CarrerCounceling/CarrerHeader";
 import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
 import Interview from "./Pages/CarrerCounceling/Interview";
 import Stories from "./Pages/CarrerCounceling/Stories";
-import Home from "./Pages/Home/Home";
 import CoverLetterDemo from "./Pages/Home/DemoTemplate/CoverLetterDemo";
 import CvDemo from "./Pages/Home/DemoTemplate/CvDemo";
-import ResumeDemo from "./Pages/Home/DemoTemplate/ResumeDemo";
 import DemoTemplate from "./Pages/Home/DemoTemplate/DemoTemplate";
-import Footer from "./Shared/Footer/Footer";
+import ResumeDemo from "./Pages/Home/DemoTemplate/ResumeDemo";
+import Home from "./Pages/Home/Home";
 import Resume from "./Pages/Resume/Resume";
+import Footer from "./Shared/Footer/Footer";
 
 function App() {
   return (

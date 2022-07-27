@@ -1,5 +1,4 @@
-img:hover {
-  transition: transform 0.4s ease-out;
-  transform: scale(1.1);
-  cursor: pointer;
+.no-scroll::-webkit-scrollbar {
+  background: transparent; /* Chrome/Safari/Webkit */
+  width: 0px;
 }
