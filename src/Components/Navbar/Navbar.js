@@ -11,16 +11,16 @@ const Navbar = () => {
   const navItem = (
     <>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link to="/">Home</Link>
+        <Link to="/">HOME</Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link to="/resume">Resume</Link>
+        <Link to="/cvTemplate">CV</Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <a>CV</a>
+        <Link to="/">RESUME</Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link to="/latter">Cover Latter</Link>
+        <Link to="/">COVER LETTER</Link>
       </li>
 
       {/* <li className="hover:bg-primary hover:text-white rounded-md">
