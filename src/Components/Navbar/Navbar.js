@@ -17,7 +17,7 @@ const Navbar = () => {
         <Link to="/cvTemplate">CV</Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link to="/">RESUME</Link>
+        <Link to="/resumeTemplate">RESUME</Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
         <Link to="/">COVER LETTER</Link>

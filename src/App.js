@@ -17,6 +17,7 @@ import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
 import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import Templates from "./Pages/Home/Templates/Templates";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
+import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         </Route>
         <Route path="template" element={<Templates />} />
         <Route path="cvTemplate" element={<CvTemplate/>}></Route>
+        <Route path="resumeTemplate" element={<ResumeTemplate/>}></Route>
       </Routes>
       <Footer />
       <Toaster />
