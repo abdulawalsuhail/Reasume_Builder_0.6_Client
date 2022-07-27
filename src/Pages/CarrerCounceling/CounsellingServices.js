@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { MdOutlineDone } from "react-icons/md";
 import CounsellingCard from "./CounsellingCard";
+
+
+
 const CounsellingServices = () => {
   const [services,setServices] = useState([])
 
@@ -23,9 +27,11 @@ const CounsellingServices = () => {
           </p>
 
 
-          {
+         <div>
+         {
             services.map(service => <CounsellingCard key={service.id} service={service}/>)
           }
+         </div>
           
         </div>
 
@@ -40,9 +46,11 @@ const CounsellingServices = () => {
           <button className="btn btn-primary text-white mt-4 px-12">
             By Now
           </button>
-          <p className="text-[14px] text-[#384347] mt-8">
+          <p className="text-[14px] text-[#384347] mt-[50px]">
             Draft ready within 3 business days of first call
           </p>
+          <div className="text-center "><MdOutlineDone className="text-4xl text-primary mt-[69px] mx-auto"/></div>
+          <div className="text-center "><MdOutlineDone className="text-4xl text-primary mt-[57px] mx-auto"/></div>
         </div>
         <div className="shadow-lg text-center p-6 border-t-4 border-[#8c7cdd] rounded">
           <h2 className="uppercase text-2xl text-[#8c7cdd]  mt-2">Executive</h2>
@@ -53,9 +61,11 @@ const CounsellingServices = () => {
           <button className="btn btn-primary text-white mt-[30px] px-12">
             By Now
           </button>
-          <p className="text-[14px] text-[#384347] mt-8">
+          <p className="text-[14px] text-[#384347] mt-[50px]">
             Draft ready within 1 business days of first call
           </p>
+          <div className="text-center "><MdOutlineDone className="text-4xl text-primary mt-[69px] mx-auto"/></div>
+          <div className="text-center "><MdOutlineDone className="text-4xl text-primary mt-[57px] mx-auto"/></div>
         </div>
         <div className="shadow-lg text-center p-6 border-t-4 border-[#feb251] rounded">
           <h2 className="uppercase text-2xl text-[#feb251]  mt-2">
@@ -69,9 +79,11 @@ const CounsellingServices = () => {
           <button className="btn btn-primary text-white mt-[35px] px-12">
             By Now
           </button>
-          <p className="text-[14px] text-[#384347] mt-8">
+          <p className="text-[14px] text-[#384347] mt-[50px]">
             Draft ready within 1 business days of first call
           </p>
+          <div className="text-center "><MdOutlineDone className="text-4xl text-primary mt-[69px] mx-auto"/></div>
+          <div className="text-center "><MdOutlineDone className="text-4xl text-primary mt-[57px] mx-auto"/></div>
         </div>
       </div>
     </section>
