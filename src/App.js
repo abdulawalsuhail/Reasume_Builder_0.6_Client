@@ -9,15 +9,16 @@ import Interview from "./Pages/CarrerCounceling/Interview";
 import Stories from "./Pages/CarrerCounceling/Stories";
 import Home from "./Pages/Home/Home";
 
+import CarrerConselling from "./Pages/CarrerCounceling/CarrerConselling";
+import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
+import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
+import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 import CoverLetter from "./Pages/Home/Templates/CoverLetter";
 import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
-import Footer from "./Shared/Footer/Footer";
-import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
-import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import Templates from "./Pages/Home/Templates/Templates";
-import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
+import Footer from "./Shared/Footer/Footer";
 
 function App() {
   return (
@@ -35,7 +36,8 @@ function App() {
 
         {/* nested route career counselling */}
         <Route path="/career-counselling" element={<CarrerHeader/>}>
-          <Route index element={<AllArticle/>}></Route>
+          <Route index element={<CarrerConselling/>}></Route>
+          <Route path="all-article" element={<AllArticle/>}></Route>
           <Route path="resume-write" element={<CarrerResume/>}></Route>
           <Route path="cv-write" element={<CarrerCv/>}></Route>
           <Route path="inspiring-stories" element={<Stories/>}/>
