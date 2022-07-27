@@ -1,10 +1,13 @@
 import Collapse from "@kunukn/react-collapse";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
-import resume from "../../assets/concellPage/resume-writing.png";
 const CounsellingServices = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  console.log(isOpen);
+  const [data,setData] = useState([])
+
+  useEffect(()=>{
+    fetch("counselling.json").then(res => res.json()).then(res => setData(res))
+  },[])
 
   const onInit = ({ state, style, node }) => {
     setIsOpen(true);
@@ -28,7 +31,7 @@ const CounsellingServices = () => {
               onClick={() => setIsOpen((state) => !state)}
             >
               <div>
-                <img src={resume} alt="" />
+                <img src="" alt="" />
               </div>
               <div>
                 <div className="flex items-center ">
