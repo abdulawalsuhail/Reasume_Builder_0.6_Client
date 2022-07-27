@@ -105,7 +105,7 @@ const ResumeBanner = () => {
           </div>
         </section>
       </div>
-      <div className="lg:order-2 order-1">
+      <div className="lg:order-2 order-1 lg:mt-5">
         <img className="w-full " src={resumeBanner} alt="banner" />
       </div>
     </div>
