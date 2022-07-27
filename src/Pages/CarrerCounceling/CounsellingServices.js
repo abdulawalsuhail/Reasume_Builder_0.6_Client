@@ -21,7 +21,7 @@ const CounsellingServices = () => {
             your dream job. That’s a guarantee.
           </p>
 
-          {/* resume section */}
+          {/* professional resume */}
           <div className="mt-6">
             <div
               className="flex items-center"
@@ -38,9 +38,11 @@ const CounsellingServices = () => {
                     </h4>
                   </div>
                   <div className="ml-14">
-                   {
-                    isOpen ? <AiOutlineDown className="text-xl font-bold text-gray-600"/> :  <AiOutlineRight className="text-xl font-bold text-gray-600"/>
-                   }
+                    {isOpen ? (
+                      <AiOutlineDown className="text-[15px] font-[900] text-gray-600" />
+                    ) : (
+                      <AiOutlineRight className="text-[15px] font-bold text-gray-600" />
+                    )}
                   </div>
                 </div>
                 <p>Written by a resume expert</p>
@@ -69,7 +71,7 @@ const CounsellingServices = () => {
           <button className="btn btn-primary text-white mt-4 px-12">
             By Now
           </button>
-          <p className="text-[14px] text-[#384347] mt-6">
+          <p className="text-[14px] text-[#384347] mt-8">
             Draft ready within 3 business days of first call
           </p>
         </div>
@@ -79,10 +81,10 @@ const CounsellingServices = () => {
             Get the full package end to end,for a single job
           </p>
           <h2 className="text-4xl text-[#2d3639] mt-6">$415</h2>
-          <button className="btn btn-primary text-white mt-4 px-12">
+          <button className="btn btn-primary text-white mt-[30px] px-12">
             By Now
           </button>
-          <p className="text-[14px] text-[#384347] mt-6">
+          <p className="text-[14px] text-[#384347] mt-8">
             Draft ready within 1 business days of first call
           </p>
         </div>
@@ -95,10 +97,10 @@ const CounsellingServices = () => {
             offer you want
           </p>
           <h2 className="text-4xl text-[#2d3639] mt-4">$655</h2>
-          <button className="btn btn-primary text-white mt-4 px-12">
+          <button className="btn btn-primary text-white mt-[35px] px-12">
             By Now
           </button>
-          <p className="text-[14px] text-[#384347] mt-6">
+          <p className="text-[14px] text-[#384347] mt-8">
             Draft ready within 1 business days of first call
           </p>
         </div>
