@@ -17,10 +17,13 @@ import drag_drop from '../../assets/CVSectionImages/drag-drop.webp'
 import contentSugest from '../../assets/CVSectionImages/contentSugest.webp'
 import generate from '../../assets/CVSectionImages/generate.webp'
 import importCV from '../../assets/CVSectionImages/importCV.webp'
+import Navbar from '../../Components/Navbar/Navbar';
 
 const CvTemplate = () => {
     return (
-        <div className='md:pt-6 text-gray-700'>
+        <div>
+            <Navbar></Navbar>
+            <div className='md:pt-6 text-gray-700'>
             <div style={{width:"94%"}} class="hero mx-auto">
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <img src={image} class="max-w-xl rounded-lg" />
@@ -169,6 +172,7 @@ const CvTemplate = () => {
                 </div>
             </div>
         </div>
+    </div>
     );
 };
 

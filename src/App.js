@@ -16,6 +16,7 @@ import Footer from "./Shared/Footer/Footer";
 import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
 import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import Templates from "./Pages/Home/Templates/Templates";
+import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="interview-preparation" element={<Interview/>}/>
         </Route>
         <Route path="template" element={<Templates />} />
+        <Route path="cvTemplate" element={<CvTemplate/>}></Route>
       </Routes>
       <Footer />
       <Toaster />
