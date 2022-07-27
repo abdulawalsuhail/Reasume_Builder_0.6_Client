@@ -11,7 +11,7 @@ const CounsellingCard = ({ service }) => {
   return (
     <div className="mt-10">
       <div
-        className="flex items-center"
+        className="flex items-center gap-2"
         onClick={() => setIsOpen((state) => !state)}
       >
         <div>
@@ -24,7 +24,7 @@ const CounsellingCard = ({ service }) => {
           <p>{service.title}</p>
         </div>
       </div>
-      <div className="relative left-[300px] bottom-[40px]">
+      <div className="relative left-[290px] bottom-[40px]">
         {isOpen ? (
           <AiOutlineDown className="text-[15px] font-[900] text-gray-600" />
         ) : (
@@ -32,7 +32,7 @@ const CounsellingCard = ({ service }) => {
         )}
       </div>
       <Collapse onInit={onInit} isOpen={isOpen}>
-        <p className="mt-4 ml-2">{service.desc}</p>
+        <p className="mt-4 ml-2 text-gray-500">{service.desc}</p>
       </Collapse>
     </div>
   );

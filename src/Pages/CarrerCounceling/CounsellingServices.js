@@ -2,20 +2,17 @@ import React, { useEffect, useState } from "react";
 import { MdOutlineDone } from "react-icons/md";
 import CounsellingCard from "./CounsellingCard";
 
-
-
 const CounsellingServices = () => {
-  const [services,setServices] = useState([])
+  const [services, setServices] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("counselling.json")
-    .then(res => res.json())
-    .then(res => setServices(res))
-  },[])
+      .then((res) => res.json())
+      .then((res) => setServices(res));
+  }, []);
 
- 
   return (
-    <section className="px-12">
+    <section className="px-12 py-16">
       <div className="grid md:grid-cols-4  mt-16 gap-10">
         <div className="">
           <h4 className="text-4xl text-[#384347] mt-16">
@@ -26,13 +23,11 @@ const CounsellingServices = () => {
             your dream job. That’s a guarantee.
           </p>
 
-
-         <div>
-         {
-            services.map(service => <CounsellingCard key={service.id} service={service}/>)
-          }
-         </div>
-          
+          <div>
+            {services.map((service) => (
+              <CounsellingCard key={service.id} service={service} />
+            ))}
+          </div>
         </div>
 
         {/*  */}
@@ -49,8 +44,21 @@ const CounsellingServices = () => {
           <p className="text-[14px] text-[#384347] mt-[50px]">
             Draft ready within 3 business days of first call
           </p>
-          <div className="text-center "><MdOutlineDone className="text-4xl text-primary mt-[69px] mx-auto"/></div>
-          <div className="text-center "><MdOutlineDone className="text-4xl text-primary mt-[57px] mx-auto"/></div>
+          <div className="text-center ">
+            <MdOutlineDone className="text-4xl text-primary mt-[69px] mx-auto hidden md:block" />
+          </div>
+          <div className="text-center ">
+            <MdOutlineDone className="text-4xl text-primary mt-[57px] mx-auto hidden md:block" />
+          </div>
+
+          <div>
+            <p className="relative top-[83px] hidden md:block text-gray-600 font-[500]">
+              Resume Builder pro for 1 month
+            </p>
+          </div>
+          <div>
+            <p className="hidden md:block text-gray-600 font-[500] relative top-[162px]">As many review and iteration</p>
+          </div>
         </div>
         <div className="shadow-lg text-center p-6 border-t-4 border-[#8c7cdd] rounded">
           <h2 className="uppercase text-2xl text-[#8c7cdd]  mt-2">Executive</h2>
@@ -64,8 +72,21 @@ const CounsellingServices = () => {
           <p className="text-[14px] text-[#384347] mt-[50px]">
             Draft ready within 1 business days of first call
           </p>
-          <div className="text-center "><MdOutlineDone className="text-4xl text-primary mt-[69px] mx-auto"/></div>
-          <div className="text-center "><MdOutlineDone className="text-4xl text-primary mt-[57px] mx-auto"/></div>
+          <div className="text-center ">
+            <MdOutlineDone className="text-4xl text-primary mt-[69px] mx-auto hidden md:block" />
+          </div>
+          <div className="text-center ">
+            <MdOutlineDone className="text-4xl text-primary mt-[57px] mx-auto hidden md:block" />
+          </div>
+          <div>
+            <p className="relative top-[83px] hidden md:block text-gray-600 font-[500]">
+              Resume Builder pro for 3 month
+            </p>
+          </div>
+          <div>
+            <p className="hidden md:block text-gray-600 font-[500] relative top-[162px]">Support every business day and documents prepared ASAP</p>
+          </div>
+          <MdOutlineDone className="text-4xl text-primary relative top-[232px] mx-auto hidden md:block" />
         </div>
         <div className="shadow-lg text-center p-6 border-t-4 border-[#feb251] rounded">
           <h2 className="uppercase text-2xl text-[#feb251]  mt-2">
@@ -82,8 +103,23 @@ const CounsellingServices = () => {
           <p className="text-[14px] text-[#384347] mt-[50px]">
             Draft ready within 1 business days of first call
           </p>
-          <div className="text-center "><MdOutlineDone className="text-4xl text-primary mt-[69px] mx-auto"/></div>
-          <div className="text-center "><MdOutlineDone className="text-4xl text-primary mt-[57px] mx-auto"/></div>
+          <div className="text-center hidden md:block">
+            <MdOutlineDone className="text-4xl text-primary mt-[69px] mx-auto" />
+          </div>
+          <div className="text-center ">
+            <MdOutlineDone className="text-4xl text-primary mt-[57px] mx-auto hidden md:block" />
+          </div>
+          <div>
+            <p className="relative top-[83px] hidden md:block text-gray-600 font-[500]">
+              Resume Builder pro for 6 month
+            </p>
+          </div>
+          <div>
+            <p className="hidden md:block text-gray-600 font-[500] relative top-[162px]">Support every business day and documents prepared ASAP</p>
+          </div>
+          <MdOutlineDone className="text-4xl text-primary relative top-[232px] mx-auto hidden md:block" />
+          <MdOutlineDone className="text-4xl text-primary relative top-[300px] mx-auto hidden md:block" />
+          <MdOutlineDone className="text-4xl text-primary relative top-[375px] mx-auto hidden md:block" />
         </div>
       </div>
     </section>
