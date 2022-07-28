@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import banner from "../../../src/assets/resume-banner.png";
+import banner from "../../../src/assets/coverLatterBanner.png";
 
 const CoverLatterTemplateBanner = () => {
   return (
@@ -9,9 +9,9 @@ const CoverLatterTemplateBanner = () => {
         background:
           "linear-gradient(278.93deg,#ffe0b9 33.6%,rgba(255,224,185,.2))",
       }}
-      className="grid lg:grid-cols-2 md:px-20 px-8 md:gap-20 gap-10 py-16"
+      className="grid lg:grid-cols-2 md:px-20 px-8 md:gap-20 gap-10 "
     >
-      <div className="lg:order-1 order-2">
+      <div className="lg:order-1 order-2 lg:pt-16">
         <p>ONLINE RESUME BUILDER</p>
         <h1 className="md:text-6xl text-5xl front-crimson bold font-semibold text-gray-700 mb-4 mt-2">
           Online Resume Builder
@@ -111,7 +111,7 @@ const CoverLatterTemplateBanner = () => {
           </div>
         </section>
       </div>
-      <div className="lg:order-2 order-1 lg:mt-5">
+      <div className="lg:order-2 order-1 lg:mt-5 pt-8 lg:pt-0">
         <img className="w-full " src={banner} alt="banner" />
       </div>
     </div>
