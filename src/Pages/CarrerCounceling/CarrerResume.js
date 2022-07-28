@@ -1,11 +1,8 @@
 import React from 'react';
 import { AiFillMail } from "react-icons/ai";
 import {
-  BsStopwatch,
   BsFacebook,
-  BsLinkedin,
- 
-  BsTwitter,
+  BsLinkedin, BsStopwatch, BsTwitter
 } from "react-icons/bs";
 
 const CarrerResume = () => {
