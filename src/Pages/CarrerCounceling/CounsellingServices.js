@@ -31,7 +31,7 @@ const CounsellingServices = () => {
         </div>
 
         {/*  */}
-        <div className="shadow-lg text-center p-6 border-t-4 border-primary rounded">
+        <div className="shadow-lg text-center p-6 border-t-4 border-primary rounded ">
           <h2 className="uppercase text-2xl text-primary  mt-2">essential</h2>
           <p className="text-[12px] text-[#384347] mt-5">
             Get a Resume Linkedin revamp and cover letter,while you do the job
@@ -44,7 +44,7 @@ const CounsellingServices = () => {
           <p className="text-[14px] text-[#384347] mt-[50px]">
             Draft ready within 3 business days of first call
           </p>
-          <div className="text-center ">
+          <div className="text-center  ">
             <MdOutlineDone className="text-4xl text-primary mt-[69px] mx-auto hidden md:block" />
           </div>
           <div className="text-center ">
