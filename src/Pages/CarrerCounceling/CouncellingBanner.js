@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 const CouncellingBanner = () => {
 
-    const [data,setData] = useState("")
-    console.log(data);
+   
     const banners = [
         {
             reviewSay:"Resume builder Executive has changed my life: One week & four interviews later, I will be making 150% more doing the job I chose.",
