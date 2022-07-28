@@ -10,7 +10,7 @@ import WriteResume from "./WriteResume/WriteResume";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-[#f4f7f8]">
       <Navbar/>
       <Hero/>
       <WriteResume/>
