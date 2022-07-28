@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 const CouncellingBanner = () => {
+
+    const [data,setData] = useState("")
+    console.log(data);
     const banners = [
         {
             reviewSay:"Resume builder Executive has changed my life: One week & four interviews later, I will be making 150% more doing the job I chose.",
@@ -38,8 +41,8 @@ const CouncellingBanner = () => {
     autoplaySpeed:1500,
     }
   return (
-    <div className="bg-[#e1f3f8] px-12 py-10">
-    <h2 className="text-5xl text-center text-[#384347]"> Get Your Dream Job</h2>
+    <div  className="bg-[#e1f3f8] px-12 py-10">
+    <h2  className="text-5xl text-center text-[#384347]"> Get Your Dream Job</h2>
     <p className="text-center text-[#384347] mt-5 text-[18px]">Nail the recruitment process with Enhancv Career Counseling - your secret weapon</p>
     <Slider {...settings}>
       {
