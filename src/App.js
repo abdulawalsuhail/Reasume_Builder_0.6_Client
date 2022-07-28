@@ -19,33 +19,34 @@ import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 import Footer from "./Shared/Footer/Footer";
+import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
 
 function App() {
   return (
     <div>
-      
       <Routes>
         <Route path="/" element={<Home />}>
           <Route index element={<Resume />}></Route>
           <Route path="cv" element={<Cv />}></Route>
-          <Route path="coverLetter" element={<CoverLetter/>}></Route>
+          <Route path="coverLetter" element={<CoverLetter />}></Route>
         </Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/login" element={<Login />}></Route>
 
         {/* nested route career counselling */}
-        <Route path="/career-counselling" element={<CarrerHeader/>}>
-          <Route index element={<CarrerConselling/>}></Route>
-          <Route path="all-article" element={<AllArticle/>}></Route>
-          <Route path="resume-write" element={<CarrerResume/>}></Route>
-          <Route path="cv-write" element={<CarrerCv/>}></Route>
-          <Route path="inspiring-stories" element={<Stories/>}/>
-          <Route path="interview-preparation" element={<Interview/>}/>
+        <Route path="/career-counselling" element={<CarrerHeader />}>
+          <Route index element={<CarrerConselling />}></Route>
+          <Route path="all-article" element={<AllArticle />}></Route>
+          <Route path="resume-write" element={<CarrerResume />}></Route>
+          <Route path="cv-write" element={<CarrerCv />}></Route>
+          <Route path="inspiring-stories" element={<Stories />} />
+          <Route path="interview-preparation" element={<Interview />} />
         </Route>
         <Route path="template" element={<Templates />} />
-        <Route path="cvTemplate" element={<CvTemplate/>}></Route>
-        <Route path="resumeTemplate" element={<ResumeTemplate/>}></Route>
+        <Route path="cvTemplate" element={<CvTemplate />}></Route>
+        <Route path="resumeTemplate" element={<ResumeTemplate />}></Route>
+        <Route path="/coverLatter" element={<CoverLatterTemplate />}></Route>
       </Routes>
       <Footer />
       <Toaster />

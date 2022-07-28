@@ -3,6 +3,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { MdCancel } from "react-icons/md";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../../../src/assets/logo.png";
+import "../../Css/CarrerCounceling.css";
 
 const CarrerHeader = () => {
   const [click,setClick]  = useState(false)
