@@ -20,7 +20,7 @@ const Navbar = () => {
         <Link to="/resumeTemplate">RESUME</Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link to="/">COVER LETTER</Link>
+        <Link to="/coverLatter">COVER LETTER</Link>
       </li>
 
       {/* <li className="hover:bg-primary hover:text-white rounded-md">
@@ -28,7 +28,10 @@ const Navbar = () => {
         
       </li> */}
       <li tabindex="0">
-        <Link to='/career-counselling' className="hover:bg-primary hover:text-white">
+        <Link
+          to="/career-counselling"
+          className="hover:bg-primary hover:text-white"
+        >
           CAREER COUNSELLING
           <svg
             class="fill-current"
