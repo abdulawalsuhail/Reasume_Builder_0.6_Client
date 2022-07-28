@@ -11,7 +11,7 @@ import {
 const CarrerResume = () => {
      return (
           <div>
-        <h1 className="text-3xl font-extrabold text-black-300 text-center mt-8">Resume Carrer</h1>
+        <h1 className="text-3xl font-extrabold text-black-300 text-center mt-8">Resume Writing</h1>
       <div className=" m-12">
       <hr className=" " style={{height:"2px",background:"#c6c6c6"}}/>
       </div>
