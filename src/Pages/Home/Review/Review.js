@@ -5,7 +5,7 @@ import image_2 from "../../../assets/reviewer/michael.jpg";
 
 const Review = () => {
     return (
-        <div className="pt-24 bg-[#a2b2c736]">
+        <div className="pt-24 pb-2 bg-[#a2b2c736]">
             <div className="mx-6 md:mx-24">
                 <h1
                     style={{ letterSpacing: "4px" }}
