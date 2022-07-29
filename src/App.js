@@ -20,6 +20,7 @@ import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 import Footer from "./Shared/Footer/Footer";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
+import Business from "./Pages/Home/Business/Business";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path="resumeTemplate" element={<ResumeTemplate />}></Route>
         <Route path="/coverLatter" element={<CoverLatterTemplate />}></Route>
       </Routes>
+      <Business />
       <Footer />
       <Toaster />
     </div>
