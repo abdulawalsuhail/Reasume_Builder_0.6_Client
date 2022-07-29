@@ -8,7 +8,7 @@ const Steps = () => {
   return (
     <div className="md:px-20 md:my-10 my-4 px-10">
       <h1 className="md:text-5xl text-4xl front-crimson mb-8">
-        Download your cover latter in 4 simple steps
+        Download your cover latter in 4 simple steps.
       </h1>
       <div className=" grid grid-cols-1 md:grid-cols-4">
         <div className="border-red-200">
