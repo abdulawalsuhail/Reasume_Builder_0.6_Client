@@ -10,7 +10,7 @@ const ShowOff = () => {
       </h4>
       <div className="lg:grid lg:grid-cols-12 lg:mx-20 md:mx-16 mx-10 items-center gap-10 py-12">
         <div className="lg:col-span-5">
-          <img className="" src={showOff} alt="show-off" />
+          <img className="w-[85%] mx-auto" src={showOff} alt="show-off" />
         </div>
         <div className="col-span-7 py-5 mt-0 md:mt-5 lg-mt-0">
           <h3 className="text-5xl front-crimson mt-5 md:mt-0">
