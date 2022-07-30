@@ -1,4 +1,5 @@
 import React from 'react';
+import CarrerCouncelingGurrenty from './CarrerCouncelingGurrenty';
 import CarrerCouncelingPrice from './CarrerCouncelingPrice';
 import CouncellingBanner from './CouncellingBanner';
 import CouncellingSteps from './CouncellingSteps';
@@ -10,7 +11,9 @@ const CarrerConselling = () => {
           <CouncellingBanner/>
           <CounsellingServices/>
           <CouncellingSteps/>
+          <CarrerCouncelingGurrenty/>
           <CarrerCouncelingPrice/>
+          
         </div>
     );
 };

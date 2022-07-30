@@ -1,17 +1,14 @@
 import React from 'react';
 import { AiFillMail } from "react-icons/ai";
 import {
-  BsStopwatch,
   BsFacebook,
-  BsLinkedin,
- 
-  BsTwitter,
+  BsLinkedin, BsStopwatch, BsTwitter
 } from "react-icons/bs";
 
 const CarrerCv = () => {
      return (
           <div>
-          <h1 className="text-3xl font-extrabold text-black-300 text-center mt-8">CV Carrer</h1>
+          <h1 className="text-3xl font-extrabold text-black-300 text-center mt-8">CV Writing</h1>
         <div className=" m-12">
         <hr className=" " style={{height:"2px",background:"#c6c6c6"}}/>
         </div>
