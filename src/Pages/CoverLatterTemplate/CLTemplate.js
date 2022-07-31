@@ -7,7 +7,7 @@ const CLTemplate = () => {
   return (
     <section className="relative">
       <img
-        class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-50"
+        class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25"
         src={clBg}
         alt="resume"
       />

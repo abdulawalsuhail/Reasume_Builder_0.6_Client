@@ -1,6 +1,6 @@
 import React from "react";
 import "swiper/css/bundle";
-import Banner from "../../../assets/Banner.jpg";
+import Banner from "../../../assets/Banner.png";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
