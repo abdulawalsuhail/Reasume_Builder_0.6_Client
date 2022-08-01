@@ -6,7 +6,6 @@ const EditResume = () => {
     return (
         <div>
             <Navbar/>
-            <h1>Hello Resume</h1>
             <Outlet />
         </div>
     );
