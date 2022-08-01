@@ -21,13 +21,9 @@ const EditResume = () => {
       <div class="drawer drawer-mobile">
         <input id="editor-nav" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content flex flex-col  ">
+
+            {/* editor content */}
           <Outlet />
-          <label
-            for="editor-nav"
-            class="btn btn-primary drawer-button lg:hidden"
-          >
-            Open drawer
-          </label>
         </div>
         <div class="drawer-side">
           <label for="editor-nav" class="drawer-overlay"></label>
