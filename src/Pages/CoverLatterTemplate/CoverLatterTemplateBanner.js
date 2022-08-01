@@ -12,9 +12,9 @@ const CoverLatterTemplateBanner = () => {
       className="grid lg:grid-cols-2 md:px-20 px-8 md:gap-20 gap-10 "
     >
       <div className="lg:order-1 order-2 lg:pt-16">
-        <p>ONLINE RESUME BUILDER</p>
+        <p>ONLINE COVER LETTER BUILDER</p>
         <h1 className="md:text-6xl text-5xl front-crimson bold font-semibold text-gray-700 mb-4 mt-2">
-          Online Resume Builder
+          Online Cover Letter Builder
         </h1>
         <p className="text-lg">
           Enhancv is the resume builder that helps you highlight your
