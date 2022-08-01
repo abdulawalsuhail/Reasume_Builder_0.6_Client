@@ -81,7 +81,7 @@ const Login = () => {
                       customError={customError}
                     ></Alert>
                   ))}
-                {/* sign up from */}
+                {/* sign in from */}
                 <div class="card flex-shrink-0 w-full">
                   <form onSubmit={(e) => handelSubmit(e)} class="card-body">
                     <div class="form-control">
@@ -114,7 +114,7 @@ const Login = () => {
                     </div>
                     <div class="form-control mt-5">
                       <button type="submit" class="btn btn-primary">
-                        Sign Up
+                        Sign In
                       </button>
                       <p className="mt-2">
                         I am new?{" "}
