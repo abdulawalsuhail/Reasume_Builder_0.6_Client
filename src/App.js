@@ -15,6 +15,7 @@ import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
+import EditorCareerObjective from "./Pages/EditorComponetn/CommonEditorComponent/EditorCareerObjective";
 import Start from "./Pages/EditorComponetn/CommonEditorComponent/Start";
 import EditResume from "./Pages/EditorComponetn/EditResume";
 import Business from "./Pages/Home/Business/Business";
@@ -53,9 +54,10 @@ function App() {
         <Route path="/coverLatter" element={<CoverLatterTemplate />}></Route>
 
         {/* Resume route */}
-        <Route path="/resume-builder/how-to-start" element={<Start />}></Route>
+        <Route path="/resume-builder/how-to-start" element={<Start />}/>
         <Route path="/resume-builder" element={<EditResume />}>
-          <Route path="editor-contact" element={<ContactDetails />}></Route>
+          <Route path="editor-contact" element={<ContactDetails />}/>
+          <Route path="career-objective" element={<EditorCareerObjective/>}/>
         </Route>
       </Routes>
 
