@@ -1,19 +1,21 @@
 import React from "react";
+import MessengerCustomerChat from "react-messenger-customer-chat";
+import Navbar from "../../Components/Navbar/Navbar";
 import Guideline from "./Guideline/Guideline";
 import Hero from "./Hero/Hero";
-import ResumeTemplate from "./ResumeTemplate/ResumeTemplate";
 import Review from "./Review/Review";
+import Templates from "./Templates/Templates";
 import WhyResumeBuilder from "./WhyResumeBuilder/WhyResumeBuilder";
 import WriteResume from "./WriteResume/WriteResume";
-import MessengerCustomerChat from "react-messenger-customer-chat";
 
 const Home = () => {
   return (
-    <div>
-      <Hero />
-      <WriteResume />
+    <div className="bg-[#f4f7f8]">
+      <Navbar/>
+      <Hero/>
+      <WriteResume/>
       <WhyResumeBuilder />
-      <ResumeTemplate />
+      <Templates/>
       <Guideline />
       <Review />
       <MessengerCustomerChat
