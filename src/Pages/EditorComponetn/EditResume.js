@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import EditorNavbar from "./CommonEditorComponent/EditorNavbar";
 
 const EditResume = () => {
   const editResumeSidebar = (
@@ -7,7 +8,7 @@ const EditResume = () => {
       <li className=" hover:text-white rounded-md">
         <Link
           className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2"
-          to="/resume-builder/contact-details"
+          to="/resume-builder/editor-contact"
         >
           Contact
         </Link>
@@ -16,6 +17,7 @@ const EditResume = () => {
   );
   return (
     <div>
+        <EditorNavbar/>
       <div class="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content flex flex-col  ">
