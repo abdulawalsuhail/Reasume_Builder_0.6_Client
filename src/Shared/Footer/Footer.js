@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer class="bg-[#f4f7f8]">
       <div class="max-w-screen-xl px-4  pb-6 mx-auto sm:px-6 lg:px-8">
-        <div class="lg:items-center lg:justify-between lg:flex">
+        <div class="lg:items-center lg:justify-between lg:flex pt-5">
           <div class="flex justify-center text-sky-600 sm:justify-start items-center">
             <img src={logo} alt="logo" />
             <h2 className="text-4xl">Resume builder</h2>

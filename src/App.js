@@ -12,14 +12,15 @@ import Home from "./Pages/Home/Home";
 import CarrerConselling from "./Pages/CarrerCounceling/CarrerConselling";
 import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
+import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
+import Business from "./Pages/Home/Business/Business";
 import CoverLetter from "./Pages/Home/Templates/CoverLetter";
 import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 import Footer from "./Shared/Footer/Footer";
-import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path="resumeTemplate" element={<ResumeTemplate />}></Route>
         <Route path="/coverLatter" element={<CoverLatterTemplate />}></Route>
       </Routes>
+      <Business />
       <Footer />
       <Toaster />
     </div>
