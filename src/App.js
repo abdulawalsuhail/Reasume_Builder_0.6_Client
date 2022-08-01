@@ -14,14 +14,13 @@ import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
+import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
+import EditResume from "./Pages/EditorComponetn/EditResume";
 import Business from "./Pages/Home/Business/Business";
 import CoverLetter from "./Pages/Home/Templates/CoverLetter";
 import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
-import EditResume from "./Pages/ResumeTemplate/EditResume";
-import Personalize from "./Pages/ResumeTemplate/Personalize";
-import ResumeStart from "./Pages/ResumeTemplate/ResumeStart";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 import Footer from "./Shared/Footer/Footer";
 
@@ -54,8 +53,7 @@ function App() {
 
           {/* Resume route */}
       <Route path="/resume-builder" element={<EditResume/>}>
-        <Route index element={<ResumeStart/>}></Route>
-        <Route path="personalize" element={<Personalize/>}></Route>
+        <Route path='contact-details' element={<ContactDetails/>}></Route>
       </Route>
 
       
