@@ -4,7 +4,7 @@ import imgtwo from "../../assets/guarntee2.png";
 
 const CarrerCouncelingGurrenty = () => {
      return (
-          <div className="py-[50px] ">
+          <div className=" ">
           <div
             class="     rounded relative mt-[200px] h-[500px] bg-[#374246]  "
             

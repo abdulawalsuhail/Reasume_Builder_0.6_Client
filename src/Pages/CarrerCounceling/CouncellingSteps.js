@@ -2,7 +2,7 @@ import React from 'react';
 
 const CouncellingSteps = () => {
      return (
-          <div className='mt-5'>
+          <div className=''>
           {/* <h1 className="text-3xl font-extrabold text-center py-4">Steps</h1> */}
     
           <div className="grid    sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-3 m  gap-14 px-12 py-8    ">
