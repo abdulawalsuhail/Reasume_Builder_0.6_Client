@@ -18,7 +18,7 @@ const Home = () => {
       <Templates />
       <Guideline />
       <Review />
-      <Business />,
+      <Business />
     </div>
   );
 };
