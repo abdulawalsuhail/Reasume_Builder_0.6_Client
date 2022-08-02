@@ -27,6 +27,27 @@ const Experience = () => {
               name="companyName"
               class="input border-1 border-gray-200 focus:outline-none w-full mb-4"
             />
+            {/* country, state, city */}
+            <div className="grid md:grid-cols-3 gap-5 mb-5">
+              <input
+                type="text"
+                placeholder="Country"
+                name="country"
+                class="input border-1 border-gray-200 focus:outline-none w-full "
+              />
+              <input
+                type="text"
+                placeholder="State"
+                name="State"
+                class="input border-1 border-gray-200 focus:outline-none w-full "
+              />
+              <input
+                type="text"
+                placeholder="City"
+                name="city"
+                class="input border-1 border-gray-200 focus:outline-none w-full "
+              />
+            </div>
 
             {/* Start month,End month,Start year,End year */}
             <div className="grid md:grid-cols-2 gap-5">
