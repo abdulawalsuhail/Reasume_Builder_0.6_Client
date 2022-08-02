@@ -24,6 +24,7 @@ import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 import Footer from "./Shared/Footer/Footer";
 import Experience from "./Pages/EditorComponetn/CommonEditorComponent/Experience";
+import Education from "./Pages/EditorComponetn/CommonEditorComponent/Education";
 
 function App() {
   return (
@@ -57,9 +58,9 @@ function App() {
         <Route path="/resume-builder" element={<EditResume />}>
           <Route path="editor-contact" element={<ContactDetails />}></Route>
           <Route path="editor-experience" element={<Experience />}></Route>
+          <Route path="editor-education" element={<Education />}></Route>
         </Route>
       </Routes>
-
 
       <Footer />
       <Toaster />
