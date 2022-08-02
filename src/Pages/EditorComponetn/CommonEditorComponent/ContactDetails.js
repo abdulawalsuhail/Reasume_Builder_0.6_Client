@@ -3,8 +3,8 @@ import contactImage from "../../../assets/contact.png";
 
 const ContactDetails = () => {
   return (
-    <div className=" bg-[#f4f7f8] mr-7 rounded-2xl">
-      <div className="px-16 py-10 grid grid-cols-12 gap-5">
+    <div className=" bg-[#f4f7f8] mr-7 rounded-2xl my-5">
+      <div className="px-16 py-10 grid grid-cols-12 gap-5 ">
         {/* form div */}
         <div className="col-span-8">
           <h3 className="text-4xl font-bold text-gray-700">Contact Section</h3>
@@ -99,7 +99,7 @@ const ContactDetails = () => {
                 </span>
                 <span class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-green-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
                 <span class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">
-                  Back
+                  Continue
                 </span>
               </a>
             </div>
