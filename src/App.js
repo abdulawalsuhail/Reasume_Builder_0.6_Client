@@ -24,6 +24,9 @@ import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 import Footer from "./Shared/Footer/Footer";
+import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
+import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
+import Languages from "./Pages/EditorComponetn/CommonEditorComponent/Languages";
 
 function App() {
   return (
@@ -52,10 +55,13 @@ function App() {
         <Route path="resumeTemplate" element={<ResumeTemplate />}></Route>
         <Route path="/coverLatter" element={<CoverLatterTemplate />}></Route>
 
-        {/* Resume route */}
+        {/* Resume Editor route */}
         <Route path="/resume-builder/how-to-start" element={<Start />}></Route>
         <Route path="/resume-builder" element={<EditResume />}>
           <Route path="editor-contact" element={<ContactDetails />}></Route>
+          <Route path="certifications" element={<Certifications />}></Route>
+          <Route path="additional-skills" element={<AdditionalSkills/>}></Route>
+          <Route path="languages" element={<Languages/>}></Route>
         </Route>
       </Routes>
 

@@ -13,6 +13,21 @@ const EditResume = () => {
           Contact
         </Link>
       </li>
+      <li className=" hover:text-white rounded-md">
+        <Link
+          className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2"
+          to="/resume-builder/certifications">Certifications</Link>
+      </li>
+      <li className=" hover:text-white rounded-md">
+        <Link
+          className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2"
+          to="/resume-builder/additional-skills">Additional Skills</Link>
+      </li>
+      <li className=" hover:text-white rounded-md">
+        <Link
+          className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2"
+          to="/resume-builder/languages">Languages</Link>
+      </li>
     </>
   );
   return (
