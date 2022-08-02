@@ -17,7 +17,6 @@ import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
 import Start from "./Pages/EditorComponetn/CommonEditorComponent/Start";
 import EditResume from "./Pages/EditorComponetn/EditResume";
-import Business from "./Pages/Home/Business/Business";
 import CoverLetter from "./Pages/Home/Templates/CoverLetter";
 import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
@@ -59,7 +58,7 @@ function App() {
         </Route>
       </Routes>
 
-      <Business />
+
       <Footer />
       <Toaster />
     </div>
