@@ -2,18 +2,18 @@ import React from "react";
 
 const CarrerCouncelingPrice = () => {
   return (
-    <div className="py-5">
+    <div className="py-12">
       <div
-        class="hero min-h-screen "
+        class="  min-h-screen bg-no-repeat bg-cover		 "
         style={{
-          backgroundImage: `url("https://leverageedu.com/blog/wp-content/uploads/2019/10/Declaration-in-Resume-for-Freshers.jpg")`,
+          backgroundImage: `url("https://images.unsplash.com/photo-1621998951482-d096a4c7dee4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")`,
         }}
       >
-        <div class="hero-overlay bg-opacity-60"></div>
-        <div class="hero-content text-center  ">
+        <div class="hero-overlay  "></div>
+        <div class="hero-content text-center   ">
           <div className="grid    sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-14 px-12 py-8">
-            <div class="card lg:max-w-lg  bg-base-100 shadow-xl border-t-4 border-primary rounded">
-              <div class="card-body items-center text-center">
+            <div class="card   lg:max-w-lg  bg-base-100 shadow-xl border-t-4 border-primary  rounded">
+              <div class="card-body     items-center text-center ">
                 <h2 class="card-title text-2xl text-primary">Essential</h2>
                 <p>
                   Get a resume, Linkedin revamp and cover letter, while you do
