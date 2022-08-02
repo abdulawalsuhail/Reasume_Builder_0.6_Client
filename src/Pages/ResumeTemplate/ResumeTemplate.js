@@ -18,9 +18,9 @@ const ResumeTemplate = () => {
                 <h1 class="text-2xl md:text-5xl font-bold ml-12 my-8 text-center">Online Resume Maker</h1>
                 <TemplateBanner/>
                 {/* Cv section */}
-                <div className=' w-3/4 mx-auto'>
+                <div className=' 2xl:w-3/4 mx-auto'>
                     <h1 className='text-center text-xl md:text-4xl font-bold mt-24 pb-24 px-2'>Create a Resume online. First, select a template:</h1>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mx-8">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:mx-16">
                         <Resume/>
                     </div>
                 </div>

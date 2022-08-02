@@ -32,11 +32,13 @@ function App() {
   return (
     <div>
       <Routes>
+        {/* Nested Routing for Templates Section of our Homepage */}
         <Route path="/" element={<Home />}>
           <Route index element={<Resume />}></Route>
           <Route path="cv" element={<Cv />}></Route>
           <Route path="coverLetter" element={<CoverLetter />}></Route>
-        </Route>
+        </Route>{/* End of Nested Routing for Templates Section of our Homepage */}
+
         <Route path="/home" element={<Home />}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/login" element={<Login />}></Route>
