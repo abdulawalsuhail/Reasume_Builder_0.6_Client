@@ -19,13 +19,13 @@ const ContactDetails = () => {
                 type="text"
                 placeholder="First Name"
                 name="firstName"
-                class="input border-1 border-gray-200 focus:outline-none w-full "
+                class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="Last Name"
                 name="lastName"
-                class="input border-1 border-gray-200 focus:outline-none w-full "
+                class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
             </div>
             {/* job title */}
@@ -33,14 +33,14 @@ const ContactDetails = () => {
               type="text"
               placeholder="Job title"
               name="jobTitle"
-              class="input border-1 border-gray-200 focus:outline-none w-full my-4"
+              class="input h-14 border-1 border-gray-200 focus:outline-none w-full my-4"
             />
             {/* phone */}
             <input
               type="text"
               placeholder="Job title"
               name="jobTitle"
-              class="input border-1 border-gray-200 focus:outline-none w-full my-4"
+              class="input h-14 border-1 border-gray-200 focus:outline-none w-full my-4"
             />
 
             {/* country,city,zip code,state */}
@@ -49,25 +49,25 @@ const ContactDetails = () => {
                 type="text"
                 placeholder="Country"
                 name="country"
-                class="input border-1 border-gray-200 focus:outline-none w-full "
+                class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="City"
                 name="city"
-                class="input border-1 border-gray-200 focus:outline-none w-full "
+                class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="State"
                 name="state"
-                class="input border-1 border-gray-200 focus:outline-none w-full "
+                class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="Zip Code"
                 name="zipCode"
-                class="input border-1 border-gray-200 focus:outline-none w-full "
+                class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
             </div>
             {/* Email */}
@@ -75,7 +75,7 @@ const ContactDetails = () => {
               type="text"
               placeholder="Email"
               name="Email"
-              class="input border-1 border-gray-200 focus:outline-none w-full my-4"
+              class="input h-14 border-1 border-gray-200 focus:outline-none w-full my-4"
             />
             <div className="flex justify-between">
               <a

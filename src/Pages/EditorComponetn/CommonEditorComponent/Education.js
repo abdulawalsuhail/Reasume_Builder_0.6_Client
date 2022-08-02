@@ -1,32 +1,26 @@
 import React from "react";
-import experienceImage from "../../../assets/experince.png";
+import educationImage from "../../../assets/education.png";
 
-const Experience = () => {
+const Education = () => {
   return (
     <div className=" bg-[#f4f7f8] lg:mr-7 rounded-2xl my-5">
-      <div className="md:px-16 px-7 py-10 grid lg:grid-cols-12 lg:gap-5 ">
+      <div className="md:px-16 px-7 py-10 grid lg:grid-cols-12 lg:gap-10 ">
         {/* form div */}
         <div className="lg:col-span-8">
           <h3 className="text-4xl font-bold text-gray-700 mb-8">
-            What's your most recent work experience?
+            What’s your high school?
           </h3>
 
           {/* input form */}
           <form>
-            {/* job title */}
+            {/* High school name*/}
             <input
               type="text"
-              placeholder="Job title"
-              name="jobTitle"
+              placeholder="High school name"
+              name="schoolName"
               class="input h-14 border-1 border-gray-200 focus:outline-none w-full my-4"
             />
-            {/* company name */}
-            <input
-              type="text"
-              placeholder="Company/Organization Name"
-              name="companyName"
-              class="input h-14 border-1 border-gray-200 focus:outline-none w-full mb-4"
-            />
+
             {/* country, state, city */}
             <div className="grid md:grid-cols-3 gap-5 mb-5">
               <input
@@ -53,31 +47,19 @@ const Experience = () => {
             <div className="grid md:grid-cols-2 gap-5">
               <input
                 type="text"
-                placeholder="Start Month"
-                name="StartMonth"
+                placeholder="Graduation Month"
+                name="graduationMonth"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
-                placeholder="Start Year"
-                name="startYear"
-                class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
-              />
-              <input
-                type="text"
-                placeholder="End month"
-                name="endMonth"
-                class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
-              />
-              <input
-                type="text"
-                placeholder="End Year"
-                name="endYear"
+                placeholder="Graduation Year"
+                name="graduationYear"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
             </div>
 
-            <div className="flex justify-between mt-10">
+            <div className="flex justify-between mt-10 mb-3">
               <a
                 href="#_"
                 class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group md:px-24 px-10 text-lg"
@@ -103,15 +85,16 @@ const Experience = () => {
                 </span>
               </a>
             </div>
+            <p className="text-red-600 text-[17px] link">Skip This Step</p>
           </form>
         </div>
         {/* image div */}
         <div className="lg:col-span-4 hidden lg:block">
-          <img src={experienceImage} alt="this is experience img" />
+          <img src={educationImage} alt="this is experience img" />
         </div>
       </div>
     </div>
   );
 };
 
-export default Experience;
+export default Education;
