@@ -1,6 +1,7 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import Login from "./Components/Navbar/Login";
 import Signup from "./Components/Navbar/Signup";
 import AllArticle from "./Pages/CarrerCounceling/AllArticle";
@@ -64,6 +65,10 @@ function App() {
 
       <Footer />
       <Toaster />
+      <MessengerCustomerChat
+        pageId="105555438910537"
+        appId="1225310258009219"
+      />
     </div>
   );
 }

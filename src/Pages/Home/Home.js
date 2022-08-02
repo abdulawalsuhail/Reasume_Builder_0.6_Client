@@ -1,5 +1,4 @@
 import React from "react";
-import MessengerCustomerChat from "react-messenger-customer-chat";
 import Navbar from "../../Components/Navbar/Navbar";
 import Business from "./Business/Business";
 import Guideline from "./Guideline/Guideline";
@@ -19,12 +18,7 @@ const Home = () => {
       <Templates />
       <Guideline />
       <Review />
-      <Business />
-      <MessengerCustomerChat
-        pageId="105555438910537"
-        appId="1225310258009219"
-      />
-      ,
+      <Business />,
     </div>
   );
 };
