@@ -3,10 +3,10 @@ import contactImage from "../../../assets/contact.png";
 
 const ContactDetails = () => {
   return (
-    <div className=" bg-[#f4f7f8] mr-7 rounded-2xl my-5">
-      <div className="px-16 py-10 grid grid-cols-12 gap-5 ">
+    <div className=" bg-[#f4f7f8] lg:mr-7 rounded-2xl my-5">
+      <div className="md:px-16 px-7 py-10 grid lg:grid-cols-12 lg:gap-5 ">
         {/* form div */}
-        <div className="col-span-8">
+        <div className="lg:col-span-8">
           <h3 className="text-4xl font-bold text-gray-700">Contact Section</h3>
           <p className="text-gray-400 text-lg my-5">
             This information will be placed at the top of your resume.
@@ -19,13 +19,13 @@ const ContactDetails = () => {
                 type="text"
                 placeholder="First Name"
                 name="firstName"
-                class="input border-1 border-gray-300 focus:outline-none w-full max-w-xs"
+                class="input border-1 border-gray-300 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="Last Name"
                 name="lastName"
-                class="input border-1 border-gray-300 focus:outline-none w-full max-w-xs"
+                class="input border-1 border-gray-300 focus:outline-none w-full "
               />
             </div>
             {/* job title */}
@@ -49,25 +49,25 @@ const ContactDetails = () => {
                 type="text"
                 placeholder="Country"
                 name="country"
-                class="input border-1 border-gray-300 focus:outline-none w-full max-w-xs"
+                class="input border-1 border-gray-300 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="City"
                 name="city"
-                class="input border-1 border-gray-300 focus:outline-none w-full max-w-xs"
+                class="input border-1 border-gray-300 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="State"
                 name="state"
-                class="input border-1 border-gray-300 focus:outline-none w-full max-w-xs"
+                class="input border-1 border-gray-300 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="Zip Code"
                 name="zipCode"
-                class="input border-1 border-gray-300 focus:outline-none w-full max-w-xs"
+                class="input border-1 border-gray-300 focus:outline-none w-full "
               />
             </div>
             {/* Email */}
@@ -80,7 +80,7 @@ const ContactDetails = () => {
             <div className="flex justify-between">
               <a
                 href="#_"
-                class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group px-24 text-lg"
+                class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group md:px-24 px-10 text-lg"
               >
                 <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
                   <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
@@ -92,7 +92,7 @@ const ContactDetails = () => {
               </a>
               <a
                 href="#_"
-                class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-green-500 rounded-xl group px-24 text-lg"
+                class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-green-500 rounded-xl group md:px-24 px-10 text-lg"
               >
                 <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-green-700 rounded group-hover:-mr-4 group-hover:-mt-4">
                   <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
@@ -106,7 +106,7 @@ const ContactDetails = () => {
           </form>
         </div>
         {/* image div */}
-        <div className="col-span-4">
+        <div className="lg:col-span-4 hidden lg:block">
           <img src={contactImage} alt="" />
         </div>
       </div>
