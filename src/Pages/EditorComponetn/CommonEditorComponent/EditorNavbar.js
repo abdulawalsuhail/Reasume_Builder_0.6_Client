@@ -10,7 +10,7 @@ const EditorNavbar = () => {
     const [toggle,setToggle] = useState(false)
     console.log(toggle);
     return (
-        <div class="navbar bg-base-100">
+        <div class="navbar bg-[#f9fbfa]">
         <div class="flex-none">
         <label
             for="editor-nav"

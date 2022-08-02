@@ -24,7 +24,7 @@ const EditResume = () => {
     </>
   );
   return (
-    <div>
+    <div className="bg-[#f9fbfa]">
         <EditorNavbar/>
       <div class="drawer drawer-mobile">
         <input id="editor-nav" type="checkbox" class="drawer-toggle" />
@@ -33,7 +33,7 @@ const EditResume = () => {
             {/* editor content */}
           <Outlet />
         </div>
-        <div class="drawer-side">
+        <div class="drawer-side bg-[#f9fbfa]">
           <label for="editor-nav" class="drawer-overlay"></label>
           <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
             {editResumeSidebar}
