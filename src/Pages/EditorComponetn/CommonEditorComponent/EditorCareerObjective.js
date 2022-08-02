@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import EditorComponent from "./EditorComponent";
 
 const EditorCareerObjective = () => {
@@ -6,6 +7,8 @@ const EditorCareerObjective = () => {
   const getValue = (value) => {
     setValue(value);
   };
+
+  const navigate = useNavigate()
 
   return (
     <div className="bg-[#f4f7f8] py-6">
@@ -29,6 +32,7 @@ const EditorCareerObjective = () => {
       </div>
       <div className="flex items-center justify-center gap-10 mt-12 mb-3">
         <a
+        onClick={()=> navigate("/resume-builder/languages")}
           href="#_"
           class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group md:px-24 px-10 text-lg"
         >

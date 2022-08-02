@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Reference = () => {
+    const navigate = useNavigate()
     return (
         <div className=" bg-[#f4f7f8] lg:mr-7  p-10">
         <div className="w-[70%] mx-auto">
@@ -63,6 +65,7 @@ const Reference = () => {
               />
               <div className="flex justify-center gap-10 mt-6">
                 <a
+                onClick={() => navigate("/resume-builder/reference/should_add_reference")}
                   href="#_"
                   class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group md:px-24 px-10 text-lg"
                 >
