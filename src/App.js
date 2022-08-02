@@ -1,5 +1,4 @@
 import { Toaster } from "react-hot-toast";
-import MessengerCustomerChat from "react-messenger-customer-chat";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Login from "./Components/Navbar/Login";
@@ -15,10 +14,13 @@ import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
+import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
+import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
 import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
 import EditorCareerObjective from "./Pages/EditorComponetn/CommonEditorComponent/EditorCareerObjective";
 import Education from "./Pages/EditorComponetn/CommonEditorComponent/Education";
 import Experience from "./Pages/EditorComponetn/CommonEditorComponent/Experience";
+import Languages from "./Pages/EditorComponetn/CommonEditorComponent/Languages";
 import Reference from "./Pages/EditorComponetn/CommonEditorComponent/Reference";
 import ShouldAddReference from "./Pages/EditorComponetn/CommonEditorComponent/ShouldAddReference";
 import Start from "./Pages/EditorComponetn/CommonEditorComponent/Start";
@@ -34,11 +36,14 @@ function App() {
   return (
     <div>
       <Routes>
+        {/* Nested Routing for Templates Section of our Homepage */}
         <Route path="/" element={<Home />}>
           <Route index element={<Resume />}></Route>
           <Route path="cv" element={<Cv />}></Route>
           <Route path="coverLetter" element={<CoverLetter />}></Route>
         </Route>
+        {/* End of Nested Routing for Templates Section of our Homepage */}
+
         <Route path="/home" element={<Home />}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/login" element={<Login />}></Route>
@@ -57,24 +62,22 @@ function App() {
         <Route path="resumeTemplate" element={<ResumeTemplate />}></Route>
         <Route path="/coverLatter" element={<CoverLatterTemplate />}></Route>
 
-        {/* Resume route */}
-        <Route path="/resume-builder/how-to-start" element={<Start />}/>
+        {/* Resume Editor route */}
+        <Route path="/resume-builder/how-to-start" element={<Start />}></Route>
         <Route path="/resume-builder" element={<EditResume />}>
           <Route path="editor-contact" element={<ContactDetails />}></Route>
-          <Route path="editor-experience" element={<Experience />}></Route>
-          <Route path="editor-education" element={<Education />}></Route>
+          <Route path="editor-experience" element={<Experience/>}></Route>
+          <Route path="editor-education" element={<Education/>}></Route>
+          <Route path="certifications" element={<Certifications />}></Route>
+          <Route path="additional-skills" element={<AdditionalSkills />}></Route>
+          <Route path="languages" element={<Languages />}></Route>
           <Route path="career-objective" element={<EditorCareerObjective/>}></Route>
           <Route path="reference/should_add_reference" element={<ShouldAddReference/>}></Route>
-          <Route path="reference" element={<Reference/>}></Route>
+          <Route path="reference"element={<Reference/>}></Route>
         </Route>
       </Routes>
-
       <Footer />
       <Toaster />
-      <MessengerCustomerChat
-        pageId="105555438910537"
-        appId="1225310258009219"
-      />
     </div>
   );
 }

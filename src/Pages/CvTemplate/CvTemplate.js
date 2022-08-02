@@ -19,9 +19,9 @@ const CvTemplate = () => {
                 <h1 class="text-2xl md:text-5xl text-center font-bold my-8">Online CV Maker</h1>
                 <TemplateBanner/>
                 {/* Cv section */}
-                <div className='w-3/4 mx-auto'>
+                <div className='2xl:w-3/4 mx-auto'>
                     <h1 className='text-xl md:text-4xl text-center font-bold px-12 md:px-0 mt-24 pb-24'>Create a CV online. First, select a template:</h1>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mx-8">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:mx-16">
                         <Cv></Cv>
                     </div>
                 </div>
