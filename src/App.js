@@ -26,6 +26,8 @@ import Footer from "./Shared/Footer/Footer";
 import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
 import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
 import Languages from "./Pages/EditorComponetn/CommonEditorComponent/Languages";
+import Experience from "./Pages/EditorComponetn/CommonEditorComponent/Experience";
+import Education from "./Pages/EditorComponetn/CommonEditorComponent/Education";
 
 function App() {
   return (
@@ -62,8 +64,13 @@ function App() {
         <Route path="/resume-builder" element={<EditResume />}>
           <Route path="editor-contact" element={<ContactDetails />}></Route>
           <Route path="certifications" element={<Certifications />}></Route>
-          <Route path="additional-skills" element={<AdditionalSkills />}></Route>
+          <Route
+            path="additional-skills"
+            element={<AdditionalSkills />}
+          ></Route>
           <Route path="languages" element={<Languages />}></Route>
+          <Route path="editor-experience" element={<Experience />}></Route>
+          <Route path="editor-education" element={<Education />}></Route>
         </Route>
       </Routes>
       <Footer />
