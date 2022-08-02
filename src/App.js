@@ -19,6 +19,7 @@ import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/Contac
 import EditorCareerObjective from "./Pages/EditorComponetn/CommonEditorComponent/EditorCareerObjective";
 import Education from "./Pages/EditorComponetn/CommonEditorComponent/Education";
 import Experience from "./Pages/EditorComponetn/CommonEditorComponent/Experience";
+import Reference from "./Pages/EditorComponetn/CommonEditorComponent/Reference";
 import ShouldAddReference from "./Pages/EditorComponetn/CommonEditorComponent/ShouldAddReference";
 import Start from "./Pages/EditorComponetn/CommonEditorComponent/Start";
 import EditResume from "./Pages/EditorComponetn/EditResume";
@@ -64,6 +65,7 @@ function App() {
           <Route path="editor-education" element={<Education />}></Route>
           <Route path="career-objective" element={<EditorCareerObjective/>}></Route>
           <Route path="reference/should_add_reference" element={<ShouldAddReference/>}></Route>
+          <Route path="reference" element={<Reference/>}></Route>
         </Route>
       </Routes>
 
