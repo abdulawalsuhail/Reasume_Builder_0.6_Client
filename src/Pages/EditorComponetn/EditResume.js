@@ -37,6 +37,14 @@ const EditResume = () => {
           Career Objective
         </Link>
       </li>
+      <li className=" hover:text-white rounded-md">
+        <Link
+          className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2"
+          to="/resume-builder/reference/should_add_reference"
+        >
+          Reference
+        </Link>
+      </li>
     </>
   );
   return (
