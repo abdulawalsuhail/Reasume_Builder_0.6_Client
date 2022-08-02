@@ -66,14 +66,25 @@ function App() {
         <Route path="/resume-builder/how-to-start" element={<Start />}></Route>
         <Route path="/resume-builder" element={<EditResume />}>
           <Route path="editor-contact" element={<ContactDetails />}></Route>
-          <Route path="editor-experience" element={<Experience/>}></Route>
-          <Route path="editor-education" element={<Education/>}></Route>
+          <Route path="editor-experience" element={<Experience />}></Route>
+          <Route path="editor-education" element={<Education />}></Route>
           <Route path="certifications" element={<Certifications />}></Route>
-          <Route path="additional-skills" element={<AdditionalSkills />}></Route>
+          <Route
+            path="additional-skills"
+            element={<AdditionalSkills />}
+          ></Route>
           <Route path="languages" element={<Languages />}></Route>
-          <Route path="career-objective" element={<EditorCareerObjective/>}></Route>
-          <Route path="reference/should_add_reference" element={<ShouldAddReference/>}></Route>
-          <Route path="reference"element={<Reference/>}></Route>
+          <Route path="editor-experience" element={<Experience />}></Route>
+          <Route path="editor-education" element={<Education />}></Route>
+          <Route
+            path="career-objective"
+            element={<EditorCareerObjective />}
+          ></Route>
+          <Route
+            path="reference/should_add_reference"
+            element={<ShouldAddReference />}
+          ></Route>
+          <Route path="reference" element={<Reference />}></Route>
         </Route>
       </Routes>
       <Footer />
