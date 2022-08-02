@@ -1,16 +1,17 @@
 import React, { useState } from "react";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { toast } from "react-hot-toast";
+import { Link } from "react-router-dom";
+import whyWe from "../../../src/assets/why-we.jpg";
 import icon2 from "../../assets/icon/handshake.png";
 import icon3 from "../../assets/icon/hto-deal.png";
 import icon1 from "../../assets/icon/saving.png";
-import whyWe from "../../../src/assets/why-we.jpg";
 import "../../Css/login.css";
-import { toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
-import Social from "./Social";
 import auth from "../../firebase.init";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import Alert from "./Alert";
 import Loading from "../../Shared/Loading/Loading";
+import Alert from "./Alert";
+import Navbar from "./Navbar";
+import Social from "./Social";
 
 const Signup = () => {
   const [customError, setCustomError] = useState("");
@@ -34,7 +35,9 @@ const Signup = () => {
     return <Loading />;
   }
   return (
-    <section className="text-white bg-gray-900 relative">
+   <div>
+    <Navbar/>
+     <section className="text-white bg-gray-900 relative">
       <img
         class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25 sm:opacity-100"
         src={whyWe}
@@ -170,6 +173,7 @@ const Signup = () => {
         </div>
       </div>
     </section>
+   </div>
   );
 };
 
