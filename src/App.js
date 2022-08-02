@@ -1,4 +1,5 @@
 import { Toaster } from "react-hot-toast";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Login from "./Components/Navbar/Login";
@@ -16,9 +17,10 @@ import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
 import EditorCareerObjective from "./Pages/EditorComponetn/CommonEditorComponent/EditorCareerObjective";
+import Education from "./Pages/EditorComponetn/CommonEditorComponent/Education";
+import Experience from "./Pages/EditorComponetn/CommonEditorComponent/Experience";
 import Start from "./Pages/EditorComponetn/CommonEditorComponent/Start";
 import EditResume from "./Pages/EditorComponetn/EditResume";
-import Business from "./Pages/Home/Business/Business";
 import CoverLetter from "./Pages/Home/Templates/CoverLetter";
 import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
@@ -56,14 +58,19 @@ function App() {
         {/* Resume route */}
         <Route path="/resume-builder/how-to-start" element={<Start />}/>
         <Route path="/resume-builder" element={<EditResume />}>
-          <Route path="editor-contact" element={<ContactDetails />}/>
-          <Route path="career-objective" element={<EditorCareerObjective/>}/>
+          <Route path="editor-contact" element={<ContactDetails />}></Route>
+          <Route path="editor-experience" element={<Experience />}></Route>
+          <Route path="editor-education" element={<Education />}></Route>
+          <Route path="career-objective" element={<EditorCareerObjective/>}></Route>
         </Route>
       </Routes>
 
-      <Business />
       <Footer />
       <Toaster />
+      <MessengerCustomerChat
+        pageId="105555438910537"
+        appId="1225310258009219"
+      />
     </div>
   );
 }

@@ -14,6 +14,7 @@ import "./styles.css";
 import { EffectCards } from "swiper";
 import demo1 from "../../../assets/demo1.png";
 import demo2 from "../../../assets/demo2.png";
+import { Link } from "react-router-dom";
 
 const hero = () => {
   return (
@@ -54,12 +55,12 @@ const hero = () => {
             data-aos-duration="3000"
             className="flex  gap-4 mt-8 text-center"
           >
-            <a
+            <Link
               className="block w-full px-12 py-3 text-sm font-medium bg-sky-600 border border-sky-600 text-white rounded sm:w-auto hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150"
-              href="/get-started"
+              to="/resume-builder"
             >
               Get Started
-            </a>
+            </Link>
 
             <a
               className="block w-full px-12 py-3 text-sm font-medium bg-white text-sky-600 border border-white rounded sm:w-auto hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150"

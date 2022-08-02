@@ -16,8 +16,8 @@ const config2 = {
   askBeforePasteFromWord: false,
   minHeight: 400,
   maxHeight: 400,
-  minWidth: 400,
-  maxWidth: 400,
+  minWidth: null,
+  maxWidth:null,
   buttons:
     "bold,italic,underline,fontsize,undo,redo",
   editorCssClass: "alic",
