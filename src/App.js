@@ -14,7 +14,15 @@ import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
+import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
+import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
 import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
+import EditorCareerObjective from "./Pages/EditorComponetn/CommonEditorComponent/EditorCareerObjective";
+import Education from "./Pages/EditorComponetn/CommonEditorComponent/Education";
+import Experience from "./Pages/EditorComponetn/CommonEditorComponent/Experience";
+import Languages from "./Pages/EditorComponetn/CommonEditorComponent/Languages";
+import Reference from "./Pages/EditorComponetn/CommonEditorComponent/Reference";
+import ShouldAddReference from "./Pages/EditorComponetn/CommonEditorComponent/ShouldAddReference";
 import Start from "./Pages/EditorComponetn/CommonEditorComponent/Start";
 import EditResume from "./Pages/EditorComponetn/EditResume";
 import CoverLetter from "./Pages/Home/Templates/CoverLetter";
@@ -23,9 +31,6 @@ import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 import Footer from "./Shared/Footer/Footer";
-import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
-import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
-import Languages from "./Pages/EditorComponetn/CommonEditorComponent/Languages";
 
 function App() {
   return (
@@ -61,9 +66,14 @@ function App() {
         <Route path="/resume-builder/how-to-start" element={<Start />}></Route>
         <Route path="/resume-builder" element={<EditResume />}>
           <Route path="editor-contact" element={<ContactDetails />}></Route>
+          <Route path="editor-experience" element={<Experience/>}></Route>
+          <Route path="editor-education" element={<Education/>}></Route>
           <Route path="certifications" element={<Certifications />}></Route>
           <Route path="additional-skills" element={<AdditionalSkills />}></Route>
           <Route path="languages" element={<Languages />}></Route>
+          <Route path="career-objective" element={<EditorCareerObjective/>}></Route>
+          <Route path="reference/should_add_reference" element={<ShouldAddReference/>}></Route>
+          <Route path="reference"element={<Reference/>}></Route>
         </Route>
       </Routes>
       <Footer />

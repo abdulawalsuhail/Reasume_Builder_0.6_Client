@@ -1,5 +1,5 @@
 import { signOut } from "firebase/auth";
-import React, { useState } from "react";
+import React from "react";
 import toast from "react-hot-toast";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -7,14 +7,12 @@ import logo from "../../../assets/logo.png";
 import auth from "../../../firebase.init";
 
 const EditorNavbar = () => {
-  const [toggle, setToggle] = useState(false);
-  console.log(toggle);
+  
   return (
     <div class="navbar bg-[#f4f7f8]">
       <div class="flex-none">
         <label for="editor-nav" class=" drawer-button lg:hidden">
           <AiOutlineMenu
-            onClick={() => setToggle(!false)}
             className="text-4xl"
           />
         </label>
