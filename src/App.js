@@ -17,7 +17,6 @@ import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
 import Start from "./Pages/EditorComponetn/CommonEditorComponent/Start";
 import EditResume from "./Pages/EditorComponetn/EditResume";
-import Business from "./Pages/Home/Business/Business";
 import CoverLetter from "./Pages/Home/Templates/CoverLetter";
 import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
@@ -39,7 +38,7 @@ function App() {
           <Route path="coverLetter" element={<CoverLetter />}></Route>
         </Route>
         {/* End of Nested Routing for Templates Section of our Homepage */}
-        
+
         <Route path="/home" element={<Home />}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/login" element={<Login />}></Route>
@@ -63,12 +62,10 @@ function App() {
         <Route path="/resume-builder" element={<EditResume />}>
           <Route path="editor-contact" element={<ContactDetails />}></Route>
           <Route path="certifications" element={<Certifications />}></Route>
-          <Route path="additional-skills" element={<AdditionalSkills/>}></Route>
-          <Route path="languages" element={<Languages/>}></Route>
+          <Route path="additional-skills" element={<AdditionalSkills />}></Route>
+          <Route path="languages" element={<Languages />}></Route>
         </Route>
       </Routes>
-
-      <Business />
       <Footer />
       <Toaster />
     </div>
