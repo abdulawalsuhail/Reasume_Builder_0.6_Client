@@ -28,6 +28,45 @@ const EditResume = () => {
         >
           Education
         </Link>
+      </li><li className=" hover:text-white rounded-md">
+        <Link
+          className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2"
+          to="/resume-builder/certifications"
+        >
+          Certifications
+        </Link>
+      </li>
+      <li className=" hover:text-white rounded-md">
+        <Link
+          className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2"
+          to="/resume-builder/additional-skills"
+        >
+          Additional Skills
+        </Link>
+      </li>
+      <li className=" hover:text-white rounded-md">
+        <Link
+          className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2"
+          to="/resume-builder/languages"
+        >
+          Languages
+        </Link>
+      </li>
+      <li className=" hover:text-white rounded-md">
+        <Link
+          className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2"
+          to="/resume-builder/career-objective"
+        >
+          Career Objective
+        </Link>
+      </li>
+      <li className=" hover:text-white rounded-md">
+        <Link
+          className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2"
+          to="/resume-builder/reference/should_add_reference"
+        >
+          Reference
+        </Link>
       </li>
     </>
   );
@@ -40,7 +79,7 @@ const EditResume = () => {
           {/* editor content */}
           <Outlet />
         </div>
-        <div class="drawer-side">
+        <div class="drawer-side bg-[#f9fbfa]">
           <label for="editor-nav" class="drawer-overlay"></label>
           <ul class="menu p-4 overflow-y-auto w-64 bg-base-100 text-base-content">
             {editResumeSidebar}

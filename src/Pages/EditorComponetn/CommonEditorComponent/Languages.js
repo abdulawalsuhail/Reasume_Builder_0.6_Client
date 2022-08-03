@@ -31,7 +31,7 @@ const Languages = () => {
                     </div>
                     <div>
                         <h1 className='text-2xl my-3'>How to set Languages</h1>
-                        <p className='text-justify'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates necessitatibus eius magnam qui eaque adipisci, facere asperiores laboriosam quae suscipit.</p>
+                        <p className='text-justify'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates necessitatibus eius magnam qui eaque adipisci, facere asperiores laboriosam quae suscipit sub.</p>
                     </div>
                 </div>
             </div>
