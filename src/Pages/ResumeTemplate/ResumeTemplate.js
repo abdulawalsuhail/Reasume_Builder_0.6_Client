@@ -15,7 +15,7 @@ const ResumeTemplate = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='md:pt-6 text-gray-700'>
+            <div className='md:pt-12 text-gray-700'>
                 <h1 class="text-2xl md:text-5xl font-bold ml-12 my-8 text-center">Online Resume Maker</h1>
                 <TemplateBanner/>
                 {/* Cv section */}
