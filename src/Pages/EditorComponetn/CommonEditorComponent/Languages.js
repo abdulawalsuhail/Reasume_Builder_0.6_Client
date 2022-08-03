@@ -16,7 +16,6 @@ const Languages = () => {
         newNode.setAttribute('type','text');
         newNode.setAttribute('placeholder', 'Languages');
         newNode.setAttribute('name', `languages_${number}`);
-        console.log(newNode);
 
         let parentFrom = document.getElementById('languageId');
         parentFrom.appendChild(newNode)

@@ -15,7 +15,6 @@ const AdditionalSkills = () => {
         newNode.setAttribute('type','text');
         newNode.setAttribute('placeholder', 'Skills');
         newNode.setAttribute('name', `skills_${number}`);
-        console.log(newNode);
 
         let parentFrom = document.getElementById('skillsId');
         parentFrom.appendChild(newNode)

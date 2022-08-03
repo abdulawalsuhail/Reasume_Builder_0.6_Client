@@ -16,8 +16,7 @@ const Certifications = () => {
         newNode.setAttribute('type','text');
         newNode.setAttribute('placeholder', 'License/Certificate');
         newNode.setAttribute('name', `certificate_${number}`);
-        console.log(newNode);
-
+        
         let parentFrom = document.getElementById('certificateId');
         parentFrom.appendChild(newNode)
     }
