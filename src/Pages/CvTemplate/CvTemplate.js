@@ -10,12 +10,13 @@ import DragDrop from '../CommonTemplateSections/DragDrop';
 import ContentSuggestions from '../CommonTemplateSections/ContentSuggestions';
 import GenerateDoc from '../CommonTemplateSections/GenerateDoc';
 import ImportDoc from '../CommonTemplateSections/ImportDoc';
+import Footer from '../../Shared/Footer/Footer';
 
 const CvTemplate = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='md:py-12 text-gray-700'>
+            <div className='md:pt-12 text-gray-700'>
                 <h1 class="text-2xl md:text-5xl text-center font-bold my-8">Online CV Maker</h1>
                 <TemplateBanner/>
                 {/* Cv section */}
@@ -48,6 +49,8 @@ const CvTemplate = () => {
                 {/* Import your old CV or LinkedIn profile */}
                 <ImportDoc/>
             </div>
+            {/* Footer section */}
+                <Footer/>
         </div>
     );
 };
