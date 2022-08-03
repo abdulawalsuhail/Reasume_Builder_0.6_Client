@@ -2,8 +2,10 @@ import React from "react";
 import EditorNavbar from "./EditorNavbar";
 import imgtwo from "../../../assets/start2.png";
 import imgone from "../../../assets/start1.png";
+import { useNavigate } from "react-router-dom";
 
 const Start = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <EditorNavbar></EditorNavbar>
@@ -13,7 +15,7 @@ const Start = () => {
       <div className=" flex    flex-col md:flex-row   justify-center items-center gap-5 	 py-8  ">
        
       
-        <div class=" card   border-2 rounded-xl border-red-500    shadow-2xl bg-base-100 hover:drop-shadow-[0_20px_15px_rgba(65,105,144,.6)]   ">
+        <div onClick={()=> navigate('/resume-builder/editor-contact')} class=" card   border-2 rounded-xl border-red-500    shadow-2xl bg-base-100 hover:drop-shadow-[0_20px_15px_rgba(65,105,144,.6)]   ">
           
             <img src={imgtwo} className="w-[500px] " alt="Shoes"  />
         
@@ -23,7 +25,7 @@ const Start = () => {
             <p className="text-center text-bold mb-5">We'll guide you through each resume section!</p>
        
         </div>
-        <div class=" card    shadow-2xl bg-base-100  hover:drop-shadow-[0_20px_15px_rgba(65,105,144,.6)] hover:border-2 rounded-1xl border-red-500   ">
+        <div onClick={() => navigate('/resume-builder/drag-and-drop-file')} class=" card    shadow-2xl bg-base-100  hover:drop-shadow-[0_20px_15px_rgba(65,105,144,.6)] hover:border-2 rounded-1xl border-red-500   ">
           
             <img src={imgone} className="w-[500px] " alt="Shoes" />
         

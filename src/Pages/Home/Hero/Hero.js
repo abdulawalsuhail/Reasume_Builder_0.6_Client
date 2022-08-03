@@ -57,7 +57,7 @@ const hero = () => {
           >
             <Link
               className="block w-full px-12 py-3 text-sm font-medium bg-sky-600 border border-sky-600 text-white rounded sm:w-auto hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150"
-              to="/resume-builder"
+              to="/resume-builder/how-to-start"
             >
               Get Started
             </Link>
