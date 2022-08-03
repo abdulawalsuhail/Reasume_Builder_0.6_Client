@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
+import Footer from '../../Shared/Footer/Footer';
 import ContentSuggestions from '../CommonTemplateSections/ContentSuggestions';
 import DownloadSteps from '../CommonTemplateSections/DownloadSteps';
 import DragDrop from '../CommonTemplateSections/DragDrop';
@@ -47,6 +48,8 @@ const ResumeTemplate = () => {
                 {/* Import your old CV or LinkedIn profile */}
                 <ImportDoc/>
             </div>
+            {/* Footer section */}
+            <Footer/>
         </div>
     );
 };

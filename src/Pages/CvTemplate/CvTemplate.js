@@ -10,6 +10,7 @@ import DragDrop from '../CommonTemplateSections/DragDrop';
 import ContentSuggestions from '../CommonTemplateSections/ContentSuggestions';
 import GenerateDoc from '../CommonTemplateSections/GenerateDoc';
 import ImportDoc from '../CommonTemplateSections/ImportDoc';
+import Footer from '../../Shared/Footer/Footer';
 
 const CvTemplate = () => {
     return (
@@ -48,6 +49,8 @@ const CvTemplate = () => {
                 {/* Import your old CV or LinkedIn profile */}
                 <ImportDoc/>
             </div>
+            {/* Footer section */}
+                <Footer/>
         </div>
     );
 };
