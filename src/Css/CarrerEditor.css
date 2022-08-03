@@ -1,0 +1,7 @@
+.jodit-status-bar {
+  display: none;
+}
+.jodit-container:not(.jodit_inline) .jodit-wysiwyg {
+  background-color: #fff;
+  color: gray;
+}
