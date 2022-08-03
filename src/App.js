@@ -30,7 +30,6 @@ import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
-import Footer from "./Shared/Footer/Footer";
 import DragAndDropFile from "./Pages/EditorComponetn/CommonEditorComponent/DragAndDropFile";
 
 function App() {
@@ -65,7 +64,10 @@ function App() {
 
         {/* Resume Editor route */}
         <Route path="/resume-builder/how-to-start" element={<Start />}></Route>
-        <Route path="/resume-builder/drag-and-drop-file" element={<DragAndDropFile />}></Route>
+        <Route
+          path="/resume-builder/drag-and-drop-file"
+          element={<DragAndDropFile />}
+        ></Route>
         <Route path="/resume-builder" element={<EditResume />}>
           <Route path="editor-contact" element={<ContactDetails />}></Route>
           <Route path="editor-experience" element={<Experience />}></Route>
