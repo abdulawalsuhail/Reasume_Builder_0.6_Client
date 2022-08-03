@@ -89,7 +89,7 @@ function App() {
           <Route path="reference" element={<Reference />}></Route>
         </Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
       <Toaster />
     </div>
   );
