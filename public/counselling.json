@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "name": "Professional Resume",
+    "title": "Written by a resume expert",
+    "desc": "Together with you, we will write the perfect resume! Using your experiences and strengths, we collaborate to build an adaptable resume tailored to your specific career. We then show you how to independently use the resume for an efficient and effective job search.",
+    "picture": "https://i.ibb.co/fv8k3sq/resume-writing.png"
+  },
+  {
+    "id": "2",
+    "name": "LinkedIn Profile",
+    "title": "Written and review by a career counselor",
+    "desc": "LinkedIn is the most important professional network out there. 93% of all recruiters check candidates on LinkedIn before inviting for an interview. Over a call, we will ensure your LinkedIn summary, header, experience, and overall profile are perfect. We also provide tactics to ensure you’re getting noticed by the right people.",
+    "picture": "https://i.ibb.co/HFJPG0h/linkedin-revamp.png"
+  },
+  {
+    "id": "3",
+    "name": "Cover Letter",
+    "title": "Written by a career counselor",
+    "desc": "A good cover letter can do miracles; give a taste of your personality to a dry application process. Over a Google Meet, we will write for you an appealing, personal, and professional cover letter - showcasing who you are. No limit on iterations or number of calls with our experts.",
+    "picture": "https://i.ibb.co/DWfMJ8k/cover-letter-writing.png"
+  },
+  {
+    "id": "4",
+    "name": "Resume Builder Pro",
+    "title": "Use all PRO features of our platform",
+    "desc": "We’ve built an entire digital platform to support you throughout the hiring process. The Pro subscription gives you access to all of it, including: resume builder, cover letter builder, application manager, job matcher, and tons of content.",
+    "picture": "https://i.ibb.co/3M6MXBR/pro-sub.png"
+  },
+  {
+    "id": "5",
+    "name": "Unlimited Access",
+    "title": "With your personal counselor",
+    "desc": "You get one career counselor, who stays with you throughout the entire process. this means they know and understand your previous careers, personal brand, strong points, and future goals. This will ensure producing coherent image throughout the entire hiring process.",
+    "picture": "https://i.ibb.co/L0Ty7PJ/unlimited.png"
+  },
+  {
+    "id": "6",
+    "name": "Interview Prep",
+    "title": "Role research, mock interview, full written feedback, tech giants specifics",
+    "desc": "Interviewing is the most crucial part of the hiring process. We create a mock interview tailored to your requirements then we provide strategic feedback on how to present your strengths. Our aim is to ensure you walk into the interview feeling confident and in control.",
+    "picture": "https://i.ibb.co/kJ5kgpN/interview-prep.png"
+  },
+  {
+    "id": "6",
+    "name": "Long-term Support",
+    "title": "During your entire job search",
+    "desc": "With Executive Plus we are there until you get hired! We will provide support, strategy and direction, up to 3-months, to ensure you are applying effectively, interviewing with confidence and searching in the right direction",
+    "picture": "https://i.ibb.co/chcxTJ9/no-time-limit.png"
+  },
+  {
+    "id": "7",
+    "name": "Top priority",
+    "title": "Response within 24 hours",
+    "desc": "Your career counselor is available every business day, for calls, reviews, and iterations. Over email or call, at your convenience.",
+    "picture": "https://i.ibb.co/BttxybV/personal-counselor.png"
+  }
+]

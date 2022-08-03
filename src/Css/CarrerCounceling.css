@@ -1,0 +1,4 @@
+.no-scroll::-webkit-scrollbar {
+  background: transparent; /* Chrome/Safari/Webkit */
+  width: 0px;
+}

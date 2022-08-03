@@ -1,20 +1,24 @@
 import React from "react";
+import Navbar from "../../Components/Navbar/Navbar";
+import Business from "./Business/Business";
 import Guideline from "./Guideline/Guideline";
 import Hero from "./Hero/Hero";
-import ResumeTemplate from "./ResumeTemplate/ResumeTemplate";
 import Review from "./Review/Review";
+import Templates from "./Templates/Templates";
 import WhyResumeBuilder from "./WhyResumeBuilder/WhyResumeBuilder";
 import WriteResume from "./WriteResume/WriteResume";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-[#f4f7f8]">
+      <Navbar />
       <Hero />
       <WriteResume />
       <WhyResumeBuilder />
-      <ResumeTemplate />
-      <Guideline/>
+      <Templates />
+      <Guideline />
       <Review />
+      <Business />
     </div>
   );
 };
