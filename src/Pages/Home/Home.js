@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Shared/Footer/Footer";
 import Business from "./Business/Business";
 import Guideline from "./Guideline/Guideline";
 import Hero from "./Hero/Hero";
@@ -19,6 +20,7 @@ const Home = () => {
       <Guideline />
       <Review />
       <Business />
+      <Footer/>
     </div>
   );
 };
