@@ -4,9 +4,10 @@ import axiosFetch from "../Pages/Api/axiosFetch";
 const useToken = (user) => {
   const [token, setToken] = useState("");
  
-  const email = user?.currentUser?.email;
-  console.log(email);
+  
+ 
   useEffect(() => {
+    const email = user?.currentUser?.email;
     const currentUser = { email: email };
 
     if (email) {
