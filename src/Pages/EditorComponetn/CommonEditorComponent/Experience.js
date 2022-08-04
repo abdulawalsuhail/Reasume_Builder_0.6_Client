@@ -1,7 +1,32 @@
 import React from "react";
+import { useOutletContext } from "react-router-dom";
 import experienceImage from "../../../assets/experince.png";
 
 const Experience = () => {
+
+  
+  const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
+  // Get input field values and store values at str
+  let str = {
+    experiencesDetails:[]
+  };// store input values
+  
+  const getValue = () => {
+    str.experiencesDetails = []
+    str.experiencesDetails.push({ jobTitle: `${document.getElementById('jobTitle')?.value}` })
+    str.experiencesDetails.push({ companyName: `${document.getElementById('companyName')?.value}` })
+    str.experiencesDetails.push({ country: `${document.getElementById('country')?.value}` })
+    str.experiencesDetails.push({ state: `${document.getElementById('state')?.value}` })
+    str.experiencesDetails.push({ city: `${document.getElementById('city')?.value}` })
+    str.experiencesDetails.push({ startMonth: `${document.getElementById('startMonth')?.value}` })
+    str.experiencesDetails.push({ startYear: `${document.getElementById('startYear')?.value}` })
+    str.experiencesDetails.push({ endMonth: `${document.getElementById('endMonth')?.value}` })
+    str.experiencesDetails.push({ endYear: `${document.getElementById('endYear')?.value}` })
+
+    setUsersTemplateInfo([...usersTemplateInfo, str])
+    console.log(str);
+  }
+
   return (
     <div className=" bg-[#f4f7f8] lg:mr-7 rounded-2xl my-5">
       <div className="md:px-16 px-7 py-10 grid lg:grid-cols-12 lg:gap-5 ">
@@ -17,14 +42,14 @@ const Experience = () => {
             <input
               type="text"
               placeholder="Job title"
-              name="jobTitle"
+              id="jobTitle"
               class="input h-14 border-1 border-gray-200 focus:outline-none w-full my-4"
             />
             {/* company name */}
             <input
               type="text"
               placeholder="Company/Organization Name"
-              name="companyName"
+              id="companyName"
               class="input h-14 border-1 border-gray-200 focus:outline-none w-full mb-4"
             />
             {/* country, state, city */}
@@ -32,19 +57,19 @@ const Experience = () => {
               <input
                 type="text"
                 placeholder="Country"
-                name="country"
+                id="country"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="State"
-                name="State"
+                id="state"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="City"
-                name="city"
+                id="city"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
             </div>
@@ -54,25 +79,25 @@ const Experience = () => {
               <input
                 type="text"
                 placeholder="Start Month"
-                name="StartMonth"
+                id="startMonth"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="Start Year"
-                name="startYear"
+                id="startYear"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="End month"
-                name="endMonth"
+                id="endMonth"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="End Year"
-                name="endYear"
+                id="endYear"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
             </div>
@@ -91,6 +116,7 @@ const Experience = () => {
                 </span>
               </a>
               <a
+                onClick={getValue}
                 href="#_"
                 class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-green-500 rounded-xl group md:px-24 px-10 text-lg"
               >

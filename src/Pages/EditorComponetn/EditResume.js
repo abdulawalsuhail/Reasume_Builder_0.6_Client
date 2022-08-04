@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import EditorNavbar from "./CommonEditorComponent/EditorNavbar";
 
 const EditResume = () => {
+  const [usersTemplateInfo, setUsersTemplateInfo] = useState([]);
   const editResumeSidebar = (
     <>
       <li className=" hover:text-white rounded-md">
@@ -77,7 +78,7 @@ const EditResume = () => {
         <input id="editor-nav" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content flex flex-col  ">
           {/* editor content */}
-          <Outlet />
+          <Outlet context={[usersTemplateInfo, setUsersTemplateInfo]}/>
         </div>
         <div class="drawer-side bg-[#f9fbfa]">
           <label for="editor-nav" class="drawer-overlay"></label>
