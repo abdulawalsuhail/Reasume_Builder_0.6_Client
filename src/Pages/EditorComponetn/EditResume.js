@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import EditorNavbar from "./CommonEditorComponent/EditorNavbar";
 
-const EditResume = () => {
+const  EditResume = () => {
   const editResumeSidebar = (
     <>
       <li className=" hover:text-white rounded-md">

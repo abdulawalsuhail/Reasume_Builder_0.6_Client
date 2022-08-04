@@ -2,7 +2,26 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Reference = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate()
+  
+    // Get input field values and store values at str
+    let str = {
+      referenceDetails:[]
+    };// store input values
+    
+    const getValue = () => {
+      str.referenceDetails = []
+      str.referenceDetails.push({ firstName: `${document.getElementById('firstName')?.value}` })
+      str.referenceDetails.push({ lastName: `${document.getElementById('lastName')?.value}` })
+      str.referenceDetails.push({ jobTitle: `${document.getElementById('jobTitle')?.value}` })
+      str.referenceDetails.push({ email: `${document.getElementById('email')?.value}` })
+      str.referenceDetails.push({ phone: `${document.getElementById('phone')?.value}` })
+      str.referenceDetails.push({ city: `${document.getElementById('city')?.value}` })
+      str.referenceDetails.push({ relationship: `${document.getElementById('relationship')?.value}` })
+
+      console.log(str);
+    }
+    
     return (
         <div className=" bg-[#f4f7f8] lg:mr-7  p-10">
         <div className="w-[70%] mx-auto">
@@ -16,13 +35,13 @@ const Reference = () => {
                 <input
                   type="text"
                   placeholder="First Name"
-                  name="firstName"
+                  id="firstName"
                   class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
                 />
                 <input
                   type="text"
                   placeholder="Last Name"
-                  name="lastName"
+                  id="lastName"
                   class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
                 />
               </div>
@@ -30,14 +49,14 @@ const Reference = () => {
               <input
                 type="text"
                 placeholder="Job title"
-                name="jobTitle"
+                id="jobTitle"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full my-4"
               />
               {/* phone */}
               <input
                 type="text"
                 placeholder="Email"
-                name="jobTitle"
+                id="email"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full my-4"
               />
   
@@ -46,13 +65,13 @@ const Reference = () => {
                 <input
                   type="text"
                   placeholder="Phone"
-                  name="phone"
+                  id="phone"
                   class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
                 />
                 <input
                   type="text"
                   placeholder="company/organization name"
-                  name="city"
+                  id="city"
                   class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
                 />
               </div>
@@ -60,7 +79,7 @@ const Reference = () => {
               <input
                 type="text"
                 placeholder="Relationship To you"
-                name="Email"
+                id="relationship"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full my-4"
               />
               <div className="flex justify-center gap-10 mt-6">
@@ -78,6 +97,7 @@ const Reference = () => {
                   </span>
                 </a>
                 <a
+                  onClick={getValue}
                   href="#_"
                   class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-green-500 rounded-xl group md:px-24 px-10 text-lg"
                 >

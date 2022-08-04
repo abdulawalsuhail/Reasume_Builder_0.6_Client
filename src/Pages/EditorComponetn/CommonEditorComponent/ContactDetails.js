@@ -2,6 +2,26 @@ import React from "react";
 import contactImage from "../../../assets/contact.png";
 
 const ContactDetails = () => {
+
+  // Get input field values and store values at str
+  let str = {
+    contactDetails:[]
+  };// store input values
+  
+  const getValue = () => {
+    str.contactDetails = []
+    str.contactDetails.push({ firstName: `${document.getElementById('firstName')?.value}` })
+    str.contactDetails.push({ lastName: `${document.getElementById('lastName')?.value}` })
+    str.contactDetails.push({ jobTitle: `${document.getElementById('jobTitle')?.value}` })
+    str.contactDetails.push({ phoneNo: `${document.getElementById('phoneNo')?.value}` })
+    str.contactDetails.push({ country: `${document.getElementById('country')?.value}` })
+    str.contactDetails.push({ city: `${document.getElementById('city')?.value}` })
+    str.contactDetails.push({ state: `${document.getElementById('state')?.value}` })
+    str.contactDetails.push({ zipCode: `${document.getElementById('zipCode')?.value}` })
+    str.contactDetails.push({ email: `${document.getElementById('email')?.value}` })
+    console.log(str);
+  }
+
   return (
     <div className=" bg-[#f4f7f8] lg:mr-7 rounded-2xl my-5">
       <div className="md:px-16 px-7 py-10 grid lg:grid-cols-12 lg:gap-5 ">
@@ -18,13 +38,13 @@ const ContactDetails = () => {
               <input
                 type="text"
                 placeholder="First Name"
-                name="firstName"
+               id="firstName"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="Last Name"
-                name="lastName"
+               id="lastName"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
             </div>
@@ -32,14 +52,14 @@ const ContactDetails = () => {
             <input
               type="text"
               placeholder="Job title"
-              name="jobTitle"
+             id="jobTitle"
               class="input h-14 border-1 border-gray-200 focus:outline-none w-full my-4"
             />
             {/* phone */}
             <input
               type="text"
-              placeholder="Job title"
-              name="jobTitle"
+              placeholder="Phone No"
+             id="phoneNo"
               class="input h-14 border-1 border-gray-200 focus:outline-none w-full my-4"
             />
 
@@ -48,25 +68,25 @@ const ContactDetails = () => {
               <input
                 type="text"
                 placeholder="Country"
-                name="country"
+               id="country"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="City"
-                name="city"
+               id="city"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="State"
-                name="state"
+               id="state"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="Zip Code"
-                name="zipCode"
+               id="zipCode"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
             </div>
@@ -74,7 +94,7 @@ const ContactDetails = () => {
             <input
               type="text"
               placeholder="Email"
-              name="Email"
+             id="Email"
               class="input h-14 border-1 border-gray-200 focus:outline-none w-full my-4"
             />
             <div className="flex justify-between">
@@ -91,6 +111,7 @@ const ContactDetails = () => {
                 </span>
               </a>
               <a
+                onClick={getValue}
                 href="#_"
                 class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-green-500 rounded-xl group md:px-24 px-10 text-lg"
               >
