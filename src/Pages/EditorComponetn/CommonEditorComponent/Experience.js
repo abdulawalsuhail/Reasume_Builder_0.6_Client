@@ -1,5 +1,5 @@
 import React from "react";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import experienceImage from "../../../assets/experince.png";
 
 const Experience = () => {
@@ -10,6 +10,8 @@ const Experience = () => {
   let str = {
     experiencesDetails:[]
   };// store input values
+
+  const navigate = useNavigate();
   
   const getValue = () => {
     str.experiencesDetails = []
@@ -24,6 +26,7 @@ const Experience = () => {
     str.experiencesDetails.push({ endYear: `${document.getElementById('endYear')?.value}` })
 
     setUsersTemplateInfo([...usersTemplateInfo, str])
+    navigate('/resume-builder/editor-education');
     console.log(str);
   }
 
@@ -104,6 +107,7 @@ const Experience = () => {
 
             <div className="flex justify-between mt-10">
               <a
+                onClick={()=>navigate("/resume-builder/editor-contact")}
                 href="#_"
                 class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group md:px-24 px-10 text-lg"
               >

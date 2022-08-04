@@ -21,6 +21,7 @@ const Reference = () => {
       str.referenceDetails.push({ relationship: `${document.getElementById('relationship')?.value}` })
 
       setUsersTemplateInfo([...usersTemplateInfo, str])
+      navigate('/template1');
       console.log(str);
     }
     

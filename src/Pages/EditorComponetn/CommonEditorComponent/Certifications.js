@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
-import { useOutletContext } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import img1 from '../../../assets/certificationInstruction.png'
 
 const Certifications = () => {
     const [number, setNumber] = useState(2);
     const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
+    const navigate = useNavigate();
     // make dynamic input field
     function addNewCertification() {
         setNumber(number + 1);
@@ -37,6 +38,7 @@ const Certifications = () => {
         }
         setUsersTemplateInfo([...usersTemplateInfo, str])
         console.log(usersTemplateInfo); 
+        navigate('/resume-builder/additional-skills');
     }
     console.log(usersTemplateInfo); 
 
@@ -63,7 +65,7 @@ const Certifications = () => {
                     {/* button */}
                     <div className='flex justify-center'>
                         <div className='w-[80%] flex justify-around items-center mt-10'>
-                            <button className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Back</button>
+                            <button onClick={()=>navigate('/resume-builder/editor-education')} className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Back</button>
                             <button onClick={getValue} className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Continue</button>
                         </div>
                     </div>
