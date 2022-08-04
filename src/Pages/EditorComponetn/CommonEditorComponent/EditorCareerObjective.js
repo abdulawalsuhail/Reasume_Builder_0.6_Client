@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import EditorComponent from "./EditorComponent";
 
 const EditorCareerObjective = () => {
+  const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
   const [editorValue, setEditorValue] = useState("");
   const getCustomEditorValue = (editorValue) => {
     setEditorValue(editorValue);
@@ -14,6 +15,8 @@ const EditorCareerObjective = () => {
   const getValue = () => {
     // console.log(editorValue);
     str.careerObjectives = editorValue;
+    
+    setUsersTemplateInfo([...usersTemplateInfo, str])
     console.log(str);
   }
 

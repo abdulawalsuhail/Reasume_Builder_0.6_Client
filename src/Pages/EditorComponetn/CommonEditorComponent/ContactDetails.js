@@ -1,8 +1,10 @@
 import React from "react";
+import { useOutletContext } from "react-router-dom";
 import contactImage from "../../../assets/contact.png";
 
 const ContactDetails = () => {
 
+  const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
   // Get input field values and store values at str
   let str = {
     contactDetails:[]
@@ -19,7 +21,9 @@ const ContactDetails = () => {
     str.contactDetails.push({ state: `${document.getElementById('state')?.value}` })
     str.contactDetails.push({ zipCode: `${document.getElementById('zipCode')?.value}` })
     str.contactDetails.push({ email: `${document.getElementById('email')?.value}` })
-    console.log(str);
+
+    setUsersTemplateInfo([...usersTemplateInfo, str])
+    console.log(usersTemplateInfo);
   }
 
   return (

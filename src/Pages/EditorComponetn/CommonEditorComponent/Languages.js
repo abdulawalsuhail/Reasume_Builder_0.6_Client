@@ -1,9 +1,11 @@
 import React from 'react';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+import { useOutletContext } from 'react-router-dom';
 import img1 from '../../../assets/language.webp'
 
 const Languages = () => {
     let number = 2;
+    const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
 
     function addNewLanguage() {
         number++;
@@ -33,6 +35,8 @@ const Languages = () => {
         for (let e of languages) {
             str.value.push(e.value);
         }
+
+        setUsersTemplateInfo([...usersTemplateInfo, str])
         console.log(str); 
     }
 

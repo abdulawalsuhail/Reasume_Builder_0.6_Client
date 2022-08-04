@@ -1,8 +1,11 @@
 import React from 'react';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+import { useOutletContext } from 'react-router-dom';
 import img1 from '../../../assets/additionalSkills.png'
 const AdditionalSkills = () => {
     let number = 2;
+    
+    const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
 
     function addNewSkills() {
         number++;
@@ -33,8 +36,11 @@ const AdditionalSkills = () => {
         for (let e of skills) {
             str.value.push(e.value);
         }
-        console.log(str); 
+
+        setUsersTemplateInfo([...usersTemplateInfo, str])
+        console.log(usersTemplateInfo); 
     }
+    console.log(usersTemplateInfo);
 
     return (
         <div className='px-12 py-12 bg-[#f4f7f8]'>

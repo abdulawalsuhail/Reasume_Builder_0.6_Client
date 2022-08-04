@@ -1,7 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 
 const Reference = () => {
+  const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
   const navigate = useNavigate()
   
     // Get input field values and store values at str
@@ -19,6 +20,7 @@ const Reference = () => {
       str.referenceDetails.push({ city: `${document.getElementById('city')?.value}` })
       str.referenceDetails.push({ relationship: `${document.getElementById('relationship')?.value}` })
 
+      setUsersTemplateInfo([...usersTemplateInfo, str])
       console.log(str);
     }
     

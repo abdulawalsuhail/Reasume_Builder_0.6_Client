@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+import { useOutletContext } from 'react-router-dom';
 import img1 from '../../../assets/certificationInstruction.png'
 
 const Certifications = () => {
     const [number, setNumber] = useState(2);
-
+    const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
     // make dynamic input field
     function addNewCertification() {
         setNumber(number + 1);
@@ -34,8 +35,10 @@ const Certifications = () => {
         for (let e of certifications) {
             str.value.push(e.value);
         }
-        console.log(str); 
+        setUsersTemplateInfo([...usersTemplateInfo, str])
+        console.log(usersTemplateInfo); 
     }
+    console.log(usersTemplateInfo); 
 
     
     return (

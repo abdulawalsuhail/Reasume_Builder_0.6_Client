@@ -1,8 +1,10 @@
 import React from "react";
+import { useOutletContext } from "react-router-dom";
 import educationImage from "../../../assets/education.png";
 
 const Education = () => {
 
+  const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
   // Get input field values and store values at str
   let str = {
     educationDetails:[]
@@ -16,6 +18,8 @@ const Education = () => {
     str.educationDetails.push({ city: `${document.getElementById('city')?.value}` })
     str.educationDetails.push({ graduationMonth: `${document.getElementById('graduationMonth')?.value}` })
     str.educationDetails.push({ graduationYear: `${document.getElementById('graduationYear')?.value}` })
+    
+    setUsersTemplateInfo([...usersTemplateInfo, str])
     console.log(str);
   }
 
