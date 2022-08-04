@@ -1,11 +1,12 @@
 import React from 'react';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
-import { useOutletContext } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import img1 from '../../../assets/language.webp'
 
 const Languages = () => {
     let number = 2;
     const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
+    const navigate = useNavigate();
 
     function addNewLanguage() {
         number++;
@@ -37,6 +38,7 @@ const Languages = () => {
         }
 
         setUsersTemplateInfo([...usersTemplateInfo, str])
+        navigate("/resume-builder/career-objective");
         console.log(str); 
     }
 
@@ -62,7 +64,7 @@ const Languages = () => {
                     {/* button */}
                     <div className='flex justify-center'>
                         <div className='w-[80%] flex justify-around items-center mt-10'>
-                            <button className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Back</button>
+                            <button onClick={()=>navigate('/resume-builder/additional-skills')} className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Back</button>
                             <button onClick={getValue} className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Continue</button>
                         </div>
                     </div>

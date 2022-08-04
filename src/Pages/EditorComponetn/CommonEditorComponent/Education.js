@@ -1,15 +1,16 @@
 import React from "react";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import educationImage from "../../../assets/education.png";
 
 const Education = () => {
 
   const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
+  const navigate = useNavigate();
   // Get input field values and store values at str
   let str = {
     educationDetails:[]
   };// store input values
-  
+
   const getValue = () => {
     str.educationDetails = []
     str.educationDetails.push({ schoolName: `${document.getElementById('schoolName')?.value}` })
@@ -20,6 +21,7 @@ const Education = () => {
     str.educationDetails.push({ graduationYear: `${document.getElementById('graduationYear')?.value}` })
     
     setUsersTemplateInfo([...usersTemplateInfo, str])
+    navigate('/resume-builder/certifications');
     console.log(str);
   }
 
@@ -82,6 +84,7 @@ const Education = () => {
 
             <div className="flex justify-between mt-10 mb-3">
               <a
+                onClick={()=> navigate('/resume-builder/editor-experience')}
                 href="#_"
                 class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group md:px-24 px-10 text-lg"
               >

@@ -1,5 +1,5 @@
 import React from "react";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import contactImage from "../../../assets/contact.png";
 
 const ContactDetails = () => {
@@ -9,6 +9,7 @@ const ContactDetails = () => {
   let str = {
     contactDetails:[]
   };// store input values
+  const navigate = useNavigate();
   
   const getValue = () => {
     str.contactDetails = []
@@ -21,9 +22,9 @@ const ContactDetails = () => {
     str.contactDetails.push({ state: `${document.getElementById('state')?.value}` })
     str.contactDetails.push({ zipCode: `${document.getElementById('zipCode')?.value}` })
     str.contactDetails.push({ email: `${document.getElementById('email')?.value}` })
-
+    navigate('/resume-builder/editor-experience');
     setUsersTemplateInfo([...usersTemplateInfo, str])
-    console.log(usersTemplateInfo);
+    
   }
 
   return (

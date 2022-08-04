@@ -92,6 +92,7 @@ function App() {
           ></Route>
           <Route path="reference" element={<Reference />}></Route>
         </Route>
+        <Route path="template1" element={<Template1/>}></Route>
       </Routes>
       {/* <Footer /> */}
       <Toaster />

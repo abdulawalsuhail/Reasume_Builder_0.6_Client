@@ -17,6 +17,7 @@ const EditorCareerObjective = () => {
     str.careerObjectives = editorValue;
     
     setUsersTemplateInfo([...usersTemplateInfo, str])
+    navigate('/resume-builder/reference/should_add_reference');
     console.log(str);
   }
 
