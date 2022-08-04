@@ -1,8 +1,11 @@
 import React from 'react';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+import { useOutletContext } from 'react-router-dom';
 import img1 from '../../../assets/additionalSkills.png'
 const AdditionalSkills = () => {
     let number = 2;
+    
+    const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
 
     function addNewSkills() {
         number++;
@@ -12,6 +15,7 @@ const AdditionalSkills = () => {
         newNode.classList.add('w-full');
         newNode.classList.add('mb-4');
         newNode.classList.add('h-14');
+        newNode.classList.add('skills');
         newNode.setAttribute('type','text');
         newNode.setAttribute('placeholder', 'Skills');
         newNode.setAttribute('name', `skills_${number}`);
@@ -20,18 +24,36 @@ const AdditionalSkills = () => {
         parentFrom.appendChild(newNode)
     }
 
+
+    // Get input field values and store
+    let str = {
+            name: "Skills",
+            value: []
+    };// store input values
+    const getValue = () => {
+        str.value = [];
+        const skills = document.getElementsByClassName("skills");
+        for (let e of skills) {
+            str.value.push(e.value);
+        }
+
+        setUsersTemplateInfo([...usersTemplateInfo, str])
+        console.log(usersTemplateInfo); 
+    }
+    console.log(usersTemplateInfo);
+
     return (
         <div className='px-12 py-12 bg-[#f4f7f8]'>
             <div className='flex'>
                 {/* input section */}
                 <div className="w-[100%] md:w-[70%] text-center">
-                    <h1 className='text-accent text-xl md:text-4xl font-bold'>Do you have any licenses or certifications?</h1>
-                    <p className='text-slate-500 text-xs md:text-lg mt-2'>Enter your licenses or certifications one at a time.</p>
+                    <h1 className='text-accent text-xl md:text-4xl font-bold'>Do you have any additional skills?</h1>
+                    <p className='text-slate-500 text-xs md:text-lg mt-2'>Enter your Skills one at a time.</p>
                     <div className='flex justify-center'>
                         <form id='skillsId' className='mt-12 w-[100%] md:w-[80%]'>
-                            <input name='skills_1' type="text" placeholder="Skills" class="input input-bordered w-full mb-4 h-14" /><br />
-                            <input name='skills_2' type="text" placeholder="Skills" class="input input-bordered w-full mb-4 h-14" /><br />
-                            <input name='skills_3' type="text" placeholder="Skills" class="input input-bordered w-full mb-4 h-14" />
+                            <input name='skills_1' type="text" placeholder="Skills" class="input input-bordered w-full mb-4 h-14 skills" /><br />
+                            <input name='skills_2' type="text" placeholder="Skills" class="input input-bordered w-full mb-4 h-14 skills" /><br />
+                            <input name='skills_3' type="text" placeholder="Skills" class="input input-bordered w-full mb-4 h-14 skills" />
                         </form>
                     </div>
                     {/* add extra input field dynamically */}
@@ -43,7 +65,7 @@ const AdditionalSkills = () => {
                     <div className='flex justify-center'>
                         <div className='w-[80%] flex justify-around items-center mt-10'>
                             <button className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Back</button>
-                            <button className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Continue</button>
+                            <button onClick={getValue} className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Continue</button>
                         </div>
                     </div>
                 </div>

@@ -17,6 +17,7 @@ import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
 import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
 import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
+import DragAndDropFile from "./Pages/EditorComponetn/CommonEditorComponent/DragAndDropFile";
 import EditorCareerObjective from "./Pages/EditorComponetn/CommonEditorComponent/EditorCareerObjective";
 import Education from "./Pages/EditorComponetn/CommonEditorComponent/Education";
 import Experience from "./Pages/EditorComponetn/CommonEditorComponent/Experience";
@@ -24,13 +25,13 @@ import Languages from "./Pages/EditorComponetn/CommonEditorComponent/Languages";
 import Reference from "./Pages/EditorComponetn/CommonEditorComponent/Reference";
 import ShouldAddReference from "./Pages/EditorComponetn/CommonEditorComponent/ShouldAddReference";
 import Start from "./Pages/EditorComponetn/CommonEditorComponent/Start";
+import Template1 from "./Pages/EditorComponetn/DummyTemplate/Template1";
 import EditResume from "./Pages/EditorComponetn/EditResume";
 import CoverLetter from "./Pages/Home/Templates/CoverLetter";
 import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
-import DragAndDropFile from "./Pages/EditorComponetn/CommonEditorComponent/DragAndDropFile";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
         <Route path="/coverLatter" element={<CoverLatterTemplate />}></Route>
 
         {/* Resume Editor route */}
+        <Route path="/final-resume"element={<Template1/>}></Route>
         <Route path="/resume-builder/how-to-start" element={<Start />}></Route>
         <Route
           path="/resume-builder/drag-and-drop-file"
