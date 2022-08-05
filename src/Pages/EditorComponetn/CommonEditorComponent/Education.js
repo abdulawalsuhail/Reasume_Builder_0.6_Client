@@ -7,6 +7,7 @@ const Education = () => {
   const navigate = useNavigate();
   // Get input field values and store values at str
   let str = {
+<<<<<<< HEAD
     educationDetails: [],
   }; // store input values
 
@@ -33,6 +34,23 @@ const Education = () => {
 
     setUsersTemplateInfo([...usersTemplateInfo, str]);
     navigate("/resume-builder/certifications");
+=======
+    name:"educationDetails",
+    value:[]
+  };// store input values
+
+  const getValue = () => {
+    str.value = []
+    str.value.push({ schoolName: `${document.getElementById('schoolName')?.value}` })
+    str.value.push({ country: `${document.getElementById('country')?.value}` })
+    str.value.push({ state: `${document.getElementById('state')?.value}` })
+    str.value.push({ city: `${document.getElementById('city')?.value}` })
+    str.value.push({ graduationMonth: `${document.getElementById('graduationMonth')?.value}` })
+    str.value.push({ graduationYear: `${document.getElementById('graduationYear')?.value}` })
+    
+    setUsersTemplateInfo([...usersTemplateInfo, str])
+    navigate('/resume-builder/certifications');
+>>>>>>> 0036ebdbb66cb842e8975035d7f648a9c9ecda1b
     console.log(str);
   };
 

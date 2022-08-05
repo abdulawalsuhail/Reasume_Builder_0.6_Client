@@ -11,6 +11,7 @@ const EditorCareerObjective = () => {
 
   const navigate = useNavigate();
 
+<<<<<<< HEAD
   let str = {};
   const getValue = () => {
     // console.log(editorValue);
@@ -18,6 +19,19 @@ const EditorCareerObjective = () => {
 
     setUsersTemplateInfo([...usersTemplateInfo, str]);
     navigate("/resume-builder/reference/should_add_reference");
+=======
+  let str = {
+    name: "careerObjectives",
+    value:[]
+  }
+  const getValue = () => {
+    // console.log(editorValue);
+    str.value = [];
+    str.value.push(editorValue);
+    
+    setUsersTemplateInfo([...usersTemplateInfo, str])
+    navigate('/resume-builder/reference/should_add_reference');
+>>>>>>> 0036ebdbb66cb842e8975035d7f648a9c9ecda1b
     console.log(str);
   };
 

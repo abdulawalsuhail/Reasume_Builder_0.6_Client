@@ -6,10 +6,30 @@ const Experience = () => {
   const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
   // Get input field values and store values at str
   let str = {
+<<<<<<< HEAD
     experiencesDetails: [],
   }; // store input values
 
   const navigate = useNavigate();
+=======
+    name:"experiencesDetails",
+    value:[]
+  };// store input values
+
+  const navigate = useNavigate();
+  
+  const getValue = () => {
+    str.value = []
+    str.value.push({ jobTitle: `${document.getElementById('jobTitle')?.value}` })
+    str.value.push({ companyName: `${document.getElementById('companyName')?.value}` })
+    str.value.push({ country: `${document.getElementById('country')?.value}` })
+    str.value.push({ state: `${document.getElementById('state')?.value}` })
+    str.value.push({ city: `${document.getElementById('city')?.value}` })
+    str.value.push({ startMonth: `${document.getElementById('startMonth')?.value}` })
+    str.value.push({ startYear: `${document.getElementById('startYear')?.value}` })
+    str.value.push({ endMonth: `${document.getElementById('endMonth')?.value}` })
+    str.value.push({ endYear: `${document.getElementById('endYear')?.value}` })
+>>>>>>> 0036ebdbb66cb842e8975035d7f648a9c9ecda1b
 
   const getValue = () => {
     str.experiencesDetails = [];

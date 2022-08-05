@@ -4,6 +4,7 @@ import "../../../Css/CarrerEditor.css";
 
 const Reference = () => {
   const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
+<<<<<<< HEAD
   const navigate = useNavigate();
 
   // Get input field values and store values at str
@@ -52,6 +53,55 @@ const Reference = () => {
           <form className="mx-auto">
             {/* first name last name */}
             <div className="grid md:grid-cols-2 gap-5">
+=======
+  const navigate = useNavigate()
+  
+    // Get input field values and store values at str
+  let str = {
+      name:"referenceDetails",
+      value:[]
+    };// store input values
+    
+    const getValue = () => {
+      str.value = []
+      str.value.push({ firstName: `${document.getElementById('firstName')?.value}` })
+      str.value.push({ lastName: `${document.getElementById('lastName')?.value}` })
+      str.value.push({ jobTitle: `${document.getElementById('jobTitle')?.value}` })
+      str.value.push({ email: `${document.getElementById('email')?.value}` })
+      str.value.push({ phone: `${document.getElementById('phone')?.value}` })
+      str.value.push({ city: `${document.getElementById('city')?.value}` })
+      str.value.push({ relationship: `${document.getElementById('relationship')?.value}` })
+
+      setUsersTemplateInfo([...usersTemplateInfo, str])
+      navigate('/resume-builder/template1');
+      console.log(str);
+    }
+    
+    return (
+        <div className=" bg-[#f4f7f8] lg:mr-7  p-10">
+        <div className="w-[70%] mx-auto">
+          {/* form div */}
+          <div className="lg:col-span-6 mx-auto">
+            <h3 className="text-4xl font-bold text-gray-700 mb-4">Add Reference</h3>
+            {/* input form */}
+            <form className='mx-auto'>
+              {/* first name last name */}
+              <div className="grid md:grid-cols-2 gap-5">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  id="firstName"
+                  class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  id="lastName"
+                  class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
+                />
+              </div>
+              {/* job title */}
+>>>>>>> 0036ebdbb66cb842e8975035d7f648a9c9ecda1b
               <input
                 type="text"
                 placeholder="First Name"
