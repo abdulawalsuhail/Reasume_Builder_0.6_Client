@@ -8,22 +8,23 @@ const Experience = () => {
   const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
   // Get input field values and store values at str
   let str = {
-    experiencesDetails:[]
+    name:"experiencesDetails",
+    value:[]
   };// store input values
 
   const navigate = useNavigate();
   
   const getValue = () => {
-    str.experiencesDetails = []
-    str.experiencesDetails.push({ jobTitle: `${document.getElementById('jobTitle')?.value}` })
-    str.experiencesDetails.push({ companyName: `${document.getElementById('companyName')?.value}` })
-    str.experiencesDetails.push({ country: `${document.getElementById('country')?.value}` })
-    str.experiencesDetails.push({ state: `${document.getElementById('state')?.value}` })
-    str.experiencesDetails.push({ city: `${document.getElementById('city')?.value}` })
-    str.experiencesDetails.push({ startMonth: `${document.getElementById('startMonth')?.value}` })
-    str.experiencesDetails.push({ startYear: `${document.getElementById('startYear')?.value}` })
-    str.experiencesDetails.push({ endMonth: `${document.getElementById('endMonth')?.value}` })
-    str.experiencesDetails.push({ endYear: `${document.getElementById('endYear')?.value}` })
+    str.value = []
+    str.value.push({ jobTitle: `${document.getElementById('jobTitle')?.value}` })
+    str.value.push({ companyName: `${document.getElementById('companyName')?.value}` })
+    str.value.push({ country: `${document.getElementById('country')?.value}` })
+    str.value.push({ state: `${document.getElementById('state')?.value}` })
+    str.value.push({ city: `${document.getElementById('city')?.value}` })
+    str.value.push({ startMonth: `${document.getElementById('startMonth')?.value}` })
+    str.value.push({ startYear: `${document.getElementById('startYear')?.value}` })
+    str.value.push({ endMonth: `${document.getElementById('endMonth')?.value}` })
+    str.value.push({ endYear: `${document.getElementById('endYear')?.value}` })
 
     setUsersTemplateInfo([...usersTemplateInfo, str])
     navigate('/resume-builder/editor-education');

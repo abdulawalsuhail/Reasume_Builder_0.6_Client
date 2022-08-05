@@ -29,7 +29,7 @@ const Start = () => {
         </div>
         <div
           onClick={() => navigate("/resume-builder/drag-and-drop-file")}
-          class=" card hover:shadow-2xl bg-base-100  rounded-1xl border-[1px] border-gray-300 hover:border-green-500 w-[464px] h-[360px] cursor-pointer"
+          class=" card hover:shadow-2xl bg-base-100  rounded-1xl border-[1px] border-gray-300 hover:border-green-500 w-[464px] h-[360px] cursor-pointergit "
         >
           <img src={imgone} alt="Shoes" />
 

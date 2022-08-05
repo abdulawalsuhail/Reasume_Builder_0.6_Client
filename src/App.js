@@ -25,14 +25,14 @@ import Languages from "./Pages/EditorComponetn/CommonEditorComponent/Languages";
 import Reference from "./Pages/EditorComponetn/CommonEditorComponent/Reference";
 import ShouldAddReference from "./Pages/EditorComponetn/CommonEditorComponent/ShouldAddReference";
 import Start from "./Pages/EditorComponetn/CommonEditorComponent/Start";
-import Template1 from "./Pages/EditorComponetn/DummyTemplate/Template1";
 import EditResume from "./Pages/EditorComponetn/EditResume";
 import CoverLetter from "./Pages/Home/Templates/CoverLetter";
 import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
-import Template2 from "./Pages/EditorComponetn/DummyTemplate/Template2";
+import Template1 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template1";
+import Template2 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template2";
 
 function App() {
   return (
@@ -81,8 +81,6 @@ function App() {
             element={<AdditionalSkills />}
           ></Route>
           <Route path="languages" element={<Languages />}></Route>
-          <Route path="editor-experience" element={<Experience />}></Route>
-          <Route path="editor-education" element={<Education />}></Route>
           <Route
             path="career-objective"
             element={<EditorCareerObjective />}
@@ -92,9 +90,9 @@ function App() {
             element={<ShouldAddReference />}
           ></Route>
           <Route path="reference" element={<Reference />}></Route>
+          <Route path="template1" element={<Template1 />}></Route>
+          <Route path="template2" element={<Template2 />}></Route>
         </Route>
-        <Route path="template1" element={<Template1 />}></Route>
-        <Route path="/template2" element={<Template2 />}></Route>
       </Routes>
       {/* <Footer /> */}
       <Toaster />
