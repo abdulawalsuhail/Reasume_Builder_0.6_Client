@@ -7,21 +7,22 @@ const ContactDetails = () => {
   const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
   // Get input field values and store values at str
   let str = {
-    contactDetails:[]
+    name: "contactDetails",
+    value:[]
   };// store input values
   const navigate = useNavigate();
   
   const getValue = () => {
-    str.contactDetails = []
-    str.contactDetails.push({ firstName: `${document.getElementById('firstName')?.value}` })
-    str.contactDetails.push({ lastName: `${document.getElementById('lastName')?.value}` })
-    str.contactDetails.push({ jobTitle: `${document.getElementById('jobTitle')?.value}` })
-    str.contactDetails.push({ phoneNo: `${document.getElementById('phoneNo')?.value}` })
-    str.contactDetails.push({ country: `${document.getElementById('country')?.value}` })
-    str.contactDetails.push({ city: `${document.getElementById('city')?.value}` })
-    str.contactDetails.push({ state: `${document.getElementById('state')?.value}` })
-    str.contactDetails.push({ zipCode: `${document.getElementById('zipCode')?.value}` })
-    str.contactDetails.push({ email: `${document.getElementById('email')?.value}` })
+    str.value = []
+    str.value.push({ firstName: `${document.getElementById('firstName')?.value}` })
+    str.value.push({ lastName: `${document.getElementById('lastName')?.value}` })
+    str.value.push({ jobTitle: `${document.getElementById('jobTitle')?.value}` })
+    str.value.push({ phoneNo: `${document.getElementById('phoneNo')?.value}` })
+    str.value.push({ country: `${document.getElementById('country')?.value}` })
+    str.value.push({ city: `${document.getElementById('city')?.value}` })
+    str.value.push({ state: `${document.getElementById('state')?.value}` })
+    str.value.push({ zipCode: `${document.getElementById('zipCode')?.value}` })
+    str.value.push({ email: `${document.getElementById('email')?.value}` })
     navigate('/resume-builder/editor-experience');
     setUsersTemplateInfo([...usersTemplateInfo, str])
     

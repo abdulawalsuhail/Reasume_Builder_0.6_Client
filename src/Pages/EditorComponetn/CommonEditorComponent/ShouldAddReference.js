@@ -31,7 +31,7 @@ const ShouldAddReference = () => {
               </span>
             </div>
             <div
-              onClick={() => navigate('/template1')}
+              onClick={() => navigate('/resume-builder/template1')}
               className="border-2 p-12 text-gray-500 hover:border-[#0ed592] hover:text-[#0ed592] ">
               <span>
                 <AiOutlineClose className="text-4xl " />
