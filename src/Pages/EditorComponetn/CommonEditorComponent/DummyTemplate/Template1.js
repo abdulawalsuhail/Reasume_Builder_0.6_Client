@@ -7,7 +7,7 @@ const Template1 = () => {
   return (
     <>
       <div>
-        <div className="w-[50%] bg-gray-100 mx-auto mt-6 p-6">
+        <div className=" sm:w-[100%] md:w-[50%] bg-gray-100 mx-auto mt-6 p-6">
           <div>
             <h1 contentEditable className="text-center  mx-auto text-4xl">
               [{
