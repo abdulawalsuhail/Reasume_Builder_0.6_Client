@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { useNavigate, useOutletContext } from 'react-router-dom';
-import img1 from '../../../assets/certificationInstruction.png'
+import img1 from '../../../assets/certificationInstruction.png';
 
 const Certifications = () => {
     const [number, setNumber] = useState(2);
@@ -65,8 +65,8 @@ const Certifications = () => {
                     {/* button */}
                     <div className='flex justify-center'>
                         <div className='w-[80%] flex justify-around items-center mt-10'>
-                            <button onClick={()=>navigate('/resume-builder/editor-education')} className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Back</button>
-                            <button onClick={getValue} className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Continue</button>
+                            <button onClick={()=>navigate('/resume-builder/editor-education')} className='relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-24 px-10 text-lg rounded-full border-[1px] border-solid border-gray-400 text-black'>Back</button>
+                            <button onClick={getValue} className='relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-24 px-10 text-lg rounded-full text-white hover:bg-[#3ba6d4]'>Continue</button>
                         </div>
                     </div>
                 </div>

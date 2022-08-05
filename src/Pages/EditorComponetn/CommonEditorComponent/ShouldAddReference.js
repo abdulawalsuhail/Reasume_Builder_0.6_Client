@@ -24,7 +24,7 @@ const ShouldAddReference = () => {
           <div className="flex gap-12">
             <div
               onClick={() => navigate("/resume-builder/reference/")}
-              className="border-2 p-12 text-gray-500 hover:border-[#0ed592] hover:text-[#0ed592]"
+              className="border-2 p-12 text-gray-500 hover:border-primary hover:text-primary"
             >
               <span>
                 <MdOutlineDone className="text-4xl " />
@@ -32,7 +32,7 @@ const ShouldAddReference = () => {
             </div>
             <div
               onClick={() => navigate('/template1')}
-              className="border-2 p-12 text-gray-500 hover:border-[#0ed592] hover:text-[#0ed592] ">
+              className="border-2 p-12 text-gray-500 hover:border-primary hover:text-primary ">
               <span>
                 <AiOutlineClose className="text-4xl " />
               </span>
