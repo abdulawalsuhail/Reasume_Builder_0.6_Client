@@ -1,9 +1,12 @@
 import React from 'react';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import img1 from '../../../assets/language.webp'
 
 const Languages = () => {
     let number = 2;
+    const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
+    const navigate = useNavigate();
 
     function addNewLanguage() {
         number++;
@@ -13,6 +16,7 @@ const Languages = () => {
         newNode.classList.add('w-full');
         newNode.classList.add('mb-4');
         newNode.classList.add('h-14');
+        newNode.classList.add('languages');
         newNode.setAttribute('type','text');
         newNode.setAttribute('placeholder', 'Languages');
         newNode.setAttribute('name', `languages_${number}`);
@@ -20,6 +24,24 @@ const Languages = () => {
         let parentFrom = document.getElementById('languageId');
         parentFrom.appendChild(newNode)
     }
+
+    // Get input field values and store
+    let str = {
+            name: "Languages",
+            value: []
+    };// store input values
+    const getValue = () => {
+        str.value = [];
+        const languages = document.getElementsByClassName("languages");
+        for (let e of languages) {
+            str.value.push(e.value);
+        }
+
+        setUsersTemplateInfo([...usersTemplateInfo, str])
+        navigate("/resume-builder/career-objective");
+        console.log(str); 
+    }
+
 
     return (
         <div className='px-12 py-12 bg-[#f4f7f8]'>
@@ -30,8 +52,8 @@ const Languages = () => {
                     <p className='text-slate-500 text-xs md:text-lg mt-2'>Please enter languages</p>
                     <div className='flex justify-center'>
                         <form id='languageId' className='mt-12 w-[100%] md:w-[80%]'>
-                            <input name='languages_1' type="text" placeholder="Language" class="input input-bordered w-full mb-4 h-14" /><br />
-                            <input name='languages_2' type="text" placeholder="Language" class="input input-bordered w-full mb-4 h-14" /><br />
+                            <input name='languages_1' type="text" placeholder="Language" class="input input-bordered w-full mb-4 h-14 languages" /><br />
+                            <input name='languages_2' type="text" placeholder="Language" class="input input-bordered w-full mb-4 h-14 languages" /><br />
                         </form>
                     </div>
                     {/* add extra input field dynamically */}
@@ -42,8 +64,8 @@ const Languages = () => {
                     {/* button */}
                     <div className='flex justify-center'>
                         <div className='w-[80%] flex justify-around items-center mt-10'>
-                            <button className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Back</button>
-                            <button className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Continue</button>
+                            <button onClick={()=>navigate('/resume-builder/additional-skills')} className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Back</button>
+                            <button onClick={getValue} className='text-white text-lg hover:bg-accent rounded-xl bg-secondary w-[100px] md:w-[250px] py-2 md:py-3'>Continue</button>
                         </div>
                     </div>
                 </div>

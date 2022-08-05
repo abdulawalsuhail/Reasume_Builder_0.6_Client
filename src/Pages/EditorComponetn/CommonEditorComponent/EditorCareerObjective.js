@@ -1,14 +1,25 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import EditorComponent from "./EditorComponent";
 
 const EditorCareerObjective = () => {
-  const [value, setValue] = useState("");
-  const getValue = (value) => {
-    setValue(value);
+  const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
+  const [editorValue, setEditorValue] = useState("");
+  const getCustomEditorValue = (editorValue) => {
+    setEditorValue(editorValue);
   };
 
   const navigate = useNavigate()
+
+  let str = {}
+  const getValue = () => {
+    // console.log(editorValue);
+    str.careerObjectives = editorValue;
+    
+    setUsersTemplateInfo([...usersTemplateInfo, str])
+    navigate('/resume-builder/reference/should_add_reference');
+    console.log(str);
+  }
 
   return (
     <div className="bg-[#f4f7f8] py-6">
@@ -28,7 +39,7 @@ const EditorCareerObjective = () => {
       </div>
 
       <div className="mx-10">
-        <EditorComponent initialValue="" getValue={getValue} />
+        <EditorComponent initialValue="" getValue={getCustomEditorValue} />
       </div>
       <div className="flex items-center justify-center gap-10 mt-12 mb-3">
         <a
@@ -45,6 +56,7 @@ const EditorCareerObjective = () => {
           </span>
         </a>
         <a
+          onClick={getValue}
           href="#_"
           class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-green-500 rounded-xl group md:px-24 px-10 text-lg"
         >

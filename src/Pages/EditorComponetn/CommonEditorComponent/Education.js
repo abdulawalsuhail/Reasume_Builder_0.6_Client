@@ -1,7 +1,30 @@
 import React from "react";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import educationImage from "../../../assets/education.png";
 
 const Education = () => {
+
+  const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
+  const navigate = useNavigate();
+  // Get input field values and store values at str
+  let str = {
+    educationDetails:[]
+  };// store input values
+
+  const getValue = () => {
+    str.educationDetails = []
+    str.educationDetails.push({ schoolName: `${document.getElementById('schoolName')?.value}` })
+    str.educationDetails.push({ country: `${document.getElementById('country')?.value}` })
+    str.educationDetails.push({ state: `${document.getElementById('state')?.value}` })
+    str.educationDetails.push({ city: `${document.getElementById('city')?.value}` })
+    str.educationDetails.push({ graduationMonth: `${document.getElementById('graduationMonth')?.value}` })
+    str.educationDetails.push({ graduationYear: `${document.getElementById('graduationYear')?.value}` })
+    
+    setUsersTemplateInfo([...usersTemplateInfo, str])
+    navigate('/resume-builder/certifications');
+    console.log(str);
+  }
+
   return (
     <div className=" bg-[#f4f7f8] lg:mr-7 rounded-2xl my-5">
       <div className="md:px-16 px-7 py-10 grid lg:grid-cols-12 lg:gap-10 ">
@@ -17,7 +40,7 @@ const Education = () => {
             <input
               type="text"
               placeholder="High school name"
-              name="schoolName"
+              id="schoolName"
               class="input h-14 border-1 border-gray-200 focus:outline-none w-full my-4"
             />
 
@@ -26,19 +49,19 @@ const Education = () => {
               <input
                 type="text"
                 placeholder="Country"
-                name="country"
+                id="country"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="State"
-                name="State"
+                id="state"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="City"
-                name="city"
+                id="city"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
             </div>
@@ -48,19 +71,20 @@ const Education = () => {
               <input
                 type="text"
                 placeholder="Graduation Month"
-                name="graduationMonth"
+                id="graduationMonth"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
               <input
                 type="text"
                 placeholder="Graduation Year"
-                name="graduationYear"
+                id="graduationYear"
                 class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
               />
             </div>
 
             <div className="flex justify-between mt-10 mb-3">
               <a
+                onClick={()=> navigate('/resume-builder/editor-experience')}
                 href="#_"
                 class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group md:px-24 px-10 text-lg"
               >
@@ -73,6 +97,7 @@ const Education = () => {
                 </span>
               </a>
               <a
+                onClick={getValue}
                 href="#_"
                 class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-green-500 rounded-xl group md:px-24 px-10 text-lg"
               >
