@@ -1,5 +1,5 @@
 import React from "react";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import experienceImage from "../../../assets/experince.png";
 
 const Experience = () => {
@@ -8,22 +8,26 @@ const Experience = () => {
   const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
   // Get input field values and store values at str
   let str = {
-    experiencesDetails:[]
+    name:"experiencesDetails",
+    value:[]
   };// store input values
+
+  const navigate = useNavigate();
   
   const getValue = () => {
-    str.experiencesDetails = []
-    str.experiencesDetails.push({ jobTitle: `${document.getElementById('jobTitle')?.value}` })
-    str.experiencesDetails.push({ companyName: `${document.getElementById('companyName')?.value}` })
-    str.experiencesDetails.push({ country: `${document.getElementById('country')?.value}` })
-    str.experiencesDetails.push({ state: `${document.getElementById('state')?.value}` })
-    str.experiencesDetails.push({ city: `${document.getElementById('city')?.value}` })
-    str.experiencesDetails.push({ startMonth: `${document.getElementById('startMonth')?.value}` })
-    str.experiencesDetails.push({ startYear: `${document.getElementById('startYear')?.value}` })
-    str.experiencesDetails.push({ endMonth: `${document.getElementById('endMonth')?.value}` })
-    str.experiencesDetails.push({ endYear: `${document.getElementById('endYear')?.value}` })
+    str.value = []
+    str.value.push({ jobTitle: `${document.getElementById('jobTitle')?.value}` })
+    str.value.push({ companyName: `${document.getElementById('companyName')?.value}` })
+    str.value.push({ country: `${document.getElementById('country')?.value}` })
+    str.value.push({ state: `${document.getElementById('state')?.value}` })
+    str.value.push({ city: `${document.getElementById('city')?.value}` })
+    str.value.push({ startMonth: `${document.getElementById('startMonth')?.value}` })
+    str.value.push({ startYear: `${document.getElementById('startYear')?.value}` })
+    str.value.push({ endMonth: `${document.getElementById('endMonth')?.value}` })
+    str.value.push({ endYear: `${document.getElementById('endYear')?.value}` })
 
     setUsersTemplateInfo([...usersTemplateInfo, str])
+    navigate('/resume-builder/editor-education');
     console.log(str);
   }
 
@@ -104,6 +108,7 @@ const Experience = () => {
 
             <div className="flex justify-between mt-10">
               <a
+                onClick={()=>navigate("/resume-builder/editor-contact")}
                 href="#_"
                 class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group md:px-24 px-10 text-lg"
               >

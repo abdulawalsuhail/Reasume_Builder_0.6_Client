@@ -11,12 +11,17 @@ const EditorCareerObjective = () => {
 
   const navigate = useNavigate()
 
-  let str = {}
+  let str = {
+    name: "careerObjectives",
+    value:[]
+  }
   const getValue = () => {
     // console.log(editorValue);
-    str.careerObjectives = editorValue;
+    str.value = [];
+    str.value.push(editorValue);
     
     setUsersTemplateInfo([...usersTemplateInfo, str])
+    navigate('/resume-builder/reference/should_add_reference');
     console.log(str);
   }
 

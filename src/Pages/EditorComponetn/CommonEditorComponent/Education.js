@@ -1,25 +1,28 @@
 import React from "react";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import educationImage from "../../../assets/education.png";
 
 const Education = () => {
 
   const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
+  const navigate = useNavigate();
   // Get input field values and store values at str
   let str = {
-    educationDetails:[]
+    name:"educationDetails",
+    value:[]
   };// store input values
-  
+
   const getValue = () => {
-    str.educationDetails = []
-    str.educationDetails.push({ schoolName: `${document.getElementById('schoolName')?.value}` })
-    str.educationDetails.push({ country: `${document.getElementById('country')?.value}` })
-    str.educationDetails.push({ state: `${document.getElementById('state')?.value}` })
-    str.educationDetails.push({ city: `${document.getElementById('city')?.value}` })
-    str.educationDetails.push({ graduationMonth: `${document.getElementById('graduationMonth')?.value}` })
-    str.educationDetails.push({ graduationYear: `${document.getElementById('graduationYear')?.value}` })
+    str.value = []
+    str.value.push({ schoolName: `${document.getElementById('schoolName')?.value}` })
+    str.value.push({ country: `${document.getElementById('country')?.value}` })
+    str.value.push({ state: `${document.getElementById('state')?.value}` })
+    str.value.push({ city: `${document.getElementById('city')?.value}` })
+    str.value.push({ graduationMonth: `${document.getElementById('graduationMonth')?.value}` })
+    str.value.push({ graduationYear: `${document.getElementById('graduationYear')?.value}` })
     
     setUsersTemplateInfo([...usersTemplateInfo, str])
+    navigate('/resume-builder/certifications');
     console.log(str);
   }
 
@@ -82,6 +85,7 @@ const Education = () => {
 
             <div className="flex justify-between mt-10 mb-3">
               <a
+                onClick={()=> navigate('/resume-builder/editor-experience')}
                 href="#_"
                 class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group md:px-24 px-10 text-lg"
               >
