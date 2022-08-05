@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import EditorNavbar from "./CommonEditorComponent/EditorNavbar";
 
+
 const EditResume = () => {
   const [usersTemplateInfo, setUsersTemplateInfo] = useState([]);
+  console.log(usersTemplateInfo);
   const editResumeSidebar = (
     <>
       <li className=" hover:text-white rounded-md">
@@ -84,7 +86,10 @@ const EditResume = () => {
           <label for="editor-nav" class="drawer-overlay"></label>
           <ul class="menu p-4 overflow-y-auto w-64 bg-base-100 text-base-content">
             {editResumeSidebar}
+           {/*  */}
+          
           </ul>
+         
         </div>
       </div>
     </div>
