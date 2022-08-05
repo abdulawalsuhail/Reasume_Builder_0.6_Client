@@ -32,6 +32,7 @@ import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
+import Template2 from "./Pages/EditorComponetn/DummyTemplate/Template2";
 
 function App() {
   return (
@@ -64,7 +65,7 @@ function App() {
         <Route path="/coverLatter" element={<CoverLatterTemplate />}></Route>
 
         {/* Resume Editor route */}
-        <Route path="/final-resume"element={<Template1/>}></Route>
+        <Route path="/final-resume" element={<Template1 />}></Route>
         <Route path="/resume-builder/how-to-start" element={<Start />}></Route>
         <Route
           path="/resume-builder/drag-and-drop-file"
@@ -92,7 +93,8 @@ function App() {
           ></Route>
           <Route path="reference" element={<Reference />}></Route>
         </Route>
-        <Route path="template1" element={<Template1/>}></Route>
+        <Route path="template1" element={<Template1 />}></Route>
+        <Route path="/template2" element={<Template2 />}></Route>
       </Routes>
       {/* <Footer /> */}
       <Toaster />
