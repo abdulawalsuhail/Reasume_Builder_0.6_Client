@@ -6,22 +6,23 @@ const Reference = () => {
   const navigate = useNavigate()
   
     // Get input field values and store values at str
-    let str = {
-      referenceDetails:[]
+  let str = {
+      name:"referenceDetails",
+      value:[]
     };// store input values
     
     const getValue = () => {
-      str.referenceDetails = []
-      str.referenceDetails.push({ firstName: `${document.getElementById('firstName')?.value}` })
-      str.referenceDetails.push({ lastName: `${document.getElementById('lastName')?.value}` })
-      str.referenceDetails.push({ jobTitle: `${document.getElementById('jobTitle')?.value}` })
-      str.referenceDetails.push({ email: `${document.getElementById('email')?.value}` })
-      str.referenceDetails.push({ phone: `${document.getElementById('phone')?.value}` })
-      str.referenceDetails.push({ city: `${document.getElementById('city')?.value}` })
-      str.referenceDetails.push({ relationship: `${document.getElementById('relationship')?.value}` })
+      str.value = []
+      str.value.push({ firstName: `${document.getElementById('firstName')?.value}` })
+      str.value.push({ lastName: `${document.getElementById('lastName')?.value}` })
+      str.value.push({ jobTitle: `${document.getElementById('jobTitle')?.value}` })
+      str.value.push({ email: `${document.getElementById('email')?.value}` })
+      str.value.push({ phone: `${document.getElementById('phone')?.value}` })
+      str.value.push({ city: `${document.getElementById('city')?.value}` })
+      str.value.push({ relationship: `${document.getElementById('relationship')?.value}` })
 
       setUsersTemplateInfo([...usersTemplateInfo, str])
-      navigate('/template1');
+      navigate('/resume-builder/template1');
       console.log(str);
     }
     

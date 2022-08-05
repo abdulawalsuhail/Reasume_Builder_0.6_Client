@@ -8,17 +8,18 @@ const Education = () => {
   const navigate = useNavigate();
   // Get input field values and store values at str
   let str = {
-    educationDetails:[]
+    name:"educationDetails",
+    value:[]
   };// store input values
 
   const getValue = () => {
-    str.educationDetails = []
-    str.educationDetails.push({ schoolName: `${document.getElementById('schoolName')?.value}` })
-    str.educationDetails.push({ country: `${document.getElementById('country')?.value}` })
-    str.educationDetails.push({ state: `${document.getElementById('state')?.value}` })
-    str.educationDetails.push({ city: `${document.getElementById('city')?.value}` })
-    str.educationDetails.push({ graduationMonth: `${document.getElementById('graduationMonth')?.value}` })
-    str.educationDetails.push({ graduationYear: `${document.getElementById('graduationYear')?.value}` })
+    str.value = []
+    str.value.push({ schoolName: `${document.getElementById('schoolName')?.value}` })
+    str.value.push({ country: `${document.getElementById('country')?.value}` })
+    str.value.push({ state: `${document.getElementById('state')?.value}` })
+    str.value.push({ city: `${document.getElementById('city')?.value}` })
+    str.value.push({ graduationMonth: `${document.getElementById('graduationMonth')?.value}` })
+    str.value.push({ graduationYear: `${document.getElementById('graduationYear')?.value}` })
     
     setUsersTemplateInfo([...usersTemplateInfo, str])
     navigate('/resume-builder/certifications');
