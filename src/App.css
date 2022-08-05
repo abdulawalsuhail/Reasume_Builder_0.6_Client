@@ -23,6 +23,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.poppins-r{
+  font-family: poppins,sans-serif;
+font-weight: 500;
+font-style: normal;
+}
 
 .App-link {
   color: #61dafb;
