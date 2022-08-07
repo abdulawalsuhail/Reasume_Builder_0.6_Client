@@ -32,10 +32,10 @@ const hero = () => {
           <h1
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="text-3xl font-extrabold sm:text-5xl text-left"
+            className="text-3xl font-extrabold sm:text-5xl text-left poppins-b"
           >
             Build your brand-new resume in as
-            <span className="font-extrabold text-primary ">
+            <span className="font-extrabold text-primary  poppins-b">
               {" "}
               little as 5 minutes.
             </span>
@@ -44,7 +44,7 @@ const hero = () => {
           <p
             data-aos="fade-up"
             data-aos-duration="2000"
-            className="max-w-lg mt-4 text-left sm:text-xl"
+            className="max-w-lg text-md mt-4 text-left sm:text-xl text-gray-300"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
             quis cumque minus, officiis odio obcaecati!
