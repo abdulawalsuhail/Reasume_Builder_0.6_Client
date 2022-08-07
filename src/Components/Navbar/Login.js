@@ -17,13 +17,12 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
+  const [token] = useToken(user);
 
-    const [token] = useToken(user)
-   
-    const navigate = useNavigate()
-    if(token){
-      navigate('/')
-    }
+  const navigate = useNavigate();
+  if (token) {
+    navigate("/");
+  }
   const handelSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
