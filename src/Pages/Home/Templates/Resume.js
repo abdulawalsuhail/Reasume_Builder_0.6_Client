@@ -36,7 +36,7 @@ const Resume = () => {
           >
             <h1 className="mb-2 text-md text-accent mt-1">{tem.name}</h1>
             <img className="w-full" src={tem.image} alt="" />
-            {/* <Link to="/resume-builder/how-to-start"><a href='#' className='customButton  border p-2 border-0 hidden bg-accent text-white'>Edit Template</a></Link> */}
+
             <div
               style={{
                 position: "absolute",
