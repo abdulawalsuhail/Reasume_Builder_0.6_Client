@@ -23,7 +23,7 @@ const Start = () => {
             Create a New Resume
           </h2>
 
-          <p className="text-center text-[16px]  mb-5 mt-2 text-gray-500">
+          <p className="text-center text-[16px]  pb-5 mt-2 text-gray-500">
             We'll guide you through each resume section!
           </p>
         </div>
@@ -37,7 +37,7 @@ const Start = () => {
             Upload My Current Resume
           </h2>
 
-          <p className="text-center text-[16px]  mb-5 mt-2 text-gray-500">
+          <p className="text-center text-[16px]  pb-5 mt-2 text-gray-500">
             We'll guide you through each resume section!
           </p>
         </div>

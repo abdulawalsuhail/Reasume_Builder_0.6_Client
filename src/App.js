@@ -33,6 +33,7 @@ import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 import Template1 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template1";
 import Template2 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template2";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 
 function App() {
   return (
@@ -94,6 +95,11 @@ function App() {
           <Route path="template2" element={<Template2 />}></Route>
         </Route>
       </Routes>
+      {/* facebook live chat */}
+      <MessengerCustomerChat
+        pageId="105555438910537"
+        appId="1225310258009219"
+      />
       {/* <Footer /> */}
       <Toaster />
     </div>
