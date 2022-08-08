@@ -9,15 +9,20 @@ import Interview from "./Pages/CarrerCounceling/Interview";
 import Stories from "./Pages/CarrerCounceling/Stories";
 import Home from "./Pages/Home/Home";
 
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import CarrerConselling from "./Pages/CarrerCounceling/CarrerConselling";
 import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
+import CarrerPayment from "./Pages/CarrerCounceling/CarrerPayment";
 import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
+import PaymentInformation from "./Pages/CarrerCounceling/PaymentInformation";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
 import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
 import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
 import DragAndDropFile from "./Pages/EditorComponetn/CommonEditorComponent/DragAndDropFile";
+import Template1 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template1";
+import Template2 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template2";
 import EditorCareerObjective from "./Pages/EditorComponetn/CommonEditorComponent/EditorCareerObjective";
 import Education from "./Pages/EditorComponetn/CommonEditorComponent/Education";
 import Experience from "./Pages/EditorComponetn/CommonEditorComponent/Experience";
@@ -31,9 +36,6 @@ import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
-import Template1 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template1";
-import Template2 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template2";
-import MessengerCustomerChat from "react-messenger-customer-chat";
 
 function App() {
   return (
@@ -93,6 +95,10 @@ function App() {
           <Route path="reference" element={<Reference />}></Route>
           <Route path="template1" element={<Template1 />}></Route>
           <Route path="template2" element={<Template2 />}></Route>
+        </Route>
+
+        <Route path="/resume-builder/career-counselling/:id" element={<CarrerPayment/>}>
+          <Route path="payment" element={<PaymentInformation/>}></Route>
         </Route>
       </Routes>
       {/* facebook live chat */}
