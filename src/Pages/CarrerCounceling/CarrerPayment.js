@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { MdOutlineDone } from "react-icons/md";
-import { useParams } from "react-router-dom";
-import img1 from '../../assets/payment-img/img1.png';
-import Navbar from "../../Components/Navbar/Navbar";
+import { Link, useParams } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import img1 from "../../assets/payment-img/img1.png";
 import axiosPrivate from "../Api/axiosPrivate";
 import CareerPaymentSystem from "./CareerPaymentSystem";
 
@@ -18,7 +18,18 @@ const CarrerPayment = () => {
   }, [id]);
   return (
     <div>
-        <Navbar/>
+      <div className=" bg-[#fafafa]">
+        <Link to="/">
+          <div className="flex items-center">
+            <img className="w-14" src={logo} alt="logo" />
+
+            <div className="flex gap-2 text-xl">
+              <p>Resume</p>
+              <p>Builder</p>
+            </div>
+          </div>
+        </Link>
+      </div>
       <div className="md:grid grid-cols-2 gap-8 px-12  ">
         <div className="mt-6">
           <h1 className="text-4xl text-[#2d3639]">Invest in your career </h1>
@@ -47,16 +58,21 @@ const CarrerPayment = () => {
               <MdOutlineDone className="text-xl text-primary mr-3 mt-2" />{" "}
               <p className="text-gray-500 mt-2">Unlimited entries</p>
             </span>
-            <hr  className="mt-6 mb-4"/>
-            <img width=""src={img1} alt="" />
+            <hr className="mt-6 mb-4" />
+            <img width="" src={img1} alt="" />
           </div>
 
-          <div className="mt-10 shadow-lg p-10 hidden md:block"> 
-            <p>you consent to get access to your Resume-Builder subscription . If you do not cancel before the end of the subscription period, you will automatically be charged the subscription billed every month until you cancel.</p>
+          <div className="mt-10 shadow-lg p-10 hidden md:block">
+            <p>
+              you consent to get access to your Resume-Builder subscription . If
+              you do not cancel before the end of the subscription period, you
+              will automatically be charged the subscription billed every month
+              until you cancel.
+            </p>
           </div>
         </div>
         <div className="bg-[#fafafa] shadow-sm p-10 ">
-            <CareerPaymentSystem service={service}/>
+          <CareerPaymentSystem service={service} />
         </div>
       </div>
     </div>
