@@ -98,7 +98,7 @@ function App() {
         </Route>
 
         <Route path="/resume-builder/career-counselling/:id" element={<CarrerPayment/>}>
-          <Route path="payment" element={<PaymentInformation/>}></Route>
+          <Route index element={<PaymentInformation/>}></Route>
         </Route>
       </Routes>
       {/* facebook live chat */}
