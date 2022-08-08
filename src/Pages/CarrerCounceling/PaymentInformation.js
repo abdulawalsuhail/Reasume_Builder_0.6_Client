@@ -32,9 +32,9 @@ const PaymentInformation = () => {
   };
 
   useEffect(()=> {
-    axios('https://restcountries.com/v3.1/all')
+    axios('https://countriesnow.space/api/v0.1/countries')
     .then(res => {
-      setCountry(res.data)
+      setCountry(res.data.data)
     })
   },[])
   return (
@@ -82,9 +82,9 @@ const PaymentInformation = () => {
            {
             countries.map(c => <>
             
-            <option value={c.name.common}
+            <option value={c.country}
     
-            >{c.name.common}</option>
+            >{c.country}</option>
             </>)
            }
           </select>
