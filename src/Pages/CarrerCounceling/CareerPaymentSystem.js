@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 const CareerPaymentSystem = ({ service }) => {
-  const { serviceName, price } = service;
+  const {serviceName, price } = service;
+  const [userInfo,setUserinfo]  = useState({})
   return (
     <div>
       <h1 className="text-[25px] text-gray-700 mb-4">Choose product</h1>
@@ -33,7 +34,7 @@ const CareerPaymentSystem = ({ service }) => {
           Billing & Payment
         </h4>
       </div>
-      <Outlet/>
+      <Outlet  context={[userInfo,setUserinfo] }/>
     </div>
   );
 };

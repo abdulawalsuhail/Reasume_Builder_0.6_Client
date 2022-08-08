@@ -15,6 +15,7 @@ import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import CarrerPayment from "./Pages/CarrerCounceling/CarrerPayment";
 import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
 import PaymentInformation from "./Pages/CarrerCounceling/PaymentInformation";
+import PaymentOption from "./Pages/CarrerCounceling/PaymentOption";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
@@ -99,6 +100,7 @@ function App() {
 
         <Route path="/resume-builder/career-counselling/:id" element={<CarrerPayment/>}>
           <Route index element={<PaymentInformation/>}></Route>
+          <Route path="method" element={<PaymentOption/>}></Route>
         </Route>
       </Routes>
       {/* facebook live chat */}

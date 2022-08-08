@@ -1,9 +1,13 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const PaymentInformation = () => {
+    const [userInfo,setUserinfo] = useOutletContext()
+    const id = useParams()
+    console.log(id.id);
   const [user] = useAuthState(auth);
   const {
     register,
@@ -12,7 +16,17 @@ const PaymentInformation = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {};
+
+  const navigate = useNavigate()
+  const onSubmit = (data) => {
+    const userInfo ={
+        name:user?.displayName,
+        email:user?.email,
+        country:data.country
+    }
+    setUserinfo(userInfo)
+    navigate(`/resume-builder/career-counselling/${id.id}/method`)
+  };
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -21,12 +35,6 @@ const PaymentInformation = () => {
             <span class="label-text">Your Name</span>
           </label>
           <input
-            {...register("name", {
-              required: {
-                value: true,
-                message: "name required",
-              },
-            })}
             readOnly
             placeholder={user?.displayName}
             className="input input-bordered w-full "
