@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 const CareerPaymentSystem = ({ service }) => {
   const {serviceName, price } = service;
   const [userInfo,setUserinfo]  = useState({})
+  console.log(userInfo);
   return (
     <div>
       <h1 className="text-[25px] text-gray-700 mb-4">Choose product</h1>

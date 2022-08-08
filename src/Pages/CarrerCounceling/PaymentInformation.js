@@ -1,13 +1,15 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const PaymentInformation = () => {
-    const [userInfo,setUserinfo] = useOutletContext()
-    const id = useParams()
-    console.log(id.id);
+  const [userInfo, setUserinfo] = useOutletContext();
+  const [countries,setCountry] = useState([])
+  const [country,getCountry] = useState("")
+  const id = useParams();
   const [user] = useAuthState(auth);
   const {
     register,
@@ -17,16 +19,24 @@ const PaymentInformation = () => {
     formState: { errors },
   } = useForm();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const onSubmit = (data) => {
-    const userInfo ={
-        name:user?.displayName,
-        email:user?.email,
-        country:data.country
-    }
-    setUserinfo(userInfo)
-    navigate(`/resume-builder/career-counselling/${id.id}/method`)
+    
+    const userInfo = {
+      name: user?.displayName,
+      email: user?.email,
+      country: country,
+    };
+    setUserinfo(userInfo);
+    navigate(`/resume-builder/career-counselling/${id.id}/method`);
   };
+
+  useEffect(()=> {
+    axios('https://restcountries.com/v3.1/all')
+    .then(res => {
+      setCountry(res.data)
+    })
+  },[])
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -66,23 +76,18 @@ const PaymentInformation = () => {
           <label class="label">
             <span class="label-text">Country</span>
           </label>
-          <input
-            {...register("country", {
-              required: {
-                value: true,
-                message: "country required ",
-              },
-            })}
-            placeholder="Country"
-            className="input input-bordered w-full "
-          />
-          <label className="label">
-            {errors.country?.type === "required" && (
-              <span className="label-text-alt text-red-500">
-                {errors.country.message}
-              </span>
-            )}
-          </label>
+          <select
+                  onChange={(e)=>getCountry(e.target.value)}
+          className="px-4 py-4 outline-none border border-gray-300 rounded">
+           {
+            countries.map(c => <>
+            
+            <option value={c.name.common}
+    
+            >{c.name.common}</option>
+            </>)
+           }
+          </select>
         </div>
         <div class="form-control mt-6">
           <button class="text-white text-[15px] font-[500] uppercase rounded btn-md bg-primary">
