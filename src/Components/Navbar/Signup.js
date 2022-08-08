@@ -1,5 +1,8 @@
-import React, { useState } from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import React, { useEffect, useState } from "react";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import whyWe from "../../../src/assets/why-we.jpg";
@@ -8,6 +11,7 @@ import icon3 from "../../assets/icon/hto-deal.png";
 import icon1 from "../../assets/icon/saving.png";
 import "../../Css/login.css";
 import auth from "../../firebase.init";
+import useToken from "../../Hook/useToken";
 import Loading from "../../Shared/Loading/Loading";
 import Alert from "./Alert";
 import Navbar from "./Navbar";
@@ -17,21 +21,29 @@ const Signup = () => {
   const [customError, setCustomError] = useState("");
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [token] = useToken(user);
+
+  // update profile
+  const [updateProfile, updating, Uerror] = useUpdateProfile(auth);
   const handelSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
+    const displayName = e.target.name.value;
     const password = e.target.password.value;
     const rePassword = e.target.rePassword.value;
     if (password === rePassword) {
       setCustomError("");
       await createUserWithEmailAndPassword(email, password);
+      await updateProfile({ displayName });
       toast.success("user created successfully 🎉");
+      console.log("token", token);
     } else {
       setCustomError("Please input the same password !");
       toast.error("please input the same password !");
     }
+    console.log("user", user);
   };
-  if (loading) {
+  if (loading || updating) {
     return <Loading />;
   }
   return (

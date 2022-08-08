@@ -3,25 +3,21 @@ import axiosFetch from "../Pages/Api/axiosFetch";
 
 const useToken = (user) => {
   const [token, setToken] = useState("");
- 
-  
- 
-  useEffect(() => {
-    const email = user?.user?.email;
-    const currentUser = { email: email };
+  // const [user] = useAuthState(auth);
 
+  const email = user?.user?.email;
+  const name = user?.user?.displayName;
+  useEffect(() => {
     if (email) {
-     axiosFetch.put(`users/${email}`, currentUser)
-     .then(response => {
+      const currentUser = { email, name };
+      axiosFetch.put(`users/${email}`, currentUser).then((response) => {
         console.log(response);
-        const accessToken = response.data.token
-        localStorage.setItem("userToken",accessToken)
-        setToken(accessToken)
-        
-     })
-      
+        const accessToken = response?.data?.token;
+        localStorage.setItem("userToken", accessToken);
+        setToken(accessToken);
+      });
     }
-  }, [user]);
+  }, [user, name, email]);
 
   return token;
 };
