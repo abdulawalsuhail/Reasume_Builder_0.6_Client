@@ -9,7 +9,7 @@ import CareerPaymentSystem from "./CareerPaymentSystem";
 const CarrerPayment = () => {
   const { id } = useParams();
 
-  const [service, setService] = useState({});
+  const [service, setService] = useState([]);
 
   useEffect(() => {
     axiosPrivate.get(`/services/${id}`).then((res) => {
@@ -19,7 +19,7 @@ const CarrerPayment = () => {
   return (
     <div>
         <Navbar/>
-      <div className="grid grid-cols-2 gap-8 px-12  ">
+      <div className="md:grid grid-cols-2 gap-8 px-12  ">
         <div className="mt-6">
           <h1 className="text-4xl text-[#2d3639]">Invest in your career </h1>
           <h1 className="text-4xl text-[#2d3639]"> with Resume Builder</h1>
@@ -49,6 +49,10 @@ const CarrerPayment = () => {
             </span>
             <hr  className="mt-6 mb-4"/>
             <img width=""src={img1} alt="" />
+          </div>
+
+          <div className="mt-10 shadow-lg p-10 hidden md:block"> 
+            <p>you consent to get access to your Resume-Builder subscription . If you do not cancel before the end of the subscription period, you will automatically be charged the subscription billed every month until you cancel.</p>
           </div>
         </div>
         <div className="bg-[#fafafa] shadow-sm p-10 ">
