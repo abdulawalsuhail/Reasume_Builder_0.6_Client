@@ -34,7 +34,7 @@ const CareerPaymentSystem = ({ service }) => {
           Billing & Payment
         </h4>
       </div>
-      <Outlet  context={[userInfo,setUserinfo] }/>
+      <Outlet  context={[userInfo,setUserinfo,price] }/>
     </div>
   );
 };

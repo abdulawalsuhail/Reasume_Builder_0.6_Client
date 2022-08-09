@@ -8,7 +8,7 @@ import auth from "../../firebase.init";
 const PaymentInformation = () => {
   const [userInfo, setUserinfo] = useOutletContext();
   const [countries,setCountry] = useState([])
-  const [country,getCountry] = useState("")
+  const [country,getCountry] = useState("Afghanistan")
   const id = useParams();
   const [user] = useAuthState(auth);
   const {
