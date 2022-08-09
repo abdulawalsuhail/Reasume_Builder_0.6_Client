@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import toast from "react-hot-toast";
 import { useNavigate, useOutletContext } from "react-router-dom";
+import Loading from "../../Shared/Loading/Loading";
 import axiosPrivate from "../Api/axiosPrivate";
 
 const CheckoutForm = () => {
@@ -10,11 +11,15 @@ const CheckoutForm = () => {
   const elements = useElements();
   const [cardError, setCarderror] = useState("");
   const [clientSecret, setClientSecret] = useState("");
-  const [userInfo, setUserinfo, price] = useOutletContext();
-  const [transictionId,setTransictionId] = useState("")
+  const [processing, setProcessing] = useState(false);
+  const [userInfo, setUserinfo, price, serviceName] = useOutletContext();
   const navigate = useNavigate();
-    
-
+  const today = new Date();
+  const date =
+    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+  const time =
+    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  const dateTime = date + " " + time;
 
   //   payment request api call
 
@@ -54,6 +59,11 @@ const CheckoutForm = () => {
     });
 
     setCarderror(error?.message || "");
+    setProcessing(true)
+
+    if(processing){
+        return <Loading/>
+    }
 
     //   confirm payment
 
@@ -64,19 +74,33 @@ const CheckoutForm = () => {
             card: card,
             billing_details: {
               name: name,
-              email: email
+              email: email,
             },
           },
         });
 
-        if (paymentErr) {
-            setCarderror(paymentErr?.message);
-          }
-          else{
-            setCarderror("")
-            toast.success("your payment successfull")
-            setTransictionId(paymentIntent.id)
-          }
+      if (paymentErr) {
+        setCarderror(paymentErr?.message);
+      } else {
+        setCarderror("");
+        toast.success("your payment successfull");
+        const transictionId = paymentIntent.id
+
+        // payment details store on database
+        const paymentDetails = {
+          name: name,
+          email: email,
+          country: country,
+          paymentId: transictionId,
+          price: price,
+          serviceName: serviceName,
+          time: dateTime,
+        };
+
+        axiosPrivate.post("/booking", paymentDetails).then((res) => {
+            setProcessing(false);
+        });
+      }
     } else {
       navigate("/resume-builder/career-counselling/62f0b75472d55b6e96f197d2");
     }
