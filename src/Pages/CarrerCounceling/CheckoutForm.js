@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import toast from "react-hot-toast";
 import { useNavigate, useOutletContext } from "react-router-dom";
+import Swal from "sweetalert2";
 import Loading from "../../Shared/Loading/Loading";
 import axiosPrivate from "../Api/axiosPrivate";
 
@@ -83,7 +83,12 @@ const CheckoutForm = () => {
         setCarderror(paymentErr?.message);
       } else {
         setCarderror("");
-        toast.success("your payment successfull");
+        Swal.fire({
+            icon: "success",
+            title: "your payment successful",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         const transictionId = paymentIntent.id
 
         // payment details store on database
