@@ -11,7 +11,9 @@ const CheckoutForm = () => {
   const [cardError, setCarderror] = useState("");
   const [clientSecret, setClientSecret] = useState("");
   const [userInfo, setUserinfo, price] = useOutletContext();
+  const [transictionId,setTransictionId] = useState("")
   const navigate = useNavigate();
+    
 
 
   //   payment request api call
@@ -55,15 +57,14 @@ const CheckoutForm = () => {
 
     //   confirm payment
 
-    if (name && email && country) {
+    if (name && email) {
       const { paymentIntent, error: paymentErr } =
         await stripe.confirmCardPayment(clientSecret, {
           payment_method: {
             card: card,
             billing_details: {
               name: name,
-              email: email,
-              country: country,
+              email: email
             },
           },
         });
@@ -72,7 +73,9 @@ const CheckoutForm = () => {
             setCarderror(paymentErr?.message);
           }
           else{
+            setCarderror("")
             toast.success("your payment successfull")
+            setTransictionId(paymentIntent.id)
           }
     } else {
       navigate("/resume-builder/career-counselling/62f0b75472d55b6e96f197d2");
