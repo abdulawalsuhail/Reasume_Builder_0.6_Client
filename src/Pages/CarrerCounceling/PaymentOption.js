@@ -1,11 +1,17 @@
 import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import logo2 from '../../assets/payment-img/card2-removebg-preview.png';
 import logo from '../../assets/payment-img/mobile-banking-removebg-preview.png';
 
 const PaymentOption = () => {
+  const {id} = useParams()
+  const navigate = useNavigate()
+  const handleCardPayment = () => {
+    navigate(`/resume-builder/career-counselling/${id}/checkout-form`)
+  }
   return (
     <div className="mt-12">
-      <div className="text-center">
+      <div onClick={handleCardPayment} className="text-center">
         <button className="btn btn-primary text-white w-[70%] mx-auto">
         <span className="hidden md:block"><img className="w-[50px]" src={logo2} alt="" /></span>
           Pay By Card

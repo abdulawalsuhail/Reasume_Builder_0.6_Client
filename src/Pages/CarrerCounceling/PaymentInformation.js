@@ -21,7 +21,7 @@ const PaymentInformation = () => {
 
   const navigate = useNavigate();
   const onSubmit = (data) => {
-    
+    console.log("hello");
     const userInfo = {
       name: user?.displayName,
       email: user?.email,
@@ -89,7 +89,7 @@ const PaymentInformation = () => {
            }
           </select>
         </div>
-        <div class="form-control mt-6">
+        <div  class="form-control mt-6">
           <button class="text-white text-[15px] font-[500] uppercase rounded btn-md bg-primary">
             Continue
           </button>
