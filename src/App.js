@@ -21,6 +21,8 @@ import PaymentInformation from "./Pages/CarrerCounceling/PaymentInformation";
 import PaymentOption from "./Pages/CarrerCounceling/PaymentOption";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
+import AllUser from "./Pages/Dashboard/All-User/AllUser";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
 import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
 import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
@@ -40,7 +42,6 @@ import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
-
 
 const stripePromise = loadStripe(
   "pk_test_51L0e7DJVuUKdOSgodXlRxjzrt9f8fKWzD9Jum98GewskqXtaZ9Mx725bepiQ7zjAuEpcALdbkJEVHlNIG0RTIanM00m74yy2rn"
@@ -105,6 +106,7 @@ function App() {
           <Route path="template2" element={<Template2 />}></Route>
         </Route>
 
+        {/* payment method */}
         <Route
           path="/resume-builder/career-counselling/:id"
           element={<CarrerPayment />}
@@ -119,6 +121,12 @@ function App() {
               </Elements>
             }
           ></Route>
+        </Route>
+
+        {/* Dashboard */}
+
+        <Route path="/dashboard" element={<Dashboard/>}>
+            <Route path="all-user" element={<AllUser/>}></Route>
         </Route>
       </Routes>
       {/* facebook live chat */}
