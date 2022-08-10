@@ -34,6 +34,7 @@ import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 import Template1 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template1";
 import Template2 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template2";
 import MessengerCustomerChat from "react-messenger-customer-chat";
+import HowWriteCoverLetter from "./Pages/CoverLatterTemplate/CoverLetter/HowWriteCoverLetter";
 
 function App() {
   return (
@@ -94,6 +95,11 @@ function App() {
           <Route path="template1" element={<Template1 />}></Route>
           <Route path="template2" element={<Template2 />}></Route>
         </Route>
+        {/* cover letter route */}
+        <Route
+          path="/how-write-cover-letter"
+          element={<HowWriteCoverLetter />}
+        ></Route>
       </Routes>
       {/* facebook live chat */}
       <MessengerCustomerChat
