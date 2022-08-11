@@ -24,7 +24,7 @@ const Dashboard = () => {
             {/* <!-- Sidebar content here --> */}
             <li className=" hover:text-white rounded-md">
         <NavLink
-          className="hover:bg-primary text-white poppins-r uppercase pr-2 mx-2"
+          className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
           to="/dashboard/all-user"
         >
           <HiUserGroup className="-mr-1 text-[20px]" />

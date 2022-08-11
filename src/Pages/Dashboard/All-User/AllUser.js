@@ -1,5 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
+import { signOut } from "firebase/auth";
 import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
+import auth from "../../../firebase.init";
 import Loading from "../../../Shared/Loading/Loading";
 import axiosPrivate from "../../Api/axiosPrivate";
 import AlluserTable from "./AlluserTable";
@@ -9,17 +12,25 @@ const AllUser = () => {
   const [users, setUsers] = useState([]);
   const [searchValue, setSearcValue] = useState("");
 
-  const { data, isLoading, refetch } = useQuery(["all-user"], () => {
-    axiosPrivate.get("/all-users").then((res) => {
-      setUsers(res.data);
-    });
+  const { data, isLoading, refetch } = useQuery(["orders"], () => {
+    axiosPrivate.get(`/all-users`)
+    .then(response  => {
+      setUsers(response.data);
+    }, (err) => {
+        if(err.response.status === 401 || err.response.status){
+            signOut(auth)
+            Navigate("/")
+            localStorage.removeItem("userToken")
+        }
+    })
   });
 
   const handleSearch = (e) => {
     e.preventDefault();
     axiosPrivate.get(`/all-users?email=${searchValue}`).then((response) => {
       setUsers(response.data);
-    });
+    })
+    
   };
 
   if (isLoading) {
@@ -74,7 +85,7 @@ const AllUser = () => {
             </thead>
             <tbody>
               {users.map((user, index) => (
-                <AlluserTable key={user._id} user={user} index={index} />
+                <AlluserTable key={user._id} user={user} index={index} refetch={refetch} />
               ))}
             </tbody>
           </table>
