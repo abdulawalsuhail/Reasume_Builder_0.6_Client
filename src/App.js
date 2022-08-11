@@ -22,6 +22,7 @@ import CheckoutForm from "./Pages/CarrerCounceling/CheckoutForm";
 import PaymentInformation from "./Pages/CarrerCounceling/PaymentInformation";
 import PaymentOption from "./Pages/CarrerCounceling/PaymentOption";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
+import HowWriteCoverLetter from "./Pages/CoverLatterTemplate/CoverLetter/HowWriteCoverLetter";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 import Alladmin from "./Pages/Dashboard/ALL-Admin/Alladmin";
 import AllUser from "./Pages/Dashboard/All-User/AllUser";
@@ -109,7 +110,11 @@ function App() {
           <Route path="template2" element={<Template2 />}></Route>
         </Route>
 
-        {/* payment method */}
+        {/* cover letter route */}
+        <Route
+          path="/how-write-cover-letter"
+          element={<HowWriteCoverLetter />}
+        ></Route>
         <Route
           path="/resume-builder/career-counselling/:id"
           element={<CarrerPayment />}
@@ -126,9 +131,10 @@ function App() {
           ></Route>
         </Route>
 
-        {/* Dashboard */}
 
-        <Route
+          {/* Dashboard */}
+
+          <Route
           path="/dashboard"
           element={
             <RequireAuth>
