@@ -115,6 +115,9 @@ function App() {
           path="/how-write-cover-letter"
           element={<HowWriteCoverLetter />}
         ></Route>
+
+        {/* payment route */}
+
         <Route
           path="/resume-builder/career-counselling/:id"
           element={<CarrerPayment />}
@@ -131,10 +134,9 @@ function App() {
           ></Route>
         </Route>
 
+        {/* Dashboard */}
 
-          {/* Dashboard */}
-
-          <Route
+        <Route
           path="/dashboard"
           element={
             <RequireAuth>
@@ -154,7 +156,7 @@ function App() {
             path="all-admin"
             element={
               <RequireAdmin>
-                <Alladmin/>
+                <Alladmin />
               </RequireAdmin>
             }
           ></Route>
