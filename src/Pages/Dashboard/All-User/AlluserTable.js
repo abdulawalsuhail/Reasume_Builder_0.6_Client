@@ -34,10 +34,10 @@ const AlluserTable = ({user,index,refetch}) => {
         <th>{index +1}</th>
         <td>{email}</td>
         <td>
-          {role === "admin"? <button className='btn btn-secondary btn-sm'>Admin</button> :<button onClick={makeAdmin} className='btn btn-sm btn-primary text-white'>Make Admin</button>
+          {role === "admin"? <button disabled className='btn btn-secondary btn-xs'>Admin</button> :<button onClick={makeAdmin} className='btn btn-xs btn-primary text-white'>Make Admin</button>
           }
         </td>
-        <td><button className='btn btn-sm bg-white hover:bg-white text-black'>Make Expert</button></td>
+        <td><button className='btn btn-xs bg-white hover:bg-white text-black'>Make Expert</button></td>
       </tr>
     );
 };

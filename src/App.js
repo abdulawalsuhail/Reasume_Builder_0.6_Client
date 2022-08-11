@@ -23,6 +23,7 @@ import PaymentInformation from "./Pages/CarrerCounceling/PaymentInformation";
 import PaymentOption from "./Pages/CarrerCounceling/PaymentOption";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
+import Alladmin from "./Pages/Dashboard/ALL-Admin/Alladmin";
 import AllUser from "./Pages/Dashboard/All-User/AllUser";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
@@ -140,6 +141,14 @@ function App() {
             element={
               <RequireAdmin>
                 <AllUser />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="all-admin"
+            element={
+              <RequireAdmin>
+                <Alladmin/>
               </RequireAdmin>
             }
           ></Route>

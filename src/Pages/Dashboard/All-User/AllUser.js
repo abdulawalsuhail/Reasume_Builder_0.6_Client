@@ -39,7 +39,7 @@ const AllUser = () => {
 
   return (
     <div>
-      <h1 className="text-4xl text-center">All User</h1>
+      <h1 className="text-4xl text-center mt-4">All User</h1>
       <div>
         <div class="form-control mt-4">
           <div class="input-group w-[60%] md:w-[20%] mx-auto">
