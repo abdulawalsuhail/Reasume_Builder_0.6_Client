@@ -39,7 +39,8 @@ const CarrerCouncelingPrice = () => {
               <div class="card-body items-center text-center">
                 <h2 class="card-title text-2xl text-[#feb251]">Executive+</h2>
                 <p>
-                Get the full package end to end,multiple role,until you get the offer you want
+                  Get the full package end to end,multiple role,until you get
+                  the offer you want
                 </p>
                 <p className="text-3xl font-bold text-black">$655</p>
                 <div class="card-actions">

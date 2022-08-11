@@ -27,7 +27,7 @@ const CounsellingServices = () => {
           <h4 className="text-4xl text-[#384347] mt-16">
             Pick the plan that suits you best
           </h4>
-         
+
           <p className="text-[#38434d] text-[18px] mt-5 hidden md:block">
             Our packages are the quickest, safest and most reliable way to get
             your dream job. That’s a guarantee.
@@ -46,7 +46,6 @@ const CounsellingServices = () => {
             service={service}
           ></CarrerServicesCard>
         ))}
-        
       </div>
     </section>
   );

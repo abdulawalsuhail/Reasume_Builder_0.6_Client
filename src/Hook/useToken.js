@@ -3,7 +3,6 @@ import axiosFetch from "../Pages/Api/axiosFetch";
 
 const useToken = (user) => {
   const [token, setToken] = useState("");
-  // const [user] = useAuthState(auth);
 
   const email = user?.user?.email;
   const name = user?.user?.displayName;
