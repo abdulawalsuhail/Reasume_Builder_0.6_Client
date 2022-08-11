@@ -13,6 +13,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import RequireAdmin from "./Pages/Authentication/RequireAdmin";
+import RequireAuth from "./Pages/Authentication/RequireAuth";
 import CarrerConselling from "./Pages/CarrerCounceling/CarrerConselling";
 import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import CarrerPayment from "./Pages/CarrerCounceling/CarrerPayment";
@@ -126,8 +127,22 @@ function App() {
 
         {/* Dashboard */}
 
-        <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="all-user" element={<RequireAdmin><AllUser /></RequireAdmin>}></Route>
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route
+            path="all-user"
+            element={
+              <RequireAdmin>
+                <AllUser />
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
       </Routes>
       {/* facebook live chat */}
