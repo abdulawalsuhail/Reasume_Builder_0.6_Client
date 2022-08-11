@@ -1,23 +1,30 @@
-import React, { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import React, { useState } from "react";
+import Loading from "../../../Shared/Loading/Loading";
 import axiosPrivate from "../../Api/axiosPrivate";
 import AlluserTable from "./AlluserTable";
+import SetRoleModal from "./SetRoleModal";
 
 const AllUser = () => {
   const [users, setUsers] = useState([]);
   const [searchValue, setSearcValue] = useState("");
 
-  useEffect(() => {
+  const { data, isLoading, refetch } = useQuery(["all-user"], () => {
     axiosPrivate.get("/all-users").then((res) => {
       setUsers(res.data);
     });
-  }, []);
+  });
 
   const handleSearch = (e) => {
     e.preventDefault();
     axiosPrivate.get(`/all-users?email=${searchValue}`).then((response) => {
-      setUsers(response.data)
+      setUsers(response.data);
     });
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <div>
@@ -60,18 +67,20 @@ const AllUser = () => {
             <thead>
               <tr>
                 <th>Serial No</th>
-                <th>Name</th>
                 <th>Email</th>
+                <th>set role</th>
+                <th>Set Blog expert</th>
               </tr>
             </thead>
             <tbody>
-              {users.map((user,index) => (
-                <AlluserTable key={user._id}  user={user} index={index} />
+              {users.map((user, index) => (
+                <AlluserTable key={user._id} user={user} index={index} />
               ))}
             </tbody>
           </table>
         </div>
       </div>
+      <SetRoleModal/>
     </div>
   );
 };

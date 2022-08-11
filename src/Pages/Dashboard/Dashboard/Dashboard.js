@@ -1,12 +1,17 @@
 import React from 'react';
 import { HiUserGroup } from "react-icons/hi";
 import { NavLink, Outlet } from 'react-router-dom';
+import Navbar from '../../../Components/Navbar/Navbar';
+import '../../../Css/CarrerCounceling.css';
 
 const Dashboard = () => {
     return (
-        <div class="drawer drawer-mobile md:px-12">
+        <>
+        
+        <Navbar/>
+        <div class="drawer drawer-mobile md:px-12 ">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content  ">
+        <div class="drawer-content no-scroll ">
           {/* <!-- Page content here --> */}
 
           <Outlet/>
@@ -30,6 +35,7 @@ const Dashboard = () => {
         
         </div>
       </div>
+        </>
     );
 };
 

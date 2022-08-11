@@ -125,8 +125,8 @@ function App() {
 
         {/* Dashboard */}
 
-        <Route path="/dashboard" element={<Dashboard/>}>
-            <Route path="all-user" element={<AllUser/>}></Route>
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="all-user" element={<AllUser />}></Route>
         </Route>
       </Routes>
       {/* facebook live chat */}
