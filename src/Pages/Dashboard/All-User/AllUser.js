@@ -12,7 +12,7 @@ const AllUser = () => {
   const [users, setUsers] = useState([]);
   const [searchValue, setSearcValue] = useState("");
 
-  const { data, isLoading, refetch } = useQuery(["orders"], () => {
+  const { data, isLoading, refetch } = useQuery(["all-user"], () => {
     axiosPrivate.get(`/all-users`)
     .then(response  => {
       setUsers(response.data);

@@ -1,4 +1,5 @@
 import React from "react";
+import { FcSelfServiceKiosk } from "react-icons/fc";
 import { HiUserGroup } from "react-icons/hi";
 import { RiAdminLine } from "react-icons/ri";
 import { NavLink, Outlet } from "react-router-dom";
@@ -42,6 +43,15 @@ const Dashboard = () => {
               >
                 <RiAdminLine className="-mr-1 text-[20px]" />
                 ADMIN
+              </NavLink>
+            </li>
+            <li className=" hover:text-white rounded-md mt-2">
+              <NavLink
+                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
+                to="/dashboard/booking-service"
+              >
+                <FcSelfServiceKiosk className="-mr-1 text-[20px]" />
+                BOOKING SERVICE
               </NavLink>
             </li>
           </ul>

@@ -26,6 +26,7 @@ import HowWriteCoverLetter from "./Pages/CoverLatterTemplate/CoverLetter/HowWrit
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 import Alladmin from "./Pages/Dashboard/ALL-Admin/Alladmin";
 import AllUser from "./Pages/Dashboard/All-User/AllUser";
+import BookingService from "./Pages/Dashboard/All-User/BookingService/BookingService";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
 import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
@@ -157,6 +158,14 @@ function App() {
             element={
               <RequireAdmin>
                 <Alladmin />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="booking-service"
+            element={
+              <RequireAdmin>
+                <BookingService />
               </RequireAdmin>
             }
           ></Route>
