@@ -34,8 +34,8 @@ const BookingService = () => {
           <table class="table w-full">
             <thead>
               <tr>
-                <th>Serial No</th>
-                <th>Name</th>
+                <th className="">Serial No</th>
+                <th className="">Name</th>
                 <th>Email</th>
                 <th>Service Name</th>
                 <th>Country</th>
