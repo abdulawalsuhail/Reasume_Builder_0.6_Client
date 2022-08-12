@@ -12,6 +12,8 @@ import Home from "./Pages/Home/Home";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import MessengerCustomerChat from "react-messenger-customer-chat";
+import RequireAdmin from "./Pages/Authentication/RequireAdmin";
+import RequireAuth from "./Pages/Authentication/RequireAuth";
 import CarrerConselling from "./Pages/CarrerCounceling/CarrerConselling";
 import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import CarrerPayment from "./Pages/CarrerCounceling/CarrerPayment";
@@ -20,7 +22,11 @@ import CheckoutForm from "./Pages/CarrerCounceling/CheckoutForm";
 import PaymentInformation from "./Pages/CarrerCounceling/PaymentInformation";
 import PaymentOption from "./Pages/CarrerCounceling/PaymentOption";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
+import HowWriteCoverLetter from "./Pages/CoverLatterTemplate/CoverLetter/HowWriteCoverLetter";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
+import Alladmin from "./Pages/Dashboard/ALL-Admin/Alladmin";
+import AllUser from "./Pages/Dashboard/All-User/AllUser";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
 import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
 import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
@@ -40,7 +46,6 @@ import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
-import HowWriteCoverLetter from "./Pages/CoverLatterTemplate/CoverLetter/HowWriteCoverLetter";
 import CoverLetterInput from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterInput";
 
 const stripePromise = loadStripe(
@@ -111,6 +116,9 @@ function App() {
           path="/how-write-cover-letter"
           element={<HowWriteCoverLetter />}
         ></Route>
+
+        {/* payment route */}
+
         <Route
           path="/resume-builder/career-counselling/:id"
           element={<CarrerPayment />}
@@ -127,6 +135,33 @@ function App() {
           ></Route>
         </Route>
         <Route path="/coverLetterInput" element={<CoverLetterInput />}></Route>
+        {/* Dashboard */}
+
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route
+            path="all-user"
+            element={
+              <RequireAdmin>
+                <AllUser />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="all-admin"
+            element={
+              <RequireAdmin>
+                <Alladmin />
+              </RequireAdmin>
+            }
+          ></Route>
+        </Route>
       </Routes>
       {/* facebook live chat */}
       <MessengerCustomerChat
