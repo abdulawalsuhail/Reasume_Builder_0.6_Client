@@ -3,6 +3,7 @@ import CoverLetterNavbar from "./CoverLetterNavbar";
 import welcome from "../../../assets/cover-letter-welcome.gif";
 import NextBtn from "./NextBtn";
 import { FcIdea } from "react-icons/fc";
+import { MdOutlineCreate } from "react-icons/md";
 
 const CoverLetterInput = () => {
   const [section, setSection] = useState("name");
@@ -16,6 +17,26 @@ const CoverLetterInput = () => {
   const [strengthTow, setStrengthTow] = useState("");
   const [strengthThree, setStrengthThree] = useState("");
   const [challenge, setChallenge] = useState("");
+  const [phone, setPhone] = useState("");
+  const [linkedin, setLinkedin] = useState("");
+  const [email, setEmail] = useState("");
+
+  const createCoverLetter = () => {
+    const skill = { skillOne, skillTow, skillThree };
+    const strength = { strengthOne, strengthTow, strengthThree };
+    const coverLetterInfo = {
+      name,
+      phone,
+      email,
+      linkedin,
+      jobRole,
+      experience,
+      skill,
+      strength,
+      challenge,
+    };
+    console.log(coverLetterInfo);
+  };
 
   return (
     <div className="min-h-screen bg-[#f4f7f8a6]">
@@ -131,7 +152,7 @@ const CoverLetterInput = () => {
 
       {/* work Strengths */}
       {section === "strengths" && (
-        <div>
+        <div className="pb-10">
           <h3 className="md:text-4xl text-2xl px-5 md:text-center mb-8 mt-4 poppins-i text-gray-500">
             How about your strengths?
           </h3>
@@ -238,6 +259,58 @@ const CoverLetterInput = () => {
             ></textarea>
             {challenge && (
               <NextBtn section={"contact"} setSection={setSection} />
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Your contact details */}
+      {section === "contact" && (
+        <div className="pb-16">
+          <h3 className="md:text-4xl text-2xl px-5 md:text-center mb-1 mt-4 poppins-i text-gray-500">
+            Add your contact details
+          </h3>
+          <p className="text-gray-500 md:text-center mt-3 mb-6">
+            Please Give your authentic contact information
+          </p>
+          <div className="px-5 lg:max-w-xl md:max-w-lg w-full mx-auto">
+            <input
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your name"
+              class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
+            />
+            <input
+              type="text"
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="Phone Number"
+              class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
+            />
+            <input
+              type="text"
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email Address"
+              class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
+            />
+            <input
+              type="text"
+              onChange={(e) => setLinkedin(e.target.value)}
+              placeholder="Linkedin profile URL"
+              class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
+            />
+            {phone && linkedin && email && name && (
+              <button
+                onClick={createCoverLetter}
+                class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-green-500 rounded-xl group"
+              >
+                <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-green-700 rounded group-hover:-mr-4 group-hover:-mt-4">
+                  <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
+                </span>
+                <span class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-green-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
+                <span class="relative w-full flex items-center gap-2 text-left text-[16px] text-white transition-colors duration-200 ease-in-out group-hover:text-white">
+                  Build my cover letter <MdOutlineCreate />
+                </span>
+              </button>
             )}
           </div>
         </div>
