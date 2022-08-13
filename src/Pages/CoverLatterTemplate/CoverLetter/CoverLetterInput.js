@@ -11,10 +11,10 @@ const CoverLetterInput = () => {
   const [jobRole, setJobRole] = useState("");
   const [experience, setExperience] = useState("");
   const [skillOne, setSkillOne] = useState("");
-  const [skillTow, setSkillTow] = useState("");
+  const [skillTwo, setSkillTwo] = useState("");
   const [skillThree, setSkillThree] = useState("");
   const [strengthOne, setStrengthOne] = useState("");
-  const [strengthTow, setStrengthTow] = useState("");
+  const [strengthTwo, setStrengthTwo] = useState("");
   const [strengthThree, setStrengthThree] = useState("");
   const [challenge, setChallenge] = useState("");
   const [phone, setPhone] = useState("");
@@ -22,8 +22,8 @@ const CoverLetterInput = () => {
   const [email, setEmail] = useState("");
 
   const createCoverLetter = () => {
-    const skill = { skillOne, skillTow, skillThree };
-    const strength = { strengthOne, strengthTow, strengthThree };
+    const skill = { skillOne, skillTwo, skillThree };
+    const strength = { strengthOne, strengthTwo, strengthThree };
     const coverLetterInfo = {
       name,
       phone,
@@ -133,8 +133,8 @@ const CoverLetterInput = () => {
             />
             <input
               type="text"
-              onChange={(e) => setSkillTow(e.target.value)}
-              placeholder="Skill Tow"
+              onChange={(e) => setSkillTwo(e.target.value)}
+              placeholder="Skill Two"
               class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
             />
             <input
@@ -143,7 +143,7 @@ const CoverLetterInput = () => {
               placeholder="Skill Three"
               class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
             />
-            {skillOne && skillTow && skillThree && (
+            {skillOne && skillTwo && skillThree && (
               <NextBtn section={"strengths"} setSection={setSection} />
             )}
           </div>
@@ -182,11 +182,11 @@ const CoverLetterInput = () => {
               <option>Observation</option>
             </select>
             <select
-              onChange={(e) => setStrengthTow(e.target.value)}
+              onChange={(e) => setStrengthTwo(e.target.value)}
               class="select select-success w-full max-w-md my-3"
             >
               <option disabled selected>
-                Strength Tow
+                Strength Two
               </option>
               <option>Coaching</option>
               <option>Collaboration</option>
@@ -229,7 +229,7 @@ const CoverLetterInput = () => {
               <option>Planning</option>
               <option>Observation</option>
             </select>
-            {strengthOne && strengthTow && strengthThree && (
+            {strengthOne && strengthTwo && strengthThree && (
               <NextBtn section={"challenge"} setSection={setSection} />
             )}
           </div>
