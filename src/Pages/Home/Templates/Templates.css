@@ -1,3 +1,20 @@
-.customDiv:hover .customButton{
+/* .customDiv:hover .customButton{
     display: block;
+} */
+
+/* https://i.ibb.co/gMgyygN/invictus-tailoring-sneaker-socks-5-OZg-Vj0-YVw-Q-unsplash.jpg */
+
+/* https://i.ibb.co/42k2X5X/joanna-kosinska-9gf-GDbxuqr-U-unsplash.jpg */
+/* https://i.ibb.co/ZgbLdGh/joanna-kosinska-u-Gc-DWKN91-Fs-unsplash.jpg */
+/* https://i.ibb.co/nb2d8TN/kristina-evstifeeva-y3h6gh2fpa-I-unsplash.jpg */
+
+.template{
+    background-image: linear-gradient(
+        rgba(26, 27, 26, 0.76),
+        rgba(182, 237, 196, 0.201)
+    ),url(https://i.ibb.co/gMgyygN/invictus-tailoring-sneaker-socks-5-OZg-Vj0-YVw-Q-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
 }

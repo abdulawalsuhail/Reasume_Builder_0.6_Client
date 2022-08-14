@@ -5,7 +5,7 @@ import './Templates.css';
 const Templates = () => {
 
   return (
-    <div className="pt-32 pb-8 bg-[#f4f7f8]">
+    <div className="pt-12 h-screen ">
       {/* menu section */}
       <div style={{width:"350px"}} class="border border-accent rounded-full mx-auto">
         <div class="">
@@ -17,10 +17,8 @@ const Templates = () => {
         </div>
       </div>
       {/* template section */}
-      <div className="mx-12 my-12 ">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <Outlet />
-        </div>
+      <div className="p-12 my-12 template">
+        <Outlet />
       </div>
     </div>
   );
