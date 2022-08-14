@@ -28,13 +28,13 @@
     flex-direction: column;
     justify-content: center;
     /* align-items: center; */
-    border-top-left-radius: 10%;
-    border-top-right-radius: 10%;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
     background-color: rgb(246, 253, 246);
     bottom: 0;
     height: 0;
     opacity: 0;
-    transition: .5s ease;
+    transition:all .5s ease;
 }
 
 .templateImage{
@@ -42,9 +42,82 @@
 }
 
 .templateContainer:hover .templateButton{
-    height: 35%;
+    height: 350px;
     opacity: 1;
 }
 .templateContainer:hover .templateImage{
     opacity: .5;
 }
+
+/* button */
+.customButton{
+    position: relative;
+    background: #444;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding: 10px 20px;
+    transition: 0.5s;
+    margin-bottom: 40px;
+}
+.customButton:hover{
+    letter-spacing: 0.25em;
+    background: var(--clr);
+    box-shadow: 0 0 35px var(--clr);
+}
+.customButton::before{
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #27282c;
+}
+.customButton span{
+    position: relative;
+    z-index: 1;
+}
+.customButton i{
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+.customButton i::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 100%;
+    transform: translate(-50%);
+    width: 20px;
+    height: 20px;
+    background: #27282c;
+    border: 2px solid var(--clr);
+    transition: 0.5s;
+}
+
+.customButton:hover i::before{
+    left: 0%;
+    transform: translateX(-50%) rotate(45deg);
+    box-shadow: 40px 40px var(--clr);
+}
+
+.customButton i::after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    transform: translate(-50%);
+    width: 20px;
+    height: 20px;
+    background: #27282c;
+    border: 2px solid var(--clr);
+    transition: 0.5s;
+}
+
+.customButton:hover i::after{
+    left: 100%;
+    transform: translateX(-50%) rotate(-45deg);
+    box-shadow: 38px -39px var(--clr);
+}
+
