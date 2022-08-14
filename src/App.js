@@ -48,6 +48,7 @@ import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 import CoverLetterInput from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterInput";
 import CoverLetterTemplate from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterTemplate";
+import Quiz from "./Pages/Quiz/Quiz";
 
 const stripePromise = loadStripe(
   "pk_test_51L0e7DJVuUKdOSgodXlRxjzrt9f8fKWzD9Jum98GewskqXtaZ9Mx725bepiQ7zjAuEpcALdbkJEVHlNIG0RTIanM00m74yy2rn"
@@ -135,10 +136,31 @@ function App() {
             }
           ></Route>
         </Route>
-        <Route path="/coverLetterInput" element={<CoverLetterInput />}></Route>
+        {/* cover letter */}
+        <Route
+          path="/coverLetterInput"
+          element={
+            <RequireAuth>
+              <CoverLetterInput />
+            </RequireAuth>
+          }
+        ></Route>
         <Route
           path="/coverLetter/:id"
-          element={<CoverLetterTemplate />}
+          element={
+            <RequireAuth>
+              <CoverLetterTemplate />
+            </RequireAuth>
+          }
+        ></Route>
+        {/* Quiz compo */}
+        <Route
+          path="/quiz"
+          element={
+            <RequireAuth>
+              <Quiz />
+            </RequireAuth>
+          }
         ></Route>
         {/* Dashboard */}
 
