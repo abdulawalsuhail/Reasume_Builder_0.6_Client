@@ -18,3 +18,33 @@
     background-size: cover;
     background-position: center;
 }
+.templateContainer{
+    cursor: pointer;
+    position: relative;
+}
+.templateButton{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    background-color: rgb(246, 253, 246);
+    bottom: 0;
+    height: 0;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.templateImage{
+    transition: .5s ease;
+}
+
+.templateContainer:hover .templateButton{
+    height: 35%;
+    opacity: 1;
+}
+.templateContainer:hover .templateImage{
+    opacity: .5;
+}
