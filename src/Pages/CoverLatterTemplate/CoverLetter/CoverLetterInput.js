@@ -4,8 +4,12 @@ import welcome from "../../../assets/cover-letter-welcome.gif";
 import NextBtn from "./NextBtn";
 import { FcIdea } from "react-icons/fc";
 import { MdOutlineCreate } from "react-icons/md";
+import axiosPrivate from "../../Api/axiosPrivate";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 
 const CoverLetterInput = () => {
+  const [user] = useAuthState(auth);
   const [section, setSection] = useState("name");
   const [name, setName] = useState("");
   const [jobRole, setJobRole] = useState("");
@@ -20,6 +24,7 @@ const CoverLetterInput = () => {
   const [phone, setPhone] = useState("");
   const [linkedin, setLinkedin] = useState("");
   const [email, setEmail] = useState("");
+  const userEmail = user?.email;
 
   const createCoverLetter = () => {
     const skill = { skillOne, skillTwo, skillThree };
@@ -28,6 +33,7 @@ const CoverLetterInput = () => {
       name,
       phone,
       email,
+      userEmail,
       linkedin,
       jobRole,
       experience,
@@ -35,7 +41,12 @@ const CoverLetterInput = () => {
       strength,
       challenge,
     };
-    console.log(coverLetterInfo);
+    // post cover letter data
+    axiosPrivate
+      .put(`coverLetterInfo/${userEmail}`, coverLetterInfo)
+      .then((res) => {
+        console.log(res);
+      });
   };
 
   return (
