@@ -4,8 +4,13 @@ import welcome from "../../../assets/cover-letter-welcome.gif";
 import NextBtn from "./NextBtn";
 import { FcIdea } from "react-icons/fc";
 import { MdOutlineCreate } from "react-icons/md";
+import axiosPrivate from "../../Api/axiosPrivate";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import { Link } from "react-router-dom";
 
 const CoverLetterInput = () => {
+  const [user] = useAuthState(auth);
   const [section, setSection] = useState("name");
   const [name, setName] = useState("");
   const [jobRole, setJobRole] = useState("");
@@ -20,6 +25,7 @@ const CoverLetterInput = () => {
   const [phone, setPhone] = useState("");
   const [linkedin, setLinkedin] = useState("");
   const [email, setEmail] = useState("");
+  const userEmail = user?.email;
 
   const createCoverLetter = () => {
     const skill = { skillOne, skillTwo, skillThree };
@@ -28,6 +34,7 @@ const CoverLetterInput = () => {
       name,
       phone,
       email,
+      userEmail,
       linkedin,
       jobRole,
       experience,
@@ -35,7 +42,12 @@ const CoverLetterInput = () => {
       strength,
       challenge,
     };
-    console.log(coverLetterInfo);
+    // post cover letter data
+    axiosPrivate
+      .put(`coverLetterInfo/${userEmail}`, coverLetterInfo)
+      .then((res) => {
+        console.log(res);
+      });
   };
 
   return (
@@ -299,8 +311,9 @@ const CoverLetterInput = () => {
               className="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
             />
             {phone && linkedin && email && name && (
-              <button
+              <Link
                 onClick={createCoverLetter}
+                to={`/coverLetter/${user?.email}`}
                 className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-green-500 rounded-xl group"
               >
                 <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-green-700 rounded group-hover:-mr-4 group-hover:-mt-4">
@@ -310,7 +323,7 @@ const CoverLetterInput = () => {
                 <span className="relative w-full flex items-center gap-2 text-left text-[16px] text-white transition-colors duration-200 ease-in-out group-hover:text-white">
                   Build my cover letter <MdOutlineCreate />
                 </span>
-              </button>
+              </Link>
             )}
           </div>
         </div>

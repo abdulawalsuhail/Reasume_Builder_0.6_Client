@@ -47,6 +47,7 @@ import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 import CoverLetterInput from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterInput";
+import CoverLetterTemplate from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterTemplate";
 
 const stripePromise = loadStripe(
   "pk_test_51L0e7DJVuUKdOSgodXlRxjzrt9f8fKWzD9Jum98GewskqXtaZ9Mx725bepiQ7zjAuEpcALdbkJEVHlNIG0RTIanM00m74yy2rn"
@@ -135,6 +136,10 @@ function App() {
           ></Route>
         </Route>
         <Route path="/coverLetterInput" element={<CoverLetterInput />}></Route>
+        <Route
+          path="/coverLetter/:id"
+          element={<CoverLetterTemplate />}
+        ></Route>
         {/* Dashboard */}
 
         <Route
