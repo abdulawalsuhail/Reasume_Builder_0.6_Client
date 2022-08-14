@@ -3,33 +3,41 @@ import { useNavigate, useOutletContext } from "react-router-dom";
 import experienceImage from "../../../assets/experince.png";
 
 const Experience = () => {
-
-  
   const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
   // Get input field values and store values at str
   let str = {
-    name:"experiencesDetails",
-    value:[]
-  };// store input values
+    name: "experiencesDetails",
+    value: [],
+  }; // store input values
 
   const navigate = useNavigate();
-  
-  const getValue = () => {
-    str.value = []
-    str.value.push({ jobTitle: `${document.getElementById('jobTitle')?.value}` })
-    str.value.push({ companyName: `${document.getElementById('companyName')?.value}` })
-    str.value.push({ country: `${document.getElementById('country')?.value}` })
-    str.value.push({ state: `${document.getElementById('state')?.value}` })
-    str.value.push({ city: `${document.getElementById('city')?.value}` })
-    str.value.push({ startMonth: `${document.getElementById('startMonth')?.value}` })
-    str.value.push({ startYear: `${document.getElementById('startYear')?.value}` })
-    str.value.push({ endMonth: `${document.getElementById('endMonth')?.value}` })
-    str.value.push({ endYear: `${document.getElementById('endYear')?.value}` })
 
-    setUsersTemplateInfo([...usersTemplateInfo, str])
-    navigate('/resume-builder/editor-education');
+  const getValue = () => {
+    str.value = [];
+    str.value.push({
+      jobTitle: `${document.getElementById("jobTitle")?.value}`,
+    });
+    str.value.push({
+      companyName: `${document.getElementById("companyName")?.value}`,
+    });
+    str.value.push({ country: `${document.getElementById("country")?.value}` });
+    str.value.push({ state: `${document.getElementById("state")?.value}` });
+    str.value.push({ city: `${document.getElementById("city")?.value}` });
+    str.value.push({
+      startMonth: `${document.getElementById("startMonth")?.value}`,
+    });
+    str.value.push({
+      startYear: `${document.getElementById("startYear")?.value}`,
+    });
+    str.value.push({
+      endMonth: `${document.getElementById("endMonth")?.value}`,
+    });
+    str.value.push({ endYear: `${document.getElementById("endYear")?.value}` });
+
+    setUsersTemplateInfo([...usersTemplateInfo, str]);
+    navigate("/resume-builder/editor-education");
     console.log(str);
-  }
+  };
 
   return (
     <div className=" bg-[#f4f7f8] lg:mr-7 rounded-2xl my-5">
@@ -106,16 +114,14 @@ const Experience = () => {
               />
             </div>
 
-            <div className="flex justify-between mt-10">
+            <div className="flex justify-center gap-10 mt-10">
               <a
-                onClick={()=>navigate("/resume-builder/editor-contact")}
+                onClick={() => navigate("/resume-builder/editor-contact")}
                 href="#_"
-                class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group md:px-24 px-10 text-lg"
+                class="relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-24 px-10 text-lg rounded-full border-[1px] border-solid border-gray-400 text-black"
               >
-                <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
-                  <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
-                </span>
-                <span class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-red-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
+                <span class="relative w-full  text-left ">Back</span>
+
                 <span class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">
                   Back
                 </span>
@@ -123,15 +129,9 @@ const Experience = () => {
               <a
                 onClick={getValue}
                 href="#_"
-                class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-green-500 rounded-xl group md:px-24 px-10 text-lg"
+                class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-24 px-10 text-lg rounded-full text-white hover:bg-[#3ba6d4]"
               >
-                <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-green-700 rounded group-hover:-mr-4 group-hover:-mt-4">
-                  <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
-                </span>
-                <span class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-green-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
-                <span class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">
-                  Continue
-                </span>
+                <span class="relative w-full  text-left ">Continue</span>
               </a>
             </div>
           </form>

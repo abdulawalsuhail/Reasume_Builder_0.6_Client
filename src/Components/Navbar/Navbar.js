@@ -10,6 +10,9 @@ const Navbar = () => {
   const [user] = useAuthState(auth);
   const navItem = (
     <>
+      <li>
+        <Link to="/">HOME</Link>
+      </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
         <Link to="/cvTemplate">CV</Link>
       </li>
