@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import template_1 from "../../../assets/demo1.png";
 import Slider from "react-slick";
+import { AiFillStar } from "react-icons/ai";
 
 const Resume = () => {
     const resume_Templates = [
@@ -72,9 +72,9 @@ const Resume = () => {
         autoplaySpeed: 3000,
       responsive: [
         {
-          breakpoint: 1024,
+          breakpoint: 1025,
           settings: {
-            slidesToShow: 3,
+            slidesToShow: 2,
             slidesToScroll: 1,
             infinite: true,
             dots: true
@@ -83,9 +83,9 @@ const Resume = () => {
         {
           breakpoint: 600,
           settings: {
-            slidesToShow: 2,
+            slidesToShow: 1,
             slidesToScroll: 1,
-            initialSlide: 2
+            initialSlide: 1
           }
         },
         {
@@ -105,8 +105,24 @@ const Resume = () => {
                     return (
                         <div
                             style={{ letterSpacing: "3px" }}
-                            className='ml-12 md:ml-8 mb-10'>
-                            <img style={{width:"80%"}} src={temp.image} alt="" />
+                            className='mb-10 md:px-4 lg:px-6 templateContainer'>
+                            <img style={{ width: "100%" }} className="templateImage" src={temp.image} alt="" />
+                            <div className='w-[100%] md:w-[91%] lg:w-[89%] templateButton p-10'>
+                                <div className='w-[90%] mx-auto flex flex-col justify-between'>
+                                    <Link className='customButton text-center' to="/resume-builder/how-to-start" style={{"--clr":"#6eff3e"}}><span>Edit Template</span><i></i></Link>
+                                    <Link className='customButton text-center' to="/resume-builder/how-to-start" style={{"--clr":"#ff1867"}}><span>Preview</span><i></i></Link>
+                                </div>
+                                <div className='text-center'>
+                                    <h1 className='text-2xl'>Our client satisfaction?</h1>
+                                    <div className='flex mt-1 justify-center'>
+                                        <AiFillStar className='text-green-800 text-xl'/>
+                                        <AiFillStar className='text-green-800 text-xl'/>
+                                        <AiFillStar className='text-green-800 text-xl'/>
+                                        <AiFillStar className='text-green-800 text-xl'/>
+                                        <AiFillStar className='text-green-800 text-xl'/>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     )
                 })
