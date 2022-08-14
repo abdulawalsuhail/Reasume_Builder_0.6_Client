@@ -11,9 +11,6 @@ const Navbar = () => {
   const navItem = (
     <>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link to="/">HOME</Link>
-      </li>
-      <li className="hover:bg-primary hover:text-white rounded-md">
         <Link to="/cvTemplate">CV</Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">

@@ -1,6 +1,10 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+// React slick
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+// react slick end
 import Login from "./Components/Navbar/Login";
 import Signup from "./Components/Navbar/Signup";
 import AllArticle from "./Pages/CarrerCounceling/AllArticle";
@@ -32,6 +36,7 @@ import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 import Template1 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template1";
+import Test from "./Test";
 
 function App() {
   return (
@@ -94,6 +99,7 @@ function App() {
       </Routes>
       {/* <Footer /> */}
       <Toaster />
+      {/* <Test/> */}
     </div>
   );
 }
