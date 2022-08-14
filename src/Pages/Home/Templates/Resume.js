@@ -105,7 +105,7 @@ const Resume = () => {
                     return (
                         <div
                             style={{ letterSpacing: "3px" }}
-                            className='mb-10 md:px-4 lg:px-6 templateContainer'>
+                            className=' md:px-4 lg:px-6 templateContainer'>
                             <img style={{ width: "100%" }} className="templateImage" src={temp.image} alt="" />
                             <div className='w-[100%] md:w-[91%] lg:w-[89%] templateButton p-10'>
                                 <div className='w-[90%] mx-auto flex flex-col justify-between'>
@@ -127,16 +127,6 @@ const Resume = () => {
                     )
                 })
             }
-            {/* {
-                resume_Templates.map(tem => {
-                return <div
-                    className="customDiv hover:drop-shadow-[0_20px_15px_rgba(65,105,144,.6)]">
-                    <h1 className="mb-2 text-md text-accent mt-1">{tem.name}</h1>
-                    <img className="w-full" src={tem.image} alt="" />
-                    <Link to="/resume-builder/how-to-start"><a href='#' style={{position:"absolute", left:"20%", right:"20%", bottom:"50%"}} className='customButton  border p-2 border-0 hidden bg-accent text-white'>Edit Template</a></Link>
-                </div>
-                })
-            } */}
         </Slider>
     );
 };
