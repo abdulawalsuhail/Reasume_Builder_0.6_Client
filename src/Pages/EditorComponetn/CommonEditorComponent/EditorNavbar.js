@@ -9,7 +9,7 @@ import auth from "../../../firebase.init";
 const EditorNavbar = () => {
   
   return (
-    <div class="navbar bg-[#f4f7f8]">
+    <div class="navbar bg-[#f4f7f8] block md:hidden">
       <div class="flex-none">
         <label for="editor-nav" class=" drawer-button lg:hidden">
           <AiOutlineMenu
@@ -29,7 +29,7 @@ const EditorNavbar = () => {
           </div>
         </Link>
       </div>
-      <div class="flex-none">
+      {/* <div class="flex-none">
         <div class="dropdown dropdown-end ml-2">
           <label tabindex="0" class="btn btn-ghost btn-circle avatar">
             <div class="w-10 rounded-full">
@@ -58,7 +58,7 @@ const EditorNavbar = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
