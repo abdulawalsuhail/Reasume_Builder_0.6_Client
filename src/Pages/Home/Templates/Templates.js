@@ -17,7 +17,7 @@ const Templates = () => {
         </div>
       </div>
       {/* template section */}
-      <div className="p-16 my-12 template">
+      <div className="px-16 py-32 my-12 template">
         <Outlet />
       </div>
     </div>
