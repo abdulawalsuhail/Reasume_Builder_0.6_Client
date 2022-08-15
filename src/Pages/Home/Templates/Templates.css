@@ -8,10 +8,11 @@
 /* https://i.ibb.co/ZgbLdGh/joanna-kosinska-u-Gc-DWKN91-Fs-unsplash.jpg */
 /* https://i.ibb.co/nb2d8TN/kristina-evstifeeva-y3h6gh2fpa-I-unsplash.jpg */
 
+
 .template{
     background-image: linear-gradient(
-        rgba(26, 27, 26, 0.76),
-        rgba(182, 237, 196, 0.201)
+        rgba(59, 67, 59, 0.443),
+        rgba(254, 254, 254, 0.66)
     ),url(https://i.ibb.co/gMgyygN/invictus-tailoring-sneaker-socks-5-OZg-Vj0-YVw-Q-unsplash.jpg);
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -46,7 +47,7 @@
     opacity: 1;
 }
 .templateContainer:hover .templateImage{
-    opacity: .5;
+    opacity: .6;
 }
 
 /* button */

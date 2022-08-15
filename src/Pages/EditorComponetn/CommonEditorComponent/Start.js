@@ -7,41 +7,42 @@ import { useNavigate } from "react-router-dom";
 const Start = () => {
   const navigate = useNavigate();
   return (
-    <div className="h-min-screen bg-[#f4f7f8a5]">
-      <EditorNavbar></EditorNavbar>
-      <h1 className="text-5xl front-crimson font-semibold mt-5 text-center">
+    <div className="h-[100vh] bg-[#e5fbe550]">
+      <div className="pt-[6%]">
+      <h1 className="text-[2rem] md:text-[3.5rem] 2xl:text-[4rem] front-crimson font-semibold py-12 text-center">
         How would you like to start?
       </h1>
-      <div className=" flex flex-col md:flex-row justify-center items-center gap-10 py-8  ">
+      <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
         <div
           onClick={() => navigate("/resume-builder/editor-contact")}
-          class=" card rounded-xl hover:shadow-2xl bg-base-100 border-[1px] border-green-500 w-[464px] h-[360px] cursor-pointer"
+          class=" card rounded-lg hover:shadow-2xl bg-base-100 border-[1px] border-green-500 w-[60%] lg:w-[30%] h-[30%] cursor-pointer"
         >
-          <img src={imgtwo} alt="Shoes" />
+          <img src={imgtwo} alt="Create new resume" />
 
-          <h2 class=" text-3xl text-center text-gray-600 font-bold mt-5">
+          <h2 class="text-[1rem] md:text-[1.5rem] 2xl:text-[2rem] text-center text-gray-600 font-bold mt-5">
             Create a New Resume
           </h2>
 
-          <p className="text-center text-[16px]  pb-5 mt-2 text-gray-500">
+          <p className="text-center text-[.70rem] md:text-[.85rem] 2xl:text-[1.5rem] pb-5 mt-2 text-gray-500">
             We'll guide you through each resume section!
           </p>
         </div>
         <div
           onClick={() => navigate("/resume-builder/drag-and-drop-file")}
-          class=" card hover:shadow-2xl bg-base-100  rounded-1xl border-[1px] border-gray-300 hover:border-green-500 w-[464px] h-[360px] cursor-pointergit "
+          class = "card rounded-lg hover:shadow-2xl bg-base-100 border-[1px] border-green-500 w-[60%] lg:w-[30%] h-[30%] cursor-pointer"
         >
           <img src={imgone} alt="Shoes" />
 
-          <h2 class=" text-3xl text-center text-gray-600 font-bold mt-5">
-            Upload My Current Resume
+          <h2 class="text-[1rem] md:text-[1.5rem] 2xl:text-[2rem] text-center text-gray-600 font-bold mt-5">
+            Upload Current Resume
           </h2>
 
-          <p className="text-center text-[16px]  pb-5 mt-2 text-gray-500">
+          <p className="text-center text-[.70rem] md:text-[.85rem] 2xl:text-[1.5rem] pb-5 mt-2 text-gray-500">
             We'll guide you through each resume section!
           </p>
         </div>
       </div>
+    </div>
     </div>
   );
 };
