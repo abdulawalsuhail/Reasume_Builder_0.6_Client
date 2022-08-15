@@ -84,7 +84,7 @@ const CoverLetter = () => {
                             style={{ letterSpacing: "3px" }}
                             className=' md:px-4 lg:px-6 templateContainer'>
                             <img style={{ width: "100%" }} className="templateImage" src={temp.image} alt="" />
-                            <div className='w-[100%] md:w-[91%] lg:w-[89%] templateButton p-10'>
+                            <div className='w-[100%] md:w-[91%] lg:w-[89%] templateButton p-4'>
                                 <div className='w-[90%] mx-auto flex flex-col justify-between'>
                                     <Link className='customButton text-center' to="/resume-builder/how-to-start" style={{"--clr":"#6eff3e"}}><span>Edit Template</span><i></i></Link>
                                     <Link className='customButton text-center' to="/resume-builder/how-to-start" style={{"--clr":"#ff1867"}}><span>Preview</span><i></i></Link>
