@@ -1,6 +1,10 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+// React slick
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+// react slick end
 import Login from "./Components/Navbar/Login";
 import Signup from "./Components/Navbar/Signup";
 import AllArticle from "./Pages/CarrerCounceling/AllArticle";
@@ -11,9 +15,9 @@ import Home from "./Pages/Home/Home";
 
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import MessengerCustomerChat from "react-messenger-customer-chat";
 import RequireAdmin from "./Pages/Authentication/RequireAdmin";
 import RequireAuth from "./Pages/Authentication/RequireAuth";
+import RequireNonAdmin from "./Pages/Authentication/RequireNonAdmin";
 import CarrerConselling from "./Pages/CarrerCounceling/CarrerConselling";
 import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import CarrerPayment from "./Pages/CarrerCounceling/CarrerPayment";
@@ -22,18 +26,17 @@ import CheckoutForm from "./Pages/CarrerCounceling/CheckoutForm";
 import PaymentInformation from "./Pages/CarrerCounceling/PaymentInformation";
 import PaymentOption from "./Pages/CarrerCounceling/PaymentOption";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
-import HowWriteCoverLetter from "./Pages/CoverLatterTemplate/CoverLetter/HowWriteCoverLetter";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 import Alladmin from "./Pages/Dashboard/ALL-Admin/Alladmin";
 import AllUser from "./Pages/Dashboard/All-User/AllUser";
 import BookingService from "./Pages/Dashboard/All-User/BookingService/BookingService";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import UserOrder from "./Pages/Dashboard/UserOrder/UserOrder";
 import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
 import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
 import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
 import DragAndDropFile from "./Pages/EditorComponetn/CommonEditorComponent/DragAndDropFile";
 import Template1 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template1";
-import Template2 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template2";
 import EditorCareerObjective from "./Pages/EditorComponetn/CommonEditorComponent/EditorCareerObjective";
 import Education from "./Pages/EditorComponetn/CommonEditorComponent/Education";
 import Experience from "./Pages/EditorComponetn/CommonEditorComponent/Experience";
@@ -51,6 +54,7 @@ import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 const stripePromise = loadStripe(
   "pk_test_51L0e7DJVuUKdOSgodXlRxjzrt9f8fKWzD9Jum98GewskqXtaZ9Mx725bepiQ7zjAuEpcALdbkJEVHlNIG0RTIanM00m74yy2rn"
 );
+
 function App() {
   return (
     <div>
@@ -108,14 +112,7 @@ function App() {
           ></Route>
           <Route path="reference" element={<Reference />}></Route>
           <Route path="template1" element={<Template1 />}></Route>
-          <Route path="template2" element={<Template2 />}></Route>
         </Route>
-
-        {/* cover letter route */}
-        <Route
-          path="/how-write-cover-letter"
-          element={<HowWriteCoverLetter />}
-        ></Route>
 
         {/* payment route */}
 
@@ -134,9 +131,6 @@ function App() {
             }
           ></Route>
         </Route>
-
-        {/* Dashboard */}
-
         <Route
           path="/dashboard"
           element={
@@ -169,15 +163,22 @@ function App() {
               </RequireAdmin>
             }
           ></Route>
+
+          {/* user order */}
+
+          <Route
+            path="order"
+            element={
+              <RequireNonAdmin>
+                <UserOrder />
+              </RequireNonAdmin>
+            }
+          ></Route>
         </Route>
       </Routes>
-      {/* facebook live chat */}
-      <MessengerCustomerChat
-        pageId="105555438910537"
-        appId="1225310258009219"
-      />
       {/* <Footer /> */}
       <Toaster />
+      {/* <Test/> */}
     </div>
   );
 }

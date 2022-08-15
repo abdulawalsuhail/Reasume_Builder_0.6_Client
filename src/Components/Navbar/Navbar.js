@@ -120,9 +120,9 @@ const Navbar = () => {
           </div>
           <Link to="/">
             <div className="flex items-center">
-              <img className="w-14" src={logo} alt="logo" />
+              <img className="w-14 mt-2" src={logo} alt="logo" />
 
-              <div className="flex gap-2 text-xl">
+              <div className="text-[15px]">
                 <p>Resume</p>
                 <p>Builder</p>
               </div>

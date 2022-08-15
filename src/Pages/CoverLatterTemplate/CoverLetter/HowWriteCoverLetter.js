@@ -27,7 +27,7 @@ const HowWriteCoverLetter = () => {
         <div
           data-aos="zoom-in-right"
           data-aos-duration="2000"
-          onClick={() => navigate("/resume-builder/editor-contact")}
+          onClick={() => navigate("/coverLetterInput")}
           class=" card rounded-xl hover:shadow-2xl bg-base-100 border-[1px] border-green-500 w-[280px] h-[240px] cursor-pointer p-8"
         >
           <img className="w-20 mx-auto" src={unique} alt="unique img" />
