@@ -118,7 +118,7 @@ const Experience = () => {
               <a
                 onClick={() => navigate("/resume-builder/editor-contact")}
                 href="#_"
-                class="relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-24 px-10 text-lg rounded-full border-[1px] border-solid border-gray-400 text-black"
+                class="relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-24 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black"
               >
                 <span class="relative w-full  text-left ">Back</span>
 
@@ -129,7 +129,7 @@ const Experience = () => {
               <a
                 onClick={getValue}
                 href="#_"
-                class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-24 px-10 text-lg rounded-full text-white hover:bg-[#3ba6d4]"
+                class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-24 px-10 text-lg rounded-lg text-white hover:bg-[#3ba6d4]"
               >
                 <span class="relative w-full  text-left ">Continue</span>
               </a>
