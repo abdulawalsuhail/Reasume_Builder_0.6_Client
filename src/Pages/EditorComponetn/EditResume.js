@@ -112,7 +112,7 @@ const EditResume = () => {
       <EditorNavbar />
       <div class="drawer drawer-mobile md:pt-6">
         <input id="editor-nav" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content flex flex-col  ">
+        <div class="drawer-content flex flex-col bg-[#edf2f591]">
           {/* editor content */}
           <Outlet context={[usersTemplateInfo, setUsersTemplateInfo]} />
         </div>

@@ -104,7 +104,6 @@ const Education = () => {
                 <span class="relative w-full  text-left ">Continue</span>
               </a>
             </div>
-            <p className="text-red-600 text-[17px] link">Skip This Step</p>
           </form>
         </div>
         {/* image div */}
