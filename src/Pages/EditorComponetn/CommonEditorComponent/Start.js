@@ -8,7 +8,7 @@ const Start = () => {
   const navigate = useNavigate();
   return (
     <div className="h-[100vh] bg-[#e5fbe550]">
-      <div className="pt-[6%]">
+      <div className="2xl:pt-[6%] pt-[2%]">
       <h1 className="text-[2rem] md:text-[3.5rem] 2xl:text-[4rem] front-crimson font-semibold py-12 text-center">
         How would you like to start?
       </h1>
