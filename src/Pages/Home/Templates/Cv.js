@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import { AiFillStar } from "react-icons/ai";
+import TemplateModal from './TemplateModal';
 
 const Cv = () => {
+    const [templateModal, setTemplateModal] = useState(null);
     const cv_Templates = [
         {
             id: 1,
@@ -93,35 +95,41 @@ const Cv = () => {
     };
     
     return (
-        <Slider {...settings}>
-            {
-                cv_Templates.map(temp => {
-                    return (
-                        <div
-                            style={{ letterSpacing: "3px" }}
-                            className='mb-10 md:px-4 lg:px-6 templateContainer'>
-                            <img style={{ width: "100%" }} className="templateImage" src={temp.image} alt="" />
-                            <div className='w-[100%] md:w-[91%] lg:w-[89%] templateButton p-4'>
-                                <div className='w-[90%] mx-auto flex flex-col justify-between'>
-                                    <Link className='customButton text-center' to="/resume-builder/how-to-start" style={{"--clr":"#6eff3e"}}><span>Edit Template</span><i></i></Link>
-                                    <Link className='customButton text-center' to="/resume-builder/how-to-start" style={{"--clr":"#ff1867"}}><span>Preview</span><i></i></Link>
-                                </div>
-                                <div className='text-center'>
-                                    <h1 className='text-2xl'>Our client satisfaction?</h1>
-                                    <div className='flex mt-1 justify-center'>
-                                        <AiFillStar className='text-green-800 text-xl'/>
-                                        <AiFillStar className='text-green-800 text-xl'/>
-                                        <AiFillStar className='text-green-800 text-xl'/>
-                                        <AiFillStar className='text-green-800 text-xl'/>
-                                        <AiFillStar className='text-green-800 text-xl'/>
+        <>
+            <Slider {...settings}>
+                {
+                    cv_Templates.map(temp => {
+                        return (
+                            <div
+                                style={{ letterSpacing: "3px" }}
+                                className='px-2 2xl:px-8 templateContainer'>
+                                <img style={{ width: "100%" }} className="templateImage" src={temp.image} alt="" />
+                                <div className='w-[95%] 2xl:w-[89%] templateButton p-4'>
+                                    <div className='w-[90%] mx-auto flex flex-col justify-between'>
+                                        <Link className='customButton text-center' to="/resume-builder/how-to-start" style={{"--clr":"#6eff3e"}}><span>Edit Template</span><i></i></Link>
+                                        
+                                        <label
+                                            onClick={()=>setTemplateModal(temp)}
+                                            style={{ "--clr": "#ff1867" }} for="template_modal" class=" modal-button customButton text-center"><span>Preview</span><i></i></label>
+                                    </div>
+                                    <div className='text-center'>
+                                        <h1 className='text-2xl'>Our client satisfaction?</h1>
+                                        <div className='flex mt-1 justify-center'>
+                                            <AiFillStar className='text-green-800 text-xl'/>
+                                            <AiFillStar className='text-green-800 text-xl'/>
+                                            <AiFillStar className='text-green-800 text-xl'/>
+                                            <AiFillStar className='text-green-800 text-xl'/>
+                                            <AiFillStar className='text-green-800 text-xl'/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    )
-                })
-            }
-        </Slider>
+                        )
+                    })
+                }
+            </Slider>
+            {templateModal ? <TemplateModal templateModal={templateModal} /> : ""}
+        </>
     );
 };
 
