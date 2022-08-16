@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Shared/Footer/Footer";
 import Business from "./Business/Business";
 import Guideline from "./Guideline/Guideline";
 import Hero from "./Hero/Hero";
@@ -14,11 +15,12 @@ const Home = () => {
       <Navbar />
       <Hero />
       <WriteResume />
-      <WhyResumeBuilder />
+      {/* <WhyResumeBuilder /> */}
       <Templates />
       <Guideline />
       <Review />
       <Business />
+      <Footer/>
     </div>
   );
 };

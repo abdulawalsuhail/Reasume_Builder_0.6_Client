@@ -1,19 +1,26 @@
 import React from "react";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
-import { AiFillGithub } from "react-icons/ai";
 import {
-  useSignInWithGoogle,
-  useSignInWithGithub,
+  useSignInWithGithub, useSignInWithGoogle
 } from "react-firebase-hooks/auth";
+import { AiFillGithub } from "react-icons/ai";
+import { FaFacebook } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import useToken from "../../Hook/useToken";
 
 const Social = ({ setCustomError }) => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [signInWithGithub, gitUser, gitLoading, gitError] =
     useSignInWithGithub(auth);
+
+    const [token] = useToken(gUser || gitUser)
+    const navigate = useNavigate()
+    if(token){
+      navigate('/')
+    }
   return (
     <div className="flex justify-evenly items-center text-3xl">
       <FcGoogle

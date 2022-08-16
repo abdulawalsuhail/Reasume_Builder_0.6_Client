@@ -1,6 +1,10 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+// React slick
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+// react slick end
 import Login from "./Components/Navbar/Login";
 import Signup from "./Components/Navbar/Signup";
 import AllArticle from "./Pages/CarrerCounceling/AllArticle";
@@ -9,12 +13,36 @@ import Interview from "./Pages/CarrerCounceling/Interview";
 import Stories from "./Pages/CarrerCounceling/Stories";
 import Home from "./Pages/Home/Home";
 
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import RequireAdmin from "./Pages/Authentication/RequireAdmin";
+import RequireAuth from "./Pages/Authentication/RequireAuth";
+import RequireNonAdmin from "./Pages/Authentication/RequireNonAdmin";
 import CarrerConselling from "./Pages/CarrerCounceling/CarrerConselling";
 import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
+import CarrerPayment from "./Pages/CarrerCounceling/CarrerPayment";
 import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
+import CheckoutForm from "./Pages/CarrerCounceling/CheckoutForm";
+import PaymentInformation from "./Pages/CarrerCounceling/PaymentInformation";
+import PaymentOption from "./Pages/CarrerCounceling/PaymentOption";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
+import Alladmin from "./Pages/Dashboard/ALL-Admin/Alladmin";
+import AllUser from "./Pages/Dashboard/All-User/AllUser";
+import BookingService from "./Pages/Dashboard/All-User/BookingService/BookingService";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import UserOrder from "./Pages/Dashboard/UserOrder/UserOrder";
+import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
+import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
 import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
+import DragAndDropFile from "./Pages/EditorComponetn/CommonEditorComponent/DragAndDropFile";
+import Template1 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template1";
+import EditorCareerObjective from "./Pages/EditorComponetn/CommonEditorComponent/EditorCareerObjective";
+import Education from "./Pages/EditorComponetn/CommonEditorComponent/Education";
+import Experience from "./Pages/EditorComponetn/CommonEditorComponent/Experience";
+import Languages from "./Pages/EditorComponetn/CommonEditorComponent/Languages";
+import Reference from "./Pages/EditorComponetn/CommonEditorComponent/Reference";
+import ShouldAddReference from "./Pages/EditorComponetn/CommonEditorComponent/ShouldAddReference";
 import Start from "./Pages/EditorComponetn/CommonEditorComponent/Start";
 import EditResume from "./Pages/EditorComponetn/EditResume";
 import CoverLetter from "./Pages/Home/Templates/CoverLetter";
@@ -22,10 +50,10 @@ import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
-import Footer from "./Shared/Footer/Footer";
-import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
-import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
-import Languages from "./Pages/EditorComponetn/CommonEditorComponent/Languages";
+
+const stripePromise = loadStripe(
+  "pk_test_51L0e7DJVuUKdOSgodXlRxjzrt9f8fKWzD9Jum98GewskqXtaZ9Mx725bepiQ7zjAuEpcALdbkJEVHlNIG0RTIanM00m74yy2rn"
+);
 
 function App() {
   return (
@@ -58,16 +86,99 @@ function App() {
         <Route path="/coverLatter" element={<CoverLatterTemplate />}></Route>
 
         {/* Resume Editor route */}
+        <Route path="/final-resume" element={<Template1 />}></Route>
         <Route path="/resume-builder/how-to-start" element={<Start />}></Route>
+        <Route
+          path="/resume-builder/drag-and-drop-file"
+          element={<DragAndDropFile />}
+        ></Route>
         <Route path="/resume-builder" element={<EditResume />}>
           <Route path="editor-contact" element={<ContactDetails />}></Route>
+          <Route path="editor-experience" element={<Experience />}></Route>
+          <Route path="editor-education" element={<Education />}></Route>
           <Route path="certifications" element={<Certifications />}></Route>
-          <Route path="additional-skills" element={<AdditionalSkills />}></Route>
+          <Route
+            path="additional-skills"
+            element={<AdditionalSkills />}
+          ></Route>
           <Route path="languages" element={<Languages />}></Route>
+          <Route
+            path="career-objective"
+            element={<EditorCareerObjective />}
+          ></Route>
+          <Route
+            path="reference/should_add_reference"
+            element={<ShouldAddReference />}
+          ></Route>
+          <Route path="reference" element={<Reference />}></Route>
+          <Route path="template1" element={<Template1 />}></Route>
+        </Route>
+
+        {/* payment route */}
+
+        <Route
+          path="/resume-builder/career-counselling/:id"
+          element={<CarrerPayment />}
+        >
+          <Route index element={<PaymentInformation />}></Route>
+          <Route path="method" element={<PaymentOption />}></Route>
+          <Route
+            path="checkout-form"
+            element={
+              <Elements stripe={stripePromise}>
+                <CheckoutForm />
+              </Elements>
+            }
+          ></Route>
+        </Route>
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route
+            path="all-user"
+            element={
+              <RequireAdmin>
+                <AllUser />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="all-admin"
+            element={
+              <RequireAdmin>
+                <Alladmin />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="booking-service"
+            element={
+              <RequireAdmin>
+                <BookingService />
+              </RequireAdmin>
+            }
+          ></Route>
+
+          {/* user order */}
+
+          <Route
+            path="order"
+            element={
+              <RequireNonAdmin>
+                <UserOrder />
+              </RequireNonAdmin>
+            }
+          ></Route>
         </Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
       <Toaster />
+      {/* <Test/> */}
     </div>
   );
 }

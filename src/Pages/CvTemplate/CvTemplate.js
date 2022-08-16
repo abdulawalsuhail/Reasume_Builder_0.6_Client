@@ -10,19 +10,20 @@ import DragDrop from '../CommonTemplateSections/DragDrop';
 import ContentSuggestions from '../CommonTemplateSections/ContentSuggestions';
 import GenerateDoc from '../CommonTemplateSections/GenerateDoc';
 import ImportDoc from '../CommonTemplateSections/ImportDoc';
+import Footer from '../../Shared/Footer/Footer';
 
 const CvTemplate = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='md:py-12 text-gray-700'>
+            <div className='md:pt-12 text-gray-700'>
                 <h1 class="text-2xl md:text-5xl text-center font-bold my-8">Online CV Maker</h1>
                 <TemplateBanner/>
                 {/* Cv section */}
-                <div className='2xl:w-3/4 mx-auto'>
+                <div className=''>
                     <h1 className='text-xl md:text-4xl text-center font-bold px-12 md:px-0 mt-24 pb-24'>Create a CV online. First, select a template:</h1>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:mx-16">
-                        <Cv></Cv>
+                    <div className="p-16 my-12 md:my-0 template">
+                        <Cv/>
                     </div>
                 </div>
                 {/* Quotation */}
@@ -48,6 +49,8 @@ const CvTemplate = () => {
                 {/* Import your old CV or LinkedIn profile */}
                 <ImportDoc/>
             </div>
+            {/* Footer section */}
+                <Footer/>
         </div>
     );
 };
