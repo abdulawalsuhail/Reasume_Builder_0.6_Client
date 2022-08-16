@@ -2,15 +2,15 @@ import React from 'react';
 import Swal from 'sweetalert2';
 import axiosPrivate from '../../Api/axiosPrivate';
 
-const AdminRow = ({admin,index,refetch}) => {
-    const {role,email} = admin
-    const removeAdmin = () => {
-        axiosPrivate.patch(`/remove-admin/${email}`)
+const AllExpertRow = ({expert,index,refetch}) => {
+    const {email,writer} = expert
+    const removeExpert = () => {
+        axiosPrivate.patch(`/remove-expert/${email}`)
         .then(response => {
             if (response.data.modifiedCount > 0) {
                 Swal.fire({
                   icon: "success",
-                  title: "remove admin success",
+                  title: "remove expert success",
                   showConfirmButton: false,
                   timer: 1500,
                 });
@@ -20,7 +20,7 @@ const AdminRow = ({admin,index,refetch}) => {
             if (err.response.status === 403) {
               Swal.fire({
                 icon: "error",
-                title: "failed to remove admin",
+                title: "failed to remove expert",
                 showConfirmButton: false,
                 timer: 1500,
               });
@@ -31,12 +31,12 @@ const AdminRow = ({admin,index,refetch}) => {
         <tr>
         <th>{index +1}</th>
         <td>{email}</td>
-        <td className='uppercase font-bold'>{role}</td>
+        <td className='uppercase font-bold'>{writer}</td>
         <td>
-            <button onClick={removeAdmin} className='btn btn-xs bg-white text-gray-600 hover:bg-white'>remove admin</button>
+            <button onClick={removeExpert} className='btn btn-xs bg-white text-gray-600 hover:bg-white'>remove expert</button>
         </td>
        </tr>
     );
 };
 
-export default AdminRow;
+export default AllExpertRow;

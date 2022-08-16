@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { FcSelfServiceKiosk } from "react-icons/fc";
+import { GrUserExpert } from "react-icons/gr";
 import { HiUserGroup } from "react-icons/hi";
 import { RiAdminLine } from "react-icons/ri";
 import { NavLink, Outlet } from "react-router-dom";
@@ -61,6 +62,15 @@ const Dashboard = () => {
               >
                 <FcSelfServiceKiosk className="-mr-1 text-[20px]" />
                 BOOKING SERVICE
+              </NavLink>
+            </li>
+            <li className=" hover:text-white rounded-md mt-2">
+              <NavLink
+                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
+                to="/dashboard/all-expert"
+              >
+                <GrUserExpert className="-mr-1 text-[20px]" />
+                All-Expert
               </NavLink>
             </li>
             

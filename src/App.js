@@ -29,6 +29,7 @@ import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 import AddReview from "./Pages/Dashboard/AddReview/AddReview";
 import Alladmin from "./Pages/Dashboard/ALL-Admin/Alladmin";
+import AllExpert from "./Pages/Dashboard/All-Expert/AllExpert";
 import AllUser from "./Pages/Dashboard/All-User/AllUser";
 import BookingService from "./Pages/Dashboard/All-User/BookingService/BookingService";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
@@ -159,6 +160,14 @@ function App() {
             element={
               <RequireAdmin>
                 <Alladmin />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="all-expert"
+            element={
+              <RequireAdmin>
+                <AllExpert/>
               </RequireAdmin>
             }
           ></Route>
