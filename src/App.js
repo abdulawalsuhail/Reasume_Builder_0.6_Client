@@ -27,6 +27,7 @@ import PaymentInformation from "./Pages/CarrerCounceling/PaymentInformation";
 import PaymentOption from "./Pages/CarrerCounceling/PaymentOption";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
+import AddReview from "./Pages/Dashboard/AddReview/AddReview";
 import Alladmin from "./Pages/Dashboard/ALL-Admin/Alladmin";
 import AllUser from "./Pages/Dashboard/All-User/AllUser";
 import BookingService from "./Pages/Dashboard/All-User/BookingService/BookingService";
@@ -131,6 +132,12 @@ function App() {
             }
           ></Route>
         </Route>
+
+
+        {/* dashboard */}
+
+
+        {/* admin dashboard */}
         <Route
           path="/dashboard"
           element={
@@ -164,13 +171,21 @@ function App() {
             }
           ></Route>
 
-          {/* user order */}
+          {/* user dashboard */}
 
           <Route
             path="order"
             element={
               <RequireNonAdmin>
                 <UserOrder />
+              </RequireNonAdmin>
+            }
+          ></Route>
+          <Route
+            path="add-review"
+            element={
+              <RequireNonAdmin>
+                <AddReview/>
               </RequireNonAdmin>
             }
           ></Route>

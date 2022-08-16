@@ -16,7 +16,7 @@ const Dashboard = () => {
   return (
     <>
       <Navbar />
-      <div class="drawer drawer-mobile md:px-12 ">
+      <div class="drawer drawer-mobile lg:px-12 ">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content no-scroll ">
           {/* <!-- Page content here --> */}
@@ -29,7 +29,7 @@ const Dashboard = () => {
             Open drawer
           </label>
         </div>
-        <div class="drawer-side md:shadow-2xl mr-6">
+        <div class="drawer-side lg:shadow-2xl mr-6">
           <label for="my-drawer-2" class="drawer-overlay"></label>
           <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
@@ -74,7 +74,16 @@ const Dashboard = () => {
                 to="/dashboard/order"
               >
                 <FcSelfServiceKiosk className="-mr-1 text-[20px]" />
-                Your Order
+                Order History
+              </NavLink>
+            </li>
+            <li className=" hover:text-white rounded-md mt-2">
+              <NavLink
+                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
+                to="/dashboard/add-review"
+              >
+                <FcSelfServiceKiosk className="-mr-1 text-[20px]" />
+                Add-Review
               </NavLink>
             </li>
             
