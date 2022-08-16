@@ -17,6 +17,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import RequireAdmin from "./Pages/Authentication/RequireAdmin";
 import RequireAuth from "./Pages/Authentication/RequireAuth";
+import RequireExpert from "./Pages/Authentication/RequireExpert";
 import RequireNonAdmin from "./Pages/Authentication/RequireNonAdmin";
 import CarrerConselling from "./Pages/CarrerCounceling/CarrerConselling";
 import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
@@ -33,6 +34,7 @@ import AllExpert from "./Pages/Dashboard/All-Expert/AllExpert";
 import AllUser from "./Pages/Dashboard/All-User/AllUser";
 import BookingService from "./Pages/Dashboard/All-User/BookingService/BookingService";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import WriteBlog from "./Pages/Dashboard/ExpertWritter/WriteBlog";
 import UserOrder from "./Pages/Dashboard/UserOrder/UserOrder";
 import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
 import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
@@ -179,7 +181,16 @@ function App() {
               </RequireAdmin>
             }
           ></Route>
+          {/* expert dashboard */}
 
+          <Route
+            path="write-blog"
+            element={
+              <RequireExpert>
+                <WriteBlog/>
+              </RequireExpert>
+            }
+          ></Route>
           {/* user dashboard */}
 
           <Route

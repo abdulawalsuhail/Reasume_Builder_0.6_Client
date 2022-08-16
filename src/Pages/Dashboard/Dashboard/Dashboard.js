@@ -9,11 +9,13 @@ import Navbar from "../../../Components/Navbar/Navbar";
 import "../../../Css/CarrerCounceling.css";
 import auth from "../../../firebase.init";
 import useAdmin from "../../../Hook/useAdmin";
+import useExpert from "../../../Hook/useExpert";
 
 const Dashboard = () => {
 
   const [user] = useAuthState(auth)
   const [admin] = useAdmin(user)
+  const [expert] = useExpert(user)
   return (
     <>
       <Navbar />
@@ -74,6 +76,19 @@ const Dashboard = () => {
               </NavLink>
             </li>
             
+            </>
+          }
+          {
+            expert && <>
+            <li className=" hover:text-white rounded-md mt-2">
+              <NavLink
+                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
+                to="/dashboard/write-blog"
+              >
+                <GrUserExpert className="-mr-1 text-[20px]" />
+                Write Blog
+              </NavLink>
+            </li>
             </>
           }
           {
