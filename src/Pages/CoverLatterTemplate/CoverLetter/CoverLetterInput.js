@@ -4,30 +4,37 @@ import welcome from "../../../assets/cover-letter-welcome.gif";
 import NextBtn from "./NextBtn";
 import { FcIdea } from "react-icons/fc";
 import { MdOutlineCreate } from "react-icons/md";
+import axiosPrivate from "../../Api/axiosPrivate";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import { Link } from "react-router-dom";
 
 const CoverLetterInput = () => {
+  const [user] = useAuthState(auth);
   const [section, setSection] = useState("name");
   const [name, setName] = useState("");
   const [jobRole, setJobRole] = useState("");
   const [experience, setExperience] = useState("");
   const [skillOne, setSkillOne] = useState("");
-  const [skillTow, setSkillTow] = useState("");
+  const [skillTwo, setSkillTwo] = useState("");
   const [skillThree, setSkillThree] = useState("");
   const [strengthOne, setStrengthOne] = useState("");
-  const [strengthTow, setStrengthTow] = useState("");
+  const [strengthTwo, setStrengthTwo] = useState("");
   const [strengthThree, setStrengthThree] = useState("");
   const [challenge, setChallenge] = useState("");
   const [phone, setPhone] = useState("");
   const [linkedin, setLinkedin] = useState("");
   const [email, setEmail] = useState("");
+  const userEmail = user?.email;
 
   const createCoverLetter = () => {
-    const skill = { skillOne, skillTow, skillThree };
-    const strength = { strengthOne, strengthTow, strengthThree };
+    const skill = { skillOne, skillTwo, skillThree };
+    const strength = { strengthOne, strengthTwo, strengthThree };
     const coverLetterInfo = {
       name,
       phone,
       email,
+      userEmail,
       linkedin,
       jobRole,
       experience,
@@ -35,7 +42,12 @@ const CoverLetterInput = () => {
       strength,
       challenge,
     };
-    console.log(coverLetterInfo);
+    // post cover letter data
+    axiosPrivate
+      .put(`coverLetterInfo/${userEmail}`, coverLetterInfo)
+      .then((res) => {
+        console.log(res);
+      });
   };
 
   return (
@@ -55,7 +67,7 @@ const CoverLetterInput = () => {
               type="text"
               onChange={(e) => setName(e.target.value)}
               placeholder="Type your name here"
-              class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success"
+              className="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success"
             />
             {name && <NextBtn section={"jobRole"} setSection={setSection} />}
           </div>
@@ -73,7 +85,7 @@ const CoverLetterInput = () => {
               type="text"
               onChange={(e) => setJobRole(e.target.value)}
               placeholder="Ex: Web Developer"
-              class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success"
+              className="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success"
             />
             {jobRole && (
               <NextBtn section={"experience"} setSection={setSection} />
@@ -90,7 +102,7 @@ const CoverLetterInput = () => {
           <div className="flex justify-center gap-3 px-5">
             <select
               onChange={(e) => setExperience(e.target.value)}
-              class="select select-success w-full max-w-xs"
+              className="select select-success w-full max-w-xs"
             >
               <option disabled selected>
                 How much experience do you have?
@@ -129,21 +141,21 @@ const CoverLetterInput = () => {
               type="text"
               onChange={(e) => setSkillOne(e.target.value)}
               placeholder="Skill One"
-              class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
+              className="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
             />
             <input
               type="text"
-              onChange={(e) => setSkillTow(e.target.value)}
-              placeholder="Skill Tow"
-              class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
+              onChange={(e) => setSkillTwo(e.target.value)}
+              placeholder="Skill Two"
+              className="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
             />
             <input
               type="text"
               onChange={(e) => setSkillThree(e.target.value)}
               placeholder="Skill Three"
-              class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
+              className="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
             />
-            {skillOne && skillTow && skillThree && (
+            {skillOne && skillTwo && skillThree && (
               <NextBtn section={"strengths"} setSection={setSection} />
             )}
           </div>
@@ -159,7 +171,7 @@ const CoverLetterInput = () => {
           <div className=" px-5 md:max-w-md mx-auto">
             <select
               onChange={(e) => setStrengthOne(e.target.value)}
-              class="select select-success w-full max-w-md my-3"
+              className="select select-success w-full max-w-md my-3"
             >
               <option disabled selected>
                 Strength One
@@ -182,11 +194,11 @@ const CoverLetterInput = () => {
               <option>Observation</option>
             </select>
             <select
-              onChange={(e) => setStrengthTow(e.target.value)}
-              class="select select-success w-full max-w-md my-3"
+              onChange={(e) => setStrengthTwo(e.target.value)}
+              className="select select-success w-full max-w-md my-3"
             >
               <option disabled selected>
-                Strength Tow
+                Strength Two
               </option>
               <option>Coaching</option>
               <option>Collaboration</option>
@@ -207,7 +219,7 @@ const CoverLetterInput = () => {
             </select>
             <select
               onChange={(e) => setStrengthThree(e.target.value)}
-              class="select select-success w-full max-w-md mt-3 mb-5"
+              className="select select-success w-full max-w-md mt-3 mb-5"
             >
               <option disabled selected>
                 Strength Three
@@ -229,7 +241,7 @@ const CoverLetterInput = () => {
               <option>Planning</option>
               <option>Observation</option>
             </select>
-            {strengthOne && strengthTow && strengthThree && (
+            {strengthOne && strengthTwo && strengthThree && (
               <NextBtn section={"challenge"} setSection={setSection} />
             )}
           </div>
@@ -253,7 +265,7 @@ const CoverLetterInput = () => {
           <div className="lg:max-w-xl md:max-w-lg mx-auto px-5">
             <textarea
               onChange={(e) => setChallenge(e.target.value)}
-              class="textarea textarea-success w-full mb-4"
+              className="textarea textarea-success w-full mb-4"
               placeholder="We Suggest Type here (max 300 characters)"
               rows="5"
             ></textarea>
@@ -278,39 +290,40 @@ const CoverLetterInput = () => {
               type="text"
               onChange={(e) => setName(e.target.value)}
               placeholder="Your name"
-              class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
+              className="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
             />
             <input
               type="text"
               onChange={(e) => setPhone(e.target.value)}
               placeholder="Phone Number"
-              class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
+              className="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
             />
             <input
               type="text"
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email Address"
-              class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
+              className="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
             />
             <input
               type="text"
               onChange={(e) => setLinkedin(e.target.value)}
               placeholder="Linkedin profile URL"
-              class="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
+              className="input input-bordegreen lg:max-w-xl md:max-w-lg w-full input-success my-3 block"
             />
             {phone && linkedin && email && name && (
-              <button
+              <Link
                 onClick={createCoverLetter}
-                class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-green-500 rounded-xl group"
+                to={`/coverLetter/${user?.email}`}
+                className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-green-500 rounded-xl group"
               >
-                <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-green-700 rounded group-hover:-mr-4 group-hover:-mt-4">
-                  <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
+                <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-green-700 rounded group-hover:-mr-4 group-hover:-mt-4">
+                  <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
                 </span>
-                <span class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-green-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
-                <span class="relative w-full flex items-center gap-2 text-left text-[16px] text-white transition-colors duration-200 ease-in-out group-hover:text-white">
+                <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-green-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
+                <span className="relative w-full flex items-center gap-2 text-left text-[16px] text-white transition-colors duration-200 ease-in-out group-hover:text-white">
                   Build my cover letter <MdOutlineCreate />
                 </span>
-              </button>
+              </Link>
             )}
           </div>
         </div>
