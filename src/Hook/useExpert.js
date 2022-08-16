@@ -11,7 +11,6 @@ const useExpert = (user) => {
         if(email){
          axiosPrivate.get(`/expert/${email}`)
          .then(res => {
-            console.log(res.data);
              setExpert(res.data)
              setExpertLoading(false)
          })

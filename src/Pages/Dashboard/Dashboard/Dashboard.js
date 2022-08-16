@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { BsPencilSquare } from "react-icons/bs";
 import { FcSelfServiceKiosk } from "react-icons/fc";
 import { GrUserExpert } from "react-icons/gr";
 import { HiUserGroup } from "react-icons/hi";
@@ -85,7 +86,7 @@ const Dashboard = () => {
                 className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
                 to="/dashboard/write-blog"
               >
-                <GrUserExpert className="-mr-1 text-[20px]" />
+                <BsPencilSquare className="-mr-1 text-[20px]" />
                 Write Blog
               </NavLink>
             </li>
