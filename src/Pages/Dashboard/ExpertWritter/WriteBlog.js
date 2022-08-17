@@ -60,9 +60,9 @@ const WriteBlog = () => {
                 className="rounded-lg py-2 px-4 outline-none border-[1px] border-gray-400 w-[100%]"
               >
                 <option value="Resume">Resume</option>
-                <option value="1">CV</option>
-                <option value="2">inspire stories</option>
-                <option value="2">interview prep</option>
+                <option value="CV">CV</option>
+                <option value="inspire-stories">inspire stories</option>
+                <option value="interview-prep">interview prep</option>
               </select>
               {errors.select && <p>{errors.select.message}</p>}
             </div>
