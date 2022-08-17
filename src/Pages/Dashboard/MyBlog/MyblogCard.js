@@ -1,10 +1,11 @@
 import React from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { BiEdit } from "react-icons/bi";
+import { useNavigate } from 'react-router-dom';
 
 const MyblogCard = ({ blog, setBlogId }) => {
   const { blogType, title, blog: text, _id } = blog;
-
+  const navigate = useNavigate();
   return (
     <div>
       <div class="card max-w-lg h-[250px] overflow-x-hidden bg-base-100 shadow-xl mt-4">
@@ -13,7 +14,7 @@ const MyblogCard = ({ blog, setBlogId }) => {
           <h2 class="card-title">{title}</h2>
           <p>{text.slice(0, 100)} see more</p>
           <div class="card-actions justify-end">
-            <BiEdit className="text-2xl text-[#f7a000] mr-2" />
+            <BiEdit onClick={() => navigate(`/dashboard/edit-blog-post/${_id}`)} className="text-2xl text-[#f7a000] mr-2" />
             <label onClick={() => setBlogId(_id)} for="blog-delete-modal">
               <AiFillDelete className="text-2xl text-red-600 mr-2" />
             </label>
