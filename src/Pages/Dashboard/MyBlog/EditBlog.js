@@ -8,7 +8,7 @@ const EditBlog = () => {
   const { id } = useParams();
   const [blog] = BlogQuery(id)
   const [newPost,setPost] = useState({})
-  
+  const [loading,setLoading] = useState(false)
 
 
 
@@ -41,6 +41,7 @@ const EditBlog = () => {
           timer: 1500,
         });
       }
+      setLoading(!false)
     }).catch(err => {
       if (err.response.status === 403) {
         Swal.fire({
