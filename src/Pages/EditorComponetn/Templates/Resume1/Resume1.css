@@ -103,13 +103,13 @@
     display: block;
     margin-top: 5px;
 }
-.languag-skill1{
+.language-skill1{
     width: 70%;
 }
-.languag-skill2{
+.language-skill2{
     width: 100%;
 }
-.languag-skill3{
+.language-skill3{
     width: 40%;
 }
 .contactInfo.languag .percent div{
@@ -214,30 +214,3 @@
     font-weight: 500;
     margin: 10px 0;
 }
-
-/* @media screen and (max-width: 720px){
-    .container{
-        width: 300px;
-        height: 100%;
-    }
-    .container .left-side{
-        padding: 20px;
-    }
-    .container .right-side{
-        padding: 20px;
-    }
-    .about{
-        margin-bottom: 5px;
-    }
-    .title2{
-        font-size: 15px;
-        margin-bottom: 2px;
-    }
-    .about .box .year-company{
-        width: 80px;
-    }
-    .about .box{
-        flex-direction: column;
-        margin: 10px 0;
-    }
-} */

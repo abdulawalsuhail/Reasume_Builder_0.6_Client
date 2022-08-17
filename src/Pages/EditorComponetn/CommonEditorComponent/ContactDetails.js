@@ -102,9 +102,9 @@ const ContactDetails = () => {
             </div>
             {/* Email */}
             <input
-              type="text"
+              type="email"
               placeholder="Email"
-              id="Email"
+              id="email"
               class="input h-14 border-1 border-gray-200 focus:outline-none w-full my-4"
             />
             <div className="flex justify-center gap-10">

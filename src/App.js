@@ -37,6 +37,7 @@ import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 import Template1 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template1";
 import Test from "./Test";
+import Resume1 from "./Pages/EditorComponetn/Templates/Resume1/Resume1";
 
 function App() {
   return (
@@ -94,7 +95,10 @@ function App() {
             element={<ShouldAddReference />}
           ></Route>
           <Route path="reference" element={<Reference />}></Route>
-          <Route path="template1" element={<Template1/>}></Route>
+          {/* <Route path="template1" element={<Template1/>}></Route> */}
+        {/* Dummy Templates section route */}
+          <Route path="template1" element={<Resume1/>} />
+        {/* End of Dummy templates section */}
         </Route>
       </Routes>
       {/* <Footer /> */}

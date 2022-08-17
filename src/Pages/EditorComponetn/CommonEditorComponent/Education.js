@@ -7,28 +7,42 @@ const Education = () => {
   const navigate = useNavigate();
   // Get input field values and store values at str
   let str = {
-    name: "educationDetails",
+    name: "Educations",
     value: [],
   }; // store input values
 
   const getValue = () => {
     str.value = [];
-    str.value.push({
-      schoolName: `${document.getElementById("schoolName")?.value}`,
-    });
-    str.value.push({ country: `${document.getElementById("country")?.value}` });
-    str.value.push({ state: `${document.getElementById("state")?.value}` });
-    str.value.push({ city: `${document.getElementById("city")?.value}` });
-    str.value.push({
-      graduationMonth: `${document.getElementById("graduationMonth")?.value}`,
-    });
-    str.value.push({
-      graduationYear: `${document.getElementById("graduationYear")?.value}`,
-    });
+    let education = {
+      name: "Education_1",
+      value : {}
+    };
+
+    education.value.schoolName = `${document.getElementById("schoolName")?.value}`;
+    education.value.country = `${document.getElementById("country")?.value}`;
+    education.value.state = `${document.getElementById("state")?.value}`;
+    education.value.city = `${document.getElementById("city")?.value}`;
+    education.value.graduationMonth = `${document.getElementById("graduationMonth")?.value}`;
+    education.value.graduationYear = `${document.getElementById("graduationYear")?.value}`;
+
+    // education.value.push({
+    //   schoolName: `${document.getElementById("schoolName")?.value}`,
+    // });
+    // education.value.push({ country: `${document.getElementById("country")?.value}` });
+    // education.value.push({ state: `${document.getElementById("state")?.value}` });
+    // education.value.push({ city: `${document.getElementById("city")?.value}` });
+    // education.value.push({
+    //   graduationMonth: `${document.getElementById("graduationMonth")?.value}`,
+    // });
+    // education.value.push({
+    //   graduationYear: `${document.getElementById("graduationYear")?.value}`,
+    // });
+
+    str.value.push(education)
 
     setUsersTemplateInfo([...usersTemplateInfo, str]);
     navigate("/resume-builder/certifications");
-    console.log(str);
+    console.log('education',education, usersTemplateInfo);
   };
 
   return (
