@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Profile = () => {
   return (
-    <div className=" py-10 ">
+    <div className=" py-10">
       <div className="card  shadow-2xl p-6   border-primary rounded-lg mx-10  ">
         <div className="flex   items-center mx-10 justify-between">
           <div>
