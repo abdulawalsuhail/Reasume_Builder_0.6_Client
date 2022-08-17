@@ -1,0 +1,243 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'popping', sans-serif;
+} */
+
+.container{
+    position: relative;
+    width: 100%;
+    width: 1000px;
+    min-height: 1000px;
+    background: #fff;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 0, 1);
+}
+.container .left-side{
+    position: relative;
+    background: #003147;
+    padding: 40px;
+}
+.profile-text{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.profile-text .img-box{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile-text .img-box img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-text h2{
+  color: #fff;
+  font-size: 25px;  
+  margin-top: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  line-height: 40px;
+}
+.profile-text span{
+    font-size: 16px;
+    font-weight: 300;
+}
+.contactInfo{
+    padding-top: 40px;
+}
+.title{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.contactInfo ul{
+    position: relative;
+}
+.contactInfo ul li{
+    position: relative;
+    list-style: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.contactInfo ul li span{
+    color: #fff;
+    font-weight: 300;
+}
+.contactInfo.education li{
+    margin-bottom: 15px;
+}
+.contactInfo.education h5{
+    color: #03a9f4;
+    font-weight: 500;
+}
+.contactInfo.education h4:nth-child(2){
+    color: #fff;
+    font-weight: 500;
+}
+.contactInfo.education h4{
+    color: #fff;
+    font-weight: 300;
+}
+.contactInfo.languag .percent{
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: #081921;
+    display: block;
+    margin-top: 5px;
+}
+.languag-skill1{
+    width: 70%;
+}
+.languag-skill2{
+    width: 100%;
+}
+.languag-skill3{
+    width: 40%;
+}
+.contactInfo.languag .percent div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #03a9f4;
+}
+.container .right-side{
+    position: relative;
+    background: #fff;
+    padding: 40px;
+}
+.about{
+    margin-bottom: 50px;
+}
+.about:last-child{
+    margin-bottom: 0;
+}
+.title2{
+    color: #003147;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.profile-description{
+    color: #333;
+}
+.about .box{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+.about .box .year-company{
+    min-width: 150px;
+    color: #848c90;
+    font-weight: 600;
+}
+.about .box .text h4{
+    text-transform: uppercase;
+    color: #2a7da2;
+    font-size: 16px;
+}
+.skill .box{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.skill .box h4{
+    text-transform: uppercase;
+    color: #848c99;
+    font-weight: 500;
+}
+.skill .box .percent{
+    width: 100%;
+    height: 10px;
+    background: #f0f0f0;
+}
+.work-skill1{
+    width: 80%;
+}
+.work-skill2{
+    width: 90%;
+}
+.work-skill3{
+    width: 70%;
+}
+.work-skill4{
+    width: 40%;
+}
+.work-skill5{
+    width: 70%;
+}
+.work-skill6{
+    width: 70%;
+}
+.work-skill7{
+    width: 60%;
+}
+.work-skill8{
+    width: 80%;
+}
+.skill .box .percent div{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #03a9f4;
+
+}
+.interest ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.interest ul li{
+    list-style: none;
+    color: #333;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+/* @media screen and (max-width: 720px){
+    .container{
+        width: 300px;
+        height: 100%;
+    }
+    .container .left-side{
+        padding: 20px;
+    }
+    .container .right-side{
+        padding: 20px;
+    }
+    .about{
+        margin-bottom: 5px;
+    }
+    .title2{
+        font-size: 15px;
+        margin-bottom: 2px;
+    }
+    .about .box .year-company{
+        width: 80px;
+    }
+    .about .box{
+        flex-direction: column;
+        margin: 10px 0;
+    }
+} */

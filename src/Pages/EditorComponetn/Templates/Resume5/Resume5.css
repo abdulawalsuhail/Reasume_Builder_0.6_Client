@@ -1,0 +1,254 @@
+.bold5{
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.semi-bold5{
+    font-weight: 500;
+    font-size: 16px;
+}
+.resume5{
+    width: 1000px;
+    height: auto;
+    display: flex;
+    margin: 50px auto;
+    position: relative;
+}
+.img-box5{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.resume5-5{
+    width: 100%;
+    height: 300px;
+    background-color: rgb(149, 140, 119);
+    position: absolute;
+    margin-top: 60px;
+    padding: 50px;
+    display: flex;
+}
+.left-5{
+    width: 320px;
+}
+.info-text5{
+    display: flex;
+    gap: 30px;
+}
+.info-text5-5 .icon5{
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    color: #0bb5f4;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 16px;
+    position: relative;
+}
+.info-text5-5 ul li .date5{
+    color: #fff;
+}
+.info-text5-5 ul li{
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+.left-side5{
+    width: 350px;
+    background-color: #354c55;
+    padding-top: 380px;
+}
+.profile5{
+    width: 350px;
+    
+
+}
+.profile5 img{
+    width: 100%;
+    height: 100%;
+}
+.content5{
+    padding: 0 25px;
+}
+.title5{
+    margin-bottom: 20px;
+}
+.bold5{
+    color: #fff;
+}
+.regular5{
+    color: #b1eaff;
+}
+.resume-item5:last-child,
+.resume-item5:last-child{
+    border-bottom: 0px;
+}
+.left-side5 ul li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.left-side5 ul li:last-child{
+    margin-bottom: 0;
+}
+.left-side5 ul li .icon5{
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    color: #0bb5f4;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 16px;
+    position: relative;
+}
+.icon5-5{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.left-side5 ul li .date5{
+    color: #b1eaff;
+}
+.left-side5 .resume-skills5 ul li{
+    color: #b1eaff;
+    justify-content: space-between;
+}
+.resume-skills5 ul li .skill-name5{
+    width: 25%;
+}
+.resume-skills5 ul li .skill-progress5{
+    width: 35%;
+    margin: 0 5px;
+    height: 5px;
+    background-color: #009fd9;
+    position: relative;
+}
+.resume-skills5 ul li .skill-per5{
+    width: 15%;
+}
+.progress5-1{
+    width: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #fff;
+}
+.progress5-2{
+    width: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #fff;
+}
+.progress5-3{
+    width: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #fff;
+}
+.progress5-4{
+    width: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #fff;
+}
+.progress5-5{
+    width: 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #fff;
+}
+.progress5-6{
+    width: 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #fff;
+}
+.progress5-7{
+    width: 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #fff;
+}
+.resume5 .right-side5{
+    width: 650px;
+    background-color: #fff;
+    padding: 25px;
+    padding-top: 380px;
+}
+.resume5 .right-side5 .bold5{
+    color: #0bb5f4;
+}
+.resume-work5 ul,
+.resume-education5 ul{
+    padding-left: 40px;
+    overflow: hidden;
+}
+.right-side5 ul li{
+    position: relative;
+}
+.right-side5 ul li .date5{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.right-side5 ul li .info5{
+    margin-bottom: 20px;
+}
+.right-side5 ul li:last-child .info5{
+    margin-bottom: 0;
+}
+
+.resume-work5 ul li::after,
+.resume-education5 ul li::after{
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: -26px;
+    width: 2px;
+    height: 115px;
+    background-color: #0bb5f4;
+}
+.resume-hobby5 ul{
+    display: flex;
+    justify-content: space-between;
+}
+.resume-hobby5 ul li{
+    color: #0bb5f4;
+}
+.resume-hobby5 ul li .icon5{
+    font-size: 30px;
+}
+
+.resume-hobby5 ul li:last-child::before{
+    display: none;
+}
+.resume-item5 li{
+    list-style: none;
+}
+
+/* @media screen and (max-width: 720px){
+    .resume5{
+        width: 300px;
+        height: 100%;
+    }
+    .resume-hobby5 ul li::before{
+        display: none;
+    }
+} */

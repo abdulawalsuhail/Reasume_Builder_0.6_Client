@@ -65,7 +65,7 @@ function App() {
         </Route>
         <Route path="template" element={<Templates />} />
         <Route path="cvTemplate" element={<CvTemplate />}></Route>
-        <Route path="resumeTemplate" element={<ResumeTemplate />}></Route>
+        <Route path="/resumeTemplate" element={<ResumeTemplate />}></Route>
         <Route path="/coverLatter" element={<CoverLatterTemplate />}></Route>
 
         {/* Resume Editor route */}
