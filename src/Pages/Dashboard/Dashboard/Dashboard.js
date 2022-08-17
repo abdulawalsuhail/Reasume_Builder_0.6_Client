@@ -2,7 +2,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { BsPencilSquare } from "react-icons/bs";
 import { FcSelfServiceKiosk } from "react-icons/fc";
-import { GrUserExpert } from "react-icons/gr";
+import { GrDocumentUser, GrUserExpert } from "react-icons/gr";
 import { HiUserGroup } from "react-icons/hi";
 import { RiAdminLine } from "react-icons/ri";
 import { NavLink, Outlet } from "react-router-dom";
@@ -88,6 +88,15 @@ const Dashboard = () => {
               >
                 <BsPencilSquare className="-mr-1 text-[20px]" />
                 Write Blog
+              </NavLink>
+            </li>
+            <li className=" hover:text-white rounded-md mt-2">
+              <NavLink
+                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
+                to="/dashboard/my-blog-post"
+              >
+                <GrDocumentUser className="-mr-1 text-[20px]" />
+                My Blog post
               </NavLink>
             </li>
             </>

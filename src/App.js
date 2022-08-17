@@ -35,6 +35,7 @@ import AllUser from "./Pages/Dashboard/All-User/AllUser";
 import BookingService from "./Pages/Dashboard/All-User/BookingService/BookingService";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import WriteBlog from "./Pages/Dashboard/ExpertWritter/WriteBlog";
+import MyBlog from "./Pages/Dashboard/MyBlog/MyBlog";
 import UserOrder from "./Pages/Dashboard/UserOrder/UserOrder";
 import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
 import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
@@ -188,6 +189,14 @@ function App() {
             element={
               <RequireExpert>
                 <WriteBlog/>
+              </RequireExpert>
+            }
+          ></Route>
+          <Route
+            path="my-blog-post"
+            element={
+              <RequireExpert>
+                <MyBlog/>
               </RequireExpert>
             }
           ></Route>
