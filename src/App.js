@@ -1,6 +1,8 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import Login from "./Components/Navbar/Login";
 import Signup from "./Components/Navbar/Signup";
 import AllArticle from "./Pages/CarrerCounceling/AllArticle";
@@ -14,6 +16,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import RequireAdmin from "./Pages/Authentication/RequireAdmin";
 import RequireAuth from "./Pages/Authentication/RequireAuth";
+import RequireNonAdmin from "./Pages/Authentication/RequireNonAdmin";
 import CarrerConselling from "./Pages/CarrerCounceling/CarrerConselling";
 import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import CarrerPayment from "./Pages/CarrerCounceling/CarrerPayment";
@@ -26,7 +29,9 @@ import HowWriteCoverLetter from "./Pages/CoverLatterTemplate/CoverLetter/HowWrit
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
 import Alladmin from "./Pages/Dashboard/ALL-Admin/Alladmin";
 import AllUser from "./Pages/Dashboard/All-User/AllUser";
+import BookingService from "./Pages/Dashboard/All-User/BookingService/BookingService";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import UserOrder from "./Pages/Dashboard/UserOrder/UserOrder";
 import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
 import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
 import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
@@ -46,6 +51,7 @@ import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
+
 import CoverLetterInput from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterInput";
 import CoverLetterTemplate from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterTemplate";
 import Quiz from "./Pages/Quiz/Quiz";
@@ -186,6 +192,25 @@ function App() {
               <RequireAdmin>
                 <Alladmin />
               </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="booking-service"
+            element={
+              <RequireAdmin>
+                <BookingService />
+              </RequireAdmin>
+            }
+          ></Route>
+
+          {/* user order */}
+
+          <Route
+            path="order"
+            element={
+              <RequireNonAdmin>
+                <UserOrder />
+              </RequireNonAdmin>
             }
           ></Route>
         </Route>
