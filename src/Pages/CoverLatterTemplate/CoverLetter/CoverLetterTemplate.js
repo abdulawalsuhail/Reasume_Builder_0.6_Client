@@ -8,6 +8,7 @@ import { HiPhone } from "react-icons/hi";
 import { MdOutlineMail } from "react-icons/md";
 import { TbBrandLinkedin } from "react-icons/tb";
 import CoverLetterNavbar from "./CoverLetterNavbar";
+import { FiArrowDown } from "react-icons/fi";
 const CoverLetterTemplate = () => {
   const { id } = useParams();
   const { isLoading, error, data } = useQuery(["coverLetter"], () =>
@@ -31,12 +32,19 @@ const CoverLetterTemplate = () => {
     <div className="bg-[#f4f7f8] min-h-screen pb-20">
       <CoverLetterNavbar />
       <div className="w-[65%] mx-auto">
-        <button
-          onClick={handelDownload}
-          className="btn btn-danger ml-auto block mt-4 mb-2"
-        >
-          Download
-        </button>
+        <div className="w-fit ml-auto mt-4 mb-2">
+          <button
+            onClick={handelDownload}
+            className="box-border relative z-30 inline-flex items-center justify-center w-auto px-5 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-rose-600 rounded-md cursor-pointer group ring-offset-2 ring-1 ring-rose-300 ring-offset-rose-200 hover:ring-offset-rose-500 ease focus:outline-none"
+          >
+            <span class="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
+            <span class="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
+            <span class="relative z-20 flex items-center gap-2 text-sm">
+              <FiArrowDown className="animate-bounce font-extrabold text-[20px]" />
+              Download
+            </span>
+          </button>
+        </div>
       </div>
       <div className="w-[65%] mx-auto bg-white  ">
         <div ref={componentRef} className="p-16">
