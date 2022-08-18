@@ -14,12 +14,20 @@ const WriteBlog = () => {
     reset,
     formState: { errors },
   } = useForm();
+
+
+  const today = new Date();
+  const date =
+  today.getDate()+ "-" + (today.getMonth() + 1) + "-" + today.getFullYear()
+   
   const onSubmit = (data) => {
     const blogs = {
       email:user?.email,
       blogType:data.blogType,
       title:data.title,
-      blog:data.blog
+      blog:data.blog,
+      name:user?.displayName,
+      date:date
     }
 
     axiosPrivate.post('/blogs',blogs)
