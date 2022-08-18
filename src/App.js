@@ -7,8 +7,8 @@ import Login from "./Components/Navbar/Login";
 import Signup from "./Components/Navbar/Signup";
 import AllArticle from "./Pages/CarrerCounceling/AllArticle/AllArticle";
 import CarrerHeader from "./Pages/CarrerCounceling/CarrerHeader";
-import Interview from "./Pages/CarrerCounceling/Interview";
-import Stories from "./Pages/CarrerCounceling/Stories";
+import Stories from "./Pages/CarrerCounceling/InspiringStories/Stories";
+import Interview from "./Pages/CarrerCounceling/InterviewPrep/Interview";
 import Home from "./Pages/Home/Home";
 
 import { Elements } from "@stripe/react-stripe-js";
