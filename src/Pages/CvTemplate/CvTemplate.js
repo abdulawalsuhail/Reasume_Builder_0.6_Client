@@ -1,16 +1,16 @@
 import React from 'react';
 
-import Cv from '../Home/Templates/Cv';
 import Navbar from '../../Components/Navbar/Navbar';
-import TemplateBanner from '../CommonTemplateSections/TemplateBanner';
-import Quotation from '../CommonTemplateSections/Quotation';
-import DownloadSteps from '../CommonTemplateSections/DownloadSteps';
-import ProfessionalTemplate from '../CommonTemplateSections/ProfessionalTemplate';
-import DragDrop from '../CommonTemplateSections/DragDrop';
+import Footer from '../../Shared/Footer/Footer';
 import ContentSuggestions from '../CommonTemplateSections/ContentSuggestions';
+import DownloadSteps from '../CommonTemplateSections/DownloadSteps';
+import DragDrop from '../CommonTemplateSections/DragDrop';
 import GenerateDoc from '../CommonTemplateSections/GenerateDoc';
 import ImportDoc from '../CommonTemplateSections/ImportDoc';
-import Footer from '../../Shared/Footer/Footer';
+import ProfessionalTemplate from '../CommonTemplateSections/ProfessionalTemplate';
+import Quotation from '../CommonTemplateSections/Quotation';
+import TemplateBanner from '../CommonTemplateSections/TemplateBanner';
+import Cv from '../Home/Templates/Cv';
 
 const CvTemplate = () => {
     return (

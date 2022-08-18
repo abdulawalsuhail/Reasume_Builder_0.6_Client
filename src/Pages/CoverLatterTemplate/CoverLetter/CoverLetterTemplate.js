@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
-import { useReactToPrint } from "react-to-print";
-import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import axiosPrivate from "../../Api/axiosPrivate";
-import Loading from "../../../Shared/Loading/Loading";
+import React, { useRef } from "react";
 import { HiPhone } from "react-icons/hi";
 import { MdOutlineMail } from "react-icons/md";
 import { TbBrandLinkedin } from "react-icons/tb";
+import { useParams } from "react-router-dom";
+import { useReactToPrint } from "react-to-print";
+import Loading from "../../../Shared/Loading/Loading";
+import axiosPrivate from "../../Api/axiosPrivate";
 import CoverLetterNavbar from "./CoverLetterNavbar";
 const CoverLetterTemplate = () => {
   const { id } = useParams();
