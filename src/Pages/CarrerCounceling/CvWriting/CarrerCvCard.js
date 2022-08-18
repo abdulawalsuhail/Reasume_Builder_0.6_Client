@@ -1,12 +1,12 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const ResumeCard = ({ resume }) => {
-  const { title, blog, name, date, _id } = resume;
-  const navigate = useNavigate();
-  return (
-    <div>
-      <div class="card max-w-sm h-[200px] mt-6 mx-auto  bg-base-100 shadow-xl">
+const CarrerCvCard = ({cv}) => {
+    const { title, blog, name, date, _id } = cv;
+    const navigate = useNavigate();
+    return (
+        <div>
+                <div class="card max-w-sm h-[200px] mt-6 mx-auto  bg-base-100 shadow-xl">
         <div class="card-body">
           <h2 class="card-title">{title}</h2>
           <p className="text-[18px] text-gray-600">
@@ -30,8 +30,8 @@ const ResumeCard = ({ resume }) => {
           </div>
         </div>
       </div>
-    </div>
-  );
+        </div>
+    );
 };
 
-export default ResumeCard;
+export default CarrerCvCard;
