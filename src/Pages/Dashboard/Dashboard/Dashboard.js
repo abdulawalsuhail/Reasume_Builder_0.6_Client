@@ -1,11 +1,12 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { CgProfile } from "react-icons/cg";
 import { FcSelfServiceKiosk } from "react-icons/fc";
 import { GrDocumentUser, GrUserExpert } from "react-icons/gr";
 import { HiUserGroup } from "react-icons/hi";
 import { MdOutlineEdit } from "react-icons/md";
 import { RiAdminLine } from "react-icons/ri";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import Navbar from "../../../Components/Navbar/Navbar";
 import "../../../Css/CarrerCounceling.css";
 import auth from "../../../firebase.init";
@@ -37,6 +38,16 @@ const Dashboard = () => {
           <label for="my-drawer-2" class="drawer-overlay"></label>
           <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
+
+            <li className=" hover:text-white rounded-md">
+              <Link
+                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
+                to="/dashboard"
+              >
+                <CgProfile className="-mr-1 text-[20px]" />
+                Profile
+              </Link>
+            </li>
           {
             admin && <>
             
