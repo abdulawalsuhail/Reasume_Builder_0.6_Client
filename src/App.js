@@ -94,6 +94,9 @@ function App() {
           <Route path="inspiring-stories" element={<Stories />} />
           <Route path="interview-preparation" element={<Interview />} />
         </Route>
+
+        
+
         <Route path="template" element={<Templates />} />
         <Route path="cvTemplate" element={<CvTemplate />}></Route>
         <Route path="resumeTemplate" element={<ResumeTemplate />}></Route>
