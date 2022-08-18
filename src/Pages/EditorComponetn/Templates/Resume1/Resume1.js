@@ -7,7 +7,8 @@ const Resume1 = () => {
     const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
     
     return (
-        <div>
+        <div className='flex justify-center items-center'>
+            <div className='md:w-[50%]'>
             <div className='container grid '>
                 <div className='left-side'>
                     <div className='profile-text'>
@@ -73,8 +74,8 @@ const Resume1 = () => {
                 <div className='right-side'>
                     {/* Reference area */}
                     <div className='about'>
-                        <h2 className='title2'>{usersTemplateInfo[7]?.name}</h2>
-                        <p className='profile-description'>{usersTemplateInfo[7]?.value[0]}</p>
+                        <h2 className='title2'>{usersTemplateInfo[6]?.name}</h2>
+                        <p className='profile-description'>{usersTemplateInfo[6]?.value}</p>
                     </div>
                     {/* Experience area */}
                     <div className='about'>
@@ -122,6 +123,13 @@ const Resume1 = () => {
                         </ul>
                     </div> */}
                 </div>
+            </div>
+            </div>
+            <div className='md:w-[30%] flex flex-col'>
+                <div className='mb-12 text-center'>
+                    <h1 className='text-4xl font-bold text-slate-700'>Hy! Download your awesome Resume Now</h1>
+                </div>
+                <button className='btn btn-md btn-accent w-[50%] mx-auto hover:text-primary'>Download</button>
             </div>
         </div>
     );
