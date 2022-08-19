@@ -42,8 +42,7 @@ import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/Addi
 import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
 import ContactDetails from "./Pages/EditorComponetn/CommonEditorComponent/ContactDetails";
 import DragAndDropFile from "./Pages/EditorComponetn/CommonEditorComponent/DragAndDropFile";
-import Template1 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template1";
-import Template2 from "./Pages/EditorComponetn/CommonEditorComponent/DummyTemplate/Template2";
+
 import EditorCareerObjective from "./Pages/EditorComponetn/CommonEditorComponent/EditorCareerObjective";
 import Education from "./Pages/EditorComponetn/CommonEditorComponent/Education";
 import Experience from "./Pages/EditorComponetn/CommonEditorComponent/Experience";
@@ -57,6 +56,8 @@ import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
+import Resume1 from "./Pages/EditorComponetn/Templates/Resume1/Resume1";
+
 
 import SingleBlog from "./Pages/CarrerCounceling/AllArticle/SingleBlog";
 import CoverLetterInput from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterInput";
@@ -99,11 +100,10 @@ function App() {
 
         <Route path="template" element={<Templates />} />
         <Route path="cvTemplate" element={<CvTemplate />}></Route>
-        <Route path="resumeTemplate" element={<ResumeTemplate />}></Route>
+        <Route path="/resumeTemplate" element={<ResumeTemplate />}></Route>
         <Route path="/coverLatter" element={<CoverLatterTemplate />}></Route>
 
         {/* Resume Editor route */}
-        <Route path="/final-resume" element={<Template1 />}></Route>
         <Route path="/resume-builder/how-to-start" element={<Start />}></Route>
         <Route
           path="/resume-builder/drag-and-drop-file"
@@ -128,8 +128,11 @@ function App() {
             element={<ShouldAddReference />}
           ></Route>
           <Route path="reference" element={<Reference />}></Route>
-          <Route path="template1" element={<Template1 />}></Route>
-          <Route path="template2" element={<Template2 />}></Route>
+
+          {/* <Route path="template1" element={<Template1/>}></Route> */}
+        {/* Dummy Templates section route */}
+          <Route path="template1" element={<Resume1/>} />
+        {/* End of Dummy templates section */}
         </Route>
 
         {/* cover letter route */}
