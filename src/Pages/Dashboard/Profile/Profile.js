@@ -54,7 +54,7 @@ const Profile = () => {
             <p className="font-semibold">Email:</p>
             <p className="text-xl mb-2">{user?.email}</p>
             <p className="font-semibold mb-2">Phone:</p>
-            <p className="text-xl mb-2"></p>
+            <p className="text-xl mb-2">{users?.number}</p>
           </div>
         </div>
       </div>

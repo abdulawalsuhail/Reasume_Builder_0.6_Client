@@ -32,7 +32,6 @@ const EditBlog = () => {
 
     axiosPrivate.patch(`/blog/${id}`,updateBlog)
     .then(res => {
-      console.log(res.data);
       if(res.data.matchedCount > 0){
         Swal.fire({
           icon: "success",

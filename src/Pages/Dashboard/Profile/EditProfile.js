@@ -1,9 +1,10 @@
 import axios from "axios";
 import { signOut } from "firebase/auth";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link, Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import profileImg from "../../../assets/icon/profile.png";
 import auth from "../../../firebase.init";
 import UserInformation from "../../../Hook/UserInformation";
@@ -14,8 +15,12 @@ const EditProfile = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const [users, isLoading, refetch] = UserInformation(user);
-  const [loading, setLoading] = useState(true);
+  const [updated,setUpdated] = useState({})
+  const navigate = useNavigate()
 
+  useEffect(()=> {
+    setUpdated(users)
+  },[users])
   const img_key = "c694c4abb3bcf601b0b79494e815c533";
 
   const uploadImage = (e) => {
@@ -50,7 +55,24 @@ const EditProfile = () => {
       });
   };
   const onSubmit = (data) => {
-    const image = data.img[0];
+    const updateProfile = {
+      name:updated.name,
+      number:updated.number
+    }
+    axiosPrivate.patch(`/profile/update/${user?.email}`,updateProfile)
+    .then(res => {
+      if(res.data.matchedCount > 0){
+        Swal.fire({
+          icon: "success",
+          title: "information updated",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+
+        refetch()
+        navigate('/dashboard')
+      }
+    })
   };
 
   if (isLoading) {
@@ -65,11 +87,11 @@ const EditProfile = () => {
               <p className="text-2xl font-bold ">My Profile</p>
             </div>
             <div>
-              <Link to="/edit-profile">
-                <button className="btn btn-link p-4 rounded-full   w-50 mt-4 ml-8">
+             <a href="#">
+                <span className="text-primary text-[15px] font-[600] p-4 rounded-full   w-50 mt-4 ml-8">
                   Edit
-                </button>
-              </Link>
+                </span>
+                </a>
             </div>
           </div>
           <hr />
@@ -116,11 +138,15 @@ const EditProfile = () => {
                     <span class="label-text">Full Name</span>
                   </label>
                   <input
-                    {...register("name", { required: true })}
+                    {...register("name", )}
                     type="text"
-                    placeholder="Full Name"
                     name="name"
-                    class="input input-bordered   rounded-3xl    "
+                    class="input input-bordered   rounded-3xl  "
+                    value={updated.name}
+                    onChange={(e) => setUpdated({
+                      ...updated,
+                      name:e.target.value
+                    }) }
                   />
                 </div>
                 <div class="form-control  ">
@@ -128,11 +154,12 @@ const EditProfile = () => {
                     <span class="label-text">Email address</span>
                   </label>
                   <input
-                    {...register("email", { required: true })}
+                    {...register("email",)}
                     type="email"
-                    placeholder="email"
+                    placeholder={users?.email}
                     name="email"
-                    class="input input-bordered rounded-3xl    "
+                    class="input input-bordered rounded-3xl"
+                    readOnly
                   />
                 </div>
                 <div class="form-control  ">
@@ -142,9 +169,13 @@ const EditProfile = () => {
                   <input
                     {...register("Phone")}
                     type="number"
-                    placeholder="Phone"
                     name="phone"
-                    class="input input-bordered rounded-3xl    "
+                    value={updated.number}
+                    class="input input-bordered rounded-3xl"
+                    onChange={(e) => setUpdated({
+                      ...updated,
+                      number:e.target.value
+                    })}
                   />
                 </div>
 
