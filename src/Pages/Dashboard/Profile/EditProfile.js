@@ -1,10 +1,84 @@
-import React from "react";
+import axios from "axios";
+import { signOut } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import profileImg from "../../../assets/icon/profile.png";
+import auth from "../../../firebase.init";
+import UserInformation from "../../../Hook/UserInformation";
+import Loading from "../../../Shared/Loading/Loading";
+import axiosPrivate from "../../Api/axiosPrivate";
 
 const EditProfile = () => {
+  const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const [users, isLoading, refetch] = UserInformation(user);
+  const [updated, setUpdated] = useState({});
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setUpdated(users);
+  }, [users]);
+  const img_key = "c694c4abb3bcf601b0b79494e815c533";
+
+  const uploadImage = (e) => {
+    const image = e.target.files[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    axios
+      .post(`https://api.imgbb.com/1/upload?&key=${img_key}`, formData)
+      .then((res) => {
+        if (res.data.success) {
+          const img = res.data.data.url;
+          const updateImage = {
+            img: img,
+          };
+
+          axiosPrivate
+            .patch(`/user/image/${user?.email}`, updateImage)
+            .then((res) => {
+              console.log(res.data);
+              if (res.data.matchedCount > 0) {
+                refetch();
+              }
+            })
+            .catch((err) => {
+              if (err.response.status === 401 || err.response.status === 403) {
+                signOut(auth);
+                Navigate("/");
+                localStorage.removeItem("userToken");
+              }
+            });
+        }
+      });
+  };
+  const onSubmit = (data) => {
+    const updateProfile = {
+      name: updated.name,
+      number: updated.number,
+    };
+    axiosPrivate
+      .patch(`/profile/update/${user?.email}`, updateProfile)
+      .then((res) => {
+        if (res.data.matchedCount > 0) {
+          Swal.fire({
+            icon: "success",
+            title: "information updated",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+
+          refetch();
+          navigate("/dashboard");
+        }
+      });
+  };
+
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div>
       <div className=" py-10 ">
@@ -14,28 +88,45 @@ const EditProfile = () => {
               <p className="text-2xl font-bold ">My Profile</p>
             </div>
             <div>
-              <Link to="/edit-profile">
-                <button className="btn btn-link p-4 rounded-full   w-50 mt-4 ml-8">
-                  Edit
-                </button>
-              </Link>
+              <span className="text-primary text-[15px] font-[600] p-4 rounded-full   w-50 mt-4 ml-8">
+                Edit
+              </span>
             </div>
           </div>
           <hr />
           <div className=" flex  flex-col md:flex-col lg:flex-row   py-10 mx-10 gap-10  ">
-            <div class="  ">
-              <img
-                alt=""
-                src="https://placeimg.com/192/192/people"
-                className="w-54 rounded-full"
-              />
+            <div class="mt-5">
+              {users.img ? (
+                <div class="avatar ml-3">
+                  <div class="w-32 mx-auto text-center rounded-full ring ring-offset-base-100 ring-offset-2">
+                    <img className="" src={users?.img} />
+                  </div>
+                </div>
+              ) : (
+                <img
+                  className="w-[200px]  rounded-full"
+                  src={profileImg}
+                  alt="profile"
+                ></img>
+              )}
+
               {/* <button className="btn btn-primary mx-auto  p-4">Edit Profile</button> */}
               <div className=" ">
-                <Link to="/edit-profile">
-                  <button className="btn btn-primary p-4 rounded-full   w-50 mt-4 ml-5">
-                    Upload photo
-                  </button>
-                </Link>
+                <label htmlFor="img" class="label">
+                  <span class="label-text mx-auto  font-[500] text-xl">
+                    <p className="text-white btn px-3 text-[14px] btn-primary rounded-full">
+                      Upload Photo
+                    </p>
+                  </span>
+                </label>
+                <input
+                  id="img"
+                  type="file"
+                  placeholder="Name"
+                  hidden
+                  class="input input-bordered"
+                  onChange={(e) => uploadImage(e)}
+                />
               </div>
             </div>
 
@@ -46,11 +137,17 @@ const EditProfile = () => {
                     <span class="label-text">Full Name</span>
                   </label>
                   <input
-                    {...register("name", { required: true })}
+                    {...register("name")}
                     type="text"
-                    placeholder="Full Name"
                     name="name"
-                    class="input input-bordered   rounded-3xl    "
+                    class="input input-bordered   rounded-3xl  "
+                    value={updated.name}
+                    onChange={(e) =>
+                      setUpdated({
+                        ...updated,
+                        name: e.target.value,
+                      })
+                    }
                   />
                 </div>
                 <div class="form-control  ">
@@ -58,11 +155,12 @@ const EditProfile = () => {
                     <span class="label-text">Email address</span>
                   </label>
                   <input
-                    {...register("email", { required: true })}
+                    {...register("email")}
                     type="email"
-                    placeholder="email"
+                    placeholder={users?.email}
                     name="email"
-                    class="input input-bordered rounded-3xl    "
+                    class="input input-bordered rounded-3xl"
+                    readOnly
                   />
                 </div>
                 <div class="form-control  ">
@@ -70,17 +168,23 @@ const EditProfile = () => {
                     <span class="label-text">Phone</span>
                   </label>
                   <input
-                    {...register("password", { required: true })}
-                    type="password"
-                    placeholder="Phone"
+                    {...register("Phone")}
+                    type="number"
                     name="phone"
-                    class="input input-bordered rounded-3xl    "
+                    value={updated.number}
+                    class="input input-bordered rounded-3xl"
+                    onChange={(e) =>
+                      setUpdated({
+                        ...updated,
+                        number: e.target.value,
+                      })
+                    }
                   />
                 </div>
 
                 <div class="form-control sm:float-left md:float-right lg:float-right  py-6   ">
                   <input
-                    className="btn btn-primary m-1 md:w-32 rounded-3xl     "
+                    className="btn btn-primary m-1 rounded-full text-white px-4     "
                     type="submit"
                     value="Save changes"
                   />
