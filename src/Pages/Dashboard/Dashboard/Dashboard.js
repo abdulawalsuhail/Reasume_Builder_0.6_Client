@@ -12,12 +12,13 @@ import "../../../Css/CarrerCounceling.css";
 import auth from "../../../firebase.init";
 import useAdmin from "../../../Hook/useAdmin";
 import useExpert from "../../../Hook/useExpert";
+import UserInformation from "../../../Hook/UserInformation";
 
 const Dashboard = () => {
-
-  const [user] = useAuthState(auth)
-  const [admin] = useAdmin(user)
-  const [expert] = useExpert(user)
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
+  const [expert] = useExpert(user);
+  const [users] = UserInformation(user)
   return (
     <>
       <Navbar />
@@ -36,9 +37,8 @@ const Dashboard = () => {
         </div>
         <div class="drawer-side lg:shadow-2xl mr-6">
           <label for="my-drawer-2" class="drawer-overlay"></label>
-          <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+          <ul class="menu p-4 overflow-y-auto mx-auto w-80 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
-
             <li className=" hover:text-white rounded-md">
               <Link
                 className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
@@ -48,94 +48,90 @@ const Dashboard = () => {
                 Profile
               </Link>
             </li>
-          {
-            admin && <>
-            
-            <li className=" hover:text-white rounded-md">
-              <NavLink
-                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                to="/dashboard/all-user"
-              >
-                <HiUserGroup className="-mr-1 text-[20px]" />
-                All-USER
-              </NavLink>
-            </li>
-            <li className=" hover:text-white rounded-md mt-2">
-              <NavLink
-                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                to="/dashboard/all-admin"
-              >
-                <RiAdminLine className="-mr-1 text-[20px]" />
-                ADMIN
-              </NavLink>
-            </li>
-            <li className=" hover:text-white rounded-md mt-2">
-              <NavLink
-                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                to="/dashboard/booking-service"
-              >
-                <FcSelfServiceKiosk className="-mr-1 text-[20px]" />
-                BOOKING SERVICE
-              </NavLink>
-            </li>
-            <li className=" hover:text-white rounded-md mt-2">
-              <NavLink
-                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                to="/dashboard/all-expert"
-              >
-                <GrUserExpert className="-mr-1 text-[20px]" />
-                All-Expert
-              </NavLink>
-            </li>
-            
-            </>
-          }
-          {
-            expert && <>
-            <li className=" hover:text-white rounded-md mt-2">
-              <NavLink
-                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                to="/dashboard/write-blog"
-              >
-                <MdOutlineEdit className="-mr-1 text-[20px]" />
-                Write Blog
-              </NavLink>
-            </li>
-            <li className=" hover:text-white rounded-md mt-2">
-              <NavLink
-                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                to="/dashboard/my-blog-post"
-              >
-                <GrDocumentUser className="-mr-1 text-[20px]" />
-                My Blog post
-              </NavLink>
-            </li>
-            </>
-          }
-          {
-            !admin && <>
-            <li className=" hover:text-white rounded-md mt-2">
-              <NavLink
-                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                to="/dashboard/order"
-              >
-                <FcSelfServiceKiosk className="-mr-1 text-[20px]" />
-                Order History
-              </NavLink>
-            </li>
-            <li className=" hover:text-white rounded-md mt-2">
-              <NavLink
-                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                to="/dashboard/add-review"
-              >
-                <FcSelfServiceKiosk className="-mr-1 text-[20px]" />
-                Add-Review
-              </NavLink>
-            </li>
-            
-            
-            </>
-          }
+            {admin && (
+              <>
+                <li className=" hover:text-white rounded-md">
+                  <NavLink
+                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
+                    to="/dashboard/all-user"
+                  >
+                    <HiUserGroup className="-mr-1 text-[20px]" />
+                    All-USER
+                  </NavLink>
+                </li>
+                <li className=" hover:text-white rounded-md mt-2">
+                  <NavLink
+                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
+                    to="/dashboard/all-admin"
+                  >
+                    <RiAdminLine className="-mr-1 text-[20px]" />
+                    ADMIN
+                  </NavLink>
+                </li>
+                <li className=" hover:text-white rounded-md mt-2">
+                  <NavLink
+                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
+                    to="/dashboard/booking-service"
+                  >
+                    <FcSelfServiceKiosk className="-mr-1 text-[20px]" />
+                    BOOKING SERVICE
+                  </NavLink>
+                </li>
+                <li className=" hover:text-white rounded-md mt-2">
+                  <NavLink
+                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
+                    to="/dashboard/all-expert"
+                  >
+                    <GrUserExpert className="-mr-1 text-[20px]" />
+                    All-Expert
+                  </NavLink>
+                </li>
+              </>
+            )}
+            {expert && (
+              <>
+                <li className=" hover:text-white rounded-md mt-2">
+                  <NavLink
+                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
+                    to="/dashboard/write-blog"
+                  >
+                    <MdOutlineEdit className="-mr-1 text-[20px]" />
+                    Write Blog
+                  </NavLink>
+                </li>
+                <li className=" hover:text-white rounded-md mt-2">
+                  <NavLink
+                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
+                    to="/dashboard/my-blog-post"
+                  >
+                    <GrDocumentUser className="-mr-1 text-[20px]" />
+                    My Blog post
+                  </NavLink>
+                </li>
+              </>
+            )}
+            {!admin && (
+              <>
+                <li className=" hover:text-white rounded-md mt-2">
+                  <NavLink
+                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
+                    to="/dashboard/order"
+                  >
+                    <FcSelfServiceKiosk className="-mr-1 text-[20px]" />
+                    Order History
+                  </NavLink>
+                </li>
+                <li className=" hover:text-white rounded-md mt-2">
+                  <NavLink
+                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
+                    to="/dashboard/add-review"
+                  >
+                    <FcSelfServiceKiosk className="-mr-1 text-[20px]" />
+                    Add-Review
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
