@@ -10,7 +10,7 @@ const Navbar = () => {
   const [user] = useAuthState(auth);
   const navItem = (
     <>
-      <li className="hover:bg-primary hover:text-white rounded-md">
+      <li>
         <Link to="/">HOME</Link>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
@@ -122,7 +122,7 @@ const Navbar = () => {
             <div className="flex items-center">
               <img className="w-14" src={logo} alt="logo" />
 
-              <div className="flex gap-2 text-xl">
+              <div className="flex gap-2 text-[20px]">
                 <p>Resume</p>
                 <p>Builder</p>
               </div>
@@ -140,7 +140,7 @@ const Navbar = () => {
         {/* Navbar end portion */}
         <div className="navbar-end">
           <Link
-            to="resume-builder "
+            to="resume-builder/how-to-start"
             className="btn btn-primary btn-outline btn-sm md:btn-md hidden md:flex "
           >
             <p>Create My Resume</p>
@@ -157,10 +157,9 @@ const Navbar = () => {
                 className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <a className="justify-between">
-                    Profile
-                    <span className="badge">New</span>
-                  </a>
+                  <Link to='/dashboard' className="justify-between">
+                    Dashboard
+                  </Link>
                 </li>
                 <li>
                   <a>Settings</a>

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginImg from "../../../src/assets/login2.png";
 import whyWe from "../../../src/assets/why-we.jpg";
 import "../../Css/login.css";
 import auth from "../../firebase.init";
+import useToken from "../../Hook/useToken";
 import Loading from "../../Shared/Loading/Loading";
 import Alert from "./Alert";
 import Navbar from "./Navbar";
@@ -16,6 +17,12 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
+  const [token] = useToken(user);
+
+  const navigate = useNavigate();
+  if (token) {
+    navigate("/");
+  }
   const handelSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;

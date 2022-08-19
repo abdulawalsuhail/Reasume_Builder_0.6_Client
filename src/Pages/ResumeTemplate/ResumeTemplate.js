@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
+import Footer from '../../Shared/Footer/Footer';
 import ContentSuggestions from '../CommonTemplateSections/ContentSuggestions';
 import DownloadSteps from '../CommonTemplateSections/DownloadSteps';
 import DragDrop from '../CommonTemplateSections/DragDrop';
@@ -14,13 +15,13 @@ const ResumeTemplate = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='md:pt-6 text-gray-700'>
+            <div className='md:pt-12 text-gray-700'>
                 <h1 class="text-2xl md:text-5xl font-bold ml-12 my-8 text-center">Online Resume Maker</h1>
                 <TemplateBanner/>
                 {/* Cv section */}
-                <div className=' 2xl:w-3/4 mx-auto'>
+                <div className=''>
                     <h1 className='text-center text-xl md:text-4xl font-bold mt-24 pb-24 px-2'>Create a Resume online. First, select a template:</h1>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:mx-16">
+                    <div className="p-16 my-12 md:my-0 template">
                         <Resume/>
                     </div>
                 </div>
@@ -47,6 +48,8 @@ const ResumeTemplate = () => {
                 {/* Import your old CV or LinkedIn profile */}
                 <ImportDoc/>
             </div>
+            {/* Footer section */}
+            <Footer/>
         </div>
     );
 };
