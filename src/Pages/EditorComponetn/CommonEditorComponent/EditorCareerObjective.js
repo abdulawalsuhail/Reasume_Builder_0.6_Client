@@ -4,30 +4,37 @@ import EditorComponent from "./EditorComponent";
 
 const EditorCareerObjective = () => {
   const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
-  const [editorValue, setEditorValue] = useState("");
-  const getCustomEditorValue = (editorValue) => {
-    setEditorValue(editorValue);
-  };
-
+  // const [editorValue, setEditorValue] = useState("");
+  // const getCustomEditorValue = (editorValue) => {
+  //   setEditorValue(editorValue);
+  // };
   const navigate = useNavigate()
 
+
   let str = {
-    name: "careerObjectives",
-    value:[]
+    name: "Career Objectives",
+    value:{}
   }
   const getValue = () => {
-    // console.log(editorValue);
-    str.value = [];
-    str.value.push(editorValue);
-    
+    str.value = document.getElementById("career-objective")?.value;
     setUsersTemplateInfo([...usersTemplateInfo, str])
     navigate('/resume-builder/reference/should_add_reference');
     console.log(str);
+
   }
+  // const getValue = () => {
+  //   // console.log(editorValue);
+  //   str.value = [];
+  //   str.value.push(editorValue);
+    
+  //   setUsersTemplateInfo([...usersTemplateInfo, str])
+  //   navigate('/resume-builder/reference/should_add_reference');
+  //   console.log(str);
+  // }
 
   return (
-    <div className="bg-[#f4f7f8] py-6">
-      <div className="mx-10">
+    <div className="bg-[#f4f7f8] mx-auto py-12">
+      <div className="mx-10 text-center">
         {" "}
         <h1 className="text-4xl font-[700] text-[#4a4a4a] mb-10">
           Career Objective
@@ -42,9 +49,14 @@ const EditorCareerObjective = () => {
         </p>
       </div>
 
-      <div className="mx-10">
+      {/* <div className="mx-10">
         <EditorComponent initialValue="" getValue={getCustomEditorValue} />
+      </div> */}
+
+      <div>
+        <textarea name="career-objective" id="career-objective" cols="150" rows="20" placeholder="Write your career objectives" className="p-8"></textarea>
       </div>
+
       <div className="flex items-center justify-center gap-10 mt-12 mb-3">
         <a
         onClick={()=> navigate("/resume-builder/languages")}

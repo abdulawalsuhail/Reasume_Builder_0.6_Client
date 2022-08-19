@@ -14,25 +14,42 @@ const Experience = () => {
 
   const getValue = () => {
     str.value = [];
-    str.value.push({
-      jobTitle: `${document.getElementById("jobTitle")?.value}`,
-    });
-    str.value.push({
-      companyName: `${document.getElementById("companyName")?.value}`,
-    });
-    str.value.push({ country: `${document.getElementById("country")?.value}` });
-    str.value.push({ state: `${document.getElementById("state")?.value}` });
-    str.value.push({ city: `${document.getElementById("city")?.value}` });
-    str.value.push({
-      startMonth: `${document.getElementById("startMonth")?.value}`,
-    });
-    str.value.push({
-      startYear: `${document.getElementById("startYear")?.value}`,
-    });
-    str.value.push({
-      endMonth: `${document.getElementById("endMonth")?.value}`,
-    });
-    str.value.push({ endYear: `${document.getElementById("endYear")?.value}` });
+    const experience = {
+      name: "Experience_1",
+      value : {}
+    };
+
+    experience.value.jobTitle = `${document.getElementById("jobTitle")?.value}`;
+    experience.value.companyName = `${document.getElementById("companyName")?.value}`;
+    experience.value.country = `${document.getElementById("country")?.value}`;
+    experience.value.state = `${document.getElementById("state")?.value}`;
+    experience.value.city = `${document.getElementById("city")?.value}`;
+    experience.value.startMonth = `${document.getElementById("startMonth")?.value}`;
+    experience.value.startYear = `${document.getElementById("startYear")?.value}`;
+    experience.value.endMonth = `${document.getElementById("endMonth")?.value}`;
+    experience.value.endYear = `${document.getElementById("endYear")?.value}`;
+
+    // experience.value.push({
+    //   jobTitle: `${document.getElementById("jobTitle")?.value}`,
+    // });
+    // experience.value.push({
+    //   companyName: `${document.getElementById("companyName")?.value}`,
+    // });
+    // experience.value.push({ country: `${document.getElementById("country")?.value}` });
+    // experience.value.push({ state: `${document.getElementById("state")?.value}` });
+    // experience.value.push({ city: `${document.getElementById("city")?.value}` });
+    // experience.value.push({
+    //   startMonth: `${document.getElementById("startMonth")?.value}`,
+    // });
+    // experience.value.push({
+    //   startYear: `${document.getElementById("startYear")?.value}`,
+    // });
+    // experience.value.push({
+    //   endMonth: `${document.getElementById("endMonth")?.value}`,
+    // });
+    // experience.value.push({ endYear: `${document.getElementById("endYear")?.value}` });
+
+    str.value.push(experience)
 
     setUsersTemplateInfo([...usersTemplateInfo, str]);
     navigate("/resume-builder/editor-education");
