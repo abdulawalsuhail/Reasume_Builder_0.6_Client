@@ -1,6 +1,4 @@
-import { signOut } from 'firebase/auth';
 import { useEffect, useState } from 'react';
-import auth from '../firebase.init';
 import axiosPrivate from '../Pages/Api/axiosPrivate';
 
 const useAdmin = (user) => {
@@ -14,17 +12,11 @@ const useAdmin = (user) => {
    if(email){
     axiosPrivate.get(`/admin/${email}`)
     .then(res => {
-        console.log(res.data);
         setAdmin(res.data)
         setLoading(false)
-    }).catch(err => {
-        if(err.response.status === 403){
-            signOut(auth)
-            localStorage.removeItem("userToken")
-        }
     })
    }
-   },[email])
+   },[user])
     return [admin,adminLoading]
 };
 

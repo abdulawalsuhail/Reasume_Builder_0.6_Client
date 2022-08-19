@@ -21,7 +21,6 @@ const PaymentInformation = () => {
 
   const navigate = useNavigate();
   const onSubmit = (data) => {
-    console.log("hello");
     const userInfo = {
       name: user?.displayName,
       email: user?.email,
