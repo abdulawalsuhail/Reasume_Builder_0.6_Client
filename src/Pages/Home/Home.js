@@ -15,9 +15,9 @@ const Home = () => {
       <Navbar />
       <Hero />
       <WriteResume />
-      {/* <WhyResumeBuilder /> */}
       <Templates />
       <Guideline />
+      <WhyResumeBuilder />
       <Review />
       <Business />
       <Footer/>

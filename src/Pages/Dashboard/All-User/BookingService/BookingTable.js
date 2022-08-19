@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BookingTable = ({booking,index}) => {
-    console.log(booking);
+ 
     const {name,email,country,paymentId,serviceName,time} = booking
     return (
         <tr>

@@ -1,14 +1,14 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import "./App.css";
 import Login from "./Components/Navbar/Login";
 import Signup from "./Components/Navbar/Signup";
-import AllArticle from "./Pages/CarrerCounceling/AllArticle";
+import AllArticle from "./Pages/CarrerCounceling/AllArticle/AllArticle";
 import CarrerHeader from "./Pages/CarrerCounceling/CarrerHeader";
-import Interview from "./Pages/CarrerCounceling/Interview";
-import Stories from "./Pages/CarrerCounceling/Stories";
+import Stories from "./Pages/CarrerCounceling/InspiringStories/Stories";
+import Interview from "./Pages/CarrerCounceling/InterviewPrep/Interview";
 import Home from "./Pages/Home/Home";
 
 import { Elements } from "@stripe/react-stripe-js";
@@ -16,21 +16,27 @@ import { loadStripe } from "@stripe/stripe-js";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import RequireAdmin from "./Pages/Authentication/RequireAdmin";
 import RequireAuth from "./Pages/Authentication/RequireAuth";
+import RequireExpert from "./Pages/Authentication/RequireExpert";
 import RequireNonAdmin from "./Pages/Authentication/RequireNonAdmin";
 import CarrerConselling from "./Pages/CarrerCounceling/CarrerConselling";
-import CarrerCv from "./Pages/CarrerCounceling/CarrerCv";
 import CarrerPayment from "./Pages/CarrerCounceling/CarrerPayment";
-import CarrerResume from "./Pages/CarrerCounceling/CarrerResume";
 import CheckoutForm from "./Pages/CarrerCounceling/CheckoutForm";
+import CarrerCv from "./Pages/CarrerCounceling/CvWriting/CarrerCv";
 import PaymentInformation from "./Pages/CarrerCounceling/PaymentInformation";
 import PaymentOption from "./Pages/CarrerCounceling/PaymentOption";
+import CarrerResume from "./Pages/CarrerCounceling/ResumeWriting/CarrerResume";
 import CoverLatterTemplate from "./Pages/CoverLatterTemplate/CoverLatterTemplate";
 import HowWriteCoverLetter from "./Pages/CoverLatterTemplate/CoverLetter/HowWriteCoverLetter";
 import CvTemplate from "./Pages/CvTemplate/CvTemplate";
+import AddReview from "./Pages/Dashboard/AddReview/AddReview";
 import Alladmin from "./Pages/Dashboard/ALL-Admin/Alladmin";
+import AllExpert from "./Pages/Dashboard/All-Expert/AllExpert";
 import AllUser from "./Pages/Dashboard/All-User/AllUser";
 import BookingService from "./Pages/Dashboard/All-User/BookingService/BookingService";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import WriteBlog from "./Pages/Dashboard/ExpertWritter/WriteBlog";
+import EditBlog from "./Pages/Dashboard/MyBlog/EditBlog";
+import MyBlog from "./Pages/Dashboard/MyBlog/MyBlog";
 import UserOrder from "./Pages/Dashboard/UserOrder/UserOrder";
 import AdditionalSkills from "./Pages/EditorComponetn/CommonEditorComponent/AdditionalSkills";
 import Certifications from "./Pages/EditorComponetn/CommonEditorComponent/Certifications";
@@ -52,8 +58,11 @@ import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 
+import SingleBlog from "./Pages/CarrerCounceling/AllArticle/SingleBlog";
 import CoverLetterInput from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterInput";
 import CoverLetterTemplate from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterTemplate";
+import EditProfile from "./Pages/Dashboard/Profile/EditProfile";
+import Profile from "./Pages/Dashboard/Profile/Profile";
 import Quiz from "./Pages/Quiz/Quiz";
 
 const stripePromise = loadStripe(
@@ -79,11 +88,15 @@ function App() {
         <Route path="/career-counselling" element={<CarrerHeader />}>
           <Route index element={<CarrerConselling />}></Route>
           <Route path="all-article" element={<AllArticle />}></Route>
+          <Route path="blog/:id" element={<SingleBlog/>}></Route>
           <Route path="resume-write" element={<CarrerResume />}></Route>
           <Route path="cv-write" element={<CarrerCv />}></Route>
           <Route path="inspiring-stories" element={<Stories />} />
           <Route path="interview-preparation" element={<Interview />} />
         </Route>
+
+        
+
         <Route path="template" element={<Templates />} />
         <Route path="cvTemplate" element={<CvTemplate />}></Route>
         <Route path="resumeTemplate" element={<ResumeTemplate />}></Route>
@@ -142,6 +155,13 @@ function App() {
             }
           ></Route>
         </Route>
+
+
+
+        {/* dashboard */}
+
+
+        {/* admin dashboard */}
         {/* cover letter */}
         <Route
           path="/coverLetterInput"
@@ -178,6 +198,8 @@ function App() {
             </RequireAuth>
           }
         >
+          <Route index element={<Profile/>}></Route>
+          <Route path="edit-profile" element={<EditProfile/>}></Route>
           <Route
             path="all-user"
             element={
@@ -195,6 +217,14 @@ function App() {
             }
           ></Route>
           <Route
+            path="all-expert"
+            element={
+              <RequireAdmin>
+                <AllExpert/>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
             path="booking-service"
             element={
               <RequireAdmin>
@@ -202,14 +232,47 @@ function App() {
               </RequireAdmin>
             }
           ></Route>
+          {/* expert dashboard */}
 
-          {/* user order */}
+          <Route
+            path="write-blog"
+            element={
+              <RequireExpert>
+                <WriteBlog/>
+              </RequireExpert>
+            }
+          ></Route>
+          <Route
+            path="my-blog-post"
+            element={
+              <RequireExpert>
+                <MyBlog/>
+              </RequireExpert>
+            }
+          ></Route>
+          <Route
+            path="edit-blog-post/:id"
+            element={
+              <RequireExpert>
+                <EditBlog/>
+              </RequireExpert>
+            }
+          ></Route>
+          {/* user dashboard */}
 
           <Route
             path="order"
             element={
               <RequireNonAdmin>
                 <UserOrder />
+              </RequireNonAdmin>
+            }
+          ></Route>
+          <Route
+            path="add-review"
+            element={
+              <RequireNonAdmin>
+                <AddReview/>
               </RequireNonAdmin>
             }
           ></Route>

@@ -10,7 +10,7 @@ const Profile = () => {
             <p className="text-2xl font-bold ">My Profile</p>
           </div>
           <div>
-          <Link to="/edit-profile"><button className="btn btn-link p-4 rounded-full   w-50 mt-4 ml-8">Edit</button></Link>
+          <Link to="/dashboard/edit-profile"><button className="btn btn-link p-4 rounded-full   w-50 mt-4 ml-8">Edit</button></Link>
           </div>
         </div>
         <hr  />
@@ -23,7 +23,7 @@ const Profile = () => {
             />
             {/* <button className="btn btn-primary mx-auto  p-4">Edit Profile</button> */}
             <div className=" ">
-              <Link to="/edit-profile"><button className="btn btn-primary p-4 rounded-full   w-50 mt-4 ml-8">Edit Profile</button></Link>
+              <Link to="/edit-profile"><button className="btn btn-primary p-4 rounded-full   w-50 mt-4 ml-8">Upload photo</button></Link>
             </div>
           </div>
 
