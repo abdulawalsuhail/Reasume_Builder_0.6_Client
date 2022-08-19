@@ -16,19 +16,19 @@ const CoverLatterTemplate = () => {
       <Navbar />
       <CoverLatterTemplateBanner />
       {/* <CLTemplate /> */}
-      <div className='py-24'>
-          <h2 className="lg:text-center text-left my-4 lg:text-5xl text-4xl front-crimson font-semibold pb-12">
-          Build your cover latter now.First choose a design</h2>
-          <div className="p-16 my-12 md:my-0 template">
-              <CoverLetter/>
-          </div>
+      <div>
+        {/* <h2 className="lg:text-center text-left my-4 lg:text-5xl text-4xl front-crimson font-semibold pb-12">
+          Build your cover latter now.First choose a design</h2> */}
+        <div className="p-16 my-12 md:my-0 template">
+          <CoverLetter />
+        </div>
       </div>
       <Steps />
       <ShowOff />
       <FindRightWord />
       <ProveYou />
       {/* Footer section */}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
