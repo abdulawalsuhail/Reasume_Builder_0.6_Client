@@ -15,12 +15,12 @@ const EditProfile = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const [users, isLoading, refetch] = UserInformation(user);
-  const [updated,setUpdated] = useState({})
-  const navigate = useNavigate()
+  const [updated, setUpdated] = useState({});
+  const navigate = useNavigate();
 
-  useEffect(()=> {
-    setUpdated(users)
-  },[users])
+  useEffect(() => {
+    setUpdated(users);
+  }, [users]);
   const img_key = "c694c4abb3bcf601b0b79494e815c533";
 
   const uploadImage = (e) => {
@@ -56,23 +56,24 @@ const EditProfile = () => {
   };
   const onSubmit = (data) => {
     const updateProfile = {
-      name:updated.name,
-      number:updated.number
-    }
-    axiosPrivate.patch(`/profile/update/${user?.email}`,updateProfile)
-    .then(res => {
-      if(res.data.matchedCount > 0){
-        Swal.fire({
-          icon: "success",
-          title: "information updated",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+      name: updated.name,
+      number: updated.number,
+    };
+    axiosPrivate
+      .patch(`/profile/update/${user?.email}`, updateProfile)
+      .then((res) => {
+        if (res.data.matchedCount > 0) {
+          Swal.fire({
+            icon: "success",
+            title: "information updated",
+            showConfirmButton: false,
+            timer: 1500,
+          });
 
-        refetch()
-        navigate('/dashboard')
-      }
-    })
+          refetch();
+          navigate("/dashboard");
+        }
+      });
   };
 
   if (isLoading) {
@@ -87,22 +88,20 @@ const EditProfile = () => {
               <p className="text-2xl font-bold ">My Profile</p>
             </div>
             <div>
-             <a href="#">
-                <span className="text-primary text-[15px] font-[600] p-4 rounded-full   w-50 mt-4 ml-8">
-                  Edit
-                </span>
-                </a>
+              <span className="text-primary text-[15px] font-[600] p-4 rounded-full   w-50 mt-4 ml-8">
+                Edit
+              </span>
             </div>
           </div>
           <hr />
           <div className=" flex  flex-col md:flex-col lg:flex-row   py-10 mx-10 gap-10  ">
             <div class="mt-5">
               {users.img ? (
-                <div class="avatar ml-2">
-                <div class="w-32 mx-auto text-center rounded-full ring ring-offset-base-100 ring-offset-2">
-                  <img className="" src={users?.img} />
+                <div class="avatar ml-3">
+                  <div class="w-32 mx-auto text-center rounded-full ring ring-offset-base-100 ring-offset-2">
+                    <img className="" src={users?.img} />
+                  </div>
                 </div>
-              </div>
               ) : (
                 <img
                   className="w-[200px]  rounded-full"
@@ -115,7 +114,7 @@ const EditProfile = () => {
               <div className=" ">
                 <label htmlFor="img" class="label">
                   <span class="label-text mx-auto  font-[500] text-xl">
-                    <p className="text-white btn px-2 text-[14px] btn-primary rounded-full">
+                    <p className="text-white btn px-3 text-[14px] btn-primary rounded-full">
                       Upload Photo
                     </p>
                   </span>
@@ -138,15 +137,17 @@ const EditProfile = () => {
                     <span class="label-text">Full Name</span>
                   </label>
                   <input
-                    {...register("name", )}
+                    {...register("name")}
                     type="text"
                     name="name"
                     class="input input-bordered   rounded-3xl  "
                     value={updated.name}
-                    onChange={(e) => setUpdated({
-                      ...updated,
-                      name:e.target.value
-                    }) }
+                    onChange={(e) =>
+                      setUpdated({
+                        ...updated,
+                        name: e.target.value,
+                      })
+                    }
                   />
                 </div>
                 <div class="form-control  ">
@@ -154,7 +155,7 @@ const EditProfile = () => {
                     <span class="label-text">Email address</span>
                   </label>
                   <input
-                    {...register("email",)}
+                    {...register("email")}
                     type="email"
                     placeholder={users?.email}
                     name="email"
@@ -172,16 +173,18 @@ const EditProfile = () => {
                     name="phone"
                     value={updated.number}
                     class="input input-bordered rounded-3xl"
-                    onChange={(e) => setUpdated({
-                      ...updated,
-                      number:e.target.value
-                    })}
+                    onChange={(e) =>
+                      setUpdated({
+                        ...updated,
+                        number: e.target.value,
+                      })
+                    }
                   />
                 </div>
 
                 <div class="form-control sm:float-left md:float-right lg:float-right  py-6   ">
                   <input
-                    className="btn btn-primary m-1 md:w-32 rounded-3xl     "
+                    className="btn btn-primary m-1 rounded-full text-white px-4     "
                     type="submit"
                     value="Save changes"
                   />

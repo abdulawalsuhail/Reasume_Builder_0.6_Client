@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import BlogQuery from "../../../Hook/BlogQuery";
 import axiosPrivate from "../../Api/axiosPrivate";
@@ -9,7 +9,7 @@ const EditBlog = () => {
   const [blog] = BlogQuery(id)
   const [newPost,setPost] = useState({})
   const [loading,setLoading] = useState(false)
-
+  const navigate = useNavigate()
 
 
   useEffect(() => {
@@ -41,6 +41,7 @@ const EditBlog = () => {
         });
       }
       setLoading(!false)
+      navigate('/dashboard/my-blog-post')
     }).catch(err => {
       if (err.response.status === 403) {
         Swal.fire({
@@ -109,8 +110,9 @@ const EditBlog = () => {
               />
             </label>
             <input
-              className="ml-auto mt-6 btn btn-primary  text-white "
+              className="ml-auto mt-6 btn btn-primary rounded-full text-white "
               type="submit"
+              value="save changes"
             />
           </div>
         </form>

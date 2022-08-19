@@ -39,7 +39,7 @@ const Profile = () => {
             {/* <button className="btn btn-primary mx-auto  p-4">Edit Profile</button> */}
             <div className=" ">
               <Link to="/dashboard/edit-profile">
-                <button className="btn btn-primary px-4 rounded-full   w-50 mt-4 ml-8 text-white">
+                <button className="btn btn-primary px-4 rounded-full  mt-4 ml-8 text-white">
                   Edit Profile
                 </button>
               </Link>
