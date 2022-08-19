@@ -1,7 +1,12 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from 'react-router-dom';
+import auth from "../../../firebase.init";
 
 const Profile = () => {
+
+  const [user] = useAuthState(auth)
+
   return (
     <div className=" py-10">
       <div className="card  shadow-2xl p-6   border-primary rounded-lg mx-10  ">
@@ -15,7 +20,7 @@ const Profile = () => {
         </div>
         <hr  />
         <div className=" flex  flex-col md:flex-row    py-10 mx-10 gap-10  ">
-          <div class="  ">
+          <div class="">
             <img
               alt=""
               src="https://placeimg.com/192/192/people"
@@ -23,19 +28,19 @@ const Profile = () => {
             />
             {/* <button className="btn btn-primary mx-auto  p-4">Edit Profile</button> */}
             <div className=" ">
-              <Link to="/edit-profile"><button className="btn btn-primary p-4 rounded-full   w-50 mt-4 ml-8">Upload photo</button></Link>
+              <Link to="/dashboard/edit-profile"><button className="btn btn-primary p-4 rounded-full   w-50 mt-4 ml-8 text-white">Edit Profile</button></Link>
             </div>
           </div>
 
           <div className=" mt-4  ">
-            <p className=" font-semibold mb-2">Student ID:</p>
-            <p className="text-xl mb-2">WEB5-3613</p>
+            <p  className=" font-semibold mb-2">Student ID:</p>
+            <p className="text-xl mb-2"></p>
             <p className="font-semibold mb-2">Full Name:</p>
-            <p className="text-xl mb-2">Md Sadnan Hossain</p>
-            <p className="font-semibold">Full Name:</p>
-            <p className="text-xl mb-2">Md Sadnan Hossain</p>
+            <p className="text-xl mb-2">{user?.displayName}</p>
+            <p className="font-semibold">Email:</p>
+            <p className="text-xl mb-2">{user?.email}</p>
             <p className="font-semibold mb-2">Phone:</p>
-            <p className="text-xl mb-2">01892409715</p>
+            <p className="text-xl mb-2"></p>
           </div>
         </div>
       </div>

@@ -1,10 +1,41 @@
+import axios from "axios";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import auth from "../../../firebase.init";
+import axiosPrivate from "../../Api/axiosPrivate";
 
 const EditProfile = () => {
+
+  const [user] = useAuthState(auth)
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const img_key = "c694c4abb3bcf601b0b79494e815c533";
+
+  const uploadImage = (e) => {
+    const image = e.target.files[0]
+    const formData = new FormData();
+    formData.append("image", image);
+    axios
+    .post(`https://api.imgbb.com/1/upload?&key=${img_key}`, formData)
+    .then(res => {
+      if(res.data.success){
+        const img = res.data.data.url;
+        const updateImage = {
+          img:img
+        }
+
+        axiosPrivate.patch(`/user/image/${user?.email}`,updateImage)
+        .then(res => {
+          console.log(res.data);
+        })
+      }
+    })
+  }
+  const onSubmit = (data) =>{
+    const image = data.img[0];
+    
+  } ;
   return (
     <div>
       <div className=" py-10 ">
@@ -29,13 +60,23 @@ const EditProfile = () => {
                 src="https://placeimg.com/192/192/people"
                 className="w-54 rounded-full"
               />
+
+              
               {/* <button className="btn btn-primary mx-auto  p-4">Edit Profile</button> */}
               <div className=" ">
-                <Link to="/edit-profile">
-                  <button className="btn btn-primary p-4 rounded-full   w-50 mt-4 ml-5">
-                    Upload photo
-                  </button>
-                </Link>
+                <label htmlFor="img"  class="label">
+                  <span  class="label-text mx-auto  font-[500] text-xl">
+                    <p className="text-white btn btn-primary rounded-full">Upload Photo</p>
+                  </span>
+                </label>
+                <input
+                  id="img"
+                  type="file"
+                  placeholder="Name"
+                  hidden
+                  class="input input-bordered"
+                  onChange={(e) => uploadImage(e)}
+                />
               </div>
             </div>
 
@@ -70,8 +111,8 @@ const EditProfile = () => {
                     <span class="label-text">Phone</span>
                   </label>
                   <input
-                    {...register("password", { required: true })}
-                    type="password"
+                    {...register("Phone",)}
+                    type="number"
                     placeholder="Phone"
                     name="phone"
                     class="input input-bordered rounded-3xl    "
