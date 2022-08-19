@@ -121,9 +121,7 @@ const EditResume = () => {
           <ul class="menu p-4 overflow-y-auto w-64 bg-base-100 text-base-content">
             {editResumeSidebar}
            {/*  */}
-          
           </ul>
-         
         </div>
       </div>
     </div>
@@ -131,3 +129,4 @@ const EditResume = () => {
 };
 
 export default EditResume;
+

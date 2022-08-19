@@ -30,8 +30,10 @@ const Reference = () => {
     });
 
     setUsersTemplateInfo([...usersTemplateInfo, str]);
-    navigate("/resume-builder/template1");
-    console.log(str);
+    navigate("resume-builder/template1");
+    console.log(usersTemplateInfo);
+    const pretty = JSON.stringify(usersTemplateInfo, undefined, 4);
+    document.getElementById("showData").value = pretty;
   };
 
   return (

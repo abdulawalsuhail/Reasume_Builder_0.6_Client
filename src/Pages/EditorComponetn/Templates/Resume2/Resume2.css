@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box;
+    font-family: 'popping', sans-serif; */
+}
+/* body{
+    background: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+} */
+.container2{
+    position: relative;
+    width: 100%;
+    width: 1000px;
+    min-height: 1000px;
+    background: #fff;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 0, 1);
+}
+.container2 .left-side2{
+    position: relative;
+    background: #04608a;
+    padding: 40px;
+}
+.contactInfo-2{
+   width: 100px;
+    border-bottom: 2px solid #fff;
+}
+.profile-text2 .img-box2{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile-text2 .img-box2 img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.contactInfo2 h2{
+  color: #fff;
+  font-size: 25px;  
+  margin-top: 20px;
+  text-transform: uppercase;
+  
+  font-weight: 600;
+  line-height: 40px;
+}
+.profile-text2 span{
+    font-size: 16px;
+    font-weight: 300;
+}
+.contactInfo2{
+    padding-top: 40px;
+}
+.titele2{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.work-skills2{
+    width: 80px;
+    border-bottom: 2px solid #fff;
+}
+.contactInfo2 ul{
+    position: relative;
+}
+.contactInfo2 ul li{
+    position: relative;
+    list-style: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.contactInfo2 ul li span{
+    color: #fff;
+    font-weight: 300;
+}
+.contactInfo2.education2 li{
+    margin-bottom: 15px;
+}
+.contactInfo2.education2 h5{
+    color: #03a9f4;
+    font-weight: 500;
+}
+.contactInfo2.education2 h4:nth-child(2){
+    color: #fff;
+    font-weight: 500;
+}
+.contactInfo2.education2 h4{
+    color: #fff;
+    font-weight: 300;
+}
+.contactInfo2.work2 .percent2{
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: #081921;
+    display: block;
+    margin-top: 5px;
+}
+.work-skill2-1{
+    width: 80%;
+}
+.work-skill2-2{
+    width: 90%;
+}
+.work-skill2-3{
+    width: 70%;
+}
+.work-skill2-4{
+    width: 60%;
+}
+.work-skill2-5{
+    width: 70%;
+}
+.work-skill2-6{
+    width: 80%;
+}
+.work-skill2-7{
+    width: 60%;
+}
+.work-skill2-8{
+    width: 70%;
+}
+.language-skills2{
+    width: 120px;
+    border-bottom: 2px solid #fff;
+}
+.contactInfo2.work2 .percent2 div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #03a9f4;
+}
+.container2 .right-side2{
+    position: relative;
+    background: #fff;
+    padding: 40px;
+}
+.about2-2{
+    background: gainsboro;
+    padding: 10px 0;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.name{
+    border-bottom: 1px solid black;
+    width: 200px;
+    margin: auto;
+}
+.about2-2 h4{
+    text-transform: uppercase;
+    color: #838080;
+    letter-spacing: 2px;
+    font-weight: normal;
+    margin-top: 10px;
+    
+}
+.about2:last-child{
+    margin-bottom: 0;
+}
+.title2-2{
+    color: #0a7fb9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.summary{
+    width: 130px;
+    border-bottom: 2px solid black;
+}
+.summary2{
+    margin-left: 30px;
+}
+.summary2 ul li{
+    margin-top: 10px;
+}
+.profile-description2{
+    color: #333;
+}
+.about2 .box2{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+.about2 .box2 .year-company2{
+    min-width: 150px;
+    color: #848c90;
+    font-weight: 600;
+}
+.about2 .box2 .text2 h4{
+    text-transform: uppercase;
+    color: #2a7da2;
+    font-size: 16px;
+}
+.experience{
+    width: 170px;
+    border-bottom: 2px solid black;
+}
+.education{
+    width: 160px;
+    border-bottom: 2px solid black;
+}
+.education2{
+    margin-left: 30px;
+}
+.interest2 ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.interest2 ul li{
+    list-style: none;
+    color: #333;
+    font-weight: 500;
+    margin: 10px 0;
+}
+/* @media screen and (max-width: 720px){
+    .container2{
+        width: 300px;
+        height: 100%;
+    }
+    .container2 .left-side2{
+        padding: 20px;
+    }
+    .container2 .right-side2{
+        padding: 20px;
+    }
+    .about2-2{
+        margin-bottom: 5px;
+    }
+    .title2-2{
+        font-size: 15px;
+        margin-bottom: 2px;
+    }
+    .about2 .box2 .year-company2{
+        width: 80px;
+    }
+    .about2 .box2{
+        flex-direction: column;
+        margin: 10px 0;
+    }
+} */
