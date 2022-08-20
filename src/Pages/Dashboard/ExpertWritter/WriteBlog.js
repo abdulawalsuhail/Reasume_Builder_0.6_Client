@@ -114,6 +114,7 @@ const WriteBlog = () => {
             <input
               className="ml-auto mt-6 btn btn-primary  text-white "
               type="submit"
+              value="post"
             />
           </div>
         </form>
