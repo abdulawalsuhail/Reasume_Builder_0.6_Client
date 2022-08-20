@@ -131,12 +131,7 @@ const Navbar = () => {
 
         {/* Navbar end portion */}
         <div className="navbar-end">
-          <Link
-            to="resume-builder/how-to-start"
-            className="btn btn-primary btn-outline btn-sm md:btn-md hidden md:flex "
-          >
-            <p>Create My Resume</p>
-          </Link>
+
           {user ? (
             <div className="dropdown dropdown-end ml-2">
               <label tabindex="0" className="btn btn-ghost btn-circle avatar">
