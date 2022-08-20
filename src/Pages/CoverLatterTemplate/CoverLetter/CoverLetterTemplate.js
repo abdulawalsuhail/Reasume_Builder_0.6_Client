@@ -31,7 +31,7 @@ const CoverLetterTemplate = () => {
   return (
     <div className="bg-[#f4f7f8] min-h-screen pb-20">
       <CoverLetterNavbar />
-      <div className="w-[65%] mx-auto">
+      <div className="lg:w-[65%] md:w-[90%] w-[95%] mx-auto">
         <div className="w-fit ml-auto mt-4 mb-2">
           <button
             onClick={handelDownload}
@@ -46,8 +46,8 @@ const CoverLetterTemplate = () => {
           </button>
         </div>
       </div>
-      <div className="w-[65%] mx-auto bg-white  ">
-        <div ref={componentRef} className="p-16">
+      <div className="lg:w-[65%] md:w-[90%] w-[95%] mx-auto bg-white">
+        <div ref={componentRef} className="lg:p-16 md:p-12 p-5">
           <div
             contentEditable
             className="p-3 border-0 focus:border-[1px] outline-none border-green-600 rounded-md focus:bg-gray-100"
