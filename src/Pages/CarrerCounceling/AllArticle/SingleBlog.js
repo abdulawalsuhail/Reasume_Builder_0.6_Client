@@ -6,6 +6,7 @@ import BlogQuery from "../../../Hook/BlogQuery";
 
 const SingleBlog = () => {
   const { id } = useParams();
+  
   const [blog] = BlogQuery(id);
 
 

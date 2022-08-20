@@ -22,9 +22,9 @@ const Dashboard = () => {
   return (
     <>
       <Navbar />
-      <div class="drawer drawer-mobile lg:px-12 ">
+      <div class="drawer drawer-mobile lg:px-12 bg-gray-200">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content no-scroll ">
+        <div class="drawer-content no-scroll  ">
           {/* <!-- Page content here --> */}
 
           <Outlet />

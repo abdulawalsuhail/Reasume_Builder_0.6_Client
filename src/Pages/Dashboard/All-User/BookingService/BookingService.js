@@ -41,11 +41,12 @@ const BookingService = () => {
                 <th>Country</th>
                 <th>Transaction ID</th>
                 <th>Time</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
               {bookings.map((booking, index) => (
-                <BookingTable key={booking._id} booking={booking} index={index} />
+                <BookingTable key={booking._id} booking={booking} index={index}refetch={refetch} />
               ))}
             </tbody>
           </table>

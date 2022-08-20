@@ -51,12 +51,12 @@ import Reference from "./Pages/EditorComponetn/CommonEditorComponent/Reference";
 import ShouldAddReference from "./Pages/EditorComponetn/CommonEditorComponent/ShouldAddReference";
 import Start from "./Pages/EditorComponetn/CommonEditorComponent/Start";
 import EditResume from "./Pages/EditorComponetn/EditResume";
+import Resume1 from "./Pages/EditorComponetn/Templates/Resume1/Resume1";
 import CoverLetter from "./Pages/Home/Templates/CoverLetter";
 import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
-import Resume1 from "./Pages/EditorComponetn/Templates/Resume1/Resume1";
 
 
 import SingleBlog from "./Pages/CarrerCounceling/AllArticle/SingleBlog";
@@ -71,7 +71,7 @@ const stripePromise = loadStripe(
 );
 function App() {
   return (
-    <div>
+    <div className="app">
       <Routes>
         {/* Nested Routing for Templates Section of our Homepage */}
         <Route path="/" element={<Home />}>
@@ -161,10 +161,10 @@ function App() {
 
 
 
-        {/* dashboard */}
+   
 
 
-        {/* admin dashboard */}
+   
         {/* cover letter */}
         <Route
           path="/coverLetterInput"
@@ -191,6 +191,9 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+
+
+             {/* admin dashboard */}
         {/* Dashboard */}
 
         <Route

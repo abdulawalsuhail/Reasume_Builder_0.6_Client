@@ -3,10 +3,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import auth from "../../../firebase.init";
+import UserInformation from "../../../Hook/UserInformation";
 import axiosPrivate from "../../Api/axiosPrivate";
 
 const WriteBlog = () => {
   const [user] = useAuthState(auth)
+  const [users] = UserInformation(user)
   const {
     register,
     setValue,
@@ -27,7 +29,9 @@ const WriteBlog = () => {
       title:data.title,
       blog:data.blog,
       name:user?.displayName,
-      date:date
+      date:date,
+      likes:[],
+      img:users.img
     }
 
     axiosPrivate.post('/blogs',blogs)
