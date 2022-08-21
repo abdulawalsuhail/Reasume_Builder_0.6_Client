@@ -62,7 +62,9 @@ const CoverLetterTemplate = () => {
             </p>
           </div>
           <div className="text-[15px] poppins-t text-gray-600">
-            <p className="mb-4">Dear [Hiring Manager's Name],</p>
+            <p className="mb-4">
+              Dear <span contentEditable>[Hiring Manager's Name]</span>,
+            </p>
 
             <p className="mb-4">
               You must be receiving floods of resumes for the role of {jobRole}.

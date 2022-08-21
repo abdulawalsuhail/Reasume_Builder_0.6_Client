@@ -76,12 +76,7 @@ const Navbar = () => {
       <li className="hover:bg-primary hover:text-white rounded-md">
         <Link to="/quiz">Quiz</Link>
       </li>
-      <Link
-        to="/resume-builder"
-        className="btn btn-primary btn-outline btn-sm md:btn-md mr-6 md:hidden"
-      >
-        Create My Resume
-      </Link>
+
     </>
   );
 
@@ -136,12 +131,7 @@ const Navbar = () => {
 
         {/* Navbar end portion */}
         <div className="navbar-end">
-          <Link
-            to="resume-builder/how-to-start"
-            className="btn btn-primary btn-outline btn-sm md:btn-md hidden md:flex "
-          >
-            <p>Create My Resume</p>
-          </Link>
+
           {user ? (
             <div className="dropdown dropdown-end ml-2">
               <label tabindex="0" className="btn btn-ghost btn-circle avatar">
