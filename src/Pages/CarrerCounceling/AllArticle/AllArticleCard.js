@@ -8,10 +8,11 @@ const AllArticleCard = ({ article }) => {
   const navigate = useNavigate();
   return (
     <div className="md:w-[500px] mx-auto  ">
-      <div className="blog_post p-10 h-[350px] md:h-[300px] mt-8 md:mt-4 ">
+      
+      <div className="blog_post shadow p-10 h-[350px] md:h-[300px] mt-8 md:mt-4 ">
         <div className="img_pod">
           {
-            img ? <div class="avatar">
+            img ? <div class="avatar ">
             <div class="w-24 rounded-full">
               <img src={img} />
             </div>

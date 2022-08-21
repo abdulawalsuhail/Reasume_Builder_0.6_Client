@@ -24,7 +24,7 @@ const Dashboard = () => {
   return (
     <>
       <Navbar />
-      <div class="drawer drawer-mobile lg:px-12 bg-[#f6f5f8]">
+      <div class="drawer drawer-mobile  bg-[#f6f5f8]">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content no-scroll  ">
           {/* <!-- Page content here --> */}
@@ -37,9 +37,9 @@ const Dashboard = () => {
             Open drawer
           </label>
         </div>
-        <div class="drawer-side lg:shadow-2xl mr-6">
+        <div class="drawer-side md:px-6 lg:shadow-2xl mr-6">
           <label for="my-drawer-2" class="drawer-overlay"></label>
-          <ul class="menu overflow-y-auto mx-auto w-80 bg-[#f8f8fa] mb-4">
+          <ul class="menu overflow-y-auto  w-52 bg-[#f8f8fa] mb-4">
             <DashboardCustomLink
               className="flex items-center py-3 text-gray-500 "
               to="/dashboard"

@@ -12,7 +12,7 @@ const AllArticle = () => {
     setArticles(res.data)
   })
   return (
-    <div className="">
+    <div className="bg-[#f6f5f8]">
       <h1 className="text-3xl font-extrabold text-black-300 text-center p-8">
         All Articles
       </h1>
