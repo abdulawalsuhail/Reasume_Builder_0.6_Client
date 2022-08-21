@@ -82,7 +82,7 @@ const EditProfile = () => {
   return (
     <div>
       <div className=" py-10 ">
-        <div className="card  shadow-2xl p-6   border-primary rounded-lg mx-10  ">
+        <div className="card bg-white shadow-2xl p-6   border-primary rounded-lg mx-10  ">
           <div className="flex   items-center mx-10 justify-between">
             <div>
               <p className="text-2xl font-bold ">My Profile</p>
@@ -141,7 +141,7 @@ const EditProfile = () => {
                     type="text"
                     name="name"
                     class="input input-bordered   rounded-3xl  "
-                    value={updated.name}
+                    placeholder={users?.name ? users?.name:user?.displayName }
                     onChange={(e) =>
                       setUpdated({
                         ...updated,

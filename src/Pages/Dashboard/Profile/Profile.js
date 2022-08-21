@@ -10,8 +10,8 @@ const Profile = () => {
   const [users, isLoading, refetch] = UserInformation(user);
 
   return (
-    <div className=" py-10">
-      <div className="card  shadow-2xl p-6   border-primary rounded-lg mx-10  ">
+    <div className=" py-10 ">
+      <div className="card bg-white  shadow-2xl p-6   border-primary rounded-lg mx-10  ">
         <div className="flex   items-center mx-10 justify-between">
           <div>
             <p className="text-2xl font-bold ">My Profile</p>
@@ -50,7 +50,9 @@ const Profile = () => {
             <p className=" font-semibold mb-2">Your Id:</p>
             <p className="text-xl mb-2">{`RB - ${users?._id?.slice(0,6)}`}</p>
             <p className="font-semibold mb-2">Full Name:</p>
-            <p className="text-xl mb-2">{users?.name}</p>
+            <p className="text-xl mb-2">{
+              users?.name ? users?.name : user?.displayName
+            }</p>
             <p className="font-semibold">Email:</p>
             <p className="text-xl mb-2">{user?.email}</p>
             <p className="font-semibold mb-2">Phone:</p>

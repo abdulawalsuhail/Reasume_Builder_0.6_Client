@@ -4,42 +4,51 @@ import { MdCancel } from "react-icons/md";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../../../src/assets/logo.png";
 import "../../Css/CarrerCounceling.css";
+import CareerCustomNavbar from "./CarrerCustomNavar/CareerCustomNavbar";
 
 const CarrerHeader = () => {
-  const [click,setClick]  = useState(false)
+  const [click, setClick] = useState(false);
 
   const articleMenu = (
     <>
-      <li className=" hover:text-white rounded-md">
-        <Link className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2" to="/career-counselling">
-          Counselling
-        </Link>
-      </li>
-      <li className=" hover:text-white rounded-md">
-        <Link className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2" to="/career-counselling/all-article">
-          All Articles
-        </Link>
-      </li>
-      <li className=" hover:text-white rounded-md">
-        <Link className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2" to="/career-counselling/resume-write">
-          resume Writing
-        </Link>
-      </li>
-      <li className=" hover:text-white rounded-md">
-        <Link className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2" to="/career-counselling/cv-write">
-          cv Writing
-        </Link>
-      </li>
-      <li className=" hover:text-white rounded-md">
-        <Link className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2" to="/career-counselling/inspiring-stories">
-            inspiring stories
-        </Link>
-      </li>
-      <li className=" hover:text-white rounded-md">
-        <Link className="hover:bg-primary rounded uppercase pl-2 pr-2 mx-2" to="/career-counselling/interview-preparation">
-            interview preparation
-        </Link>
-      </li>
+      <CareerCustomNavbar
+        to="/career-counselling"
+        className="text-gray-600 uppercase font-[600] ml-4"
+      >
+        Counselling
+      </CareerCustomNavbar>
+      <CareerCustomNavbar
+        to="/career-counselling/all-article"
+        className="text-gray-600 uppercase font-[600] ml-4"
+      >
+        All Articles
+      </CareerCustomNavbar>
+      <CareerCustomNavbar
+        to="/career-counselling/resume-write"
+        className="text-gray-600 uppercase font-[600] ml-4"
+      >
+        resume Writing
+      </CareerCustomNavbar>
+      <CareerCustomNavbar
+        to="/career-counselling/cv-write"
+        className="text-gray-600 uppercase font-[600] ml-4"
+      >
+        cv Writing
+      </CareerCustomNavbar>
+      <CareerCustomNavbar
+        to="/career-counselling/inspiring-stories"
+        className="text-gray-600 uppercase font-[600] ml-4"
+      >
+       inspiring stories
+      </CareerCustomNavbar>
+      <CareerCustomNavbar
+        to="/career-counselling/interview-preparation"
+        className="text-gray-600 uppercase font-[600] ml-4"
+      >
+     interview preparation
+      </CareerCustomNavbar>
+
+   
     </>
   );
   return (
@@ -60,23 +69,21 @@ const CarrerHeader = () => {
                   ></ul>
                 </div>
                 <Link to="/">
-                <div className="flex items-center">
-                
+                  <div className="flex items-center">
+                    <img className="w-14" src={logo} alt="logo" />
 
-               <img className="w-14" src={logo} alt="logo" /> 
-              
-                  <div className="flex gap-2 text-xl">
-                    <p>Resume</p>
-                    <p>Builder</p>
+                    <div className="flex gap-2 text-xl">
+                      <p>Resume</p>
+                      <p>Builder</p>
+                    </div>
                   </div>
-                </div>
                 </Link>
               </div>
               {/* End Navbar left Portion */}
 
               {/* Navbar center portion */}
               <div class="navbar-center  ml-[85px] hidden lg:flex">
-                <ul class="menu horizontal">{click ? "": articleMenu}</ul>
+                <ul class="menu horizontal">{click ? "" : articleMenu}</ul>
               </div>
               {/* End Navbar center portion */}
 
@@ -84,18 +91,24 @@ const CarrerHeader = () => {
                 <label htmlFor="career-drawer" class=" swap swap-rotate">
                   <input type="checkbox" />
 
-                  <AiOutlineMenu onClick={()=> setClick(!false)} className="text-4xl"></AiOutlineMenu>
+                  <AiOutlineMenu
+                    onClick={() => setClick(!false)}
+                    className="text-4xl"
+                  ></AiOutlineMenu>
                 </label>
               </div>
             </div>
           </div>
-            <Outlet/>
+          <Outlet />
         </div>
         <div class="drawer-side">
           <label for="career-drawer" class="drawer-overlay"></label>
-          <ul class="menu p-4 overflow-y-auto w-80 bg-[#f4f7f8] text-base-content">
+          <ul class=" menu p-4 overflow-y-auto w-80 bg-[#f4f7f8] text-base-content">
             <label htmlFor="career-drawer" class=" btn-circle swap swap-rotate">
-              <MdCancel onClick={()=> setClick(false) } className="text-4xl"></MdCancel>
+              <MdCancel
+                onClick={() => setClick(false)}
+                className="text-4xl"
+              ></MdCancel>
             </label>
             {articleMenu}
           </ul>

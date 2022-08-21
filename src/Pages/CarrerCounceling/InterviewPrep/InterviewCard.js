@@ -1,37 +1,44 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import logo from "../../../assets/icon/profile.png";
+import "../AllArticle/Article.css";
 
-const InterviewCard = ({interview}) =>
- {  const { title, blog, name, date, _id } =interview;
-const navigate = useNavigate();
-    return (
-        <div>
-              <div class="card max-w-sm h-[200px] mt-6 mx-auto  bg-base-100 shadow-xl">
-        <div class="card-body">
-          <h2 class="card-title">{title}</h2>
-          <p className="text-[18px] text-gray-600">
-            {blog.slice(0, 50)}
-
+const InterviewCard = ({ interview }) => {
+  const { title, blog, name, date, _id, img } = interview;
+  const navigate = useNavigate();
+  return (
+    <div className="md:w-[500px] mx-auto  ">
+      <div className="blog_post p-10 h-[350px] md:h-[300px] mt-8 md:mt-4 ">
+        <div className="img_pod">
+          {img ? (
+            <div class="avatar">
+              <div class="w-24 rounded-full">
+                <img src={img} />
+              </div>
+            </div>
+          ) : (
+            <img src={logo} alt="" />
+          )}
+        </div>
+        <div className=" mt-12">
+          <div className="md:flex justify-between">
+            <h3 className="text-gray-500 text-[17px]">{name}</h3>
+            <h3 className="text-gray-500">{date}</h3>
+          </div>
+          <h1 className="text-[22px] my-4 font-[600]">{title}</h1>
+          <p className="blog-post text-gray-400">
+            {blog.slice(0, 100)}
             <span
-              onClick={() => navigate(`/career-counselling/blog/${_id}`)}
               className="text-[15px] font-bold text-[#3f66da]"
+              onClick={() => navigate(`/career-counselling/blog/${_id}`)}
             >
               see more...
-            </span>
+            </span>{" "}
           </p>
-          <hr className="border-1 border-gray-300" />
-          <div className="flex justify-between">
-            <div>
-              <p className="text-[18px] text-gray-500">{name}</p>
-            </div>
-            <div>
-              <p className="text-[15px] text-gray-500">{date}</p>
-            </div>
-          </div>
         </div>
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default InterviewCard;

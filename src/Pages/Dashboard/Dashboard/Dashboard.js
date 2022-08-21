@@ -1,30 +1,32 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { CgProfile } from "react-icons/cg";
-import { FcSelfServiceKiosk } from "react-icons/fc";
-import { GrDocumentUser, GrUserExpert } from "react-icons/gr";
+import { FaChalkboardTeacher, FaFirstOrder, FaHistory } from 'react-icons/fa';
 import { HiUserGroup } from "react-icons/hi";
-import { MdOutlineEdit } from "react-icons/md";
-import { RiAdminLine } from "react-icons/ri";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { MdOutlineEdit, MdReviews } from "react-icons/md";
+import { RiAdminLine, RiFileUserLine } from "react-icons/ri";
+import { Outlet } from "react-router-dom";
 import Navbar from "../../../Components/Navbar/Navbar";
 import "../../../Css/CarrerCounceling.css";
 import auth from "../../../firebase.init";
 import useAdmin from "../../../Hook/useAdmin";
 import useExpert from "../../../Hook/useExpert";
 import UserInformation from "../../../Hook/UserInformation";
+import "../Dashboard/Dashboard.css";
+import DashboardCustomLink from "../DashBoardCustomLink/DashboardCustomLink";
+
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
   const [expert] = useExpert(user);
-  const [users] = UserInformation(user)
+  const [users] = UserInformation(user);
   return (
     <>
       <Navbar />
-      <div class="drawer drawer-mobile lg:px-12 ">
+      <div class="drawer drawer-mobile  bg-[#f6f5f8]">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content no-scroll ">
+        <div class="drawer-content no-scroll  ">
           {/* <!-- Page content here --> */}
 
           <Outlet />
@@ -35,101 +37,103 @@ const Dashboard = () => {
             Open drawer
           </label>
         </div>
-        <div class="drawer-side lg:shadow-2xl mr-6">
+        <div class="drawer-side md:px-6 lg:shadow-2xl mr-6">
           <label for="my-drawer-2" class="drawer-overlay"></label>
-          <ul class="menu p-4 overflow-y-auto mx-auto w-80 bg-base-100 text-base-content">
-            {/* <!-- Sidebar content here --> */}
-            <li className=" hover:text-white rounded-md">
-              <Link
-                className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                to="/dashboard"
-              >
-                <CgProfile className="-mr-1 text-[20px]" />
-                Profile
-              </Link>
-            </li>
+          <ul class="menu overflow-y-auto  w-52 bg-[#f8f8fa] mb-4">
+            <DashboardCustomLink
+              className="flex items-center py-3 text-gray-500 "
+              to="/dashboard"
+            >
+              <CgProfile className=" ml-2 text-[20px] mr-2 " />
+              <span className="uppercase font-bold text-gray-700">Profile</span>
+            </DashboardCustomLink>
             {admin && (
               <>
-                <li className=" hover:text-white rounded-md">
-                  <NavLink
-                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                    to="/dashboard/all-user"
-                  >
-                    <HiUserGroup className="-mr-1 text-[20px]" />
-                    All-USER
-                  </NavLink>
-                </li>
-                <li className=" hover:text-white rounded-md mt-2">
-                  <NavLink
-                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                    to="/dashboard/all-admin"
-                  >
-                    <RiAdminLine className="-mr-1 text-[20px]" />
-                    ADMIN
-                  </NavLink>
-                </li>
-                <li className=" hover:text-white rounded-md mt-2">
-                  <NavLink
-                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                    to="/dashboard/booking-service"
-                  >
-                    <FcSelfServiceKiosk className="-mr-1 text-[20px]" />
+                <DashboardCustomLink
+                  className="flex items-center py-3 text-gray-500 "
+                  to="/dashboard/all-user"
+                >
+                  <HiUserGroup className=" ml-2 text-[20px] mr-2 " />
+                  <span className="uppercase font-bold text-gray-700">
+                    All user
+                  </span>
+                </DashboardCustomLink>
+                <DashboardCustomLink
+                  className="flex items-center py-3 text-gray-500 "
+                  to="/dashboard/all-admin"
+                >
+                  <RiAdminLine className=" ml-2 text-[20px] mr-2 " />
+                  <span className="uppercase font-bold text-gray-700">
+                    All Admin
+                  </span>
+                </DashboardCustomLink>
+                <DashboardCustomLink
+                  className="flex items-center py-3 text-gray-500 "
+                  to="/dashboard/booking-service"
+                >
+                  <FaFirstOrder className=" ml-2 text-[20px] mr-2 " />
+                  <span className="uppercase font-bold text-gray-700">
                     BOOKING SERVICE
-                  </NavLink>
-                </li>
-                <li className=" hover:text-white rounded-md mt-2">
-                  <NavLink
-                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                    to="/dashboard/all-expert"
-                  >
-                    <GrUserExpert className="-mr-1 text-[20px]" />
+                  </span>
+                </DashboardCustomLink>
+                <DashboardCustomLink
+                  className="flex items-center py-3 text-gray-500 "
+                  to="/dashboard/all-expert"
+                >
+                  <FaChalkboardTeacher  className=" ml-2 text-[20px] mr-2 "/>
+                  <span className="uppercase font-bold text-gray-700">
+                    {" "}
                     All-Expert
-                  </NavLink>
-                </li>
+                  </span>
+                </DashboardCustomLink>
               </>
             )}
             {expert && (
               <>
-                <li className=" hover:text-white rounded-md mt-2">
-                  <NavLink
-                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                    to="/dashboard/write-blog"
-                  >
-                    <MdOutlineEdit className="-mr-1 text-[20px]" />
+                <DashboardCustomLink
+                  className="flex items-center py-3 text-gray-500 "
+                  to="/dashboard/write-blog"
+                >
+                  <MdOutlineEdit className=" ml-2 text-[20px] mr-2 " />
+                  <span className="uppercase font-bold text-gray-700">
+                    {" "}
                     Write Blog
-                  </NavLink>
-                </li>
-                <li className=" hover:text-white rounded-md mt-2">
-                  <NavLink
-                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                    to="/dashboard/my-blog-post"
-                  >
-                    <GrDocumentUser className="-mr-1 text-[20px]" />
+                  </span>
+                </DashboardCustomLink>
+                <DashboardCustomLink
+                  className="flex items-center py-3 text-gray-500 "
+                  to="/dashboard/my-blog-post"
+                >
+                  <RiFileUserLine className=" ml-2 text-[20px] mr-2 " />
+                  <span className="uppercase font-bold text-gray-700">
+                    {" "}
                     My Blog post
-                  </NavLink>
-                </li>
+                  </span>
+                </DashboardCustomLink>
               </>
             )}
             {!admin && (
               <>
-                <li className=" hover:text-white rounded-md mt-2">
-                  <NavLink
-                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                    to="/dashboard/order"
-                  >
-                    <FcSelfServiceKiosk className="-mr-1 text-[20px]" />
+                 <DashboardCustomLink
+                  className="flex items-center py-3 text-gray-500 "
+                  to="/dashboard/order"
+                >
+                  <FaHistory className=" ml-2 text-[20px] mr-2 " />
+                  <span className="uppercase font-bold text-gray-700">
+                    {" "}
                     Order History
-                  </NavLink>
-                </li>
-                <li className=" hover:text-white rounded-md mt-2">
-                  <NavLink
-                    className="hover:bg-primary text-black poppins-r uppercase pr-2 mx-2"
-                    to="/dashboard/add-review"
-                  >
-                    <FcSelfServiceKiosk className="-mr-1 text-[20px]" />
+                  </span>
+                </DashboardCustomLink>
+                 <DashboardCustomLink
+                  className="flex items-center py-3 text-gray-500 "
+                  to="/dashboard/add-review"
+                >
+                  <MdReviews className=" ml-2 text-[20px] mr-2 " />
+                  <span className="uppercase font-bold text-gray-700">
+                    {" "}
                     Add-Review
-                  </NavLink>
-                </li>
+                  </span>
+                </DashboardCustomLink>
               </>
             )}
           </ul>
