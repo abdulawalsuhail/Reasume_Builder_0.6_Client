@@ -88,12 +88,22 @@ function App() {
         {/* nested route career counselling */}
         <Route path="/career-counselling" element={<CarrerHeader />}>
           <Route index element={<CarrerConselling />}></Route>
-          <Route path="all-article" element={<AllArticle />}></Route>
-          <Route path="blog/:id" element={<SingleBlog/>}></Route>
-          <Route path="resume-write" element={<CarrerResume />}></Route>
-          <Route path="cv-write" element={<CarrerCv />}></Route>
-          <Route path="inspiring-stories" element={<Stories />} />
-          <Route path="interview-preparation" element={<Interview />} />
+          <Route path="all-article" element={<RequireAuth><AllArticle /></RequireAuth>}></Route>
+          <Route path="blog/:id" element={<RequireAuth>
+            <SingleBlog/>
+          </RequireAuth>}></Route>
+          <Route path="resume-write" element={<RequireAuth>
+            <CarrerResume />
+          </RequireAuth>}></Route>
+          <Route path="cv-write" element={<RequireAuth>
+            <CarrerCv />
+          </RequireAuth>}></Route>
+          <Route path="inspiring-stories" element={<RequireAuth>
+            <Stories />
+          </RequireAuth>} />
+          <Route path="interview-preparation" element={<RequireAuth>
+            <Interview />
+          </RequireAuth>} />
         </Route>
 
         

@@ -39,39 +39,43 @@ const SingleBlog = () => {
 },[id])
 
   const handleLikes = (BlogId) => {
-    axiosPrivate.put(`/like/${users?._id}`, { id: BlogId }).then((res) => {
-      if(res.data.matchedCount > 0){
-        axiosPrivate.get(`/blog/${id}`)
-        .then(res => {
-            setBlog(res.data)
-        })
-        axiosPrivate
-        .get(`/single/user/${user?.email}`)
-        .then((res) => {
-          setUsers(res.data);
-        })
-       
-      }
-    });
+    if(users?._id){
+      axiosPrivate.put(`/like/${users?._id}`, { id: BlogId }).then((res) => {
+        if(res.data.matchedCount > 0){
+          axiosPrivate.get(`/blog/${id}`)
+          .then(res => {
+              setBlog(res.data)
+          })
+          axiosPrivate
+          .get(`/single/user/${user?.email}`)
+          .then((res) => {
+            setUsers(res.data);
+          })
+         
+        }
+      });
+    }
   
   };
   const handleUnLikes = (blogId) => {
-    axiosPrivate.put(`/unlike/${users?._id}`, { id: blogId }).then((res) => {
-      console.log(res.data);
-      if(res.data.matchedCount > 0){
-        axiosPrivate.get(`/blog/${id}`)
-        .then(res => {
-            setBlog(res.data)
-        })
-
-        axiosPrivate
-        .get(`/single/user/${user?.email}`)
-        .then((res) => {
-          setUsers(res.data);
-        })
-       
-      }
-    });
+    if(users?._id){
+      axiosPrivate.put(`/unlike/${users?._id}`, { id: blogId }).then((res) => {
+        console.log(res.data);
+        if(res.data.matchedCount > 0){
+          axiosPrivate.get(`/blog/${id}`)
+          .then(res => {
+              setBlog(res.data)
+          })
+  
+          axiosPrivate
+          .get(`/single/user/${user?.email}`)
+          .then((res) => {
+            setUsers(res.data);
+          })
+         
+        }
+      });
+    }
     
   };
   return (
