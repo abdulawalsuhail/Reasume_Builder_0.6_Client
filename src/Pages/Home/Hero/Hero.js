@@ -18,17 +18,9 @@ import { Link } from "react-router-dom";
 
 const hero = () => {
   return (
-    <section className="relative bg-black">
-      <img
-        className="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25 sm:opacity-100"
-        src={Banner}
-        alt="Resume of a job"
-      />
-
-      <div className="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-slate-800 sm:to-transparent"></div>
-
-      <div className="relative max-w-screen-xl px-4 py-32 mx-auto lg:h-screen grid lg:grid-cols-2 grid-cols-1 gap-5">
-        <div className="max-w-xl text-center sm:text-left text-white md:ml-8 lg:order-1 order-2">
+    <section className="">
+      <div className=" max-w-screen-xl px-4 py-32 mx-auto lg:h-screen grid lg:grid-cols-2 grid-cols-1 gap-5">
+        <div className="max-w-xl text-center sm:text-left md:ml-8 lg:order-1 order-2">
           <h1
             data-aos="fade-up"
             data-aos-duration="1000"

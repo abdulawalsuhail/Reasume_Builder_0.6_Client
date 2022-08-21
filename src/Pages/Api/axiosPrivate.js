@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosPrivate = axios.create({
-  baseURL: "https://lit-ravine-09639.herokuapp.com/",
+  baseURL: "http://localhost:5000/",
 });
 
 axiosPrivate.interceptors.request.use(
