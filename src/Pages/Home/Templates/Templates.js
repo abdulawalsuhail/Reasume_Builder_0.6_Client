@@ -7,7 +7,7 @@ const Templates = () => {
   return (
     <div className="pt-12">
       {/* menu section */}
-      <div style={{width:"350px"}} class="border border-accent rounded-full mx-auto">
+      <div style={{ width: "350px" }} class="border border-accent rounded-full mx-auto">
         <div class="">
           <ul class="flex flex-row justify-between md:px-1 md:py-1">
             <Link className=" text-lg hover:bg-accent hover:text-white px-6 py-1 rounded-full" to="/">Resume</Link>
