@@ -7,11 +7,11 @@ import img_5 from '../../../assets/Business_deals/template-step-03.svg';
 
 const Guideline = () => {
     return (
-        <div className='bg-[#f4f7f8]'>
-            <div className='flex'>
+        <div style={{backgroundImage:"linear-gradient(rgba(254, 254, 254, 0.66), rgba(49, 67, 59, 0.505))"}} className='h-screen pt-24'>
+            {/* <div className='flex'>
                 <img className='w-1/2' src={img_1} alt="" />
                 <img className='w-1/2' src={img_2} alt="" />
-            </div>
+            </div> */}
             <div className='grid grid-cols-1 md:grid-cols-3 mx-16 pb-28'>
                 <div className='mb-12 md:mb-0'>
                     <img className='mx-auto' style={{width:"60%"}} src={img_3} alt="" srcset="" />

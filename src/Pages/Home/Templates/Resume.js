@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
-import { AiFillStar } from "react-icons/ai";
+// import { AiFillStar } from "react-icons/ai";
 import { useState } from 'react';
 import TemplateModal from './TemplateModal';
 
@@ -113,13 +113,13 @@ const Resume = () => {
                                 <img style={{ width: "100%" }} className="templateImage" src={temp.image} alt="" />
                                 <div className='w-[95%] md:w-[95%] 2xl:w-[85%] templateButton p-4'>
                                     <div className='w-[90%] mx-auto flex flex-col justify-between'>
-                                        <Link className='customButton text-center' to="/resume-builder/how-to-start" style={{"--clr":"#6eff3e"}}><span>Edit Template</span><i></i></Link>
+                                        <Link className='customButton text-center' to="/resume-builder/how-to-start" style={{"--clr":"#b93ddb"}}><span>Edit Template</span><i></i></Link>
                                         
                                         <label
                                             onClick={()=>setTemplateModal(temp)}
                                             style={{ "--clr": "#ff1867" }} for="template_modal" class=" modal-button customButton text-center"><span>Preview</span><i></i></label>
                                     </div>
-                                    <div className='text-center'>
+                                    {/* <div className='text-center'>
                                         <h1 className='text-2xl'>Our client satisfaction?</h1>
                                         <div className='flex mt-1 justify-center'>
                                             <AiFillStar className='text-green-800 text-xl'/>
@@ -128,7 +128,7 @@ const Resume = () => {
                                             <AiFillStar className='text-green-800 text-xl'/>
                                             <AiFillStar className='text-green-800 text-xl'/>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         )
