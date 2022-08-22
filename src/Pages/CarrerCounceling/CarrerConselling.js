@@ -12,13 +12,8 @@ const CarrerConselling = () => {
       <CounsellingServices />
       <CouncellingSteps />
       <CarrerCouncelingGurrenty />
-<<<<<<< HEAD
-      <CarrerCouncelingPrice />
-      <Footer />
-=======
       {/* <CarrerCouncelingPrice /> */}
-      <Footer/>
->>>>>>> abcaba4aa8dac8f247859b5ded7758a73ada6f25
+      <Footer />
     </div>
   );
 };
