@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../../Components/Navbar/Navbar";
+import BusinessPartner from "../../Shared/BusinessPartner";
 import Footer from "../../Shared/Footer/Footer";
 import Business from "./Business/Business";
 import Guideline from "./Guideline/Guideline";
@@ -14,6 +15,7 @@ const Home = () => {
     <div className="">
       <Navbar />
       <Hero />
+      <BusinessPartner />
       <WriteResume />
       <Templates />
       <Guideline />
