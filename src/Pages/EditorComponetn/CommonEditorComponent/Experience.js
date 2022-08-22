@@ -89,8 +89,6 @@ const Experience = () => {
   };
 
 
-
-
   return (
     <div className=" bg-[#f4f7f8] lg:mr-7 rounded-2xl my-5">
       <div className="md:px-16 px-7 py-10 grid lg:grid-cols-12 lg:gap-5 ">

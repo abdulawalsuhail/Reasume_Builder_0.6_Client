@@ -34,7 +34,7 @@ const Education = () => {
 
   const addEducations = () => {
     let newNode = document.createElement('form');
-    newNode.classList.add("pb-3");
+    newNode.classList.add("pb-3","inputForm");
     let p = document.createElement("p");
     p.innerText = "Add new education"
     p.classList.add("py-1","text-primary");
@@ -77,6 +77,35 @@ const Education = () => {
     parentNode.appendChild(newNode);
   }
 
+
+
+  // getting values
+  let str = {
+    name: "Education Details",
+    value: [],
+  }; // store input values
+
+  const getValue = () => {
+    str.value = [];
+    const experiences = document.getElementsByClassName("inputForm");
+    for (let e of experiences) {
+      const education = {
+        name: "Education",
+        value : {}
+      };
+      education.value.institutionName = `${e.querySelector("#institutionName")?.value}`;
+      education.value.location = `${e.querySelector("#location")?.value}`;
+      education.value.startDate = `${e.querySelector("#startDate")?.value}`;
+      education.value.endDate = `${e.querySelector("#endDate")?.value}`;
+
+      str.value.push(education);
+    }
+
+    setUsersTemplateInfo([...usersTemplateInfo, str]);
+    navigate("/resume-builder/certifications");
+    console.log(str);
+  };
+
   return (
     <div className=" bg-[#f4f7f8] lg:mr-7 rounded-2xl my-5">
       <div className="md:px-16 px-7 py-10 grid lg:grid-cols-12 lg:gap-10 ">
@@ -91,7 +120,7 @@ const Education = () => {
 
           {/* input form */}
           <div id="parentNode">
-            <form  className="pb-3">
+            <form  className="pb-3 inputForm">
             {/* school/ college/ university name and Locations*/}
               <div className="grid md:grid-cols-2 gap-3">
                 <input
@@ -140,7 +169,7 @@ const Education = () => {
               <span class="relative w-full  text-left ">Back</span>
             </a>
             <a
-              // onClick={getValue}
+              onClick={getValue}
               href="#_"
               class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-24 px-10 text-lg rounded-lg text-white hover:bg-[#3ba6d4]"
             >
