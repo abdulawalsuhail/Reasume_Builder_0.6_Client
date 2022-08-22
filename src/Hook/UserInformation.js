@@ -7,7 +7,7 @@ import axiosPrivate from '../Pages/Api/axiosPrivate';
 
 const UserInformation = (user) => {
     const [users,setUsers]  = useState({})
-
+    
     const { data, isLoading, refetch } = useQuery(["user"], () => {
         axiosPrivate
           .get(`/single/user/${user?.email}`)
