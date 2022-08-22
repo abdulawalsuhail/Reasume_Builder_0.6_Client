@@ -1,53 +1,40 @@
 import React from "react";
 import "swiper/css/bundle";
-import Banner from "../../../assets/Banner.png";
+import Banner from "../../../assets/hero-banner.png";
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
 import "swiper/css/effect-cards";
 import "./styles.css";
 
-// import required modules
-import { EffectCards } from "swiper";
-import demo1 from "../../../assets/demo1.png";
-import demo2 from "../../../assets/demo2.png";
 import { Link } from "react-router-dom";
 
 const hero = () => {
   return (
-    <section className="relative bg-black">
-      <img
-        className="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25 sm:opacity-100"
-        src={Banner}
-        alt="Resume of a job"
-      />
-
-      <div className="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-slate-800 sm:to-transparent"></div>
-
-      <div className="relative max-w-screen-xl px-4 py-32 mx-auto lg:h-screen grid lg:grid-cols-2 grid-cols-1 gap-5">
-        <div className="max-w-xl text-center sm:text-left text-white md:ml-8 lg:order-1 order-2">
-          <h1
+    <section className="">
+      <div className=" md:py-20 py-10 lg:py-24 lg:mx-16 mx-8 grid lg:grid-cols-2 grid-cols-1 gap-5">
+        <div className="max-w-xl text-left md:ml-8 lg:order-1 order-2 mt-10 lg:mt-0">
+          <div className="flex items-center gap-2 bg-gray-100 w-fit px-3 rounded-full py-2 border-[1px] border-gray-200 mb-5">
+            <p className=" px-2 py-[2px] text-white rounded-full bg-green-500">
+              $
+            </p>
+            <p>Discover the easiest way to build your resume!</p>
+          </div>
+          <p
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="text-3xl font-extrabold sm:text-5xl text-left poppins-b"
+            className="md:text-[43px] font-bold text-[26px] text-left poppins-b text-blue-700"
+            style={{ lineHeight: "135%" }}
           >
-            Build your brand-new resume in as
-            <span className="font-extrabold text-primary  poppins-b">
-              {" "}
-              little as 5 minutes.
-            </span>
-          </h1>
+            Online Resume Builder With Creative Template
+          </p>
 
           <p
             data-aos="fade-up"
             data-aos-duration="2000"
-            className="max-w-lg text-md mt-4 text-left sm:text-xl text-gray-300"
+            className="max-w-lg mt-4 text-left text-[15px] poppins-t text-gray-800"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-            quis cumque minus, officiis odio obcaecati!
+            quis cumque minus, officiis odio obcaecati! Lorem ipsum dolor sit
+            amet consectetur adipisicing.
           </p>
 
           <div
@@ -55,47 +42,16 @@ const hero = () => {
             data-aos-duration="3000"
             className="flex  gap-4 mt-8 text-center"
           >
-            <Link
-              className="block w-full px-12 py-3 text-sm font-medium bg-sky-600 border border-sky-600 text-white rounded sm:w-auto hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150"
-              to="/resume-builder/how-to-start"
-            >
+            <button className="py-[12px] px-8 poppins-t text-white rounded-md bg-blue-700">
               Get Started
-            </Link>
-
-            <a
-              className="block w-full px-12 py-3 text-sm font-medium bg-white text-sky-600 border border-white rounded sm:w-auto hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150"
-              href="/about"
-            >
-              Learn More
-            </a>
+            </button>
+            <button className="py-[10px] px-8 border-[2px] border-blue-700 rounded-md poppins-t">
+              Read a blog
+            </button>
           </div>
         </div>
-        <div className="lg:order-2 order-1 -mt-20 lg:-mt-8 md:hidden lg:block">
-          <Swiper
-            effect={"cards"}
-            grabCursor={true}
-            modules={[EffectCards]}
-            className="mySwiper"
-          >
-            <SwiperSlide className="bg-transparent">
-              <img src={demo1} alt="" />
-            </SwiperSlide>
-            <SwiperSlide className="bg-transparent">
-              <img src={demo2} alt="" />
-            </SwiperSlide>
-            <SwiperSlide className="bg-transparent">
-              <img src={demo1} alt="" />
-            </SwiperSlide>
-            <SwiperSlide className="bg-transparent">
-              <img src={demo2} alt="" />
-            </SwiperSlide>
-            <SwiperSlide className="bg-transparent">
-              <img src={demo1} alt="" />
-            </SwiperSlide>
-            <SwiperSlide className="bg-transparent">
-              <img src={demo2} alt="" />
-            </SwiperSlide>
-          </Swiper>
+        <div className="lg:order-2 order-1  lg:-mt-2">
+          <img className="lg:w-[100%] w-[90%] mx-auto" src={Banner} alt="" />
         </div>
       </div>
     </section>
