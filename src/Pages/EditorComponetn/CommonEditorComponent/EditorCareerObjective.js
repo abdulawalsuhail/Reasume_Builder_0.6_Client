@@ -33,19 +33,15 @@ const EditorCareerObjective = () => {
   // }
 
   return (
-    <div className="bg-[#f4f7f8] mx-auto py-12">
-      <div className="mx-10 text-center">
+    <div className="bg-[#f4f7f8]  mx-auto">
+      <div className="w-[330px] md:w-[550px] mt-12 text-center">
         {" "}
-        <h1 className="text-4xl font-[700] text-[#4a4a4a] mb-10">
+        <h1 className="text-4xl font-[700] text-[#4a4a4a] mb-6">
           Career Objective
         </h1>
-        <p className="text-[#989898]">
+        <p className="text-gray-400 text-lg mb-8">
           This section will usually be one of the first things a hiring manager
           reads. It tells them,
-        </p>
-        <p className="mb-10 text-[#989898]">
-          {" "}
-          “Here's who I am, and here's what I can do for your company”.
         </p>
       </div>
 
@@ -54,10 +50,10 @@ const EditorCareerObjective = () => {
       </div> */}
 
       <div>
-        <textarea name="career-objective" id="career-objective" cols="150" rows="20" placeholder="Write your career objectives" className="p-8"></textarea>
+        <textarea name="career-objective" id="career-objective" placeholder="Write your career objectives" className="p-8 h-[200px] w-[330px] md:w-[550px]"></textarea>
       </div>
 
-      <div className="flex items-center justify-center gap-10 mt-12 mb-3">
+      <div className="flex gap-10 mt-12 mb-3">
         <a
         onClick={()=> navigate("/resume-builder/languages")}
           href="#_"

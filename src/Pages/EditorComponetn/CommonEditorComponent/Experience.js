@@ -100,10 +100,13 @@ const Experience = () => {
     <div className=" bg-[#f4f7f8] lg:mr-7 rounded-2xl my-5">
       <div className="md:px-16 px-7 py-10 grid lg:grid-cols-12 lg:gap-5 ">
         {/* form div */}
-        <div className="lg:col-span-8">
-          <h3 className="text-4xl font-bold text-gray-700 mb-8">
+        <div className="lg:col-span-8 text-center">
+          <h3 className="text-4xl font-bold text-gray-700 mb-2">
             What's your most recent work experience?
           </h3>
+          <p className="text-gray-400 text-lg mt-2 mb-5">
+            Please add your experiences
+          </p>
           {/* input form */}
           <div id="parentNode">
             <form  className="pb-3">

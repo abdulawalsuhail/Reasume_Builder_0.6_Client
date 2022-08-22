@@ -108,10 +108,13 @@ const Reference = () => {
     <div className=" bg-[#f4f7f8] lg:mr-7  p-10">
       <div className="w-[70%] mx-auto">
         {/* form div */}
-        <div className="lg:col-span-6 mx-auto">
-          <h3 className="text-4xl font-bold text-gray-700 mb-4">
-            Add Reference
+        <div className="lg:col-span-6 mx-auto text-center">
+          <h3 className="text-4xl font-bold text-gray-700 pb-4">
+            If you have any references ?
           </h3>
+          <p className="text-gray-400 text-lg mb-8">
+            Add references here
+          </p>
 
           {/* input form */}
           <div id="parentNode">
@@ -183,6 +186,7 @@ const Reference = () => {
             </a>
             <a
               // onClick={getValue}
+              onClick={() => navigate('/resume-builder/template1')}
               href="#_"
               class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-24 px-10 text-lg rounded-lg text-white hover:bg-[#3ba6d4]"
             >
