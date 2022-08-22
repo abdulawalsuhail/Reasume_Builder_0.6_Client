@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { BsChatLeftText } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { FaChalkboardTeacher, FaFirstOrder, FaHistory } from 'react-icons/fa';
 import { HiUserGroup } from "react-icons/hi";
@@ -65,6 +66,15 @@ const Dashboard = () => {
                   <RiAdminLine className=" ml-2 text-[20px] mr-2 " />
                   <span className="uppercase font-bold text-gray-700">
                     All Admin
+                  </span>
+                </DashboardCustomLink>
+                <DashboardCustomLink
+                  className="flex items-center py-3 text-gray-500 "
+                  to="/dashboard/chat"
+                >
+                  <BsChatLeftText className=" ml-2 text-[20px] mr-2 " />
+                  <span className="uppercase font-bold text-gray-700">
+                    Chat
                   </span>
                 </DashboardCustomLink>
                 <DashboardCustomLink

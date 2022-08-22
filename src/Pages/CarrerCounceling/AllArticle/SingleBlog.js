@@ -79,7 +79,7 @@ const SingleBlog = () => {
     
   };
   return (
-    <div class="card md:w-[70%] mx-auto h-screen bg-base-100 shadow-xl">
+    <div class="card md:w-[70%] mx-auto min-h-screen bg-base-100 shadow-xl">
       <div class="card-body">
         <div class="avatar">
           <div class="w-24 mx-auto rounded-full ring ring-offset-base-100 ring-offset-2">
