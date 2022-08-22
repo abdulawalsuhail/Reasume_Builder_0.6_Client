@@ -11,7 +11,7 @@ import WriteResume from "./WriteResume/WriteResume";
 
 const Home = () => {
   return (
-    <div className="bg-[#f4f7f8]">
+    <div className="">
       <Navbar />
       <Hero />
       <WriteResume />
@@ -20,7 +20,7 @@ const Home = () => {
       <WhyResumeBuilder />
       <Review />
       <Business />
-      <Footer/>
+      <Footer />
     </div>
   );
 };
