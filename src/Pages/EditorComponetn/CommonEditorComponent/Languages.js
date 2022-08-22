@@ -11,12 +11,7 @@ const Languages = () => {
     function addNewLanguage() {
         number++;
         let newNode = document.createElement('input');
-        newNode.classList.add('input');
-        newNode.classList.add('input-bordered');
-        newNode.classList.add('w-full');
-        newNode.classList.add('mb-4');
-        newNode.classList.add('h-14');
-        newNode.classList.add('languages');
+        newNode.classList.add('input', 'input-bordered', 'w-full', 'mb-4', 'h-14', 'languages');
         newNode.setAttribute('type','text');
         newNode.setAttribute('placeholder', 'Languages');
         newNode.setAttribute('name', `languages_${number}`);
