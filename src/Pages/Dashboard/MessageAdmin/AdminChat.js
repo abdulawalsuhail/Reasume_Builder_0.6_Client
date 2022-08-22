@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { io } from 'socket.io-client';
 import auth from "../../../firebase.init";
 import UserInformation from "../../../Hook/UserInformation";
 import axiosPrivate from "../../Api/axiosPrivate";
@@ -8,6 +9,7 @@ import "./message.css";
 import Message from "./Message/Message";
 
 const AdminChat = () => {
+
   const [user] = useAuthState(auth);
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
@@ -16,9 +18,22 @@ const AdminChat = () => {
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [admin, setAdmin] = useState([]);
-  const socket = useRef();
+  const [socket,setSocket] = useState(null);
   const [users] = UserInformation(user);
   const scrollRef = useRef();
+
+
+
+
+  useEffect(()=> {
+    setSocket(io("http://localhost:8000/"))
+  },[])
+
+  useEffect(() => {
+    socket?.on("myevent", (data) => {
+      console.log(data);
+    });
+  }, [socket]);
 
   useEffect(() => {
     if (users?._id) {
@@ -36,6 +51,26 @@ const AdminChat = () => {
     };
     getMessage();
   }, [currentChat]);
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const message = {
+        conversationId:currentChat._id,
+        senderId:users?._id,
+        text:newMessage
+    }
+  if(currentChat._id && users?._id ){
+   await axiosPrivate.post('/message',message)
+    .then(res => {
+        setMessages([...messages,res.data])
+        setNewMessage("")
+    })
+  }
+  }
+  useEffect(() => {
+    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
   return (
     <>
       <div className="messenger">
@@ -54,13 +89,15 @@ const AdminChat = () => {
             {currentChat ? (
               <>
                 <div className="chatBoxTop">
-                  {messages.map((m) => (
+                <div ref={scrollRef}>
+                {messages.map((m) => (
                     <Message
                       key={m._id}
                       message={m}
                       own={m.senderId === users._id}
                     ></Message>
                   ))}
+                </div>
                 </div>
                 <div className="chatBoxBottom">
                   <textarea
@@ -69,7 +106,7 @@ const AdminChat = () => {
                     onChange={(e) => setNewMessage(e.target.value)}
                     value={newMessage}
                   ></textarea>
-                  <button className="chatSubmitButton">Send</button>
+                  <button onClick={handleSubmit} className="chatSubmitButton">Send</button>
                 </div>
               </>
             ) : (

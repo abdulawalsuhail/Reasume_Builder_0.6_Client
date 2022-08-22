@@ -37,6 +37,8 @@
     "react-to-print": "^2.14.7",
     "recharts": "^2.1.13",
     "slick-carousel": "^1.8.1",
+    "socket.io": "^4.5.1",
+    "socket.io-client": "^4.5.1",
     "sweetalert2": "^11.4.26",
     "swiper": "^8.3.1",
     "web-vitals": "^2.1.4"

@@ -2,7 +2,6 @@ import React from 'react';
 import './Message.css';
 
 const Message = ({message,own}) => {
-    console.log(own);
     return (
         <div className={own ? "message own" : "message"}>
         <div className="messageTop">
