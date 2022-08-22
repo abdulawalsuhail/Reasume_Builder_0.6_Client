@@ -8,92 +8,87 @@ const Experience = () => {
   const navigate = useNavigate();
 
 
-
-
-
-
-
-  // Get input field values and store values at str
-  // let str = {
-  //   name: "experiencesDetails",
-  //   value: [],
-  // }; // store input values
-
-
-  // const getValue = () => {
-  //   str.value = [];
-  //   const experience = {
-  //     name: "Experience_1",
-  //     value : {}
-  //   };
-
-  //   experience.value.jobTitle = `${document.getElementById("jobTitle")?.value}`;
-  //   experience.value.companyName = `${document.getElementById("companyName")?.value}`;
-  //   experience.value.country = `${document.getElementById("country")?.value}`;
-  //   experience.value.state = `${document.getElementById("state")?.value}`;
-  //   experience.value.city = `${document.getElementById("city")?.value}`;
-  //   experience.value.startMonth = `${document.getElementById("startMonth")?.value}`;
-  //   experience.value.startYear = `${document.getElementById("startYear")?.value}`;
-  //   experience.value.endMonth = `${document.getElementById("endMonth")?.value}`;
-  //   experience.value.endYear = `${document.getElementById("endYear")?.value}`;
-
-  //   str.value.push(experience)
-
-  //   setUsersTemplateInfo([...usersTemplateInfo, str]);
-  //   navigate("/resume-builder/editor-education");
-  //   console.log(str);
-  // };
-
   const addExperiences = () => {
-    let newNode = document.createElement('form');
-    newNode.classList.add("pb-3");
-    let p = document.createElement("p");
-    p.innerText = "Add new experience"
-    p.classList.add("py-1","text-primary");
-    let firstDiv = document.createElement('div');
-    firstDiv.classList.add("grid","md:grid-cols-2","gap-3");
-    firstDiv.innerHTML = `
-      <input
-        type = "text"
-        placeholder = "Company Name"
-        id = "companyName"
-        class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
-      />
-      <input
-        type = "text"
-        placeholder = "Location"
-        id = "location"
-        class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
-      />
-    `
-    let secondDiv = document.createElement('div');
-    secondDiv.classList.add("grid", "md:grid-cols-3", "gap-3","mt-3");
-    secondDiv.innerHTML = `
-      <input
-        type="text"
-        placeholder="Job Title"
-        id="jobTitle"
-        class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
-      />
-      <input
-        type="text"
-        placeholder="Start date/month/year"
-        id="startDate"
-        class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
-      />
-      <input
-        type="text"
-        placeholder="End date/month/year"
-        id="endDate"
-        class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
-      />
-    `
-    newNode.appendChild(p);
-    newNode.appendChild(firstDiv);
-    newNode.appendChild(secondDiv);
-    const parentNode = document.getElementById("parentNode");
-    parentNode.appendChild(newNode);
-  }
+  let newNode = document.createElement('form');
+  newNode.classList.add("pb-3","inputForm","abc2");
+  let p = document.createElement("p");
+  p.innerText = "Add new experience"
+  p.classList.add("py-1","text-primary");
+  let firstDiv = document.createElement('div');
+  firstDiv.classList.add("grid","md:grid-cols-2","gap-3");
+  firstDiv.innerHTML = `
+    <input
+      type = "text"
+      placeholder = "Company Name"
+      id = "companyName"
+      class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
+    />
+    <input
+      type = "text"
+      placeholder = "Location"
+      id = "location"
+      class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
+    />
+  `
+  let secondDiv = document.createElement('div');
+  secondDiv.classList.add("grid", "md:grid-cols-3", "gap-3","mt-3");
+  secondDiv.innerHTML = `
+    <input
+      type="text"
+      placeholder="Job Title"
+      id="jobTitle"
+      class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
+    />
+    <input
+      type="text"
+      placeholder="Start date/month/year"
+      id="startDate"
+      class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
+    />
+    <input
+      type="text"
+      placeholder="End date/month/year"
+      id="endDate"
+      class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
+    />
+  `
+  newNode.appendChild(p);
+  newNode.appendChild(firstDiv);
+  newNode.appendChild(secondDiv);
+  const parentNode = document.getElementById("parentNode");
+  parentNode.appendChild(newNode);
+}
+
+
+  // getting values
+  let str = {
+    name: "experiencesDetails",
+    value: [],
+  }; // store input values
+
+  const getValue = () => {
+    str.value = [];
+    const experiences = document.getElementsByClassName("inputForm");
+    for (let e of experiences) {
+      const experience = {
+      name: "Experience",
+      value : {}
+      };
+      experience.value.companyName = `${e.querySelector("#companyName")?.value}`;
+      experience.value.location = `${e.querySelector("#location")?.value}`;
+      experience.value.jobTitle = `${e.querySelector("#jobTitle")?.value}`;
+      experience.value.startDate = `${e.querySelector("#startDate")?.value}`;
+      experience.value.endDate = `${e.querySelector("#endDate")?.value}`;
+
+      str.value.push(experience)
+    }
+
+    setUsersTemplateInfo([...usersTemplateInfo, str]);
+    navigate("/resume-builder/editor-education");
+    console.log(str);
+  };
+
+
 
 
   return (
@@ -109,7 +104,7 @@ const Experience = () => {
           </p>
           {/* input form */}
           <div id="parentNode">
-            <form  className="pb-3">
+            <form  className="pb-3 inputForm">
             {/* Company name and Location*/}
               <div className="grid md:grid-cols-2 gap-3">
                 <input
@@ -169,7 +164,7 @@ const Experience = () => {
                 </span>
               </a>
               <a
-                // onClick={getValue}
+                onClick={getValue}
                 href="#_"
                 class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-24 px-10 text-lg rounded-lg text-white hover:bg-[#3ba6d4]"
               >
