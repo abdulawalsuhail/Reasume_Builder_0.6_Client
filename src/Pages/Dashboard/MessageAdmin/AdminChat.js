@@ -29,11 +29,19 @@ const AdminChat = () => {
     setSocket(io("http://localhost:8000/"))
   },[])
 
+  useEffect(()=> {
+    socket?.on("getMessage",data => {
+
+    })
+  },[])
   useEffect(() => {
-    socket?.on("myevent", (data) => {
-      console.log(data);
-    });
-  }, [socket]);
+  if(users?._id){
+    socket?.emit("addUser",users?._id)
+    socket?.on("getUsers",users => {
+     console.log(users);
+    })
+  }
+  }, [socket,users]);
 
   useEffect(() => {
     if (users?._id) {
@@ -60,6 +68,17 @@ const AdminChat = () => {
         senderId:users?._id,
         text:newMessage
     }
+
+    const receiverId = currentChat.members.find(member => member !== user?._id)
+
+    if(user?._id){
+      socket?.emit('sendMessage',{
+        senderId: user?._id,
+        receiverId,
+        text:newMessage
+      })
+    }
+
   if(currentChat._id && users?._id ){
    await axiosPrivate.post('/message',message)
     .then(res => {
@@ -68,6 +87,8 @@ const AdminChat = () => {
     })
   }
   }
+
+  
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
