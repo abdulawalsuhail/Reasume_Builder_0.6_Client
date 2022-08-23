@@ -21,7 +21,6 @@ const Home = () => {
       <Guideline />
       <WhyResumeBuilder />
       <Review />
-      <Business />
       <Footer />
     </div>
   );
