@@ -18,27 +18,40 @@ const AdminChat = () => {
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [admin, setAdmin] = useState([]);
-  const [socket,setSocket] = useState(null);
+  // const [socket,setSocket] = useState(null);
+  const socket = useRef()
   const [users] = UserInformation(user);
   const scrollRef = useRef();
 
 
-
-
-  useEffect(()=> {
-    setSocket(io("http://localhost:8000/"))
-  },[])
+ 
 
   useEffect(()=> {
-    socket?.on("getMessage",data => {
+    socket.current=(io("http://localhost:8000/"))
 
+    socket.current.on("getMessage",data =>{
+      setArrivalMessage({
+        senderId:data.senderId,
+        text:data.text
+      })
     })
+    
   },[])
+
+
+  useEffect(() => {
+
+    
+    arrivalMessage &&
+      currentChat?.members.includes(arrivalMessage.senderId) &&
+      setMessages([...messages,arrivalMessage]);
+  }, [arrivalMessage, currentChat,messages]);
+
   useEffect(() => {
   if(users?._id){
-    socket?.emit("addUser",users?._id)
-    socket?.on("getUsers",users => {
-     console.log(users);
+    socket?.current.emit("addUser",users?._id)
+    socket?.current.on("getUsers",users => {
+      console.log(users);
     })
   }
   }, [socket,users]);
@@ -61,6 +74,7 @@ const AdminChat = () => {
   }, [currentChat]);
 
 
+ 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const message = {
@@ -69,28 +83,31 @@ const AdminChat = () => {
         text:newMessage
     }
 
-    const receiverId = currentChat.members.find(member => member !== user?._id)
-
-    if(user?._id){
-      socket?.emit('sendMessage',{
-        senderId: user?._id,
-        receiverId,
-        text:newMessage
-      })
-    }
+     
+    const receiverId = currentChat.members.find(member =>  member !== user?._id)
+    socket.current.emit("sendMessage",{
+      senderId:users?._id,
+      receiverId,
+      text:newMessage
+  
+    })
 
   if(currentChat._id && users?._id ){
    await axiosPrivate.post('/message',message)
     .then(res => {
-        setMessages([...messages,res.data])
+      axiosPrivate.get(`/message/${currentChat?._id}`).then((res) => {
+        setMessages(res.data);
+      });
         setNewMessage("")
     })
   }
+
+  return scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }
 
   
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+    return scrollRef.current?.scrollIntoView({top: scrollRef.current.scrollTop -= 500, behavior: "smooth" });
   }, [messages]);
   return (
     <>
@@ -110,15 +127,17 @@ const AdminChat = () => {
             {currentChat ? (
               <>
                 <div className="chatBoxTop">
-                <div ref={scrollRef}>
+               
                 {messages.map((m) => (
+                   <div ref={scrollRef}>
                     <Message
                       key={m._id}
                       message={m}
                       own={m.senderId === users._id}
                     ></Message>
+                    </div>
                   ))}
-                </div>
+                
                 </div>
                 <div className="chatBoxBottom">
                   <textarea
