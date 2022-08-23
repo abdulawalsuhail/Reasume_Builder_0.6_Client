@@ -16,7 +16,7 @@ import toast from "react-hot-toast";
 
 
 const EditResume = () => {
-  const [usersTemplateInfo, setUsersTemplateInfo] = useState([]);
+  const [usersTemplateInfo, setUsersTemplateInfo] = useState({});
   console.log(usersTemplateInfo);
   const editResumeSidebar = (
     <>
@@ -98,7 +98,7 @@ const EditResume = () => {
       <li className=" hover:text-white rounded-md">
         <NavLink
           className="hover:bg-primary poppins-r uppercase pr-2 mx-2"
-          to="/resume-builder/reference/should_add_reference"
+          to="/resume-builder/reference"
         >
           <BiLink className="-mr-1 text-[20px]" />
           Reference

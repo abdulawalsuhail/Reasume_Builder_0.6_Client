@@ -4,32 +4,28 @@ import contactImage from "../../../assets/contact.png";
 
 const ContactDetails = () => {
   const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
-  // Get input field values and store values at str
-  let str = {
-    name: "contactDetails",
-    value: [],
-  }; // store input values
   const navigate = useNavigate();
 
+  // Get input field values and store values at str
+  let str = {
+    name: "Contact Details",
+    value: {},
+  };
   const getValue = () => {
-    str.value = [];
-    str.value.push({
-      firstName: `${document.getElementById("firstName")?.value}`,
-    });
-    str.value.push({
-      lastName: `${document.getElementById("lastName")?.value}`,
-    });
-    str.value.push({
-      jobTitle: `${document.getElementById("jobTitle")?.value}`,
-    });
-    str.value.push({ phoneNo: `${document.getElementById("phoneNo")?.value}` });
-    str.value.push({ country: `${document.getElementById("country")?.value}` });
-    str.value.push({ city: `${document.getElementById("city")?.value}` });
-    str.value.push({ state: `${document.getElementById("state")?.value}` });
-    str.value.push({ zipCode: `${document.getElementById("zipCode")?.value}` });
-    str.value.push({ email: `${document.getElementById("email")?.value}` });
+    str.value = {};
+    str.value.firstName = document.getElementById("firstName")?.value;
+    str.value.lastName = document.getElementById("lastName")?.value;
+    str.value.jobTitle = document.getElementById("jobTitle")?.value;
+    str.value.phoneNo = document.getElementById("phoneNo")?.value;
+    str.value.country = document.getElementById("country")?.value;
+    str.value.city = document.getElementById("city")?.value;
+    str.value.state = document.getElementById("state")?.value;
+    str.value.zipCode = document.getElementById("zipCode")?.value;
+    str.value.email = document.getElementById("email")?.value;
+    
+    setUsersTemplateInfo({...usersTemplateInfo,contactDetails:str});
     navigate("/resume-builder/editor-experience");
-    setUsersTemplateInfo([...usersTemplateInfo, str]);
+    console.log(usersTemplateInfo);
   };
 
   return (

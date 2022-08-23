@@ -62,7 +62,7 @@ const Experience = () => {
 
   // getting values
   let str = {
-    name: "experiencesDetails",
+    name: "Experience Details",
     value: [],
   }; // store input values
 
@@ -83,9 +83,10 @@ const Experience = () => {
       str.value.push(experience)
     }
 
-    setUsersTemplateInfo([...usersTemplateInfo, str]);
+    setUsersTemplateInfo({...usersTemplateInfo,experienceDetails:str});
+    
     navigate("/resume-builder/editor-education");
-    console.log(str);
+    console.log(usersTemplateInfo);
   };
 
 
@@ -145,7 +146,7 @@ const Experience = () => {
           {/* add extra input field dynamically */}
           <div onClick={addExperiences} className='flex justify-center items-center text-accent hover:text-primary cursor-pointer'>
               <AiOutlinePlusCircle className='mr-2 text-xl '/>
-              <p className='text-lg'> Add Education</p>
+              <p className='text-lg'> Add Experience</p>
           </div>
 
           {/* button */}

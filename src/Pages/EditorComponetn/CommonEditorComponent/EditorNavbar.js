@@ -1,10 +1,7 @@
-import { signOut } from "firebase/auth";
 import React from "react";
-import toast from "react-hot-toast";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png";
-import auth from "../../../firebase.init";
 
 const EditorNavbar = () => {
   

@@ -6,32 +6,7 @@ import educationImage from "../../../assets/education.png";
 const Education = () => {
   const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
   const navigate = useNavigate();
-  // Get input field values and store values at str
-  // let str = {
-  //   name: "Educations",
-  //   value: [],
-  // }; 
-
-  // const getValue = () => {
-  //   str.value = [];
-  //   let education = {
-  //     name: "Education_1",
-  //     value : {}
-  //   };
-
-  //   education.value.institutionName = `${document.getElementById("institutionName")?.value}`;
-  //   education.value.location = `${document.getElementById("location")?.value}`;
-  //   education.value.startDate = `${document.getElementById("startDate")?.value}`;
-  //   education.value.endDate = `${document.getElementById("endDate")?.value}`;
-
-
-  //   str.value.push(education)
-
-  //   setUsersTemplateInfo([...usersTemplateInfo, str]);
-  //   navigate("/resume-builder/certifications");
-  //   console.log('education',education, usersTemplateInfo);
-  // };
-
+  
   const addEducations = () => {
     let newNode = document.createElement('form');
     newNode.classList.add("pb-3","inputForm");
@@ -101,9 +76,11 @@ const Education = () => {
       str.value.push(education);
     }
 
-    setUsersTemplateInfo([...usersTemplateInfo, str]);
+    setUsersTemplateInfo({...usersTemplateInfo,educationsDetails:str});
+    
     navigate("/resume-builder/certifications");
-    console.log(str);
+    console.log(usersTemplateInfo);
+    
   };
 
   return (

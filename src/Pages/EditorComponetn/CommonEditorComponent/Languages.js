@@ -32,7 +32,7 @@ const Languages = () => {
             str.value.push(e.value);
         }
 
-        setUsersTemplateInfo([...usersTemplateInfo, str])
+        setUsersTemplateInfo({ ...usersTemplateInfo, languages: str });
         navigate("/resume-builder/career-objective");
         console.log(str); 
     }

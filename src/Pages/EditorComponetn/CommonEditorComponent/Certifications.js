@@ -31,7 +31,9 @@ const Certifications = () => {
         for (let e of certifications) {
             str.value.push(e.value);
         }
-        setUsersTemplateInfo([...usersTemplateInfo, str])
+        
+        setUsersTemplateInfo({...usersTemplateInfo,certifications:str});
+
         console.log(usersTemplateInfo); 
         navigate('/resume-builder/additional-skills');
     }

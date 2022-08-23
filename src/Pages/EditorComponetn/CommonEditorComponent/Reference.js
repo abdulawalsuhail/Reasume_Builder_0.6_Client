@@ -43,7 +43,7 @@ const Reference = () => {
   // }
   const addReference = () => {
     let newNode = document.createElement('form');
-    newNode.classList.add("pb-3");
+    newNode.classList.add("pb-3", "inputForm");
     let p = document.createElement("p");
     p.innerText = "Add new experience"
     p.classList.add("py-1","text-primary");
@@ -104,13 +104,43 @@ const Reference = () => {
     parentNode.appendChild(newNode);
   }
 
+
+  // getting values
+  let str = {
+    name: "References",
+    value: [],
+  }; // store input values
+
+  const getValue = () => {
+    str.value = [];
+    const references = document.getElementsByClassName("inputForm");
+    for (let e of references) {
+      const reference = {
+        name: "Reference",
+        value : {}
+      };
+      reference.value.name = `${e.querySelector("#name")?.value}`;
+      reference.value.relationship = `${e.querySelector("#relationship")?.value}`;
+      reference.value.jobTitle = `${e.querySelector("#jobTitle")?.value}`;
+      reference.value.companyName = `${e.querySelector("#companyName")?.value}`;
+      reference.value.phone = `${e.querySelector("#phone")?.value}`;
+      reference.value.email = `${e.querySelector("#email")?.value}`;
+
+      str.value.push(reference);
+    }
+
+    setUsersTemplateInfo({ ...usersTemplateInfo, reference: str });
+    navigate('/resume-builder/template1')
+    console.log(str);
+  };
+
   return (
     <div className=" bg-[#f4f7f8] lg:mr-7  p-10">
-      <div className="w-[70%] mx-auto">
+      <div className="md:w-[70%] mx-auto">
         {/* form div */}
         <div className="lg:col-span-6 mx-auto text-center">
           <h3 className="text-4xl font-bold text-gray-700 pb-4">
-            If you have any references ?
+            Do you have any references ?
           </h3>
           <p className="text-gray-400 text-lg mb-8">
             Add references here
@@ -118,7 +148,7 @@ const Reference = () => {
 
           {/* input form */}
           <div id="parentNode">
-            <form  className="pb-3">
+            <form  className="pb-3 inputForm">
             {/* Name and relationship*/}
               <div className="grid md:grid-cols-2 gap-3">
                 <input
@@ -170,14 +200,14 @@ const Reference = () => {
           {/* add extra input field dynamically */}
           <div onClick={addReference} className='flex justify-center items-center text-accent hover:text-primary cursor-pointer'>
               <AiOutlinePlusCircle className='mr-2 text-xl '/>
-              <p className='text-lg'> Add Education</p>
+              <p className='text-lg'> Add Reference</p>
           </div>
 
           {/* Button */}
           <div className="flex justify-center gap-10 mt-6">
             <a
               onClick={() =>
-                navigate("/resume-builder/reference/should_add_reference")
+                navigate("/resume-builder/career-objective")
               }
               href="#_"
               class="relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-24 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black"
@@ -185,8 +215,7 @@ const Reference = () => {
               <span class="relative w-full  text-left ">Back</span>
             </a>
             <a
-              // onClick={getValue}
-              onClick={() => navigate('/resume-builder/template1')}
+              onClick={getValue}
               href="#_"
               class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-24 px-10 text-lg rounded-lg text-white hover:bg-[#3ba6d4]"
             >

@@ -65,6 +65,7 @@ import CoverLetterTemplate from "./Pages/CoverLatterTemplate/CoverLetter/CoverLe
 import EditProfile from "./Pages/Dashboard/Profile/EditProfile";
 import Profile from "./Pages/Dashboard/Profile/Profile";
 import Quiz from "./Pages/Quiz/Quiz";
+import Test from "./Test";
 
 const stripePromise = loadStripe(
   "pk_test_51L0e7DJVuUKdOSgodXlRxjzrt9f8fKWzD9Jum98GewskqXtaZ9Mx725bepiQ7zjAuEpcALdbkJEVHlNIG0RTIanM00m74yy2rn"
@@ -288,6 +289,7 @@ function App() {
       />
       {/* <Footer /> */}
       <Toaster />
+      {/* <Test/> */}
     </div>
   );
 }
