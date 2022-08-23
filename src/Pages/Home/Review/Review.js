@@ -1,6 +1,9 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import Slider from "react-slick";
 import bg from "../../../assets/service_bg.png";
+import Loading from "../../../Shared/Loading/Loading";
+import axiosFetch from "../../Api/axiosFetch";
 import ReviewsCard from "./ReviewCard";
 
 const Review = () => {
@@ -40,6 +43,16 @@ const Review = () => {
       },
     ],
   };
+
+  // get review data
+  const { data, isLoading, error } = useQuery(["reviews"], () =>
+    axiosFetch.get("reviews")
+  );
+  if (isLoading) {
+    return <Loading />;
+  }
+  const reviews = data?.data;
+  console.log(reviews);
   return (
     <div>
       <section className="relative">
@@ -58,13 +71,9 @@ const Review = () => {
           {/* this is card */}
 
           <Slider {...settings}>
-            <ReviewsCard />
-            <ReviewsCard />
-            <ReviewsCard />
-            <ReviewsCard />
-            <ReviewsCard />
-            <ReviewsCard />
-            <ReviewsCard />
+            {reviews.map((review) => (
+              <ReviewsCard review={review} key={review?._id} />
+            ))}
           </Slider>
         </div>
       </section>

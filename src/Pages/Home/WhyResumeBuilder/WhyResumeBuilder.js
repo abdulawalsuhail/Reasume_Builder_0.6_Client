@@ -10,7 +10,7 @@ import edit from "../../../assets/service_icon/resume.png";
 const WhyResumeBuilder = () => {
   return (
     <section className="bg-gray-100">
-      <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+      <div className="md:mx-16 lg:mx-24 mx-8 py-16 ">
         <div className="max-w-lg mr-auto text-left">
           <h2 className="text-3xl text-primary font-bold poppins-b sm:text-4xl">
             Why Use The Resume Builder?
