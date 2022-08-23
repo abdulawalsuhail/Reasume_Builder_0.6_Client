@@ -13,6 +13,9 @@ import logo from "../../assets/logo.png";
 import { signOut } from "firebase/auth";
 import auth from "../../firebase.init";
 import toast from "react-hot-toast";
+import { GrDocumentText } from "react-icons/gr";
+import { AiFillSignal } from "react-icons/ai";
+import { GiSkills } from "react-icons/gi";
 
 
 const EditResume = () => {
@@ -46,7 +49,8 @@ const EditResume = () => {
           className="hover:bg-primary uppercase pr-2 mx-2 poppins-r"
           to="/resume-builder/editor-experience"
         >
-          <FaHammer className="-mr-1 text-[20px]" />
+          {/* <FaHammer className="-mr-1 text-[20px]" /> */}
+          <AiFillSignal className="-mr-2 text-[20px]"/>
           Experience
         </NavLink>
       </li>
@@ -73,7 +77,8 @@ const EditResume = () => {
           className="hover:bg-primary poppins-r uppercase pr-2 mx-2"
           to="/resume-builder/additional-skills"
         >
-          <FaMagic className="-mr-1 text-[16px]" />
+          {/* <FaMagic className="-mr-1 text-[16px]" /> */}
+          <GiSkills className="-mr-1 text-[16px]"/>
           Additional Skills
         </NavLink>
       </li>
@@ -95,13 +100,22 @@ const EditResume = () => {
           Career Objective
         </NavLink>
       </li>
-      <li className=" hover:text-white rounded-md">
+      <li className=" hover:text-white rounded-md mb-2">
         <NavLink
           className="hover:bg-primary poppins-r uppercase pr-2 mx-2"
           to="/resume-builder/reference"
         >
           <BiLink className="-mr-1 text-[20px]" />
           Reference
+        </NavLink>
+      </li>
+      <li className=" hover:text-white rounded-md">
+        <NavLink
+          className="hover:bg-primary poppins-r uppercase pr-2 mx-2"
+          to="/resume-builder/template1"
+        >
+          <GrDocumentText className="-mr-1 text-[20px]"/>
+          Template
         </NavLink>
       </li>
       

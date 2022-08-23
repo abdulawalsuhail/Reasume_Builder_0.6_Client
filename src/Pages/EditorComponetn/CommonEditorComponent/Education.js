@@ -65,7 +65,7 @@ const Education = () => {
     const experiences = document.getElementsByClassName("inputForm");
     for (let e of experiences) {
       const education = {
-        name: "Education",
+        name: `${e.querySelector("#degree")?.value}`,
         value : {}
       };
       education.value.institutionName = `${e.querySelector("#institutionName")?.value}`;
@@ -114,7 +114,13 @@ const Education = () => {
                 />
               </div>
               {/* Start month,End month,Start year,End year */}
-              <div className="grid md:grid-cols-2 gap-3 mt-3">
+              <div className="grid md:grid-cols-3 gap-3 mt-3">
+                <input
+                  type="text"
+                  placeholder="Degree/Program"
+                  id="degree"
+                  class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
+                />
                 <input
                   type="text"
                   placeholder="Start date/month/year"
