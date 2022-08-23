@@ -248,7 +248,9 @@ function App() {
                 <AdminChat/>
               </RequireAdmin>
             }
-          ></Route>
+            
+          >
+          </Route>
           <Route
             path="booking-service"
             element={
