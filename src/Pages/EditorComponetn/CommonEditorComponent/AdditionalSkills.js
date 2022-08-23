@@ -60,9 +60,9 @@ const AdditionalSkills = () => {
                     </div>
                     {/* button */}
                     <div className='flex justify-center'>
-                        <div className='w-[80%] flex justify-around items-center mt-10'>
-                            <button onClick={()=>navigate('/resume-builder/certifications')} className='relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-24 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black'>Back</button>
-                            <button onClick={getValue}className='relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-24 px-10 text-lg rounded-lg text-white hover:bg-[#3ba6d4]'>Continue</button>
+                        <div className='md:w-[50%] w-[100%] flex justify-around items-center mt-10'>
+                            <button onClick={()=>navigate('/resume-builder/certifications')} className='relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-16 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black'>Back</button>
+                            <button onClick={getValue}className='relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-16 px-10 text-lg rounded-lg text-white hover:bg-[#3ba6d4]'>Save and continue</button>
                         </div>
                     </div>
                 </div>
