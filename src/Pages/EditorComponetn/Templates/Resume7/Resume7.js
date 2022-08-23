@@ -15,8 +15,10 @@ import { FaMusic } from "react-icons/fa"
 import { FaCanadianMapleLeaf } from "react-icons/fa"
 import { HiLocationMarker } from "react-icons/hi"
 import { GiCalendarHalfYear } from "react-icons/gi"
+import { useOutletContext } from 'react-router-dom';
 
 const Resume7 = () => {
+    const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
 
     return (
         <div className=''>

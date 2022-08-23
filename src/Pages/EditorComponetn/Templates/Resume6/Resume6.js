@@ -14,9 +14,11 @@ import { FaMusic } from "react-icons/fa"
 import { FaCanadianMapleLeaf } from "react-icons/fa"
 import { MdLocationCity } from "react-icons/md"
 import { BsGithub } from "react-icons/bs"
+import { useOutletContext } from 'react-router-dom';
 
 
 const Resume6 = () => {
+    const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
 
     return (
         <div className=''>

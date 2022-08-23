@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useParams } from "react-router-dom";
 import { IoMdContact } from "react-icons/io";
 import { FaHammer } from "react-icons/fa";
 import { FaBook } from "react-icons/fa";
@@ -20,6 +20,7 @@ import { GiSkills } from "react-icons/gi";
 
 const EditResume = () => {
   const [usersTemplateInfo, setUsersTemplateInfo] = useState({});
+  const {_id} = useParams();
   console.log(usersTemplateInfo);
   const editResumeSidebar = (
     <>
@@ -38,7 +39,7 @@ const EditResume = () => {
       <li className=" hover:text-white mb-2 ">
         <NavLink
           className="hover:bg-primary uppercase  mx-2 poppins-r"
-          to="/resume-builder/editor-contact"
+          to={`/resume-builder/${_id}/editor-contact`}
         >
           <IoMdContact className="-mr-1 text-[20px]" />
           Contact
@@ -47,7 +48,7 @@ const EditResume = () => {
       <li className=" hover:text-white rounded-md mb-2">
         <NavLink
           className="hover:bg-primary uppercase pr-2 mx-2 poppins-r"
-          to="/resume-builder/editor-experience"
+          to={`/resume-builder/${_id}/editor-experience`}
         >
           {/* <FaHammer className="-mr-1 text-[20px]" /> */}
           <AiFillSignal className="-mr-2 text-[20px]"/>
@@ -57,7 +58,7 @@ const EditResume = () => {
       <li className=" hover:text-white rounded-md mb-2">
         <NavLink
           className="hover:bg-primary poppins-r uppercase pr-2 mx-2"
-          to="/resume-builder/editor-education"
+          to={`/resume-builder/${_id}/editor-education`}
         >
           <FaBook className="-mr-1 text-[16px]" />
           Education
@@ -66,7 +67,7 @@ const EditResume = () => {
       <li className=" hover:text-white rounded-md mb-2">
         <NavLink
           className="hover:bg-primary poppins-r uppercase pr-2 mx-2"
-          to="/resume-builder/certifications"
+          to={`/resume-builder/${_id}/certifications`}
         >
           <TbFileCertificate className="-mr-1 text-[20px]" />
           Certifications
@@ -75,7 +76,7 @@ const EditResume = () => {
       <li className=" hover:text-white rounded-md mb-2">
         <NavLink
           className="hover:bg-primary poppins-r uppercase pr-2 mx-2"
-          to="/resume-builder/additional-skills"
+          to={`/resume-builder/${_id}/additional-skills`}
         >
           {/* <FaMagic className="-mr-1 text-[16px]" /> */}
           <GiSkills className="-mr-1 text-[16px]"/>
@@ -85,7 +86,7 @@ const EditResume = () => {
       <li className=" hover:text-white rounded-md mb-2">
         <NavLink
           className="hover:bg-primary poppins-r uppercase pr-2 mx-2"
-          to="/resume-builder/languages"
+          to={`/resume-builder/${_id}/languages`}
         >
           <MdLanguage className="-mr-1 text-[20px]" />
           Languages
@@ -94,7 +95,7 @@ const EditResume = () => {
       <li className=" hover:text-white rounded-md mb-2">
         <NavLink
           className="hover:bg-primary poppins-r uppercase pr-2 mx-2"
-          to="/resume-builder/career-objective"
+          to={`/resume-builder/${_id}/career-objective`}
         >
           <HiFlag className="-mr-1 text-[20px]" />
           Career Objective
@@ -103,7 +104,7 @@ const EditResume = () => {
       <li className=" hover:text-white rounded-md mb-2">
         <NavLink
           className="hover:bg-primary poppins-r uppercase pr-2 mx-2"
-          to="/resume-builder/reference"
+          to={`/resume-builder/${_id}/reference`}
         >
           <BiLink className="-mr-1 text-[20px]" />
           Reference
@@ -112,7 +113,7 @@ const EditResume = () => {
       <li className=" hover:text-white rounded-md">
         <NavLink
           className="hover:bg-primary poppins-r uppercase pr-2 mx-2"
-          to="/resume-builder/template1"
+          to={`/resume-builder/${_id}/template${_id}`}
         >
           <GrDocumentText className="-mr-1 text-[20px]"/>
           Template
