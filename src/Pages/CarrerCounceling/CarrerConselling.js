@@ -13,7 +13,7 @@ const CarrerConselling = () => {
       <CouncellingSteps />
       <CarrerCouncelingGurrenty />
       {/* <CarrerCouncelingPrice /> */}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
