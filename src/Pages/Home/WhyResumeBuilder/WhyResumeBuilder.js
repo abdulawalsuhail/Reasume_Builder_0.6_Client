@@ -6,6 +6,7 @@ import hidden from "../../../assets/service_icon/hidden.png";
 import friendly from "../../../assets/service_icon/friends.png";
 import liveContent from "../../../assets/service_icon/live-chat.png";
 import edit from "../../../assets/service_icon/resume.png";
+import { BsArrowRight } from "react-icons/bs";
 
 const WhyResumeBuilder = () => {
   return (
@@ -103,28 +104,11 @@ const WhyResumeBuilder = () => {
 
         <div className="mt-12 text-center">
           <Link
-            className="inline-flex items-center px-8 py-3 mt-8  bg-primary border border-primary rounded hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150"
+            className="inline-flex items-center px-8 py-3 mt-8  bg-primary border border-primary rounded hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150 text-white hover:text-black"
             to="/"
           >
-            <span className="text-sm font-medium text-white">
-              {" "}
-              Get Started{" "}
-            </span>
-
-            <svg
-              className="w-5 h-5 ml-3"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
+            <span className="text-sm font-medium"> Get Started </span>
+            <BsArrowRight className="text-lg ml-2" />
           </Link>
         </div>
       </div>

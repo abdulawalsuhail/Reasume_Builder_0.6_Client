@@ -1,4 +1,6 @@
 import React from "react";
+import { BsArrowRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import writeResume from "../../../assets/write-resume.webp";
 import "./WriteResume.css";
 
@@ -14,9 +16,13 @@ const WriteResume = () => {
             Tech, Engineering, Management or Marketing - CV generator with the
             right resume templates to highlight your career journey.
           </p>
-          <button className="btn btn-primary text-white">
-            Explore all Templates
-          </button>
+          <Link
+            className="inline-flex items-center px-8 py-3 mt-8  bg-primary border border-primary rounded hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150  text-white hover:text-black"
+            to="/"
+          >
+            <span className="text-sm font-medium"> Get Started </span>
+            <BsArrowRight className="text-lg ml-2" />
+          </Link>
         </div>
       </div>
       <div className="flex items-center md:order-2 order-1">
