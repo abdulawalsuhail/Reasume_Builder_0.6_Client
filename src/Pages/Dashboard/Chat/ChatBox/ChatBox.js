@@ -1,22 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import InputEmoji from "react-input-emoji";
 import axiosPrivate from "../../../Api/axiosPrivate";
 import "./Chatbox.css";
 
-const ChatBox = ({ chat, currentUserId, setSendMessage,reciveMessage }) => {
+const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
   const [userData, setUserData] = useState(null);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessages] = useState("");
-  
 
-    useEffect(()=>{
-        if(reciveMessage !== null && reciveMessage.chatId === chat._id){
-            setMessages([...messages,reciveMessage])
-        }
-    },[reciveMessage])
-   
+  const handleChange = (newMessage) => {
+    setNewMessages(newMessage);
+  };
   useEffect(() => {
-    const userId = chat?.members?.find((id) => id !== currentUserId);
+    const userId = chat?.members?.find((id) => id !== currentUser);
     const getUserData = async () => {
       try {
         if (userId) {
@@ -29,7 +25,7 @@ const ChatBox = ({ chat, currentUserId, setSendMessage,reciveMessage }) => {
       }
     };
     if (chat !== null) getUserData();
-  }, [chat, currentUserId]);
+  }, [chat, currentUser]);
 
   //   fetching data for message
   useEffect(() => {
@@ -44,53 +40,57 @@ const ChatBox = ({ chat, currentUserId, setSendMessage,reciveMessage }) => {
         console.log(error);
       }
     };
-    fetchMessage();
-    // if(chat !== null) fetchMessage()
+    if (chat !== null) fetchMessage();
   }, [chat]);
   // text handle click
-  const handleChange = (newMessage) => {
-    setNewMessages(newMessage);
-  };
+  // Always scroll to last Message
+  useEffect(() => {
+    scroll.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
+  //   send msg
 
   const handleSend = (e) => {
     e.preventDefault();
-
     const message = {
-      senderId: currentUserId,
+      senderId: currentUser,
       text: newMessage,
       chatId: chat._id,
     };
+    const receiverId = chat?.members.find((id) => id !== currentUser);
+
+    setSendMessage({ ...message, receiverId });
 
     // send database
-
-    if (currentUserId && chat._id) {
+    if (currentUser && chat._id) {
       try {
         axiosPrivate.post("/message", message).then((res) => {
           setNewMessages("");
-          const fetchMessage = async () => {
-            try {
-              if (chat?._id) {
-                axiosPrivate.get(`/message/${chat?._id}`).then((res) => {
-                  setMessages(res.data);
-                });
-              }
-            } catch (error) {
-              console.log(error);
+          try {
+            if (chat?._id) {
+              axiosPrivate.get(`/message/${chat?._id}`).then((res) => {
+                setMessages(res.data);
+              });
             }
-          };
-          fetchMessage();
+          } catch (error) {
+            console.log(error);
+          }
         });
       } catch (error) {
         console.log(error);
       }
     }
-
-  
-
-    //  send message to socket server
-    const receiverId = chat.members.find((id) => id !== currentUserId);
-    setSendMessage({ ...message, receiverId });
   };
+
+  useEffect(() => {
+    if (receivedMessage !== null && receivedMessage?.chatId === chat?._id) {
+        console.log(receivedMessage );
+      setMessages([...messages, receivedMessage]);
+    }
+  }, [receivedMessage]);
+
+  const scroll = useRef();
+  const imageRef = useRef();
   return (
     <>
       <div className="ChatBox-container">
@@ -113,8 +113,10 @@ const ChatBox = ({ chat, currentUserId, setSendMessage,reciveMessage }) => {
                       </div>
                     </div>
                   )}
-                  <div className="name text-[16px] font-[500] ml-4">
-                    <span>{userData?.name}</span>
+                  <div className="name ml-2" style={{ fontSize: "0.9rem" }}>
+                    <span>
+                      {userData?.name}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -128,26 +130,25 @@ const ChatBox = ({ chat, currentUserId, setSendMessage,reciveMessage }) => {
             </div>
             {/* chat-body */}
             <div className="chat-body">
-              {messages?.map((message) => (
+              {messages.map((message) => (
                 <>
                   <div
+                    ref={scroll}
                     className={
-                      message?.senderId === currentUserId
+                      message?.senderId === currentUser
                         ? "message own"
                         : "message"
                     }
                   >
-                    <span>{message.text}</span>{" "}
+                    <span>{message?.text}</span>{" "}
                   </div>
                 </>
               ))}
             </div>
             {/* chat-sender */}
             <div className="chat-sender">
-              {/* onClick={() => imageRef.current.click()} */}
-              <div>+</div>
+              <div onClick={() => imageRef.current.click()}>+</div>
               <InputEmoji value={newMessage} onChange={handleChange} />
-
               <div className="send-button button" onClick={handleSend}>
                 Send
               </div>
@@ -156,7 +157,7 @@ const ChatBox = ({ chat, currentUserId, setSendMessage,reciveMessage }) => {
                 name=""
                 id=""
                 style={{ display: "none" }}
-                //   ref={imageRef}
+                ref={imageRef}
               />
             </div>{" "}
           </>

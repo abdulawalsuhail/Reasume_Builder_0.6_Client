@@ -4,7 +4,8 @@ import axiosPrivate from "../../../Api/axiosPrivate";
 const Conversation = ({ data, currentUserId }) => {
   const [userData, setUserData] = useState(null);
   useEffect(() => {
-    const userId = data.members.find((id) => id !== currentUserId);
+    if(currentUserId){
+      const userId = data.members.find((id) => id !== currentUserId);
     const getUserData = async () => {
       try {
         axiosPrivate.get(`/conversationuser/${userId}`).then((res) => {
@@ -15,6 +16,7 @@ const Conversation = ({ data, currentUserId }) => {
       }
     };
     getUserData();
+    }
   }, []);
   return (
     <>

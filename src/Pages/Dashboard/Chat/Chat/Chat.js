@@ -12,45 +12,12 @@ const Chat = () => {
   const [user] = useAuthState(auth);
   const [users] = UserInformation(user);
   const [chats, setChat] = useState([]);
-  const [currentChat,setCurrentChat] = useState(null)
-  const [onlineUsers,setOnlineUsers] = useState([])
-  const [senMessage,setSendMessage] = useState(null)
-  const [reciveMessage,setReciveMessage] = useState(null)
+  const [currentChat, setCurrentChat] = useState(null);
+  const [onlineUsers, setOnlineUsers] = useState([]);
+  const [sendMessage, setSendMessage] = useState(null);
+  const [receivedMessage, setReceivedMessage] = useState(null);
 
-  const socket = useRef()
-
-
-// send message
-    useEffect(()=>{
-        if(senMessage !== null){
-            socket.current.emit("send-message",senMessage)
-        }
-    },[senMessage])
-
-   
-
- useEffect(()=> {
-    socket.current = io("http://localhost:8800");
-
-   if(users?._id){
-    socket.current.emit("new-user-add",users?._id)
-    socket.current.on("get-users",(users)=>{
-        setOnlineUsers(users)
-       
-    })
-   }
-
- },[users])
-
-
-  // recive message
-  useEffect(()=> {
-    socket.current?.on("recieve-message",(data)=> {
-        console.log(data);
-        setReciveMessage(data)
-    })
-},[])
-
+  const socket = useRef();
 
   useEffect(() => {
     const getChats = () => {
@@ -64,7 +31,32 @@ const Chat = () => {
     };
     getChats();
   }, [users]);
+  useEffect(() => {
+    socket.current = io("ws://localhost:8800");
+    if (users?._id) {
+      socket.current.emit("new-user-add", users?._id);
+      socket.current.on("get-users", (users) => {
+        setOnlineUsers(users);
+      });
+    }
+  }, [users]);
 
+  // Send Message to socket server
+  useEffect(() => {
+    if (sendMessage !== null) {
+      socket.current.emit("send-message", sendMessage);
+    }
+  }, [sendMessage]);
+  // Get the message from socket server
+  useEffect(() => {
+    socket.current.on("recieve-message", (data) => {
+      console.log(data);
+
+      setReceivedMessage(data);
+    });
+  }, [socket]);
+  console.log(receivedMessage);
+  console.log(onlineUsers);
   return (
     <div className="Chat">
       {/* Left Side */}
@@ -74,7 +66,7 @@ const Chat = () => {
           <h2>Chats</h2>
           <div className="Chat-list">
             {chats.map((chat) => (
-              <div onClick={()=> setCurrentChat(chat)}>
+              <div onClick={() => setCurrentChat(chat)}>
                 <Conversation
                   key={chat._id}
                   data={chat}
@@ -89,13 +81,12 @@ const Chat = () => {
       {/* Right Side */}
 
       <div className="Right-side-chat">
-        <div style={{ width: "20rem", alignSelf: "flex-end" }}>
-        </div>
+        <div style={{ width: "20rem", alignSelf: "flex-end" }}></div>
         <ChatBox
-        chat={currentChat}
-        currentUserId={users?._id}
-        setSendMessage={setSendMessage}
-        reciveMessage={reciveMessage}
+          chat={currentChat}
+          currentUser={users?._id}
+          setSendMessage={setSendMessage}
+          receivedMessage={receivedMessage}
         />
       </div>
     </div>
