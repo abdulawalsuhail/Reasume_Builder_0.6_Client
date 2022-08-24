@@ -30,7 +30,7 @@ const hero = () => {
           <p
             data-aos="fade-up"
             data-aos-duration="2000"
-            className="max-w-lg mt-4 text-left text-[15px] poppins-t text-gray-800"
+            className="max-w-lg mt-10 text-left text-[17px] poppins-t text-gray-600 "
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
             quis cumque minus, officiis odio obcaecati! Lorem ipsum dolor sit

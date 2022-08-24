@@ -24,7 +24,7 @@ const ReviewCard = ({ review }) => {
           accusantium cumque tenetur ratione ea nobis dolore voluptas! Vel,
           ipsam nisi?
         </p>
-        <div className="flex justify-start text-lg gap-1 mt-4 text-green-500">
+        <div className="flex justify-start text-lg gap-1 mt-4 text-blue-800">
           <AiFillStar />
           <AiFillStar />
           <AiFillStar />
