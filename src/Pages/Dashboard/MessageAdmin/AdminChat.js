@@ -28,7 +28,6 @@ const AdminChat = () => {
   });
 
   const handleUserChatView = (admin) => {
-    console.log(admin);
     setCurrentChat(admin)
   }
   return (
@@ -42,7 +41,7 @@ const AdminChat = () => {
         </div>
         <div>
          {
-          currentChat ? <Message own={false}/> :  <StartConverSatio></StartConverSatio>
+          currentChat ? <Message currentChat={currentChat} own={false}/> :  <StartConverSatio></StartConverSatio>
          }
         </div>
       </div>
