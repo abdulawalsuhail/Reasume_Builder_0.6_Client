@@ -58,12 +58,13 @@ import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 
-
 import SingleBlog from "./Pages/CarrerCounceling/AllArticle/SingleBlog";
 import CoverLetterInput from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterInput";
 import CoverLetterTemplate from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterTemplate";
 import EditProfile from "./Pages/Dashboard/Profile/EditProfile";
 import Profile from "./Pages/Dashboard/Profile/Profile";
+import QuizStart from "./Pages/Quiz/QuizStart";
+import QuizRules from "./Pages/Quiz/QuizRules";
 import Quiz from "./Pages/Quiz/Quiz";
 
 const stripePromise = loadStripe(
@@ -88,25 +89,55 @@ function App() {
         {/* nested route career counselling */}
         <Route path="/career-counselling" element={<CarrerHeader />}>
           <Route index element={<CarrerConselling />}></Route>
-          <Route path="all-article" element={<RequireAuth><AllArticle /></RequireAuth>}></Route>
-          <Route path="blog/:id" element={<RequireAuth>
-            <SingleBlog/>
-          </RequireAuth>}></Route>
-          <Route path="resume-write" element={<RequireAuth>
-            <CarrerResume />
-          </RequireAuth>}></Route>
-          <Route path="cv-write" element={<RequireAuth>
-            <CarrerCv />
-          </RequireAuth>}></Route>
-          <Route path="inspiring-stories" element={<RequireAuth>
-            <Stories />
-          </RequireAuth>} />
-          <Route path="interview-preparation" element={<RequireAuth>
-            <Interview />
-          </RequireAuth>} />
+          <Route
+            path="all-article"
+            element={
+              <RequireAuth>
+                <AllArticle />
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path="blog/:id"
+            element={
+              <RequireAuth>
+                <SingleBlog />
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path="resume-write"
+            element={
+              <RequireAuth>
+                <CarrerResume />
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path="cv-write"
+            element={
+              <RequireAuth>
+                <CarrerCv />
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path="inspiring-stories"
+            element={
+              <RequireAuth>
+                <Stories />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="interview-preparation"
+            element={
+              <RequireAuth>
+                <Interview />
+              </RequireAuth>
+            }
+          />
         </Route>
-
-        
 
         <Route path="template" element={<Templates />} />
         <Route path="cvTemplate" element={<CvTemplate />}></Route>
@@ -140,9 +171,9 @@ function App() {
           <Route path="reference" element={<Reference />}></Route>
 
           {/* <Route path="template1" element={<Template1/>}></Route> */}
-        {/* Dummy Templates section route */}
-          <Route path="template1" element={<Resume1/>} />
-        {/* End of Dummy templates section */}
+          {/* Dummy Templates section route */}
+          <Route path="template1" element={<Resume1 />} />
+          {/* End of Dummy templates section */}
         </Route>
 
         {/* cover letter route */}
@@ -169,12 +200,6 @@ function App() {
           ></Route>
         </Route>
 
-
-
-   
-
-
-   
         {/* cover letter */}
         <Route
           path="/coverLetterInput"
@@ -194,6 +219,22 @@ function App() {
         ></Route>
         {/* Quiz compo */}
         <Route
+          path="/quizStart"
+          element={
+            <RequireAuth>
+              <QuizStart />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/quizRules"
+          element={
+            <RequireAuth>
+              <QuizRules />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
           path="/quiz"
           element={
             <RequireAuth>
@@ -202,8 +243,7 @@ function App() {
           }
         ></Route>
 
-
-             {/* admin dashboard */}
+        {/* admin dashboard */}
         {/* Dashboard */}
 
         <Route
@@ -214,8 +254,8 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<Profile/>}></Route>
-          <Route path="edit-profile" element={<EditProfile/>}></Route>
+          <Route index element={<Profile />}></Route>
+          <Route path="edit-profile" element={<EditProfile />}></Route>
           <Route
             path="all-user"
             element={
@@ -236,7 +276,7 @@ function App() {
             path="all-expert"
             element={
               <RequireAdmin>
-                <AllExpert/>
+                <AllExpert />
               </RequireAdmin>
             }
           ></Route>
@@ -254,7 +294,7 @@ function App() {
             path="write-blog"
             element={
               <RequireExpert>
-                <WriteBlog/>
+                <WriteBlog />
               </RequireExpert>
             }
           ></Route>
@@ -262,7 +302,7 @@ function App() {
             path="my-blog-post"
             element={
               <RequireExpert>
-                <MyBlog/>
+                <MyBlog />
               </RequireExpert>
             }
           ></Route>
@@ -270,7 +310,7 @@ function App() {
             path="edit-blog-post/:id"
             element={
               <RequireExpert>
-                <EditBlog/>
+                <EditBlog />
               </RequireExpert>
             }
           ></Route>
@@ -288,7 +328,7 @@ function App() {
             path="add-review"
             element={
               <RequireNonAdmin>
-                <AddReview/>
+                <AddReview />
               </RequireNonAdmin>
             }
           ></Route>
