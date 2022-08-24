@@ -21,7 +21,7 @@
 
 .message {
   background: var(--buttonBg);
-  color: white;
+  color: black;
   padding: 0.7rem;
   border-radius: 1rem 1rem 1rem 0;
   max-width: 28rem;

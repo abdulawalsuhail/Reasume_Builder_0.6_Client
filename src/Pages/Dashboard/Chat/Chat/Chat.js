@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { io } from "socket.io-client";
 import auth from "../../../../firebase.init";
 import UserInformation from "../../../../Hook/UserInformation";
 import axiosPrivate from "../../../Api/axiosPrivate";
@@ -12,6 +13,44 @@ const Chat = () => {
   const [users] = UserInformation(user);
   const [chats, setChat] = useState([]);
   const [currentChat,setCurrentChat] = useState(null)
+  const [onlineUsers,setOnlineUsers] = useState([])
+  const [senMessage,setSendMessage] = useState(null)
+  const [reciveMessage,setReciveMessage] = useState(null)
+
+  const socket = useRef()
+
+
+// send message
+    useEffect(()=>{
+        if(senMessage !== null){
+            socket.current.emit("send-message",senMessage)
+        }
+    },[senMessage])
+
+   
+
+ useEffect(()=> {
+    socket.current = io("http://localhost:8800");
+
+   if(users?._id){
+    socket.current.emit("new-user-add",users?._id)
+    socket.current.on("get-users",(users)=>{
+        setOnlineUsers(users)
+       
+    })
+   }
+
+ },[users])
+
+
+  // recive message
+  useEffect(()=> {
+    socket.current?.on("recieve-message",(data)=> {
+        console.log(data);
+        setReciveMessage(data)
+    })
+},[])
+
 
   useEffect(() => {
     const getChats = () => {
@@ -55,6 +94,8 @@ const Chat = () => {
         <ChatBox
         chat={currentChat}
         currentUserId={users?._id}
+        setSendMessage={setSendMessage}
+        reciveMessage={reciveMessage}
         />
       </div>
     </div>
