@@ -62,7 +62,7 @@ import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
 import SingleBlog from "./Pages/CarrerCounceling/AllArticle/SingleBlog";
 import CoverLetterInput from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterInput";
 import CoverLetterTemplate from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterTemplate";
-import AdminChat from "./Pages/Dashboard/MessageAdmin/AdminChat";
+import Chat from "./Pages/Dashboard/Chat/Chat/Chat";
 import EditProfile from "./Pages/Dashboard/Profile/EditProfile";
 import Profile from "./Pages/Dashboard/Profile/Profile";
 import Quiz from "./Pages/Quiz/Quiz";
@@ -245,7 +245,7 @@ function App() {
             path="chat"
             element={
               <RequireAdmin>
-                <AdminChat/>
+                <Chat/>
               </RequireAdmin>
             }
             
