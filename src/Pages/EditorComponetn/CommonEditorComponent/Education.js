@@ -1,11 +1,12 @@
 import React from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 import educationImage from "../../../assets/education.png";
 
 const Education = () => {
   const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
   const navigate = useNavigate();
+  const { _id } = useParams();
   
   const addEducations = () => {
     let newNode = document.createElement('form');
@@ -78,7 +79,7 @@ const Education = () => {
 
     setUsersTemplateInfo({...usersTemplateInfo,educationsDetails:str});
     
-    navigate("/resume-builder/certifications");
+    navigate(`/resume-builder/${_id}/certifications`);
     console.log(usersTemplateInfo);
     
   };
@@ -145,7 +146,7 @@ const Education = () => {
           {/* button */}
           <div className="flex justify-center gap-10 mt-10 mb-3">
             <a
-              onClick={() => navigate("/resume-builder/editor-experience")}
+              onClick={() => navigate(`/resume-builder/${_id}/editor-experience`)}
               href="#_"
               class="relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-16 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black"
             >

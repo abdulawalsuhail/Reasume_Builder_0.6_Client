@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
-import { useNavigate, useOutletContext } from 'react-router-dom';
+import { useNavigate, useOutletContext, useParams } from 'react-router-dom';
 import img1 from '../../../assets/certificationInstruction.png';
 
 const Certifications = () => {
     const [number, setNumber] = useState(2);
     const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
     const navigate = useNavigate();
+    const { _id } = useParams();
     // make dynamic input field
     function addNewCertification() {
         setNumber(number + 1);
@@ -35,7 +36,7 @@ const Certifications = () => {
         setUsersTemplateInfo({...usersTemplateInfo,certifications:str});
 
         console.log(usersTemplateInfo); 
-        navigate('/resume-builder/additional-skills');
+        navigate(`/resume-builder/${_id}/additional-skills`);
     }
     console.log(usersTemplateInfo); 
 
@@ -59,12 +60,33 @@ const Certifications = () => {
                         <AiOutlinePlusCircle className='mr-2 text-xl '/>
                         <p className='text-lg'> Add License / certifications</p>
                     </div>
-                    {/* button */}
+                    {/* button
                     <div className='flex justify-center'>
                         <div className='md:w-[50%] w-[100%] flex justify-around items-center mt-10'>
-                            <button onClick={()=>navigate('/resume-builder/editor-education')} className='relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-16 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black'>Back</button>
+                            <button onClick={() => navigate(`/resume-builder/${_id}/editor-education`)} className='relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-16 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black'>Back</button>
+                            
                             <button onClick={getValue} className='relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-16 px-10 text-lg rounded-lg text-white hover:bg-[#3ba6d4]'>Save and continue</button>
                         </div>
+                    </div> */}
+
+                    {/* Button */}
+                    <div className="flex justify-center gap-10 mt-6">
+                        <a
+                        onClick={() =>
+                            navigate(`/resume-builder/${_id}/editor-education`)
+                        }
+                        href="#_"
+                        class="relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-16 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black"
+                        >
+                        <span class="relative w-full  text-left ">Back</span>
+                        </a>
+                        <a
+                        onClick={getValue}
+                        href="#_"
+                        class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-16 px-10 text-lg rounded-lg text-white hover:bg-[#3ba6d4]"
+                        >
+                        <span class="relative w-full  text-left ">Save and continue</span>
+                        </a>
                     </div>
                 </div>
                 {/* Tips section */}

@@ -1,10 +1,11 @@
 import React from "react";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 import contactImage from "../../../assets/contact.png";
 
 const ContactDetails = () => {
   const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
   const navigate = useNavigate();
+  const {_id} = useParams();
 
   // Get input field values and store values at str
   let str = {
@@ -24,7 +25,7 @@ const ContactDetails = () => {
     str.value.email = document.getElementById("email")?.value;
     
     setUsersTemplateInfo({...usersTemplateInfo,contactDetails:str});
-    navigate("/resume-builder/editor-experience");
+    navigate(`/resume-builder/${_id}/editor-experience`);
     console.log(usersTemplateInfo);
   };
 
@@ -104,12 +105,12 @@ const ContactDetails = () => {
               class="input h-14 border-1 border-gray-200 focus:outline-none w-full my-4"
             />
             <div className="flex justify-center gap-10">
-              <a
+              {/* <a
                 href="#_"
                 class="relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-16 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black"
               >
                 <span class="relative w-full  text-left ">Back</span>
-              </a>
+              </a> */}
               <a
                 onClick={getValue}
                 href="#_"

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 import EditorComponent from "./EditorComponent";
 
 const EditorCareerObjective = () => {
@@ -9,6 +9,7 @@ const EditorCareerObjective = () => {
   //   setEditorValue(editorValue);
   // };
   const navigate = useNavigate()
+  const { _id } = useParams();
 
 
   let str = {
@@ -18,7 +19,7 @@ const EditorCareerObjective = () => {
   const getValue = () => {
     str.value = document.getElementById("career-objective")?.value;
     setUsersTemplateInfo({...usersTemplateInfo, careerObjective:str})
-    navigate('/resume-builder/reference');
+    navigate(`/resume-builder/${_id}/reference`);
     console.log(str);
 
   }
@@ -55,7 +56,7 @@ const EditorCareerObjective = () => {
 
       <div className="flex w-[390px] md:w-[650px] justify-center gap-4 md:gap-10 mt-12 mb-3">
         <a
-        onClick={()=> navigate("/resume-builder/languages")}
+        onClick={()=> navigate(`/resume-builder/${_id}/languages`)}
           href="#_"
           class="relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-16 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black"
           >

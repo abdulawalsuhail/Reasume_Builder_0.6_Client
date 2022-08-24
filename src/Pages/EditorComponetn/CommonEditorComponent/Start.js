@@ -14,7 +14,7 @@ const Start = () => {
       </h1>
       <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
         <div
-          onClick={() => navigate("/resume-builder/editor-contact")}
+          onClick={() => navigate("/resume-builder/8")}
           class=" card rounded-lg hover:shadow-2xl bg-base-100 border-[1px] border-green-500 w-[60%] lg:w-[30%] h-[30%] cursor-pointer"
         >
           <img src={imgtwo} alt="Create new resume" />
