@@ -1,23 +1,17 @@
-/* .customDiv:hover .customButton{
-    display: block;
-} */
 
-/* https://i.ibb.co/gMgyygN/invictus-tailoring-sneaker-socks-5-OZg-Vj0-YVw-Q-unsplash.jpg */
-
-/* https://i.ibb.co/42k2X5X/joanna-kosinska-9gf-GDbxuqr-U-unsplash.jpg */
-/* https://i.ibb.co/ZgbLdGh/joanna-kosinska-u-Gc-DWKN91-Fs-unsplash.jpg */
-/* https://i.ibb.co/nb2d8TN/kristina-evstifeeva-y3h6gh2fpa-I-unsplash.jpg */
-
-
-.template{
-    background-image: linear-gradient(
-        rgba(59, 67, 59, 0.443),
-        rgba(254, 254, 254, 0.66)
-    ),url(https://i.ibb.co/gMgyygN/invictus-tailoring-sneaker-socks-5-OZg-Vj0-YVw-Q-unsplash.jpg);
+.homeTemplate{
+    background-image:
+    linear-gradient(to bottom, rgba(55, 69, 43, 0.808), rgba(180, 183, 178, 0.082));
+    
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
     background-position: center;
+}
+.guidelineBackground{
+    /* background-image:
+    linear-gradient(to bottom,rgba(114, 117, 111, 0), rgb(52, 65, 41)); */
+    background-color: rgba(180, 183, 178, 0.071);
 }
 .templateContainer{
     cursor: pointer;
@@ -31,7 +25,7 @@
     /* align-items: center; */
     border-top-left-radius: 0%;
     border-top-right-radius: 0%;
-    background-color: rgb(246, 253, 246);
+    background-color: rgba(246, 253, 246, 0);
     bottom: 0;
     height: 0;
     opacity: 0;

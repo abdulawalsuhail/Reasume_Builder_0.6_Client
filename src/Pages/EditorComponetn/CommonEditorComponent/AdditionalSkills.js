@@ -1,22 +1,17 @@
 import React from 'react';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
-import { useNavigate, useOutletContext } from 'react-router-dom';
+import { useNavigate, useOutletContext, useParams } from 'react-router-dom';
 import img1 from '../../../assets/additionalSkills.png';
 const AdditionalSkills = () => {
     let number = 2;
-    
     const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
     const navigate = useNavigate();
+    const { _id } = useParams();
 
     function addNewSkills() {
         number++;
         let newNode = document.createElement('input');
-        newNode.classList.add('input');
-        newNode.classList.add('input-bordered');
-        newNode.classList.add('w-full');
-        newNode.classList.add('mb-4');
-        newNode.classList.add('h-14');
-        newNode.classList.add('skills');
+        newNode.classList.add('input','input-bordered','w-full','mb-4','h-14','skills');
         newNode.setAttribute('type','text');
         newNode.setAttribute('placeholder', 'Skills');
         newNode.setAttribute('name', `skills_${number}`);
@@ -38,8 +33,8 @@ const AdditionalSkills = () => {
             str.value.push(e.value);
         }
 
-        setUsersTemplateInfo([...usersTemplateInfo, str])
-        navigate("/resume-builder/languages")
+        setUsersTemplateInfo({...usersTemplateInfo, skills:str})
+        navigate(`/resume-builder/${_id}/languages`)
         console.log(usersTemplateInfo); 
     }
     console.log(usersTemplateInfo);
@@ -63,12 +58,34 @@ const AdditionalSkills = () => {
                         <AiOutlinePlusCircle className='mr-2 text-xl '/>
                         <p className='text-lg'> Add Skills</p>
                     </div>
-                    {/* button */}
+                    {/* button
                     <div className='flex justify-center'>
-                        <div className='w-[80%] flex justify-around items-center mt-10'>
-                            <button onClick={()=>navigate('/resume-builder/certifications')} className='relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-24 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black'>Back</button>
-                            <button onClick={getValue}className='relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-24 px-10 text-lg rounded-lg text-white hover:bg-[#3ba6d4]'>Continue</button>
+                        <div className='md:w-[50%] w-[100%] flex justify-around items-center mt-10'>
+                            <button onClick={() => navigate(`/resume-builder/${_id}/certifications`)} className='relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-16 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black'>Back</button>
+                            
+                            <button onClick={getValue}className='relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-16 px-10 text-lg rounded-lg text-white hover:bg-[#3ba6d4]'>Save and continue</button>
                         </div>
+                    </div> */}
+
+
+                    {/* Button */}
+                    <div className="flex justify-center gap-10 mt-6">
+                        <a
+                        onClick={() =>
+                            navigate(`/resume-builder/${_id}/certifications`)
+                        }
+                        href="#_"
+                        class="relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-16 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black"
+                        >
+                        <span class="relative w-full  text-left ">Back</span>
+                        </a>
+                        <a
+                        onClick={getValue}
+                        href="#_"
+                        class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-16 px-10 text-lg rounded-lg text-white hover:bg-[#3ba6d4]"
+                        >
+                        <span class="relative w-full  text-left ">Save and continue</span>
+                        </a>
                     </div>
                 </div>
                 {/* Tips section */}

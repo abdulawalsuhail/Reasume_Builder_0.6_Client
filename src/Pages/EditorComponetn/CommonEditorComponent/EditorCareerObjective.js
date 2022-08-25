@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 import EditorComponent from "./EditorComponent";
 
 const EditorCareerObjective = () => {
@@ -9,6 +9,7 @@ const EditorCareerObjective = () => {
   //   setEditorValue(editorValue);
   // };
   const navigate = useNavigate()
+  const { _id } = useParams();
 
 
   let str = {
@@ -17,8 +18,8 @@ const EditorCareerObjective = () => {
   }
   const getValue = () => {
     str.value = document.getElementById("career-objective")?.value;
-    setUsersTemplateInfo([...usersTemplateInfo, str])
-    navigate('/resume-builder/reference/should_add_reference');
+    setUsersTemplateInfo({...usersTemplateInfo, careerObjective:str})
+    navigate(`/resume-builder/${_id}/reference`);
     console.log(str);
 
   }
@@ -33,19 +34,15 @@ const EditorCareerObjective = () => {
   // }
 
   return (
-    <div className="bg-[#f4f7f8] mx-auto py-12">
-      <div className="mx-10 text-center">
+    <div className="bg-[#f4f7f8]  mx-auto">
+      <div className="w-[390px] md:w-[650px] mt-12 text-center">
         {" "}
-        <h1 className="text-4xl font-[700] text-[#4a4a4a] mb-10">
+        <h1 className="text-4xl font-[700] text-[#4a4a4a] mb-6">
           Career Objective
         </h1>
-        <p className="text-[#989898]">
+        <p className="text-gray-400 text-lg mb-8">
           This section will usually be one of the first things a hiring manager
           reads. It tells them,
-        </p>
-        <p className="mb-10 text-[#989898]">
-          {" "}
-          “Here's who I am, and here's what I can do for your company”.
         </p>
       </div>
 
@@ -54,24 +51,23 @@ const EditorCareerObjective = () => {
       </div> */}
 
       <div>
-        <textarea name="career-objective" id="career-objective" cols="150" rows="20" placeholder="Write your career objectives" className="p-8"></textarea>
+        <textarea name="career-objective" id="career-objective" placeholder="Write your career objectives" className="p-8 h-[200px] w-[390px] md:w-[650px]"></textarea>
       </div>
 
-      <div className="flex items-center justify-center gap-10 mt-12 mb-3">
+      <div className="flex w-[390px] md:w-[650px] justify-center gap-4 md:gap-10 mt-12 mb-3">
         <a
-        onClick={()=> navigate("/resume-builder/languages")}
+        onClick={()=> navigate(`/resume-builder/${_id}/languages`)}
           href="#_"
-          class="relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-24 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black"
+          class="relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-16 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black"
           >
             <span class="relative w-full  text-left ">Back</span>
-        
         </a>
         <a
           onClick={getValue}
           href="#_"
-          class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-24 px-10 text-lg rounded-lg text-white hover:bg-[#3ba6d4]"
+          class="relative inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all bg-primary group md:px-16 px-10 text-lg rounded-lg text-white hover:bg-[#3ba6d4]"
           >
-            <span class="relative w-full  text-left ">Continue</span>
+            <span class="relative w-full  text-left ">Save and continue</span>
         </a>
       </div>
     </div>
