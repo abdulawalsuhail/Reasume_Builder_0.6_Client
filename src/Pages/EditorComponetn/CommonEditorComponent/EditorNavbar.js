@@ -14,15 +14,10 @@ const EditorNavbar = () => {
           />
         </label>
       </div>
-      <div class="flex-1">
+      <div class="flex-1 navbar-end">
         <Link to="/">
           <div className="flex items-center">
-            <img className="w-14" src={logo} alt="logo" />
-
-            <div className="flex gap-2 text-xl">
-              <p>Resume</p>
-              <p>Builder</p>
-            </div>
+            <img className="w-32" src={logo} alt="logo" />
           </div>
         </Link>
       </div>

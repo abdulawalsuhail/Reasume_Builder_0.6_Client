@@ -27,11 +27,7 @@ const EditResume = () => {
       <li className="mb-2 hidden md:block">
         <Link to="/" className="hover:bg-white">
           <div className="flex items-center">
-            <img className="w-14" src={logo} alt="logo" />
-            <div className="flex gap-2 text-sm">
-              <p>Resume</p>
-              <p>Builder</p>
-            </div>
+            <img className="w-full" src={logo} alt="logo" />
           </div>
         </Link>
       </li>

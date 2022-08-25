@@ -7,7 +7,7 @@ import img_5 from '../../../assets/Business_deals/template-step-03.svg';
 
 const Guideline = () => {
     return (
-        <section className='py-12 guidelineBackground'>
+        <section className='py-12 h-[80vh] flex justify-center items-center guidelineBackground'>
             <div className=' md:w-[70%] mx-auto  pt-6 px-6'>
                 <div className='text-center pb-20'>
                     <h1 className='text-4xl md:text-5xl font-bold pb-6 front-crimson'>Three Simple steps to Follow</h1>

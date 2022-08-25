@@ -5,7 +5,8 @@ import './Templates.css';
 const Templates = () => {
 
   return (
-    <div className="py-12 homeTemplate lg:relative mt-16">
+    <div className="py-12 homeTemplate lg:relative mt-">
+      {/* oporer section tare ar aktu padding diye niche namaile valo lagbe */}
       {/* menu section */}
 
       <div className = "md:w-[410px] h-[100px] mx-auto flex justify-center items-center shadow-lg shadow-slate-800 lg:absolute lg:top-[-50px] lg:left-[33%]  2xl:left-[39%] lg:bg-[#687162] rounded-full" >
