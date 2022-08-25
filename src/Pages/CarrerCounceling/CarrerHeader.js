@@ -39,16 +39,16 @@ const CarrerHeader = () => {
         to="/career-counselling/inspiring-stories"
         className="text-gray-600 uppercase font-[600] ml-4"
       >
-       inspiring stories
+        inspiring stories
       </CareerCustomNavbar>
       <CareerCustomNavbar
         to="/career-counselling/interview-preparation"
         className="text-gray-600 uppercase font-[600] ml-4"
       >
-     interview preparation
+        interview preparation
       </CareerCustomNavbar>
 
-   
+
     </>
   );
   return (
@@ -59,9 +59,9 @@ const CarrerHeader = () => {
         <div class="drawer-content no-scroll">
           <div className="px-4 bg-[#f4f7f8]">
             {/* Navbar start source code from Daisy UI */}
-            <div class="navbar py-4">
+            <div class="navbar py-3 lg:px-24 md:px-20 px-6">
               {/* Navbar left portion */}
-              <div class="navbar-start">
+              <div class="navbar-start ">
                 <div class="dropdown">
                   <ul
                     tabindex="0"
@@ -70,12 +70,9 @@ const CarrerHeader = () => {
                 </div>
                 <Link to="/">
                   <div className="flex items-center">
-                    <img className="w-14" src={logo} alt="logo" />
+                    <img className="w-48" src={logo} alt="logo" />
 
-                    <div className="flex gap-2 text-xl">
-                      <p>Resume</p>
-                      <p>Builder</p>
-                    </div>
+
                   </div>
                 </Link>
               </div>

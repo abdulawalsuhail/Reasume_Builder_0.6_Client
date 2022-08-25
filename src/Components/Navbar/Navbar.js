@@ -80,7 +80,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="px-4 bg-[#f4f7f8]">
+    <div className="px-6 md:px-20 lg:px-24 bg-[#f4f7f8]">
       {/* Navbar start source code from Daisy UI */}
       <div className="navbar py-4">
         {/* Navbar left portion */}
@@ -111,12 +111,9 @@ const Navbar = () => {
           </div>
           <Link to="/">
             <div className="flex items-center">
-              <img className="w-14" src={logo} alt="logo" />
+              <img className="w-48" src={logo} alt="logo" />
 
-              <div className="flex gap-2 text-[20px]">
-                <p>Resume</p>
-                <p>Builder</p>
-              </div>
+
             </div>
           </Link>
         </div>
