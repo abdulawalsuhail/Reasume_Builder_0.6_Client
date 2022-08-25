@@ -74,13 +74,18 @@ import Resume7 from "./Pages/EditorComponetn/Templates/Resume7/Resume7";
 import SingleBlog from "./Pages/CarrerCounceling/AllArticle/SingleBlog";
 import CoverLetterInput from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterInput";
 import CoverLetterTemplate from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterTemplate";
+import Chat from "./Pages/Dashboard/Chat/Chat/Chat";
+import Expert from "./Pages/Dashboard/Expert/Expert";
 import EditProfile from "./Pages/Dashboard/Profile/EditProfile";
 import Profile from "./Pages/Dashboard/Profile/Profile";
 import Quiz from "./Pages/Quiz/Quiz";
+
 import Test from "./Test";
 import Resume8 from "./Pages/EditorComponetn/Templates/Resume8/Resume8";
 import SocialNetwork from "./Pages/EditorComponetn/CommonEditorComponent/SocialNetwork";
 import AddProjects from "./Pages/EditorComponetn/CommonEditorComponent/AddProjects";
+
+
 
 const stripePromise = loadStripe(
   "pk_test_51L0e7DJVuUKdOSgodXlRxjzrt9f8fKWzD9Jum98GewskqXtaZ9Mx725bepiQ7zjAuEpcALdbkJEVHlNIG0RTIanM00m74yy2rn"
@@ -104,22 +109,54 @@ function App() {
         {/* nested route career counselling */}
         <Route path="/career-counselling" element={<CarrerHeader />}>
           <Route index element={<CarrerConselling />}></Route>
-          <Route path="all-article" element={<RequireAuth><AllArticle /></RequireAuth>}></Route>
-          <Route path="blog/:id" element={<RequireAuth>
-            <SingleBlog/>
-          </RequireAuth>}></Route>
-          <Route path="resume-write" element={<RequireAuth>
-            <CarrerResume />
-          </RequireAuth>}></Route>
-          <Route path="cv-write" element={<RequireAuth>
-            <CarrerCv />
-          </RequireAuth>}></Route>
-          <Route path="inspiring-stories" element={<RequireAuth>
-            <Stories />
-          </RequireAuth>} />
-          <Route path="interview-preparation" element={<RequireAuth>
-            <Interview />
-          </RequireAuth>} />
+          <Route
+            path="all-article"
+            element={
+              <RequireAuth>
+                <AllArticle />
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path="blog/:id"
+            element={
+              <RequireAuth>
+                <SingleBlog />
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path="resume-write"
+            element={
+              <RequireAuth>
+                <CarrerResume />
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path="cv-write"
+            element={
+              <RequireAuth>
+                <CarrerCv />
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path="inspiring-stories"
+            element={
+              <RequireAuth>
+                <Stories />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="interview-preparation"
+            element={
+              <RequireAuth>
+                <Interview />
+              </RequireAuth>
+            }
+          />
         </Route>
 
         
@@ -202,11 +239,6 @@ function App() {
         </Route>
 
 
-
-   
-
-
-   
         {/* cover letter */}
         <Route
           path="/coverLetterInput"
@@ -235,7 +267,7 @@ function App() {
         ></Route>
 
 
-             {/* admin dashboard */}
+        {/* admin dashboard */}
         {/* Dashboard */}
 
         <Route
@@ -317,6 +349,14 @@ function App() {
             }
           ></Route>
           <Route
+            path="message"
+            element={
+              <RequireNonAdmin>
+                <Expert />
+              </RequireNonAdmin>
+            }
+          ></Route>
+          <Route
             path="add-review"
             element={
               <RequireNonAdmin>
@@ -325,6 +365,7 @@ function App() {
             }
           ></Route>
         </Route>
+        <Route path="/chat/expert" element={<Chat />}></Route>
       </Routes>
       {/* facebook live chat */}
       <MessengerCustomerChat

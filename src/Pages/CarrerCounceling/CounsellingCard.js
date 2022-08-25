@@ -9,6 +9,7 @@ const CounsellingCard = ({ service }) => {
     setIsOpen(false);
   };
   return (
+  <>
     <div className="mt-10">
       <div
         className="flex items-center gap-2"
@@ -35,6 +36,10 @@ const CounsellingCard = ({ service }) => {
         <p className="mt-4 ml-2 text-gray-500">{service.desc}</p>
       </Collapse>
     </div>
+    <div>
+
+    </div>
+  </>
   );
 };
 

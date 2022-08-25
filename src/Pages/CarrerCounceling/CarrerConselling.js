@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../Shared/Footer/Footer";
 import CarrerCouncelingGurrenty from "./CarrerCouncelingGurrenty";
 import CouncellingBanner from "./CouncellingBanner";
 import CouncellingSteps from "./CouncellingSteps";
@@ -13,7 +12,6 @@ const CarrerConselling = () => {
       <CouncellingSteps />
       <CarrerCouncelingGurrenty />
       {/* <CarrerCouncelingPrice /> */}
-      <Footer />
     </div>
   );
 };
