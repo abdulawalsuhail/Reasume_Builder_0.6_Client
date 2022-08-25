@@ -16,44 +16,51 @@ const AddProjects = () => {
     newForm.classList.add("pb-3","inputForm","abc2");
     let p = document.createElement("p");
     p.innerText = "Add new project details"
-    p.classList.add("py-1","text-primary");
+    p.classList.add("py-1","text-primary","text-center");
     let div = document.createElement('div');
     div.classList.add("grid","md:grid-cols-1","gap-3");
     div.innerHTML = `
         <input
         type = "text"
+        placeholder = "Project Name"
+        id = "projectName"
+        class="input h-14 border-1 border-gray-200 focus:outline-none w-full"
+        />
+        
+        <input
+        type = "text"
         placeholder = "Live Link"
         id = "liveLink"
-        class="input h-14 border-1 border-gray-200 focus:outline-none w-full mb-2"
+        class="input h-14 border-1 border-gray-200 focus:outline-none w-full"
         />
         
         <input
         type = "text"
         placeholder = "Client side code Link"
-        id = "clientCode"
-        class="input h-14 border-1 border-gray-200 focus:outline-none w-full mb-2"
+        id = "clientSideLink"
+        class="input h-14 border-1 border-gray-200 focus:outline-none w-full"
         />
         
         <input
         type = "text"
         placeholder = "Server Side Code Link"
-        id = "serverCode"
+        id = "serverSideLink"
         class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
         />
         
-        <h1 className='text-left my-2 text-xs text-accent font-bold'>Add Features and Functionality separated by comma</h1>
+        <h1 className='my-2 text-xs text-accent font-bold'>Add Features and Functionality separated by comma</h1>
         <input
         type = "text"
         placeholder = "Features and functionality"
-        id = "serverCode"
+        id = "fnf"
         class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
         />
         
-        <h1 className='text-left my-2 text-xs   text-accent font-bold'>Add technologies separate by comma</h1>
+        <h1 className='my-2 text-xs   text-accent font-bold'>Add technologies separate by comma</h1>
         <input
         type = "text"
         placeholder = "Technology used"
-        id = "serverCode"
+        id = "technology"
         class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
         />
     `
@@ -98,24 +105,24 @@ const AddProjects = () => {
 
     const getValue = () => {
         str.value = [];
-        // const experiences = document.getElementsByClassName("inputForm");
-        // for (let e of experiences) {
-        // const experience = {
-        // name: "Project",
-        // value : {}
-        // };
-        // experience.value.companyName = `${e.querySelector("#companyName")?.value}`;
-        // experience.value.location = `${e.querySelector("#location")?.value}`;
-        // experience.value.jobTitle = `${e.querySelector("#jobTitle")?.value}`;
-        // experience.value.startDate = `${e.querySelector("#startDate")?.value}`;
-        // experience.value.endDate = `${e.querySelector("#endDate")?.value}`;
+        const projects = document.getElementsByClassName("inputForm");
+        for (let e of projects) {
+        const project = {
+        name: e.querySelector("#projectName")?.value,
+        value : {}
+        };
+        project.value.liveLink = `${e.querySelector("#liveLink")?.value}`;
+        project.value.clientSideLink = `${e.querySelector("#clientSideLink")?.value}`;
+        project.value.serverSideLink = `${e.querySelector("#serverSideLink")?.value}`;
+        project.value.fnf = `${e.querySelector("#fnf")?.value}`;
+        project.value.technology = `${e.querySelector("#technology")?.value}`;
 
-        // str.value.push(experience)
-        // }
+        str.value.push(project)
+        }
 
-        // setUsersTemplateInfo({...usersTemplateInfo,projects:str});
+        setUsersTemplateInfo({...usersTemplateInfo,projects:str});
         
-        navigate(`/resume-builder/${_id}/editor-education`);
+        navigate(`/resume-builder/${_id}/languages`);
         console.log(usersTemplateInfo);
     };
     
@@ -124,7 +131,7 @@ const AddProjects = () => {
     <div className=" bg-[#f4f7f8] lg:mr-7 rounded-2xl my-5">
       <div className="md:px-16 px-7 py-10 grid lg:grid-cols-12 lg:gap-5 ">
         {/* form div */}
-        <div className="lg:col-span-8 text-center">
+        <div className="lg:col-span-8">
             <h3 className="text-4xl font-bold text-gray-700 mb-2">
                 What's your most recent Projects?
             </h3>
@@ -133,8 +140,15 @@ const AddProjects = () => {
             </p>
             {/* input form */}
             <div id="parentNode">
-                <form  className="pb-3 inputForm text-left text-xs">
+                <form className="pb-3 inputForm text-left text-xs">
                     <div className="grid md:grid-cols-1 mb-2">
+                        <input
+                        type = "text"
+                        placeholder = "Project Name"
+                        id = "projectName"
+                        class="input h-14 border-1 border-gray-200 focus:outline-none w-full mb-2"
+                        />
+                        
                         <input
                         type = "text"
                         placeholder = "Live Link"
@@ -145,14 +159,14 @@ const AddProjects = () => {
                         <input
                         type = "text"
                         placeholder = "Client side code Link"
-                        id = "clientCode"
+                        id = "clientSideLink"
                         class="input h-14 border-1 border-gray-200 focus:outline-none w-full mb-2"
                         />
                         
                         <input
                         type = "text"
                         placeholder = "Server Side Code Link"
-                        id = "serverCode"
+                        id = "serverSideLink"
                         class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
                         />
                         
@@ -160,7 +174,7 @@ const AddProjects = () => {
                         <input
                         type = "text"
                         placeholder = "Features and functionality"
-                        id = "serverCode"
+                        id = "fnf"
                         class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
                         />
                         
@@ -168,7 +182,7 @@ const AddProjects = () => {
                         <input
                         type = "text"
                         placeholder = "Technology used"
-                        id = "serverCode"
+                        id = "technology"
                         class="input h-14 border-1 border-gray-200 focus:outline-none w-full "
                         />
                         
@@ -212,7 +226,7 @@ const AddProjects = () => {
             {/* button */}
             <div className="flex justify-center gap-10 mt-10">
                 <a
-                    onClick={() => navigate(`/resume-builder/${_id}/social-network`)}
+                    onClick={() => navigate(`/resume-builder/${_id}/additional-skills`)}
                     href="#_"
                     class="relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-16 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black"
                 >

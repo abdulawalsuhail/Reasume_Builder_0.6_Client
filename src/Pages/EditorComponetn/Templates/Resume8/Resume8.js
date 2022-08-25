@@ -10,13 +10,14 @@ import { useOutletContext } from 'react-router-dom';
 const Resume8 = () => {
     const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
     console.log(usersTemplateInfo);
+    
     return (
         <div className='Resume8body'>
             <div className='resume8 bg-white mx-auto text-left'>
                 <div className='bg-slate-100'>
                     <div className='p-10'>
-                        <h1 className='text-6xl'>{usersTemplateInfo?.contactDetails?.value?.firstName} {usersTemplateInfo?.contactDetails?.value?.lastName}</h1>
-                        <h1 style={{letterSpacing:"4px"}} className='text-2xl mt-2 uppercase'>{usersTemplateInfo?.contactDetails?.value?.jobTitle}</h1>
+                        <h1 className='text-5xl'>{usersTemplateInfo?.contactDetails?.value?.firstName} {usersTemplateInfo?.contactDetails?.value?.lastName}</h1>
+                        <h1 style={{letterSpacing:"4px"}} className='text-xl mt-2 uppercase'>{usersTemplateInfo?.contactDetails?.value?.jobTitle}</h1>
 
                     </div>
                 </div>
@@ -78,12 +79,12 @@ const Resume8 = () => {
                         <ul>
                             <li className='flex gap-2'>
                                 {
-                                    usersTemplateInfo?.contactDetails?.value?.email
+                                    usersTemplateInfo?.socialLinks?.value?.github
                                     ? 
                                     <>
                                         <div className='flex items-center gap-2'>
                                             <div><BsGithub></BsGithub></div>
-                                            <div className=''>GitHub Profile</div>
+                                            <div className=''><a href={usersTemplateInfo?.socialLinks?.value?.github}>Github</a></div>
                                         </div>
                                     </>
                                     : ""
@@ -91,12 +92,12 @@ const Resume8 = () => {
                             </li>
                             <li className='flex gap-2'>
                                 {
-                                    usersTemplateInfo?.contactDetails?.value?.email
+                                    usersTemplateInfo?.socialLinks?.value?.linkedIn
                                     ? 
                                     <>
                                         <div className='flex items-center gap-2'>
                                             <div><BsLinkedin></BsLinkedin></div>
-                                            <div className=''>LinkedIn Profile</div>
+                                            <div className=''><a href={usersTemplateInfo?.socialLinks?.value?.linkedIn}>LinkedIn</a></div>
                                         </div>
                                     </>
                                     : ""
@@ -106,11 +107,12 @@ const Resume8 = () => {
                     </div>
                 </div>
                 <div className='bg-black w-full h-px'></div>
-                <div className='container8 flex justify-center'>
+                <div className='flex'>
 
                     <div className='flex'>
                         <div className='w-1/7 h-auto p-10'>
 
+                            {/* skills */}
                             <div>
                                 <h1 className='uppercase tracking-widest text-lg font-bold'>
                                     {
@@ -120,7 +122,7 @@ const Resume8 = () => {
                                 <hr className='mb-5 w-1/6'></hr>
                                 {
                                     usersTemplateInfo?.skills?.value?.map(skill => {
-                                         return <li className=''>{skill}</li>
+                                        return <li className=''>{skill}</li>
                                     })
                                 }
                             </div>
@@ -137,8 +139,8 @@ const Resume8 = () => {
                                         return (
                                         <>
                                             <h1 className='text-sm font-semibold tracking-wider'>{edu?.name}</h1>
-                                            <h1 className='my-2'>{edu?.value?.institutionName}</h1>
-                                            <h1 className=''>
+                                            <h1 className='text-xs'>{edu?.value?.institutionName}</h1>
+                                            <h1 className='mb-2 text-md'>
                                                 {edu?.value?.startDate} - {edu?.value?.endDate}
                                             </h1>
                                         </>
@@ -154,68 +156,71 @@ const Resume8 = () => {
                     <div className='bg-black w-px'></div>
 
                     <div className='right-site8 p-10'>
-                        <div>
-                            <h1 className='font-bold text-lg'>P R O J E C T S</h1>
-                            <h1 className='font-thin'>Tools Manufacturer</h1>
-                            <div className='flex gap-3'>
-                                <h1>Live Site</h1>
-                                <h1>Client Code</h1>
-                                <h1>Server Code</h1>
-                            </div>
-                        </div>
-                        <div>
-                            <h1 className='mt-5 font-bold'>Features and Functionality</h1>
-                            <li>Authentication and Authorization</li>
-                            <li>Users can purchase Tools and complete payment</li>
-                            <li>Admin can create and manage Products also handle orders and
-                                shipment</li>
-                            <li>Make unique UI and simple UX</li>
-                        </div>
-                        <div>
-                            <h1 className='mt-5 font-bold'>Technology Used</h1>
-                            <div className='flex gap-2'>
-                                <h1 className='font-bold'>Client Side:</h1>
-                                <p>ReactJs, React Router, DaisyUI, Tailwind, Firebase,
-                                    Firebase authentication hooks, React Hook Form, React Query.</p>
-                            </div>
-                            <div className='flex gap-2'>
-                                <h1 className='font-bold'>Server Side:</h1>
-                                <p>Side: NodeJs, ExpressJs, MongoDB, Heroku deploy,
-                                    JWT
-                                </p>
-                            </div>
-                        </div>
-                        <div>
-                            <h1 className='font-thin'>Warehouse Management System</h1>
-                            <div className='flex gap-3'>
-                                <h1>Live Site</h1>
-                                <h1>Client Code</h1>
-                                <h1>Server Code</h1>
-                            </div>
-                            <div>
-                                <h1 className='mt-5 font-bold'>Features and Functionality</h1>
-                                <li>Authentication and Authorization</li>
-                                <li>Users can purchase Tools and complete payment</li>
-                                <li>Admin can create and manage Products also handle orders and
-                                    shipment</li>
-                                <li>Make unique UI and simple UX</li>
-                            </div>
+                        <h1 style={{ letterSpacing: "5px" }} className='font-bold text-lg mb-5'>
+                            {
+                                usersTemplateInfo?.projects?.name
+                            }
+                        </h1>
+                        {/* Project details */}
+                        {
+                            usersTemplateInfo?.projects?.value?.map(project => {
+                                return (
+                                    <div className='mb-6'>
+                                        {/* Name and Link */}
+                                        <div className='mb-[-12px]'>
+                                            <h1 className='font-bold text-orange-700 text-md'>
+                                                {
+                                                    project?.name
+                                                }
+                                            </h1>
+                                            <div className='flex gap-3'>
+                                                <h1>
+                                                    <a href={project?.value?.liveLink}>Live Site</a>
+                                                </h1>
+                                                <h1>
+                                                    <a href={project?.value?.clientSideLink}>Client Code</a>
+                                                </h1>
+                                                <h1>
+                                                    <a href={project?.value?.clientSideLink}>Server Code</a>
+                                                </h1>
+                                            </div>
+                                        </div>
+                                        {/* Features and functionality */}
+                                        {
+                                            project?.value?.fnf
+                                            ?
+                                            <div className='mb-[-12px]'>
+                                                <h1 className='mt-5 font-bold'>Features and Functionality</h1>
+                                                {
+                                                    project?.value?.fnf.split(',').map(item => {
+                                                        return (<li>{item}</li>)
+                                                    }) 
+                                                }
+                                            </div>
+                                            :
+                                            ""
+                                        }
+                                        {/* Technology Used */}
+                                        {
+                                            project?.value?.technology
+                                            ?
+                                            <div>
+                                                <h1 className='mt-5 font-bold'>Technology Used</h1>
+                                                {
+                                                    project?.value?.technology.split(',').map(item => {
+                                                        return (<p className='inline-block mr-1'> {item},</p>)
+                                                    }) 
+                                                }
+                                            </div>
+                                            :
+                                            ""
+                                        }
 
-                        </div>
-                        <div>
-                            <h1 className='mt-5 font-bold'>Technology Used</h1>
-                            <div className='flex gap-2'>
-                                <h1 className='font-bold'>Client Side:</h1>
-                                <p>ReactJs, React Router, DaisyUI, Tailwind, Firebase,
-                                    Firebase authentication hooks, React Hook Form, React Query.</p>
-                            </div>
-                            <div className='flex gap-2'>
-                                <h1 className='font-bold'>Server Side:</h1>
-                                <p>Side: NodeJs, ExpressJs, MongoDB, Heroku deploy,
-                                    JWT
-                                </p>
-                            </div>
-                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                        
                     </div>
                 </div>
 

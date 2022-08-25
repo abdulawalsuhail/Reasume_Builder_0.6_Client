@@ -16,6 +16,8 @@ import toast from "react-hot-toast";
 import { GrDocumentText, GrProjects } from "react-icons/gr";
 import { AiFillSignal } from "react-icons/ai";
 import { GiSkills } from "react-icons/gi";
+import { GoProject } from "react-icons/go";
+import { HiTemplate } from "react-icons/hi";
 
 
 const EditResume = () => {
@@ -97,7 +99,8 @@ const EditResume = () => {
           to={`/resume-builder/${_id}/add-projects`}
         >
           {/* <FaMagic className="-mr-1 text-[16px]" /> */}
-          <GrProjects className="-mr-1 text-[16px]"/>
+          {/* <GrProjects className="-mr-1 text-[16px]"/> */}
+          <GoProject className="-mr-1 text-[16px]"/>
           Add Projects
         </NavLink>
       </li>
@@ -133,7 +136,7 @@ const EditResume = () => {
           className="hover:bg-primary poppins-r uppercase pr-2 mx-2"
           to={`/resume-builder/${_id}/template${_id}`}
         >
-          <GrDocumentText className="-mr-1 text-[20px]"/>
+          <HiTemplate className="-mr-1 text-[20px]"/>
           Template
         </NavLink>
       </li>
