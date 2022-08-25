@@ -1,12 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import { signOut } from "firebase/auth";
 import React, { useState } from 'react';
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Navigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import UserInformation from "../../../Hook/UserInformation";
 import axiosPrivate from "../../Api/axiosPrivate";
 import AdminRow from "./AdminRow";
 
 const Alladmin = () => {
+  const [user] = useAuthState(auth)
+  const [users] = UserInformation(user)
     const [admins,setAdmin] = useState([])
     const {data,isLoading,refetch} = useQuery(["admin"],()=> {
         axiosPrivate.get('/admin?role=admin')
@@ -41,6 +45,7 @@ const Alladmin = () => {
                 admin={admin}
                 index={index}
                 refetch={refetch}
+                currentUser={users?._id}
                 >
 
                 </AdminRow>)

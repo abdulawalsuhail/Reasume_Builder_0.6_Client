@@ -1,9 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import axiosPrivate from '../../Api/axiosPrivate';
 
 const AdminRow = ({admin,index,refetch}) => {
-    const {role,email} = admin
+    const {role,email,_id} = admin
     const removeAdmin = () => {
         axiosPrivate.patch(`/remove-admin/${email}`)
         .then(response => {
@@ -27,6 +28,9 @@ const AdminRow = ({admin,index,refetch}) => {
             }
           });
     }
+
+    const navigate = useNavigate()
+   
     return (
         <tr>
         <th>{index +1}</th>
