@@ -48,15 +48,22 @@ const Chat = () => {
     }
   }, [sendMessage]);
   // Get the message from socket server
+  // Get the message from socket server
   useEffect(() => {
     socket.current.on("recieve-message", (data) => {
-      console.log(data);
-
+      console.log("connect backend")
       setReceivedMessage(data);
-    });
-  }, [socket]);
+    }
+
+    );
+  }, []);
   console.log(receivedMessage);
-  console.log(onlineUsers);
+  const checkOnlineStatus = (chat) => {
+    const chatMember = chat.members.find((member) => member !== user._id);
+    const online = onlineUsers.find((user) => user.userId === chatMember);
+    return online ? true : false;
+  };
+
   return (
     <div className="Chat">
       {/* Left Side */}
@@ -71,6 +78,7 @@ const Chat = () => {
                   key={chat._id}
                   data={chat}
                   currentUserId={users?._id}
+                  online={checkOnlineStatus(chat)}
                 />
               </div>
             ))}
