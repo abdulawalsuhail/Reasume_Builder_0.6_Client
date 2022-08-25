@@ -40,11 +40,11 @@ const AddReview = () => {
   };
   return (
     <div>
-      <div class="card max-w-sm flex mx-auto mt-20 shadow-lg text-primary-content">
+      <div class="card max-w-sm flex mx-auto mt-20 shadow-lg text-primary-content bg-white">
         <div class="card-body">
-          <h2 class=" text-center mb-2 text-2xl font-bold">Add Feedback</h2>
+          <h2 class=" text-center text-black mb-2 text-2xl font-bold">Add Feedback</h2>
           <textarea
-            className="outline-none border-[1px] p-2 rounded border-gray-400"
+            className="outline-none border-[1px] text-gray-600 p-2 rounded border-gray-400"
             name=""
             id=""
             cols="20"

@@ -51,11 +51,13 @@ import Reference from "./Pages/EditorComponetn/CommonEditorComponent/Reference";
 import ShouldAddReference from "./Pages/EditorComponetn/CommonEditorComponent/ShouldAddReference";
 import Start from "./Pages/EditorComponetn/CommonEditorComponent/Start";
 import EditResume from "./Pages/EditorComponetn/EditResume";
+
 import CoverLetter from "./Pages/Home/Templates/CoverLetter";
 import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
+
 // Dummy templates
 import Resume1 from "./Pages/EditorComponetn/Templates/Resume1/Resume1";
 import Resume2 from "./Pages/EditorComponetn/Templates/Resume2/Resume2";
@@ -83,7 +85,7 @@ const stripePromise = loadStripe(
 );
 function App() {
   return (
-    <div>
+    <div className="app">
       <Routes>
         {/* Nested Routing for Templates Section of our Homepage */}
         <Route path="/" element={<Home />}>
@@ -100,12 +102,22 @@ function App() {
         {/* nested route career counselling */}
         <Route path="/career-counselling" element={<CarrerHeader />}>
           <Route index element={<CarrerConselling />}></Route>
-          <Route path="all-article" element={<AllArticle />}></Route>
-          <Route path="blog/:id" element={<SingleBlog/>}></Route>
-          <Route path="resume-write" element={<CarrerResume />}></Route>
-          <Route path="cv-write" element={<CarrerCv />}></Route>
-          <Route path="inspiring-stories" element={<Stories />} />
-          <Route path="interview-preparation" element={<Interview />} />
+          <Route path="all-article" element={<RequireAuth><AllArticle /></RequireAuth>}></Route>
+          <Route path="blog/:id" element={<RequireAuth>
+            <SingleBlog/>
+          </RequireAuth>}></Route>
+          <Route path="resume-write" element={<RequireAuth>
+            <CarrerResume />
+          </RequireAuth>}></Route>
+          <Route path="cv-write" element={<RequireAuth>
+            <CarrerCv />
+          </RequireAuth>}></Route>
+          <Route path="inspiring-stories" element={<RequireAuth>
+            <Stories />
+          </RequireAuth>} />
+          <Route path="interview-preparation" element={<RequireAuth>
+            <Interview />
+          </RequireAuth>} />
         </Route>
 
         
@@ -184,10 +196,10 @@ function App() {
 
 
 
-        {/* dashboard */}
+   
 
 
-        {/* admin dashboard */}
+   
         {/* cover letter */}
         <Route
           path="/coverLetterInput"
@@ -214,6 +226,9 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+
+
+             {/* admin dashboard */}
         {/* Dashboard */}
 
         <Route

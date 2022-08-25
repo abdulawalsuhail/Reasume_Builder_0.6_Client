@@ -1,3 +1,11 @@
-.front-crimson{
+.front-crimson {
     font-family: 'Crimson Pro', serif;
+}
+
+.writeBackground {
+    background-image: url(../../../assets/HeroBackground/wave2.svg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
 }

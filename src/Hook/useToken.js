@@ -6,17 +6,17 @@ const useToken = (user) => {
 
   const email = user?.user?.email;
   const name = user?.user?.displayName;
+  console.log(user);
   useEffect(() => {
     if (email) {
       const currentUser = { email, name };
       axiosFetch.put(`users/${email}`, currentUser).then((response) => {
-        console.log(response);
         const accessToken = response?.data?.token;
         localStorage.setItem("userToken", accessToken);
         setToken(accessToken);
       });
     }
-  }, [user, name, email]);
+  }, [user]);
 
   return token;
 };

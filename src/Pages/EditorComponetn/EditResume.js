@@ -21,7 +21,7 @@ import { GiSkills } from "react-icons/gi";
 const EditResume = () => {
   const [usersTemplateInfo, setUsersTemplateInfo] = useState({});
   const {_id} = useParams();
-  console.log(usersTemplateInfo);
+  console.log("from parent",usersTemplateInfo);
   const editResumeSidebar = (
     <>
       <li className="mb-2 hidden md:block">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { AiFillStar } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
-import { AiFillStar } from "react-icons/ai";
 import TemplateModal from './TemplateModal';
 
 const CoverLetter = () => {

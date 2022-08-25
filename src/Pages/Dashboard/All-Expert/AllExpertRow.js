@@ -31,7 +31,7 @@ const AllExpertRow = ({expert,index,refetch}) => {
         <tr>
         <th>{index +1}</th>
         <td>{email}</td>
-        <td className='uppercase font-bold'>{writer}</td>
+        <td className='uppercase font-bold text-primary'>{writer}</td>
         <td>
             <button onClick={removeExpert} className='btn btn-xs bg-white text-gray-600 hover:bg-white'>remove expert</button>
         </td>

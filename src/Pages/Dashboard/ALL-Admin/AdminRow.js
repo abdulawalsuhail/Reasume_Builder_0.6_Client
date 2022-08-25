@@ -31,7 +31,7 @@ const AdminRow = ({admin,index,refetch}) => {
         <tr>
         <th>{index +1}</th>
         <td>{email}</td>
-        <td className='uppercase font-bold'>{role}</td>
+        <td className='uppercase font-bold text-primary'>{role}</td>
         <td>
             <button onClick={removeAdmin} className='btn btn-xs bg-white text-gray-600 hover:bg-white'>remove admin</button>
         </td>
