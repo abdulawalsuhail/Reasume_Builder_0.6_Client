@@ -4,11 +4,12 @@ import axiosPrivate from "../../../Api/axiosPrivate";
 const Conversation = ({ data, currentUserId,online}) => {
   const [userData, setUserData] = useState(null);
   useEffect(() => {
+    const userId = data.members.find((id) => id !== currentUserId);
     if(currentUserId){
-      const userId = data.members.find((id) => id !== currentUserId);
     const getUserData = async () => {
       try {
         axiosPrivate.get(`/conversationuser/${userId}`).then((res) => {
+          console.log(res.data);
           setUserData(res.data);
         });
       } catch (error) {
@@ -22,10 +23,10 @@ const Conversation = ({ data, currentUserId,online}) => {
     <>
       <div className="follower conversation">
         <div className="flex items-center">
-        {online && <div className="online-dot"></div>}
+        {/* {online && <div className="online-dot"></div>} */}
           {userData?.img ? (
             <div class="avatar rounded-full">
-              <div class="w-12 rounded-full">
+              <div class="w-6 rounded-full">
                 <img  src={userData?.img} alt="" />
               </div>
             </div>
@@ -36,7 +37,7 @@ const Conversation = ({ data, currentUserId,online}) => {
               </div>
             </div>
           )}
-          <div className="name text-[16px] font-[500]" >
+          <div className=" text-[14px] ml-2 font-[500]" >
             <span>{userData?.name}</span>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { AiOutlineSend } from "react-icons/ai";
 import InputEmoji from "react-input-emoji";
 import axiosPrivate from "../../../Api/axiosPrivate";
 import "./Chatbox.css";
@@ -113,7 +114,7 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
                       </div>
                     </div>
                   )}
-                  <div className="name ml-2" style={{ fontSize: "0.9rem" }}>
+                  <div className=" ml-2" style={{ fontSize: "0.9rem" }}>
                     <span>
                       {userData?.name}
                     </span>
@@ -147,10 +148,9 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
             </div>
             {/* chat-sender */}
             <div className="chat-sender">
-              <div onClick={() => imageRef.current.click()}>+</div>
               <InputEmoji value={newMessage} onChange={handleChange} />
-              <div className="send-button button" onClick={handleSend}>
-                Send
+              <div className="  text-white btn btn-primary cursor-pointer" onClick={handleSend}>
+                <AiOutlineSend className=""></AiOutlineSend>
               </div>
               <input
                 type="file"

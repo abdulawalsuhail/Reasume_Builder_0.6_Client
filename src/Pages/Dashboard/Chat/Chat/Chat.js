@@ -21,14 +21,17 @@ const Chat = () => {
 
   useEffect(() => {
     const getChats = () => {
+    if(users?._id){
       try {
         axiosPrivate.get(`/admin/chat/${users?._id}`).then((res) => {
           setChat(res.data);
+          console.log(res.data);
         });
       } catch (error) {
         console.log(error);
       }
     };
+    }
     getChats();
   }, [users]);
   useEffect(() => {

@@ -70,15 +70,6 @@ const Dashboard = () => {
                 </DashboardCustomLink>
                 <DashboardCustomLink
                   className="flex items-center py-3 text-gray-500 "
-                  to="/dashboard/chat"
-                >
-                  <BsChatLeftText className=" ml-2 text-[20px] mr-2 " />
-                  <span className="uppercase font-bold text-gray-700">
-                    Chat
-                  </span>
-                </DashboardCustomLink>
-                <DashboardCustomLink
-                  className="flex items-center py-3 text-gray-500 "
                   to="/dashboard/booking-service"
                 >
                   <FaFirstOrder className=" ml-2 text-[20px] mr-2 " />
@@ -100,6 +91,15 @@ const Dashboard = () => {
             )}
             {expert && (
               <>
+                 <DashboardCustomLink
+                  className="flex items-center py-3 text-gray-500 "
+                  to="/dashboard/chat"
+                >
+                  <BsChatLeftText className=" ml-2 text-[20px] mr-2 " />
+                  <span className="uppercase font-bold text-gray-700">
+                    Chat
+                  </span>
+                </DashboardCustomLink>
                 <DashboardCustomLink
                   className="flex items-center py-3 text-gray-500 "
                   to="/dashboard/write-blog"
@@ -132,6 +132,25 @@ const Dashboard = () => {
                   <span className="uppercase font-bold text-gray-700">
                     {" "}
                     Order History
+                  </span>
+                </DashboardCustomLink>
+                <DashboardCustomLink
+                  className="flex items-center py-3 text-gray-500 "
+                  to="/dashboard/message"
+                >
+                  <FaChalkboardTeacher  className=" ml-2 text-[20px] mr-2 "/>
+                  <span className="uppercase font-bold text-gray-700">
+                    {" "}
+                    Chat With Expert
+                  </span>
+                </DashboardCustomLink>
+                <DashboardCustomLink
+                  className="flex items-center py-3 text-gray-500 "
+                  to="/dashboard/chat"
+                >
+                  <BsChatLeftText className=" ml-2 text-[20px] mr-2 " />
+                  <span className="uppercase font-bold text-gray-700">
+                    Current Chat
                   </span>
                 </DashboardCustomLink>
                  <DashboardCustomLink

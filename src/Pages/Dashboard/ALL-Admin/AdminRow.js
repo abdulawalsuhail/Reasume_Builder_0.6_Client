@@ -1,11 +1,9 @@
 import React from 'react';
-import { AiOutlineMessage } from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import axiosPrivate from '../../Api/axiosPrivate';
 
-const AdminRow = ({admin,index,refetch,currentUser}) => {
-  console.log(currentUser);
+const AdminRow = ({admin,index,refetch}) => {
     const {role,email,_id} = admin
     const removeAdmin = () => {
         axiosPrivate.patch(`/remove-admin/${email}`)
@@ -32,18 +30,7 @@ const AdminRow = ({admin,index,refetch,currentUser}) => {
     }
 
     const navigate = useNavigate()
-    const handleMessage = (msgId) =>{
-      if(currentUser){
-        axiosPrivate.post('/admin/chat',{
-          senderId:currentUser,
-        receiverId:msgId
-       })
-       .then(res => {
- 
-         navigate('/dashboard/chat')
-       })
-      }
-    }
+   
     return (
         <tr>
         <th>{index +1}</th>
@@ -51,9 +38,6 @@ const AdminRow = ({admin,index,refetch,currentUser}) => {
         <td className='uppercase font-bold text-primary'>{role}</td>
         <td>
             <button onClick={removeAdmin} className='btn btn-xs bg-white text-gray-600 hover:bg-white'>remove admin</button>
-        </td>
-        <td>
-            <button onClick={()=>handleMessage(_id)} className='btn btn-xs bg-white text-gray-600 hover:bg-white'><AiOutlineMessage/></button>
         </td>
        </tr>
     );
