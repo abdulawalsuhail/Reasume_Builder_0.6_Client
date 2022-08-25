@@ -8,16 +8,15 @@ const CoverLetterNavbar = () => {
   return (
     <div className="pt-8 pb-2 flex justify-between lg:px-20 md:px-10 px-6">
       <button
-        className=" text-white text-2xl rounded-full px-3 bg-rose-400 hover:bg-rose-500 "
+        className=" text-white text-2xl rounded-full p-2 bg-blue-700 hover:bg-blue-800 "
         onClick={() => navigate(-1)}
       >
         <AiFillBackward />
       </button>
 
       <div>
-        <Link className="flex items-center" to="/">
-          <img src={logo} className="w-14" alt="this is logo" />
-          <p className="text-2xl front-crimson">Resume Builder</p>
+        <Link to="/">
+          <img src={logo} className="w-40" alt="this is logo" />
         </Link>
       </div>
     </div>

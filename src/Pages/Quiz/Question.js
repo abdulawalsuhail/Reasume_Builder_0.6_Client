@@ -3,15 +3,27 @@ import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { GiCheckMark } from "react-icons/gi";
 import Loading from "../../Shared/Loading/Loading";
+import Icon from "./Icon";
 const Question = () => {
   const [questions, setQuestions] = useState({});
   const [current, setCurrent] = useState(0);
+  const [selected, setSelected] = useState("");
   useEffect(() => {
     fetch("question.json")
       .then((res) => res.json())
       .then((data) => setQuestions(data));
   }, []);
+  // some variable class name
   let crr = questions[current];
+  let normal = `py-2 px-4 border-[1px] border-blue-200 bg-blue-100 rounded-md cursor-pointer hover:bg-blue-200 mb-3`;
+  let correct = `py-2 px-4 border-[1px] border-green-200 bg-green-100 rounded-md cursor-pointer flex justify-between items-center my-3`;
+  let wrong = `py-2 px-4 border-[1px] border-red-200 bg-red-100 rounded-md cursor-pointer flex justify-between items-center my-3`;
+
+  // get text
+  const getText = (e) => {
+    setSelected(e.target.innerText);
+  };
+  console.log(selected);
   if (!crr) {
     return <Loading />;
   }
@@ -27,27 +39,30 @@ const Question = () => {
             </p>
           </div>
         </div>
+        <div
+          style={{ width: `${(100 / questions?.length) * current}%` }}
+          className="h-[2px] bg-green-500 transition duration-700 ease-in-out"
+        ></div>
         <div className="py-3 px-8">
           <h1 className="text-[22px] poppins-b font-semibold">
             {crr?.numb}. {crr?.question} ?
           </h1>
           <div className="py-5">
-            <div className="py-2 px-4 border-[1px] border-blue-200 bg-blue-100 rounded-md cursor-pointer">
-              {crr?.options?.option1}
+            <div onClick={getText} className={normal}>
+              <p>{crr?.options?.option1}</p>
+              {/* {selected && <Icon crr={crr} selected={selected} />} */}
             </div>
 
-            <div className="py-2 px-4 border-[1px] border-green-200 bg-green-100 rounded-md cursor-pointer flex justify-between items-center my-3">
-              <p>{crr?.options?.option2}</p>{" "}
-              <GiCheckMark className="bg-green-200 border-[1px] border-green-500 text-green-600 font-bold p-1 text-[20px] rounded-full" />
+            <div onClick={getText} className={normal}>
+              <p>{crr?.options?.option2}</p>
             </div>
 
-            <div className="py-2 px-4 border-[1px] border-red-200 bg-red-100 rounded-md cursor-pointer flex justify-between items-center my-3">
-              <p>{crr?.options?.option2}</p>{" "}
-              <AiOutlineClose className="bg-red-200 border-[1px] border-red-500 text-red-600 font-bold p-1 text-[20px] rounded-full" />
+            <div onClick={getText} className={normal}>
+              <p>{crr?.options?.option3}</p>{" "}
             </div>
 
-            <div className="py-2 px-4 border-[1px] border-blue-200 bg-blue-100 rounded-md cursor-pointer">
-              {crr?.options?.option2}
+            <div onClick={getText} className={normal}>
+              <p>{crr?.options?.option4}</p>
             </div>
           </div>
         </div>
@@ -56,15 +71,21 @@ const Question = () => {
           <p>
             {crr?.numb} of {questions.length} Questions
           </p>
-          <button
-            onClick={() => {
-              const nm = current + 1;
-              setCurrent(nm);
-            }}
-            className="py-2 px-4 rounded-md bg-green-500 text-white"
-          >
-            Continue
-          </button>
+          {current + 1 < questions?.length ? (
+            <button
+              onClick={() => {
+                const nm = current + 1;
+                setCurrent(nm);
+              }}
+              className="py-2 px-4 rounded-md bg-green-500 text-white"
+            >
+              Continue
+            </button>
+          ) : (
+            <button className="py-2 px-4 rounded-md bg-green-500 text-white">
+              Submit
+            </button>
+          )}
         </div>
       </div>
     </div>
