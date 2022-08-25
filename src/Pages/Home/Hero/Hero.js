@@ -30,7 +30,7 @@ const hero = () => {
           <p
             data-aos="fade-up"
             data-aos-duration="2000"
-            className="max-w-lg mt-10 text-left text-[17px] poppins-t text-gray-600 "
+            className="max-w-lg mt-7 text-left text-[17px] poppins-t text-gray-600 "
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
             quis cumque minus, officiis odio obcaecati! Lorem ipsum dolor sit
@@ -40,10 +40,10 @@ const hero = () => {
           <div
             data-aos="fade-up"
             data-aos-duration="3000"
-            className="flex  gap-4 mt-8 text-center"
+            className="flex  gap-4 mt-10 text-center"
           >
             <Link
-              className="inline-flex items-center px-8 py-3 mt-8  bg-primary border border-primary rounded hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150  text-white hover:text-black"
+              className="inline-flex items-center px-8 py-3 bg-primary border border-primary rounded hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150  text-white hover:text-black"
               to="/"
             >
               <span className="text-sm font-medium"> Get Started </span>
@@ -51,7 +51,7 @@ const hero = () => {
             </Link>
 
             <Link
-              className="inline-flex items-center px-8 py-3 mt-8  border border-primary rounded bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150  text-black hover:text-white hover:bg-primary"
+              className="inline-flex items-center px-8 py-3  border border-primary rounded bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150  text-black hover:text-white hover:bg-primary"
               to="/"
             >
               <span className="text-sm font-medium"> Read a blog </span>

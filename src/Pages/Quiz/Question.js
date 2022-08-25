@@ -50,7 +50,6 @@ const Question = () => {
           <div className="py-5">
             <div onClick={getText} className={normal}>
               <p>{crr?.options?.option1}</p>
-              {/* {selected && <Icon crr={crr} selected={selected} />} */}
             </div>
 
             <div onClick={getText} className={normal}>
