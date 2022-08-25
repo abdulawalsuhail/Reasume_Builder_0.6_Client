@@ -20,20 +20,17 @@ const CarrerPayment = () => {
     <div>
       <div className=" bg-[#fafafa]">
         <Link to="/">
-          <div className="flex items-center">
-            <img className="w-14" src={logo} alt="logo" />
+          <div className="py-4 pl-12">
+            <img className="w-48" src={logo} alt="logo" />
 
-            <div className="flex gap-2 text-xl">
-              <p>Resume</p>
-              <p>Builder</p>
-            </div>
+
           </div>
         </Link>
       </div>
       <div className="md:grid grid-cols-2 gap-8 px-12  ">
         <div className="mt-6">
           <h1 className="text-4xl text-[#2d3639]">Invest in your career </h1>
-          <h1 className="text-4xl text-[#2d3639]"> with Resume Builder</h1>
+          <h1 className="text-4xl text-[#2d3639]"> with WritoRCC</h1>
           <p className="text-2xl mt-5">One plan, Endless Possibilities</p>
           <div className="mt-4">
             <span className="flex items-center ">
@@ -64,7 +61,7 @@ const CarrerPayment = () => {
 
           <div className="mt-10 shadow-lg p-10 hidden md:block">
             <p>
-              you consent to get access to your Resume-Builder subscription . If
+              you consent to get access to your WritoRCC subscription . If
               you do not cancel before the end of the subscription period, you
               will automatically be charged the subscription billed every month
               until you cancel.
