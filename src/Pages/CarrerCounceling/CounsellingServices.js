@@ -22,7 +22,7 @@ const CounsellingServices = () => {
 
   return (
     <section className="px-12 py-16">
-      <div className="grid md:grid-cols-4  mt-16 gap-10">
+      <div className="grid grid-cols-1  lg:grid-cols-4 mt-16 gap-10">
         <div className="">
           <h4 className="text-4xl text-[#384347] mt-16">
             Pick the plan that suits you best
@@ -33,11 +33,12 @@ const CounsellingServices = () => {
             your dream job. That’s a guarantee.
           </p>
 
-          <div>
+          <div className="hidden lg:block">
             {services.map((service) => (
               <CounsellingCard key={service.id} service={service} />
             ))}
           </div>
+          
         </div>
 
         {priceService.map((service) => (

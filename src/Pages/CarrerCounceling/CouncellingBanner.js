@@ -42,7 +42,7 @@ const CouncellingBanner = () => {
   return (
     <div  className="bg-[#fefefe] px-12 py-10">
     <h2  className="text-5xl text-center text-[#384347]"> Get Your Dream Job</h2>
-    <p className="text-center text-[#384347] mt-5 text-[18px]">Nail the recruitment process with Enhancv Career Counseling - your secret weapon</p>
+    <p className="text-center text-[#384347] mt-5 text-[18px]">Nail the recruitment process with writoCCC Career Counseling - your secret weapon</p>
     <Slider {...settings}>
       {
         banners.map(b => <>
