@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 const CareerPaymentSystem = ({ service }) => {
-  const {serviceName, price } = service;
-  const [userInfo,setUserinfo]  = useState({})
+  const { serviceName, price } = service;
+  const [userInfo, setUserinfo] = useState({})
   return (
     <div>
       <h1 className="text-[25px] text-gray-700 mb-4">Choose product</h1>
       <div className="flex justify-between">
         <div>
           <p className="capitalize text-gray-500 font-[600]">
-            Resume Builder {serviceName}
+            WritoRCC {serviceName}
           </p>
         </div>
         <div>
@@ -34,7 +34,7 @@ const CareerPaymentSystem = ({ service }) => {
           Billing & Payment
         </h4>
       </div>
-      <Outlet  context={[userInfo,setUserinfo,price,serviceName] }/>
+      <Outlet context={[userInfo, setUserinfo, price, serviceName]} />
     </div>
   );
 };

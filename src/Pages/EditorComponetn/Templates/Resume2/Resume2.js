@@ -1,8 +1,10 @@
 import React from 'react';
 import './Resume2.css'
 import Image from '../Images/image02.jpg';
+import { useOutletContext } from 'react-router-dom';
 
 const Resume2 = () => {
+    const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
 
     return (
         <div className=''>

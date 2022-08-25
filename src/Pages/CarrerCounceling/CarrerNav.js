@@ -46,13 +46,16 @@ const CarrerNav = () => {
   );
   return (
     <>
-      <div class="navbar bg-base-100">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <label tabindex="0" class="btn btn-ghost lg:hidden">
+     <div className="px-6 md:px-20 lg:px-12 bg-[#f4f7f8]">
+      {/* Navbar start source code from Daisy UI */}
+      <div className="navbar py-4">
+        {/* Navbar left portion */}
+        <div className="navbar-start">
+          <div className="dropdown">
+            <label tabindex="0" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
+                className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -67,22 +70,35 @@ const CarrerNav = () => {
             </label>
             <ul
               tabindex="0"
-              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               {articleMenu}
             </ul>
           </div>
           <Link to="/">
-            <img className="w-14" src={logo} alt="" />
+            <div className="flex items-center">
+              <img className="w-48" src={logo} alt="logo" />
+
+
+            </div>
           </Link>
         </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal p-0">{articleMenu}</ul>
+        {/* End Navbar left Portion */}
+
+        {/* Navbar center portion */}
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal p-0">{articleMenu}</ul>
         </div>
-        <div class="navbar-end">
-          <a class="btn">Get started</a>
+        {/* End Navbar center portion */}
+
+        {/* Navbar end portion */}
+        <div className="navbar-end">
+
+         <h1>Hello</h1>
         </div>
+        {/* End navbar end portion */}
       </div>
+    </div>
     </>
   );
 };

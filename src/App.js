@@ -51,12 +51,24 @@ import Reference from "./Pages/EditorComponetn/CommonEditorComponent/Reference";
 import ShouldAddReference from "./Pages/EditorComponetn/CommonEditorComponent/ShouldAddReference";
 import Start from "./Pages/EditorComponetn/CommonEditorComponent/Start";
 import EditResume from "./Pages/EditorComponetn/EditResume";
-import Resume1 from "./Pages/EditorComponetn/Templates/Resume1/Resume1";
+
 import CoverLetter from "./Pages/Home/Templates/CoverLetter";
 import Cv from "./Pages/Home/Templates/Cv";
 import Resume from "./Pages/Home/Templates/Resume";
 import Templates from "./Pages/Home/Templates/Templates";
 import ResumeTemplate from "./Pages/ResumeTemplate/ResumeTemplate";
+
+// Dummy templates
+import Resume1 from "./Pages/EditorComponetn/Templates/Resume1/Resume1";
+import Resume2 from "./Pages/EditorComponetn/Templates/Resume2/Resume2";
+import Resume3 from "./Pages/EditorComponetn/Templates/Resume3/Resume3";
+import Resume4 from "./Pages/EditorComponetn/Templates/Resume4/Resume4";
+import Resume5 from "./Pages/EditorComponetn/Templates/Resume5/Resume5";
+import Resume6 from "./Pages/EditorComponetn/Templates/Resume6/Resume6";
+import Resume7 from "./Pages/EditorComponetn/Templates/Resume7/Resume7";
+// import Resume8 from "./Pages/EditorComponetn/Templates/Resume8/Resume8";
+// import Resume9 from "./Pages/EditorComponetn/Templates/Resume9/Resume9";
+// import Resume10 from "./Pages/EditorComponetn/Templates/Resume10/Resume10";
 
 
 import SingleBlog from "./Pages/CarrerCounceling/AllArticle/SingleBlog";
@@ -66,6 +78,8 @@ import Chat from "./Pages/Dashboard/Chat/Chat/Chat";
 import EditProfile from "./Pages/Dashboard/Profile/EditProfile";
 import Profile from "./Pages/Dashboard/Profile/Profile";
 import Quiz from "./Pages/Quiz/Quiz";
+import Test from "./Test";
+import Resume8 from "./Pages/EditorComponetn/Templates/Resume8/Resume8";
 
 const stripePromise = loadStripe(
   "pk_test_51L0e7DJVuUKdOSgodXlRxjzrt9f8fKWzD9Jum98GewskqXtaZ9Mx725bepiQ7zjAuEpcALdbkJEVHlNIG0RTIanM00m74yy2rn"
@@ -120,7 +134,8 @@ function App() {
           path="/resume-builder/drag-and-drop-file"
           element={<DragAndDropFile />}
         ></Route>
-        <Route path="/resume-builder" element={<EditResume />}>
+        <Route path="/resume-builder/:_id" element={<EditResume />}>
+          <Route index element={<ContactDetails />}></Route>
           <Route path="editor-contact" element={<ContactDetails />}></Route>
           <Route path="editor-experience" element={<Experience />}></Route>
           <Route path="editor-education" element={<Education />}></Route>
@@ -140,9 +155,19 @@ function App() {
           ></Route>
           <Route path="reference" element={<Reference />}></Route>
 
-          {/* <Route path="template1" element={<Template1/>}></Route> */}
         {/* Dummy Templates section route */}
           <Route path="template1" element={<Resume1/>} />
+          <Route path="template2" element={<Resume2/>} />
+          <Route path="template3" element={<Resume3/>} />
+          <Route path="template4" element={<Resume4/>} />
+          <Route path="template5" element={<Resume5/>} />
+          <Route path="template6" element={<Resume6/>} />
+          <Route path="template7" element={<Resume7/>} />
+          <Route path="template8" element={<Resume8/>} />
+          {/* <Route path="template8" element={<Resume8/>} />
+          <Route path="template9" element={<Resume9/>} />
+          <Route path="template10" element={<Resume10/>} /> */}
+
         {/* End of Dummy templates section */}
         </Route>
 
@@ -312,6 +337,7 @@ function App() {
       />
       {/* <Footer /> */}
       <Toaster />
+      {/* <Test/> */}
     </div>
   );
 }

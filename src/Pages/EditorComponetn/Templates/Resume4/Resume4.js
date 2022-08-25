@@ -13,8 +13,10 @@ import { BiBook } from "react-icons/bi"
 import { FaGamepad } from "react-icons/fa"
 import { FaMusic } from "react-icons/fa"
 import { FaCanadianMapleLeaf } from "react-icons/fa"
+import { useOutletContext } from 'react-router-dom';
 
 const Resume4 = () => {
+    const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
 
     return (
         <div className=''>

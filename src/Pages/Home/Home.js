@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../../Components/Navbar/Navbar";
+import BusinessPartner from "../../Shared/BusinessPartner";
 import Footer from "../../Shared/Footer/Footer";
 import Business from "./Business/Business";
 import Guideline from "./Guideline/Guideline";
@@ -11,16 +12,16 @@ import WriteResume from "./WriteResume/WriteResume";
 
 const Home = () => {
   return (
-    <div className="bg-[#f4f7f8]">
+    <div className="">
       <Navbar />
       <Hero />
+      <BusinessPartner />
       <WriteResume />
       <Templates />
       <Guideline />
       <WhyResumeBuilder />
       <Review />
-      <Business />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

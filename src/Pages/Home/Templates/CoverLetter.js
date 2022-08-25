@@ -95,7 +95,7 @@ const CoverLetter = () => {
                                             onClick={()=>setTemplateModal(temp)}
                                             style={{ "--clr": "#ff1867" }} for="template_modal" class=" modal-button customButton text-center"><span>Preview</span><i></i></label>
                                     </div>
-                                    <div className='text-center'>
+                                    {/* <div className='text-center'>
                                         <h1 className='text-2xl'>Our client satisfaction?</h1>
                                         <div className='flex mt-1 justify-center'>
                                             <AiFillStar className='text-green-800 text-xl'/>
@@ -104,7 +104,7 @@ const CoverLetter = () => {
                                             <AiFillStar className='text-green-800 text-xl'/>
                                             <AiFillStar className='text-green-800 text-xl'/>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         )
