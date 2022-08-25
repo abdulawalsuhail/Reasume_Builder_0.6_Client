@@ -25,7 +25,7 @@ const ContactDetails = () => {
     str.value.email = document.getElementById("email")?.value;
     
     setUsersTemplateInfo({...usersTemplateInfo,contactDetails:str});
-    navigate(`/resume-builder/${_id}/editor-experience`);
+    navigate(`/resume-builder/${_id}/social-network`);
     console.log(usersTemplateInfo);
   };
 
