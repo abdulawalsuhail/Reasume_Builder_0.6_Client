@@ -4,7 +4,7 @@ import "./WriteResume.css";
 
 const WriteResume = () => {
   return (
-    <section className="writeBackground pb-20">
+    <section className="writeBackground lg:pb-24 lg:pt-10">
       <div className="grid md:grid-cols-2 gap-7 lg:gap-14 content-center md:mx-16 lg:mx-24 mx-8 py-10 ">
         <div className="flex items-center md:order-1 order-2">
           <div className="lg:max-w-md">

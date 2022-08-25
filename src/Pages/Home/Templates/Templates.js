@@ -6,15 +6,14 @@ const Templates = () => {
 
   return (
     <div className="py-12 homeTemplate lg:relative mt-">
-      {/* oporer section tare ar aktu padding diye niche namaile valo lagbe */}
       {/* menu section */}
 
-      <div className = "md:w-[410px] h-[100px] mx-auto flex justify-center items-center shadow-lg shadow-slate-800 lg:absolute lg:top-[-50px] lg:left-[33%]  2xl:left-[39%] lg:bg-[#687162] rounded-full" >
+      <div className = "md:w-[410px] h-[100px] mx-auto flex justify-center items-center shadow-lg shadow-slate-800 lg:absolute lg:top-[-50px] lg:left-[33%]  2xl:left-[39%] lg:bg-[#626671] rounded-full" >
         <div style={{width:"350px"}} class=" border-accent rounded-full mx-auto bg-white ">
           <ul class="flex flex-row justify-between md:px-1 md:py-1">
-            <Link className=" text-md hover:bg-[#687162] hover:text-white px-6 py-1 rounded-full" to="/">Resume</Link>
-            <Link className=" text-md hover:bg-[#687162] hover:text-white px-6 py-1 rounded-full" to="/cv">CV</Link>
-            <Link className=" text-md hover:bg-[#687162] hover:text-white px-6 py-1 rounded-full" to="/coverLetter">Cover Letter</Link>
+            <Link className=" text-md hover:bg-[#626671] hover:text-white px-6 py-1 rounded-full" to="/">Resume</Link>
+            <Link className=" text-md hover:bg-[#626671] hover:text-white px-6 py-1 rounded-full" to="/cv">CV</Link>
+            <Link className=" text-md hover:bg-[#626671] hover:text-white px-6 py-1 rounded-full" to="/coverLetter">Cover Letter</Link>
           </ul>
         </div>
       </div>
