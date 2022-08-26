@@ -1,4 +1,3 @@
-import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
@@ -99,45 +98,6 @@ const CarrerNav = () => {
 
         {/* Navbar end portion */}
         <div className="navbar-end">
-
-          {users ? (
-            <div className="dropdown dropdown-end ml-2">
-              <label tabindex="0" className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" />
-                </div>
-              </label>
-              <ul
-                tabindex="0"
-                className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <Link to='/dashboard' className="justify-between">
-                    Dashboard
-                  </Link>
-                </li>
-                <li>
-                  <a>Settings</a>
-                </li>
-                <li>
-                  <p
-                    onClick={async () => {
-                      await signOut(auth);
-                    }}
-                  >
-                    Sign Out
-                  </p>
-                </li>
-              </ul>
-            </div>
-          ) : (
-            <Link
-              to="/login"
-              className="btn btn-secondary btn-xs md:btn-md ml-2 modal-button"
-            >
-              Login
-            </Link>
-          )}
         </div>
         {/* End navbar end portion */}
       </div>
