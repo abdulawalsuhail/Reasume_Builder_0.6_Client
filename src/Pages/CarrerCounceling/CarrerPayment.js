@@ -18,7 +18,7 @@ const CarrerPayment = () => {
   }, [id]);
   return (
     <div>
-      <div className=" bg-[#fafafa]">
+      <div className=" bg-[#fafafa] navbar sticky top-0 z-50">
         <Link to="/">
           <div className="py-4 pl-12">
             <img className="w-48" src={logo} alt="logo" />

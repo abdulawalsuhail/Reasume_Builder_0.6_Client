@@ -73,13 +73,20 @@ import Resume7 from "./Pages/EditorComponetn/Templates/Resume7/Resume7";
 import SingleBlog from "./Pages/CarrerCounceling/AllArticle/SingleBlog";
 import CoverLetterInput from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterInput";
 import CoverLetterTemplate from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterTemplate";
+import Chat from "./Pages/Dashboard/Chat/Chat/Chat";
+import Expert from "./Pages/Dashboard/Expert/Expert";
 import EditProfile from "./Pages/Dashboard/Profile/EditProfile";
 import Profile from "./Pages/Dashboard/Profile/Profile";
 import QuizStart from "./Pages/Quiz/QuizStart";
 import QuizRules from "./Pages/Quiz/QuizRules";
 import Quiz from "./Pages/Quiz/Quiz";
+
 import Test from "./Test";
 import Resume8 from "./Pages/EditorComponetn/Templates/Resume8/Resume8";
+import SocialNetwork from "./Pages/EditorComponetn/CommonEditorComponent/SocialNetwork";
+import AddProjects from "./Pages/EditorComponetn/CommonEditorComponent/AddProjects";
+import AddQuiz from "./Pages/Quiz/AddQuiz";
+import QuizResult from "./Pages/Quiz/QuizResult";
 
 const stripePromise = loadStripe(
   "pk_test_51L0e7DJVuUKdOSgodXlRxjzrt9f8fKWzD9Jum98GewskqXtaZ9Mx725bepiQ7zjAuEpcALdbkJEVHlNIG0RTIanM00m74yy2rn"
@@ -167,6 +174,7 @@ function App() {
         <Route path="/resume-builder/:_id" element={<EditResume />}>
           <Route index element={<ContactDetails />}></Route>
           <Route path="editor-contact" element={<ContactDetails />}></Route>
+          <Route path="social-network" element={<SocialNetwork />}></Route>
           <Route path="editor-experience" element={<Experience />}></Route>
           <Route path="editor-education" element={<Education />}></Route>
           <Route path="certifications" element={<Certifications />}></Route>
@@ -174,6 +182,7 @@ function App() {
             path="additional-skills"
             element={<AdditionalSkills />}
           ></Route>
+          <Route path="add-projects" element={<AddProjects />}></Route>
           <Route path="languages" element={<Languages />}></Route>
           <Route
             path="career-objective"
@@ -272,6 +281,14 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route
+          path="/quizResult/:email"
+          element={
+            <RequireAuth>
+              <QuizResult />
+            </RequireAuth>
+          }
+        ></Route>
 
         {/* admin dashboard */}
         {/* Dashboard */}
@@ -355,6 +372,14 @@ function App() {
             }
           ></Route>
           <Route
+            path="message"
+            element={
+              <RequireNonAdmin>
+                <Expert />
+              </RequireNonAdmin>
+            }
+          ></Route>
+          <Route
             path="add-review"
             element={
               <RequireNonAdmin>
@@ -362,7 +387,17 @@ function App() {
               </RequireNonAdmin>
             }
           ></Route>
+          {/* ashik dashboard */}
+          <Route
+            path="add-quiz"
+            element={
+              <RequireAdmin>
+                <AddQuiz />
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
+        <Route path="/chat/expert" element={<Chat />}></Route>
       </Routes>
       {/* facebook live chat */}
       <MessengerCustomerChat

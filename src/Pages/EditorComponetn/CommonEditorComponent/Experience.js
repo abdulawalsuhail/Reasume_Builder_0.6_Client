@@ -153,7 +153,7 @@ const Experience = () => {
           {/* button */}
           <div className="flex justify-center gap-10 mt-10">
               <a
-                onClick={() => navigate(`/resume-builder/${_id}`)}
+                onClick={() => navigate(`/resume-builder/${_id}/social-network`)}
                 href="#_"
                 class="relative editor-btn inline-flex items-center justify-start  py-3 overflow-hidden font-medium transition-all group md:px-16 px-10 text-lg rounded-lg border-[1px] border-solid border-gray-400 text-black"
               >

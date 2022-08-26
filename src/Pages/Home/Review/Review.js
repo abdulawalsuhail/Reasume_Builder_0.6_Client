@@ -61,7 +61,7 @@ const Review = () => {
           src={bg}
           alt="resume"
         />
-        {/* <div class="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-blue-100 sm:to-blue-50 opacity-75"></div> */}
+
         <div className="lg:mx-16 mx-8 py-16  sm:px-6 lg:px-8 relative">
           <div className="max-w-sm mx-auto text-center mb-20">
             <h2 className="text-3xl font-bold sm:text-4xl">

@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import premium from "../../../assets/service_icon/premium.png";
 import resume from "../../../assets/service_icon/cv.png";
-import hidden from "../../../assets/service_icon/hidden.png";
 import friendly from "../../../assets/service_icon/friends.png";
+import hidden from "../../../assets/service_icon/hidden.png";
 import liveContent from "../../../assets/service_icon/live-chat.png";
+import premium from "../../../assets/service_icon/premium.png";
 import edit from "../../../assets/service_icon/resume.png";
 import { BsArrowRight } from "react-icons/bs";
 
