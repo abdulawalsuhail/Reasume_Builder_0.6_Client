@@ -1,13 +1,14 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { BsChatLeftText } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { FaChalkboardTeacher, FaFirstOrder, FaHistory } from "react-icons/fa";
 import { HiUserGroup } from "react-icons/hi";
 import { MdOutlineEdit, MdReviews } from "react-icons/md";
 import { RiAdminLine, RiFileUserLine } from "react-icons/ri";
-import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { Outlet } from "react-router-dom";
+import Navbar from "../../../Components/Navbar/Navbar";
 import "../../../Css/CarrerCounceling.css";
 import auth from "../../../firebase.init";
 import useAdmin from "../../../Hook/useAdmin";
@@ -15,7 +16,6 @@ import useExpert from "../../../Hook/useExpert";
 import UserInformation from "../../../Hook/UserInformation";
 import "../Dashboard/Dashboard.css";
 import DashboardCustomLink from "../DashBoardCustomLink/DashboardCustomLink";
-import DashBoardNav from "../DashBoardNav/DashBoardNav";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
@@ -24,7 +24,7 @@ const Dashboard = () => {
   const [users] = UserInformation(user);
   return (
     <>
-      <DashBoardNav/>
+      <Navbar/>
       <div class="drawer drawer-mobile  bg-[#f6f5f8]">
         <input id="dashboard-nav" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content no-scroll  ">

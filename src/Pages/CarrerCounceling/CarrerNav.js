@@ -1,14 +1,9 @@
 import React from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import auth from "../../firebase.init";
-import UserInformation from "../../Hook/UserInformation";
 import CareerCustomNavbar from "./CarrerCustomNavar/CareerCustomNavbar";
 
 const CarrerNav = () => {
-    const [user] = useAuthState(auth)
-    const [users] = UserInformation(user)
   const articleMenu = (
     <>
       <CareerCustomNavbar

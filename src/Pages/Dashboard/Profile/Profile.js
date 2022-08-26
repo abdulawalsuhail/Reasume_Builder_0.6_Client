@@ -7,7 +7,7 @@ import UserInformation from "../../../Hook/UserInformation";
 
 const Profile = () => {
   const [user] = useAuthState(auth);
-  const [users, isLoading, refetch] = UserInformation(user);
+  const [users] = UserInformation(user);
 
   return (
     <div className=" py-10 ">
@@ -27,7 +27,7 @@ const Profile = () => {
         <hr />
         <div className=" flex  flex-col md:flex-row    py-10 mx-10 gap-10  ">
           <div class="">
-            {users.img ? (
+            {users?.img ? (
               <div class="avatar ml-4">
                 <div class="w-40 mx-auto text-center rounded-full ring ring-offset-base-100 ring-offset-2">
                   <img className="" src={users?.img} />
@@ -47,6 +47,8 @@ const Profile = () => {
           </div>
 
           <div className=" mt-4  ">
+            <p className="font-semibold mb-2">user Id:</p>
+            <p className="text-xl mb-2">writoRcc-{users._id?.slice(0,6)}</p>
             <p className="font-semibold mb-2">Full Name:</p>
             <p className="text-xl mb-2">{
               users?.name ? users?.name : user?.displayName

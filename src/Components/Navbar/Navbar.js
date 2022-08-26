@@ -4,13 +4,10 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import logo from "../../../src/assets/logo.png";
-import profile from "../../assets/icon/profile.png";
 import auth from "../../firebase.init";
-import UserInformation from "../../Hook/UserInformation";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
-  const [users, isLoading, refetch] = UserInformation(user);
 
   const navItem = (
     <>
@@ -78,7 +75,7 @@ const Navbar = () => {
         </ul>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link to="/quizStart">Quiz</Link>
+        <Link to="/quiz">Quiz</Link>
       </li>
     </>
   );
@@ -131,19 +128,10 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <div className="dropdown dropdown-end ml-2">
-              <label
-                tabindex="0"
-                className="btn btn-ghost btn-circle ring ring-primary avatar"
-              >
-                {users.img ? (
-                  <div className="w-10  rounded-full  ">
-                    <img src={users?.img} alt="" />
-                  </div>
-                ) : (
-                  <div className="w-10 rounded-full">
-                    <img src={profile} alt="" />
-                  </div>
-                )}
+              <label tabindex="0" className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src="https://placeimg.com/80/80/people" />
+                </div>
               </label>
               <ul
                 tabindex="0"
