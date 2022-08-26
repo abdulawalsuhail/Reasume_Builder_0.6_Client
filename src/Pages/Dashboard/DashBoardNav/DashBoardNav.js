@@ -1,5 +1,5 @@
 import { signOut } from "firebase/auth";
-import React from "react";
+import React, { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -12,6 +12,9 @@ import UserInformation from "../../../Hook/UserInformation";
 const DashBoardNav = () => {
     const [user] = useAuthState(auth)
     const [users,isLoading,refetch] = UserInformation(user)
+    useEffect(()=>{
+      refetch()
+    },[users])
 
   return (
     <div>
@@ -35,7 +38,7 @@ const DashBoardNav = () => {
         <div className="dropdown dropdown-end ml-2">
               <label tabindex="0" className="btn btn-ghost ring ring-primary btn-circle avatar">
                 {
-                    users.img?<div className="w-10  ">
+                    users.img?<div className="w-10 rounded-full  ">
                     <img src={users?.img}  alt=""/>
                   </div>:<div className="w-10 rounded-full">
                     <img src={profile} alt="" />

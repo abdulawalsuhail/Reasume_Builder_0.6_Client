@@ -136,7 +136,7 @@ const Navbar = () => {
                 className="btn btn-ghost btn-circle ring ring-primary avatar"
               >
                 {users.img ? (
-                  <div className="w-10    ">
+                  <div className="w-10  rounded-full  ">
                     <img src={users?.img} alt="" />
                   </div>
                 ) : (
