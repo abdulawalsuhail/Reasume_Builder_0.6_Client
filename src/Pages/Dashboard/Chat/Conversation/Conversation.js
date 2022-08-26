@@ -37,7 +37,7 @@ const Conversation = ({ data, currentUserId}) => {
             </div>
           )}
           <div className=" text-[14px] ml-2 font-[500]" >
-            <span>{userData?.name}</span>
+            <span className="hidden md:block">{userData?.name}</span>
           </div>
         </div>
       </div>

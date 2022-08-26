@@ -1,6 +1,6 @@
 import axios from "axios";
 
 const axiosFetch = axios.create({
-  baseURL: "http://localhost:5000/",
+  baseURL: "https://writorcc-server-06.herokuapp.com/",
 });
 export default axiosFetch;

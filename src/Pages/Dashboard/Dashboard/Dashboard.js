@@ -1,12 +1,12 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { BsChatLeftText } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { FaChalkboardTeacher, FaFirstOrder, FaHistory } from "react-icons/fa";
 import { HiUserGroup } from "react-icons/hi";
 import { MdOutlineEdit, MdReviews } from "react-icons/md";
 import { RiAdminLine, RiFileUserLine } from "react-icons/ri";
-import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { Outlet } from "react-router-dom";
 import Navbar from "../../../Components/Navbar/Navbar";
 import "../../../Css/CarrerCounceling.css";
@@ -24,22 +24,16 @@ const Dashboard = () => {
   const [users] = UserInformation(user);
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <div class="drawer drawer-mobile  bg-[#f6f5f8]">
-        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+        <input id="dashboard-nav" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content no-scroll  ">
           {/* <!-- Page content here --> */}
 
           <Outlet />
-          <label
-            for="my-drawer-2"
-            class="btn btn-primary drawer-button lg:hidden"
-          >
-            Open drawer
-          </label>
         </div>
         <div class="drawer-side md:px-6 lg:shadow-2xl mr-6">
-          <label for="my-drawer-2" class="drawer-overlay"></label>
+          <label for="dashboard-nav" class="drawer-overlay"></label>
           <ul class="menu overflow-y-auto  w-52 bg-[#f8f8fa] mb-4">
             <DashboardCustomLink
               className="flex items-center py-3 text-gray-500 "
