@@ -13,6 +13,7 @@ const Resume8 = () => {
     
     return (
         <div className='Resume8body'>
+            <button className='btn btn-accent flex mx-auto pt-6'>Download Now</button>
             <div className='resume8 bg-white mx-auto text-left'>
                 <div className='bg-slate-100'>
                     <div className='p-10'>
