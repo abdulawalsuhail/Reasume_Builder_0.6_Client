@@ -2,10 +2,11 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { BsChatLeftText } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
-import { FaChalkboardTeacher, FaFirstOrder, FaHistory } from 'react-icons/fa';
+import { FaChalkboardTeacher, FaFirstOrder, FaHistory } from "react-icons/fa";
 import { HiUserGroup } from "react-icons/hi";
 import { MdOutlineEdit, MdReviews } from "react-icons/md";
 import { RiAdminLine, RiFileUserLine } from "react-icons/ri";
+import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { Outlet } from "react-router-dom";
 import "../../../Css/CarrerCounceling.css";
 import auth from "../../../firebase.init";
@@ -15,7 +16,6 @@ import UserInformation from "../../../Hook/UserInformation";
 import "../Dashboard/Dashboard.css";
 import DashboardCustomLink from "../DashBoardCustomLink/DashboardCustomLink";
 import DashBoardNav from "../DashBoardNav/DashBoardNav";
-
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
@@ -75,17 +75,27 @@ const Dashboard = () => {
                   className="flex items-center py-3 text-gray-500 "
                   to="/dashboard/all-expert"
                 >
-                  <FaChalkboardTeacher  className=" ml-2 text-[20px] mr-2 "/>
+                  <FaChalkboardTeacher className=" ml-2 text-[20px] mr-2 " />
                   <span className="uppercase font-bold text-gray-700">
                     {" "}
                     All-Expert
+                  </span>
+                </DashboardCustomLink>
+                <DashboardCustomLink
+                  className="flex items-center py-3 text-gray-500 "
+                  to="/dashboard/add-quiz"
+                >
+                  <AiOutlineAppstoreAdd className=" ml-2 text-[20px] mr-2 " />
+                  <span className="uppercase font-bold text-gray-700">
+                    {" "}
+                    Add a quiz
                   </span>
                 </DashboardCustomLink>
               </>
             )}
             {expert && (
               <>
-                 <DashboardCustomLink
+                <DashboardCustomLink
                   className="flex items-center py-3 text-gray-500 "
                   to="/dashboard/chat"
                 >
@@ -118,7 +128,7 @@ const Dashboard = () => {
             )}
             {!admin && (
               <>
-                 <DashboardCustomLink
+                <DashboardCustomLink
                   className="flex items-center py-3 text-gray-500 "
                   to="/dashboard/order"
                 >
@@ -132,7 +142,7 @@ const Dashboard = () => {
                   className="flex items-center py-3 text-gray-500 "
                   to="/dashboard/message"
                 >
-                  <FaChalkboardTeacher  className=" ml-2 text-[20px] mr-2 "/>
+                  <FaChalkboardTeacher className=" ml-2 text-[20px] mr-2 " />
                   <span className="uppercase font-bold text-gray-700">
                     {" "}
                     Chat With Expert
@@ -147,7 +157,7 @@ const Dashboard = () => {
                     Current Chat
                   </span>
                 </DashboardCustomLink>
-                 <DashboardCustomLink
+                <DashboardCustomLink
                   className="flex items-center py-3 text-gray-500 "
                   to="/dashboard/add-review"
                 >

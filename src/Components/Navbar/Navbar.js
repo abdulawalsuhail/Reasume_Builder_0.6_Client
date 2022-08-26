@@ -86,7 +86,7 @@ const Navbar = () => {
         </ul>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link to="/quiz">Quiz</Link>
+        <Link to="/quizStart">Quiz</Link>
       </li>
     </>
   );

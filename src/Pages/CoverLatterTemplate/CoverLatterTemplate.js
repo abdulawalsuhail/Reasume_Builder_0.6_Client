@@ -12,7 +12,7 @@ import Steps from "./Steps";
 
 const CoverLatterTemplate = () => {
   return (
-    <div className="bg-[#f4f7f8]">
+    <div className="">
       <Navbar />
       <CoverLatterTemplateBanner />
       {/* <CLTemplate /> */}
