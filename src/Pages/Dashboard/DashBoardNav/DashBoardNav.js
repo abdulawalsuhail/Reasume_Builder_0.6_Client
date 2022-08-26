@@ -1,5 +1,5 @@
 import { signOut } from "firebase/auth";
-import React, { useEffect } from "react";
+import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -8,19 +8,10 @@ import profile from '../../../assets/icon/profile.png';
 import logo from "../../../assets/logo.png";
 import auth from "../../../firebase.init";
 import UserInformation from "../../../Hook/UserInformation";
-import Loading from "../../../Shared/Loading/Loading";
 
 const DashBoardNav = () => {
     const [user] = useAuthState(auth)
     const [users,isLoading,refetch] = UserInformation(user)
-
-    useEffect(()=>{
-        refetch()
-    },[users])
-
-    if(isLoading){
-        return <Loading/>
-    }
 
   return (
     <div>
