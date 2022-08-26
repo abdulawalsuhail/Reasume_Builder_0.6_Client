@@ -34,7 +34,7 @@ const Chat = () => {
     getChats();
   }, [users]);
   useEffect(() => {
-    socket.current = io("https://chat-server-06.herokuapp.com/");
+    socket.current = io("http://localhost:8800/");
     if (users?._id) {
       socket.current.emit("new-user-add", users?._id);
       socket.current.on("get-users", (users) => {
