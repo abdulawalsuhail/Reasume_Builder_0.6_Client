@@ -44,7 +44,7 @@ const hero = () => {
           >
             <Link
               className="inline-flex items-center px-8 py-3 bg-primary border border-primary rounded hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150  text-white hover:text-black"
-              to="/"
+              to="/resume-builder/how-to-start"
             >
               <span className="text-sm font-medium"> Get Started </span>
               <BsArrowRight className="text-lg ml-2" />
@@ -55,7 +55,6 @@ const hero = () => {
               to="/"
             >
               <span className="text-sm font-medium"> Read a blog </span>
-              <BsArrowRight className="text-lg ml-2" />
             </Link>
           </div>
         </div>
