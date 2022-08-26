@@ -21,16 +21,16 @@ const Signup = () => {
   const [customError, setCustomError] = useState("");
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-    const [updateProfile, updating, Uerror] = useUpdateProfile(auth);
+  const [updateProfile, updating, Uerror] = useUpdateProfile(auth);
   const [token] = useToken(user);
   const navigate = useNavigate()
-  useEffect(()=> {
-    if(token){
+  useEffect(() => {
+    if (token) {
       navigate('/')
     }
-  },[token])
+  }, [token])
   // update profile
-  
+
   const handelSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -51,7 +51,7 @@ const Signup = () => {
     return <Loading />;
   }
 
- 
+
   return (
     <div>
       <Navbar />
@@ -168,7 +168,7 @@ const Signup = () => {
                         </span>
                       </label>
                       <input
-                        type="text"
+                        type="password"
                         name="password"
                         required
                         placeholder="password"
@@ -181,7 +181,7 @@ const Signup = () => {
                         </span>
                       </label>
                       <input
-                        type="text"
+                        type="password"
                         name="rePassword"
                         required
                         placeholder="Re-Type-Password"
