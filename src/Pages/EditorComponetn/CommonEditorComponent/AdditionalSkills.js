@@ -34,7 +34,7 @@ const AdditionalSkills = () => {
         }
 
         setUsersTemplateInfo({...usersTemplateInfo, skills:str})
-        navigate(`/resume-builder/${_id}/languages`)
+        navigate(`/resume-builder/${_id}/add-projects`)
         console.log(usersTemplateInfo); 
     }
     console.log(usersTemplateInfo);
