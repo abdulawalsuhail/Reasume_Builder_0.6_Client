@@ -74,9 +74,8 @@ const Navbar = () => {
         </ul>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link to="/quiz">Quiz</Link>
+        <Link to="/quizStart">Quiz</Link>
       </li>
-
     </>
   );
 
@@ -128,7 +127,6 @@ const Navbar = () => {
 
         {/* Navbar end portion */}
         <div className="navbar-end">
-
           {user ? (
             <div className="dropdown dropdown-end ml-2">
               <label tabindex="0" className="btn btn-ghost btn-circle avatar">
@@ -141,7 +139,7 @@ const Navbar = () => {
                 className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <Link to='/dashboard' className="justify-between">
+                  <Link to="/dashboard" className="justify-between">
                     Dashboard
                   </Link>
                 </li>

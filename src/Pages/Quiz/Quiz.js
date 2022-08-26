@@ -1,11 +1,10 @@
 import React from "react";
-import Navbar from "../../Components/Navbar/Navbar";
+import Question from "./Question";
 
 const Quiz = () => {
   return (
     <div>
-      <Navbar />
-      <h3>This is quiz compo</h3>
+      <Question />
     </div>
   );
 };

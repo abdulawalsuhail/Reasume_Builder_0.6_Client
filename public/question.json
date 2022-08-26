@@ -1,0 +1,36 @@
+[
+    {
+        "numb": 1,
+        "question": "What does HTML stand for?",
+        "answer": "Hyper Text Markup Language",
+        "options": {
+          "option1":"Hyper Text Preprocessor",
+          "option2":"Hyper Text Markup Language",
+          "option3":"Hyper Text Multiple Language",
+          "option4":"Hyper Tool Multi Language"
+        }
+      },
+    {
+        "numb": 2,
+        "question": "2What does HTML stand for?",
+        "answer": "Hyper Text Markup Language",
+        "options": {
+          "option1":"Hyper Text Preprocessor",
+          "option2":"Hyper Text Markup Language",
+          "option3":"Hyper Text Multiple Language",
+          "option4":"Hyper Tool Multi Language"
+        }
+      },
+    {
+        "numb": 3,
+        "question": "3What does HTML stand for?",
+        "answer": "Hyper Text Markup Language",
+        "options": {
+          "option1":"Hyper Text Preprocessor",
+          "option2":"Hyper Text Markup Language",
+          "option3":"Hyper Text Multiple Language",
+          "option4":"Hyper Tool Multi Language"
+        }
+      }
+       
+]

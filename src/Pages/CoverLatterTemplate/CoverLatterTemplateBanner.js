@@ -5,11 +5,11 @@ import banner from "../../../src/assets/coverLatterBanner.png";
 const CoverLatterTemplateBanner = () => {
   return (
     <div
-      style={{
-        background:
-          "linear-gradient(278.93deg,#ffe0b9 33.6%,rgba(255,224,185,.2))",
-      }}
-      className="grid lg:grid-cols-2 md:px-20 px-8 md:gap-20 gap-10 "
+      // style={{
+      //   background:
+      //     "linear-gradient(278.93deg,#ffe0b9 33.6%,rgba(255,224,185,.2))",
+      // }}
+      className="grid lg:grid-cols-2 md:px-20 px-8 md:gap-20 gap-10 py-10"
     >
       <div className="lg:order-1 order-2 lg:pt-16">
         <p>ONLINE COVER LETTER BUILDER</p>
@@ -25,7 +25,7 @@ const CoverLatterTemplateBanner = () => {
         <div className="my-10">
           <Link
             to="/how-write-cover-letter"
-            class="relative rounded px-5 py-2.5 overflow-hidden group bg-sky-500 relative hover:bg-gradient-to-r hover:from-sky-500 hover:to-sky-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-sky-400 transition-all ease-out duration-300 py-[14px]"
+            class="relative rounded px-5 py-2.5 overflow-hidden group bg-blue-700 relative hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 text-white hover:ring-2 hover:ring-offset-2 hover:ring-blue-500 transition-all ease-out duration-300 py-[14px]"
           >
             <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
             <span class="relative">Build my Cover Letter now</span>

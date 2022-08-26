@@ -6,11 +6,12 @@ import hidden from "../../../assets/service_icon/hidden.png";
 import liveContent from "../../../assets/service_icon/live-chat.png";
 import premium from "../../../assets/service_icon/premium.png";
 import edit from "../../../assets/service_icon/resume.png";
+import { BsArrowRight } from "react-icons/bs";
 
 const WhyResumeBuilder = () => {
   return (
     <section className="bg-gray-100">
-      <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+      <div className="md:mx-16 lg:mx-24 mx-8 py-16 ">
         <div className="max-w-lg mr-auto text-left">
           <h2 className="text-3xl text-primary font-bold poppins-b sm:text-4xl">
             Why Use The Resume Builder?
@@ -103,28 +104,11 @@ const WhyResumeBuilder = () => {
 
         <div className="mt-12 text-center">
           <Link
-            className="inline-flex items-center px-8 py-3 mt-8  bg-primary border border-primary rounded hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150"
+            className="inline-flex items-center px-8 py-3 mt-8  bg-primary border border-primary rounded hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150 text-white hover:text-black"
             to="/"
           >
-            <span className="text-sm font-medium text-white">
-              {" "}
-              Get Started{" "}
-            </span>
-
-            <svg
-              className="w-5 h-5 ml-3"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
+            <span className="text-sm font-medium"> Get Started </span>
+            <BsArrowRight className="text-lg ml-2" />
           </Link>
         </div>
       </div>

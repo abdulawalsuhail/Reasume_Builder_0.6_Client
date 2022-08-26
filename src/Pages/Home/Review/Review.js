@@ -1,6 +1,9 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import Slider from "react-slick";
 import bg from "../../../assets/service_bg.png";
+import Loading from "../../../Shared/Loading/Loading";
+import axiosFetch from "../../Api/axiosFetch";
 import ReviewsCard from "./ReviewCard";
 
 const Review = () => {
@@ -40,6 +43,16 @@ const Review = () => {
       },
     ],
   };
+
+  // get review data
+  const { data, isLoading, error } = useQuery(["reviews"], () =>
+    axiosFetch.get("reviews")
+  );
+  if (isLoading) {
+    return <Loading />;
+  }
+  const reviews = data?.data;
+  console.log(reviews);
   return (
     <div>
       <section className="relative">
@@ -48,7 +61,7 @@ const Review = () => {
           src={bg}
           alt="resume"
         />
-        {/* <div class="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-blue-100 sm:to-blue-50 opacity-75"></div> */}
+
         <div className="lg:mx-16 mx-8 py-16  sm:px-6 lg:px-8 relative">
           <div className="max-w-sm mx-auto text-center mb-20">
             <h2 className="text-3xl font-bold sm:text-4xl">
@@ -58,13 +71,9 @@ const Review = () => {
           {/* this is card */}
 
           <Slider {...settings}>
-            <ReviewsCard />
-            <ReviewsCard />
-            <ReviewsCard />
-            <ReviewsCard />
-            <ReviewsCard />
-            <ReviewsCard />
-            <ReviewsCard />
+            {reviews?.map((review) => (
+              <ReviewsCard review={review} key={review?._id} />
+            ))}
           </Slider>
         </div>
       </section>
