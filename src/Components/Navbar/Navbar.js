@@ -1,13 +1,25 @@
 import { signOut } from "firebase/auth";
-import React from "react";
+import React, { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import logo from "../../../src/assets/logo.png";
+import profile from "../../assets/icon/profile.png";
 import auth from "../../firebase.init";
+import UserInformation from "../../Hook/UserInformation";
+import Loading from "../../Shared/Loading/Loading";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
+  const [users, isLoading, refetch] = UserInformation(user);
+
+  useEffect(() => {
+    refetch();
+  }, [users]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
   const navItem = (
     <>
       <li>
@@ -76,7 +88,6 @@ const Navbar = () => {
       <li className="hover:bg-primary hover:text-white rounded-md">
         <Link to="/quiz">Quiz</Link>
       </li>
-
     </>
   );
 
@@ -113,8 +124,6 @@ const Navbar = () => {
           <Link to="/">
             <div className="flex items-center">
               <img className="w-48" src={logo} alt="logo" />
-
-
             </div>
           </Link>
         </div>
@@ -128,20 +137,28 @@ const Navbar = () => {
 
         {/* Navbar end portion */}
         <div className="navbar-end">
-
           {user ? (
             <div className="dropdown dropdown-end ml-2">
-              <label tabindex="0" className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" />
-                </div>
+              <label
+                tabindex="0"
+                className="btn btn-ghost btn-circle ring ring-primary avatar"
+              >
+                {users.img ? (
+                  <div className="w-10    ">
+                    <img src={users?.img} alt="" />
+                  </div>
+                ) : (
+                  <div className="w-10 rounded-full">
+                    <img src={profile} alt="" />
+                  </div>
+                )}
               </label>
               <ul
                 tabindex="0"
                 className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <Link to='/dashboard' className="justify-between">
+                  <Link to="/dashboard" className="justify-between">
                     Dashboard
                   </Link>
                 </li>
