@@ -8,6 +8,7 @@ import auth from "../../firebase.init";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
+
   const navItem = (
     <>
       <li>
@@ -74,7 +75,7 @@ const Navbar = () => {
         </ul>
       </li>
       <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link to="/quizStart">Quiz</Link>
+        <Link to="/quiz">Quiz</Link>
       </li>
     </>
   );
@@ -112,8 +113,6 @@ const Navbar = () => {
           <Link to="/">
             <div className="flex items-center">
               <img className="w-48" src={logo} alt="logo" />
-
-
             </div>
           </Link>
         </div>
