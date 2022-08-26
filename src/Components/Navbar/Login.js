@@ -112,7 +112,7 @@ const Login = () => {
                         </span>
                       </label>
                       <input
-                        type="text"
+                        type="password"
                         name="password"
                         required
                         placeholder="password"
