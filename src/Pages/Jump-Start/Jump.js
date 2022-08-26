@@ -9,6 +9,7 @@ import Image6 from '../../assets/illestatror/illustration-image6.png'
 import Image7 from '../../assets/illestatror/illustration-image7.png'
 import Image8 from '../../assets/illestatror/illustration-image8.png'
 import { GoArrowSmallRight } from "react-icons/go"
+import { Link } from 'react-router-dom';
  
 const BuildResume = () => {
  
@@ -19,7 +20,12 @@ const BuildResume = () => {
                     <h1 className='text-3xl font-bold poppins-b'>Ready to Jump-start Your Career</h1>
                     <h1 className='bg-blue-800 w-24 h-2 mx-auto mt-2 mb-4 rounded-lg'></h1>
                     <div>
-                        <button className='bg-blue-800 px-8 py-2 rounded-full text-white flex items-center mx-auto text-base'>Build My Resume <GoArrowSmallRight className='text-2xl'></GoArrowSmallRight></button>
+                        <Link 
+                        to="/resume-builder/how-to-start" 
+                        className='inline-flex items-center px-8 py-3 bg-primary border border-primary rounded-lg hover:bg-transparent active:text-blue-800 focus:outline-none focus:ring transition ease-in-out delay-150  text-white hover:text-black
+                        '> 
+                        <span className="text-sm font-medium"> Build My Resume </span>
+                        <GoArrowSmallRight className='text-2xl'></GoArrowSmallRight></Link>
                     </div>
                 </div>
             </div>
