@@ -12,12 +12,7 @@ const OrderInvoice = ({ order, index }) => {
       <div className="w-[600px] mt-[50px]">
         <div className="flex items-center justify-between px-8">
           <div className="flex items-center">
-            <img className="w-14 mt-2" src={logo} alt="logo" />
-
-            <div className="">
-              <p>Resume</p>
-              <p>Builder</p>
-            </div>
+            <img className="w-28 mt-2" src={logo} alt="logo" />
           </div>
           <div>
             <div>
