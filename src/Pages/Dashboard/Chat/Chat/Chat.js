@@ -25,7 +25,6 @@ const Chat = () => {
       try {
         axiosPrivate.get(`/admin/chat/${users?._id}`).then((res) => {
           setChat(res.data);
-          console.log(res.data);
         });
       } catch (error) {
         console.log(error);
@@ -35,7 +34,7 @@ const Chat = () => {
     getChats();
   }, [users]);
   useEffect(() => {
-    socket.current = io("ws://localhost:8800");
+    socket.current = io("https://chat-server-06.herokuapp.com/");
     if (users?._id) {
       socket.current.emit("new-user-add", users?._id);
       socket.current.on("get-users", (users) => {
@@ -53,19 +52,14 @@ const Chat = () => {
   // Get the message from socket server
   // Get the message from socket server
   useEffect(() => {
-    socket.current.on("recieve-message", (data) => {
+    socket.current.on("recived-message", (data) => {
       console.log("connect backend")
       setReceivedMessage(data);
     }
 
     );
   }, []);
-  console.log(receivedMessage);
-  const checkOnlineStatus = (chat) => {
-    const chatMember = chat.members.find((member) => member !== user._id);
-    const online = onlineUsers.find((user) => user.userId === chatMember);
-    return online ? true : false;
-  };
+
 
   return (
     <div className="Chat">
@@ -81,7 +75,6 @@ const Chat = () => {
                   key={chat._id}
                   data={chat}
                   currentUserId={users?._id}
-                  online={checkOnlineStatus(chat)}
                 />
               </div>
             ))}
