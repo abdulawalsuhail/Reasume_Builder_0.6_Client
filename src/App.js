@@ -296,6 +296,7 @@ function App() {
               </RequireAdmin>
             }
           ></Route>
+          <Route path="chat" element={<Chat />}></Route>
           <Route
             path="all-expert"
             element={
