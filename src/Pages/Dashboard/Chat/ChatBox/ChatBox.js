@@ -91,7 +91,6 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
   }, [receivedMessage]);
 
   const scroll = useRef();
-  const imageRef = useRef();
   return (
     <>
       <div className="ChatBox-container">
@@ -152,13 +151,6 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
               <div className="  text-white btn btn-primary cursor-pointer" onClick={handleSend}>
                 <AiOutlineSend className=""></AiOutlineSend>
               </div>
-              <input
-                type="file"
-                name=""
-                id=""
-                style={{ display: "none" }}
-                ref={imageRef}
-              />
             </div>{" "}
           </>
         ) : (
