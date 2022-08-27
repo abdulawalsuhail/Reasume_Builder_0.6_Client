@@ -54,53 +54,6 @@ const Navbar = () => {
         </NavLink>
       </li>
 
-      {/* <li tabindex="0">
-        <Link
-          to="/career-counselling"
-          className="hover:bg-primary hover:text-white"
-        >
-          CAREER COUNSELLING
-          <svg
-            className="fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-          >
-            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-          </svg>
-        </Link>
-        <ul className="p-2 bg-base-100 z-50 md:w-60">
-          <li className="hover:bg-primary hover:text-white uppercase">
-            <Link to="/career-counselling/all-article">All-Articles</Link>
-          </li>
-          <li className="hover:bg-primary hover:text-white uppercase">
-            <Link to="career-counselling/resume-write">Resume Writing</Link>
-          </li>
-          <li className="hover:bg-primary hover:text-white uppercase">
-            <Link to="/career-counselling/cv-write">CV Writing</Link>
-          </li>
-          <li className="hover:bg-primary hover:text-white uppercase">
-            <Link to="/career-counselling/examples">Examples</Link>
-          </li>
-          <li className="hover:bg-primary hover:text-white uppercase">
-            <Link to="/career-counselling/personal-development">
-              Personal Development{" "}
-            </Link>
-          </li>
-          <li className="hover:bg-primary hover:text-white uppercase">
-            <Link to="/career-counselling/inspiring-stories">
-              Inspiring Stories{" "}
-            </Link>
-          </li>
-          <li className="hover:bg-primary hover:text-white uppercase">
-            <Link to="/career-counselling/interview-preparation">
-              Interview Prep{" "}
-            </Link>
-          </li>
-        </ul>
-      </li> */}
-
       <li className="nav-item p-2">
         <NavLink
           className={({ isActive }) => (isActive ? `${active}` : `${normal}`)}
@@ -111,7 +64,10 @@ const Navbar = () => {
       </li>
       <li class="dropdown inline-block relative">
         <button class="text-gray-700 font-medium hover:bg-text-primary px-4 py-2 inline-flex items-center">
-          <span class="mr-1">Dropdown</span>
+          <Link to="/career-counselling" class="mr-1 flex gap-2">
+            <div>CAREER</div>
+            <div>COUNSELLING</div>
+          </Link>
           <svg
             class="fill-current h-4 w-4"
             xmlns="http://www.w3.org/2000/svg"
@@ -120,30 +76,33 @@ const Navbar = () => {
             <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
           </svg>
         </button>
-        <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
-          <li class="">
-            <a
-              class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-              href="#"
-            >
-              One
-            </a>
+        <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 p-2 bg-base-100 z-50 md:w-60">
+          <li className="hover:bg-primary hover:text-white uppercase py-2 px-4 rounded-md">
+            <Link to="/career-counselling/all-article">All-Articles</Link>
           </li>
-          <li class="">
-            <a
-              class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-              href="#"
-            >
-              Two
-            </a>
+          <li className="hover:bg-primary hover:text-white uppercase py-2 px-4 rounded-md">
+            <Link to="career-counselling/resume-write">Resume Writing</Link>
           </li>
-          <li class="">
-            <a
-              class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-              href="#"
-            >
-              Three is
-            </a>
+          <li className="hover:bg-primary hover:text-white uppercase py-2 px-4 rounded-md">
+            <Link to="/career-counselling/cv-write">CV Writing</Link>
+          </li>
+          <li className="hover:bg-primary hover:text-white uppercase py-2 px-4 rounded-md">
+            <Link to="/career-counselling/examples">Examples</Link>
+          </li>
+          <li className="hover:bg-primary hover:text-white uppercase py-2 px-4 rounded-md">
+            <Link to="/career-counselling/personal-development">
+              Personal Development{" "}
+            </Link>
+          </li>
+          <li className="hover:bg-primary hover:text-white uppercase py-2 px-4 rounded-md">
+            <Link to="/career-counselling/inspiring-stories">
+              Inspiring Stories{" "}
+            </Link>
+          </li>
+          <li className="hover:bg-primary hover:text-white uppercase py-2 px-4 rounded-md">
+            <Link to="/career-counselling/interview-preparation">
+              Interview Prep{" "}
+            </Link>
           </li>
         </ul>
       </li>
@@ -200,7 +159,21 @@ const Navbar = () => {
 
         {/* Navbar end portion */}
         <div className="navbar-end">
-          <p>Sign Out</p>
+          {user ? (
+            <Link
+              to="/"
+              className="py-2 px-5 text-white rounded-full bg-primary hover:bg-blue-800 font-medium hidden md:flex"
+            >
+              GET STARTED
+            </Link>
+          ) : (
+            <Link
+              to="/login"
+              className="py-2 px-5 text-white rounded-full bg-primary hover:bg-blue-800 font-medium hidden md:flex"
+            >
+              Login
+            </Link>
+          )}
 
           <div className="dropdown dropdown-end ml-2">
             <label tabindex="0" className="btn btn-ghost btn-circle avatar">
