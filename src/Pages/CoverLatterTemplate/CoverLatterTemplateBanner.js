@@ -4,25 +4,22 @@ import banner from "../../../src/assets/coverLatterBanner.png";
 
 const CoverLatterTemplateBanner = () => {
   return (
-    <div
-      // style={{
-      //   background:
-      //     "linear-gradient(278.93deg,#ffe0b9 33.6%,rgba(255,224,185,.2))",
-      // }}
-      className="grid lg:grid-cols-2 md:px-20 px-8 md:gap-20 gap-10 py-10"
-    >
+    <div className="grid lg:grid-cols-2 md:px-20 px-8 md:gap-20 gap-10 py-10">
       <div className="lg:order-1 order-2 lg:pt-16">
-        <p>ONLINE COVER LETTER BUILDER</p>
-        <h1 className="md:text-6xl text-5xl front-crimson bold font-semibold text-gray-700 mb-4 mt-2">
+        <small className="font-medium">Free Cover Letter Builder</small>
+        <h1
+          style={{ lineHeight: "115%" }}
+          className="md:text-5xl text-5xl  font-semibold text-gray-700 mb-4 mt-2"
+        >
           Online Cover Letter Builder
         </h1>
-        <p className="text-lg">
+        <p className="text-[16px]">
           Enhancv is the resume builder that helps you highlight your
           achievements, attitude and personality. You get a modern resume that
           people remember. It’s easy and free to use!
         </p>
 
-        <div className="my-10">
+        <div className="my-12">
           <Link
             to="/how-write-cover-letter"
             class="relative rounded px-5 py-2.5 overflow-hidden group bg-blue-700 relative hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 text-white hover:ring-2 hover:ring-offset-2 hover:ring-blue-500 transition-all ease-out duration-300 py-[14px]"
@@ -32,7 +29,7 @@ const CoverLatterTemplateBanner = () => {
           </Link>
         </div>
 
-        <div>
+        <div className="my-5">
           <div className="flex items-center gap-8">
             <div class="rating">
               <input
@@ -64,11 +61,11 @@ const CoverLatterTemplateBanner = () => {
             </div>
             <p> ✪REVIEWS</p>
           </div>
-          <p className="text-lg my-2">
+          <p className="text-[16px] my-2 font-medium">
             1,195 happy customers shared their experience.
           </p>
         </div>
-        <p className="mt-6">Our resumes get people hired at top companies:</p>
+        <p className="mt-6 ">Our resumes get people hired at top companies:</p>
 
         <section className="text-gray-800 my-6">
           <div className="flex text-gray-600">

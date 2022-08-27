@@ -8,6 +8,7 @@ import auth from "../../firebase.init";
 import demoUser from "../../assets/demo_user.png";
 import { useQuery } from "@tanstack/react-query";
 import axiosFetch from "../../Pages/Api/axiosFetch";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
@@ -41,12 +42,15 @@ const Navbar = () => {
           RESUME
         </NavLink>
       </li>
-      <li className="nav-item p-2">
+      <li className="nav-item">
         <NavLink
-          className={({ isActive }) => (isActive ? `${active}` : `${normal}`)}
+          className={({ isActive }) =>
+            isActive ? `${active} flex gap-2` : `${normal} flex gap-2`
+          }
           to="/coverLatter"
         >
-          COVER LETTER
+          <div>COVER</div>
+          <div>LETTER</div>
         </NavLink>
       </li>
 
@@ -96,6 +100,7 @@ const Navbar = () => {
           </li>
         </ul>
       </li> */}
+
       <li className="nav-item p-2">
         <NavLink
           className={({ isActive }) => (isActive ? `${active}` : `${normal}`)}
@@ -104,11 +109,47 @@ const Navbar = () => {
           QUIZ
         </NavLink>
       </li>
+      <li class="dropdown inline-block relative">
+        <button class="text-gray-700 font-medium hover:bg-text-primary px-4 py-2 inline-flex items-center">
+          <span class="mr-1">Dropdown</span>
+          <svg
+            class="fill-current h-4 w-4"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+          </svg>
+        </button>
+        <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+          <li class="">
+            <a
+              class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+              href="#"
+            >
+              One
+            </a>
+          </li>
+          <li class="">
+            <a
+              class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+              href="#"
+            >
+              Two
+            </a>
+          </li>
+          <li class="">
+            <a
+              class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+              href="#"
+            >
+              Three is
+            </a>
+          </li>
+        </ul>
+      </li>
     </>
   );
-  // const { data, isLoading, refetch } = useQuery(["user"], () => {
-  //   axiosPrivate.get(`user/${user?.email}`)
-  // }
+
   const { data } = useQuery(["singleUser"], () =>
     axiosFetch.get(`/user/${user?.email}`)
   );
@@ -153,35 +194,36 @@ const Navbar = () => {
 
         {/* Navbar center portion */}
         <div className="navbar-start hidden ml-8 lg:flex">
-          <ul className="menu-horizontal p-0">{navItem}</ul>
+          <ul className="menu-horizontal p-0 flex items-center">{navItem}</ul>
         </div>
         {/* End Navbar center portion */}
 
         {/* Navbar end portion */}
         <div className="navbar-end">
           <p>Sign Out</p>
-          {user ? (
-            <div className="dropdown dropdown-end ml-2">
-              <label tabindex="0" className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img
-                    src={data?.data?.img ? data?.data?.img : demoUser}
-                    alt="user img"
-                  />
-                </div>
-              </label>
-              <ul
-                tabindex="0"
-                className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <Link to="/dashboard" className="justify-between">
-                    Dashboard
-                  </Link>
-                </li>
-                <li>
-                  <a>Settings</a>
-                </li>
+
+          <div className="dropdown dropdown-end ml-2">
+            <label tabindex="0" className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img
+                  src={data?.data?.img ? data?.data?.img : demoUser}
+                  alt="user img"
+                />
+              </div>
+            </label>
+            <ul
+              tabindex="0"
+              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <Link to="/dashboard" className="justify-between">
+                  Dashboard
+                </Link>
+              </li>
+              <li>
+                <a>Settings</a>
+              </li>
+              {user ? (
                 <li>
                   <p
                     onClick={async () => {
@@ -192,16 +234,13 @@ const Navbar = () => {
                     Sign Out
                   </p>
                 </li>
-              </ul>
-            </div>
-          ) : (
-            <Link
-              to="/login"
-              className="btn btn-secondary btn-xs md:btn-md ml-2 modal-button"
-            >
-              Login
-            </Link>
-          )}
+              ) : (
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+              )}
+            </ul>
+          </div>
         </div>
         {/* End navbar end portion */}
       </div>
