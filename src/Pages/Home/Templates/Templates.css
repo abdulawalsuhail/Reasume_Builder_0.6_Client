@@ -17,6 +17,7 @@
     cursor: pointer;
     position: relative;
 }
+
 .templateButton{
     position: absolute;
     display: flex;
@@ -37,7 +38,7 @@
 }
 
 .templateContainer:hover .templateButton{
-    height: 350px;
+    height: 150px;
     opacity: 1;
 }
 .templateContainer:hover .templateImage{
@@ -61,13 +62,13 @@
 .customButton:hover{
     letter-spacing: 0.25em;
     background: var(--clr);
-    box-shadow: 0 0 35px var(--clr);
+    box-shadow: 0 0 20px var(--clr);
 }
 .customButton::before{
     content: "";
     position: absolute;
     inset: 2px;
-    background: #27282c;
+    background: #000000;
 }
 .customButton span{
     position: relative;

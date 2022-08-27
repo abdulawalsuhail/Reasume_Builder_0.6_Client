@@ -105,7 +105,7 @@ const Resume = () => {
                                         
                                         <label
                                             onClick={()=>setTemplateModal(temp)}
-                                            style={{ "--clr": "#ff1867" }} for="template_modal" class=" modal-button customButton text-center"><span>Preview</span><i></i></label>
+                                            style={{ "--clr": "#1d00ff" }} for="template_modal" class=" modal-button customButton text-center"><span>Preview</span><i></i></label>
                                     </div>
                                     {/* <div className='text-center'>
                                         <h1 className='text-2xl'>Our client satisfaction?</h1>
