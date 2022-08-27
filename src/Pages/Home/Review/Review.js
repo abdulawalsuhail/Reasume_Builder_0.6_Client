@@ -52,7 +52,6 @@ const Review = () => {
     return <Loading />;
   }
   const reviews = data?.data;
-  console.log(reviews);
   return (
     <div>
       <section className="relative">
@@ -67,7 +66,6 @@ const Review = () => {
             <h2 className="text-3xl font-bold sm:text-4xl">
               Check Out Resent Reviews!
             </h2>
-            <h1 className='bg-blue-800 w-24 h-2 mx-auto mt-2 mb-4 rounded-lg'></h1>
           </div>
           {/* this is card */}
 
