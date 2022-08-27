@@ -10,13 +10,11 @@ import Templates from "./Templates/Templates";
 import WhyResumeBuilder from "./WhyResumeBuilder/WhyResumeBuilder";
 import WriteResume from "./WriteResume/WriteResume";
 import Jump from "../Jump-Start/Jump.js";
-import Nb from "../../Components/Navbar/Nb";
 
 const Home = () => {
   return (
     <div className="">
       <Navbar />
-      {/* <Nb /> */}
       <Hero />
       <BusinessPartner />
       <WriteResume />
