@@ -2,33 +2,55 @@ import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../src/assets/logo.png";
 import auth from "../../firebase.init";
+import demoUser from "../../assets/demo_user.png";
+import { useQuery } from "@tanstack/react-query";
+import axiosFetch from "../../Pages/Api/axiosFetch";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
+  const active = "text-primary mx-1 font-medium border-b-2 border-primary pb-1";
+  const normal =
+    "text-gray-700 mx-1 hover:text-primary font-medium focus:text-gray-700 p-0";
 
   const navItem = (
     <>
-      <li>
-        <Link to="/">HOME</Link>
+      <li className="nav-item p-2">
+        <NavLink
+          className={({ isActive }) => (isActive ? `${active}` : `${normal}`)}
+          to="/home"
+        >
+          HOME
+        </NavLink>
       </li>
-      <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link to="/cvTemplate">CV</Link>
+      <li className="nav-item p-2">
+        <NavLink
+          className={({ isActive }) => (isActive ? `${active}` : `${normal}`)}
+          to="/cvTemplate"
+        >
+          CV
+        </NavLink>
       </li>
-      <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link to="/resumeTemplate">RESUME</Link>
+      <li className="nav-item p-2">
+        <NavLink
+          className={({ isActive }) => (isActive ? `${active}` : `${normal}`)}
+          to="/resumeTemplate"
+        >
+          RESUME
+        </NavLink>
       </li>
-      <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link to="/coverLatter">COVER LETTER</Link>
+      <li className="nav-item p-2">
+        <NavLink
+          className={({ isActive }) => (isActive ? `${active}` : `${normal}`)}
+          to="/coverLatter"
+        >
+          COVER LETTER
+        </NavLink>
       </li>
 
-      {/* <li className="hover:bg-primary hover:text-white rounded-md">
-        <a>CAREER COUNSELLING</a>
-        
-      </li> */}
-      <li tabindex="0">
+      {/* <li tabindex="0">
         <Link
           to="/career-counselling"
           className="hover:bg-primary hover:text-white"
@@ -73,19 +95,30 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-      </li>
-      <li className="hover:bg-primary hover:text-white rounded-md">
-        <Link to="/quiz">Quiz</Link>
+      </li> */}
+      <li className="nav-item p-2">
+        <NavLink
+          className={({ isActive }) => (isActive ? `${active}` : `${normal}`)}
+          to="/quiz"
+        >
+          QUIZ
+        </NavLink>
       </li>
     </>
   );
+  // const { data, isLoading, refetch } = useQuery(["user"], () => {
+  //   axiosPrivate.get(`user/${user?.email}`)
+  // }
+  const { data } = useQuery(["singleUser"], () =>
+    axiosFetch.get(`/user/${user?.email}`)
+  );
 
   return (
-    <div className="px-6 md:px-20 lg:px-24 bg-[#f4f7f8]">
+    <div className="px-4 md:pl-10  lg:px-24 bg-[#f4f7f8]">
       {/* Navbar start source code from Daisy UI */}
       <div className="navbar py-4">
         {/* Navbar left portion */}
-        <div className="navbar-start">
+        <div className="">
           <div className="dropdown">
             <label tabindex="0" className="btn btn-ghost lg:hidden">
               <svg
@@ -119,18 +152,22 @@ const Navbar = () => {
         {/* End Navbar left Portion */}
 
         {/* Navbar center portion */}
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal p-0">{navItem}</ul>
+        <div className="navbar-start hidden ml-8 lg:flex">
+          <ul className="menu-horizontal p-0">{navItem}</ul>
         </div>
         {/* End Navbar center portion */}
 
         {/* Navbar end portion */}
         <div className="navbar-end">
+          <p>Sign Out</p>
           {user ? (
             <div className="dropdown dropdown-end ml-2">
               <label tabindex="0" className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" />
+                  <img
+                    src={data?.data?.img ? data?.data?.img : demoUser}
+                    alt="user img"
+                  />
                 </div>
               </label>
               <ul
