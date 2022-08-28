@@ -161,7 +161,7 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <Link
-              to="/"
+              to="/resume-builder/how-to-start"
               className="py-2 px-5 text-white rounded-full bg-primary hover:bg-blue-800 font-medium hidden md:flex"
             >
               GET STARTED
