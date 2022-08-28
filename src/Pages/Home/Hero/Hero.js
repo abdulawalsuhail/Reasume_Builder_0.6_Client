@@ -1,88 +1,65 @@
 import React from "react";
 import "swiper/css/bundle";
-import Banner from "../../../assets/Banner.jpg";
-
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
+import Banner from "../../../assets/hero-banner.png";
+import { BsArrowRight } from "react-icons/bs";
 import "swiper/css/effect-cards";
 import "./styles.css";
 
-// import required modules
-import { EffectCards } from "swiper";
-import demo1 from "../../../assets/demo1.png";
-import demo2 from "../../../assets/demo2.png";
+import { Link } from "react-router-dom";
 
 const hero = () => {
   return (
-    <section class="relative bg-black">
-      <img
-        class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25 sm:opacity-100"
-        src={Banner}
-        alt="Resume of a job"
-      />
-
-      <div class="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-slate-800 sm:to-transparent"></div>
-
-      <div class="relative max-w-screen-xl px-4 py-32 mx-auto lg:h-screen grid lg:grid-cols-2 grid-cols-1 gap-5">
-        <div class="max-w-xl text-center sm:text-left text-white md:ml-8 lg:order-1 order-2">
-          <h1 class="text-3xl font-extrabold sm:text-5xl text-left">
-            Build your brand-new resume in as
-            <span class="font-extrabold text-primary ">
-              {" "}
-              little as 5 minutes.
-            </span>
-          </h1>
-
-          <p class="max-w-lg mt-4 text-left sm:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-            quis cumque minus, officiis odio obcaecati!
+    <section className="">
+      <div className=" md:py-20 py-10 lg:py-24 lg:mx-16 mx-8 grid lg:grid-cols-2 grid-cols-1 gap-5">
+        <div className="max-w-xl text-left md:ml-8 lg:order-1 order-2 mt-10 lg:mt-0">
+          <div className="flex items-center gap-2 bg-gray-100 w-fit px-3 rounded-full py-2 border-[1px] border-gray-200 mb-5">
+            <p className=" px-2 py-[2px] text-white rounded-full bg-green-500">
+              $
+            </p>
+            <p>Discover the easiest way to build your resume!</p>
+          </div>
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="md:text-[43px] font-bold text-[26px] text-left poppins-b text-blue-700"
+            style={{ lineHeight: "135%" }}
+          >
+            Online Resume Builder With Creative Template
           </p>
 
-          <div class="flex  gap-4 mt-8 text-center">
-            <a
-              class="block w-full px-12 py-3 text-sm font-medium text-white rounded shadow bg-sky-600 sm:w-auto active:bg-sky-500 hover:bg-sky-700 focus:outline-none focus:ring"
-              href="/get-started"
-            >
-              Get Started
-            </a>
+          <p
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            className="max-w-lg mt-7 text-left text-[17px] poppins-t text-gray-600 "
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            quis cumque minus, officiis odio obcaecati! Lorem ipsum dolor sit
+            amet consectetur adipisicing.
+          </p>
 
-            <a
-              class="block w-full px-12 py-3 text-sm font-medium bg-white rounded shadow text-sky-600 sm:w-auto hover:text-sky-700 active:text-sky-500 focus:outline-none focus:ring"
-              href="/about"
+          <div
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            className="flex  gap-4 mt-10 text-center"
+          >
+            <Link
+              className="inline-flex items-center px-8 py-3 bg-primary border border-primary rounded hover:bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150  text-white hover:text-black"
+              to="/resume-builder/how-to-start"
             >
-              Learn More
-            </a>
+              <span className="text-sm font-medium"> Get Started </span>
+              <BsArrowRight className="text-lg ml-2" />
+            </Link>
+
+            <Link
+              className="inline-flex items-center px-8 py-3  border border-primary rounded bg-transparent active:text-primary focus:outline-none focus:ring transition ease-in-out delay-150  text-black hover:text-white hover:bg-primary"
+              to="/"
+            >
+              <span className="text-sm font-medium"> Read a blog </span>
+            </Link>
           </div>
         </div>
-        <div className="lg:order-2 order-1 -mt-20 lg:-mt-8 md:hidden lg:block">
-          <Swiper
-            effect={"cards"}
-            grabCursor={true}
-            modules={[EffectCards]}
-            className="mySwiper"
-          >
-            <SwiperSlide className="bg-transparent">
-              <img src={demo1} alt="" />
-            </SwiperSlide>
-            <SwiperSlide className="bg-transparent">
-              <img src={demo2} alt="" />
-            </SwiperSlide>
-            <SwiperSlide className="bg-transparent">
-              <img src={demo1} alt="" />
-            </SwiperSlide>
-            <SwiperSlide className="bg-transparent">
-              <img src={demo2} alt="" />
-            </SwiperSlide>
-            <SwiperSlide className="bg-transparent">
-              <img src={demo1} alt="" />
-            </SwiperSlide>
-            <SwiperSlide className="bg-transparent">
-              <img src={demo2} alt="" />
-            </SwiperSlide>
-          </Swiper>
+        <div className="lg:order-2 order-1  lg:-mt-2">
+          <img className="lg:w-[100%] w-[90%] mx-auto" src={Banner} alt="" />
         </div>
       </div>
     </section>

@@ -1,67 +1,83 @@
-import React from 'react';
-import image_1 from '../../../assets/reviewer/lukas.jpg'
-import image_2 from '../../../assets/reviewer/michael.jpg'
-import { AiFillStar } from "react-icons/ai";
-import image_3 from '../../../assets/Business_deals/logo-businessnewsdaily.svg'
-import image_4 from '../../../assets/Business_deals/logo-hubspot.svg'
-import image_5 from '../../../assets/Business_deals/logo-careerguide.png'
-import image_6 from '../../../assets/Business_deals/logo-yahoo.png'
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
+import Slider from "react-slick";
+import bg from "../../../assets/service_bg.png";
+import Loading from "../../../Shared/Loading/Loading";
+import axiosFetch from "../../Api/axiosFetch";
+import ReviewsCard from "./ReviewCard";
 
 const Review = () => {
-    return (
-        <div className='pt-24 bg-[#a2b2c736]'>
-            <div className='mx-6 md:mx-24'>
-                <h1
-                    style={{letterSpacing:"4px"}}
-                    className='text-center text-2xl text-secondary mb-10'>See what others say about Resume Builder</h1>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 mb-12'>
-                    <div className='shadow-lg p-12'>
-                        <div>
-                            <p className='text-center'>I am very pleased to have found Resume Builder when I needed to update my resume. A lot had happened since the last time I had been looking for a job and I also wanted a nicer layout. Everything was simple and straightforward and there were some great templates to choose from. The final result with my resume turned out well.</p>
-                        </div>
-                        <div className='w-2/4 mx-auto flex justify-center items-center mt-4'>
-                            <img className='w-24 rounded-full' src={image_1} alt="" />
-                            <div className='ml-6'>
-                                <h1 className='ml-1 mb-2'>Lucas abc</h1>
-                                <div className='flex'>
-                                    < AiFillStar className='text-primary text-xl' />
-                                    < AiFillStar className='text-primary text-xl' />
-                                    < AiFillStar className='text-primary text-xl' />
-                                    < AiFillStar className='text-primary text-xl' />
-                                    < AiFillStar className='text-primary text-xl'/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 2,
+    initialSlide: 0,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
-                    <div className='shadow-lg p-12'>
-                        <div>
-                            <p>I am very pleased to have found Resume Builder when I needed to update my resume. A lot had happened since the last time I had been looking for a job and I also wanted a nicer layout. Everything was simple and straightforward and there were some great templates to choose from. The final result with my resume turned out well.</p>
-                        </div>
-                        <div className='w-2/4 mx-auto flex justify-center items-center mt-4'>
-                            <img className='w-24 rounded-full' src={image_2} alt="" />
-                            <div className='ml-6'>
-                                <h1 className='ml-1 mb-2'>Michael abc</h1>
-                                <div className='flex'>
-                                    < AiFillStar className='text-primary text-xl' />
-                                    < AiFillStar className='text-primary text-xl' />
-                                    < AiFillStar className='text-primary text-xl' />
-                                    < AiFillStar className='text-primary text-xl' />
-                                    < AiFillStar className='text-primary text-xl'/>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-            <div className='w-2/3 mx-auto flex justify-around items-center py-6 md:py-12'>
-                <img className='w-16 md:w-32' src={image_3} alt="" srcset="" />
-                <img className='w-16 md:w-32' src={image_4} alt="" srcset="" />
-                <img className='w-16 md:w-48' src={image_5} alt="" srcset="" />
-                <img className='w-16 md:w-36' src={image_6} alt="" srcset="" />
-            </div>
+  // get review data
+  const { data, isLoading, error } = useQuery(["reviews"], () =>
+    axiosFetch.get("reviews")
+  );
+  if (isLoading) {
+    return <Loading />;
+  }
+  const reviews = data?.data;
+  return (
+    <div>
+      <section className="relative">
+        <img
+          class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25 sm:opacity-100"
+          src={bg}
+          alt="resume"
+        />
+
+        <div className="lg:mx-16 mx-8 py-16  sm:px-6 lg:px-8 relative">
+          <div className="max-w-sm mx-auto text-center mb-20">
+            <h2 className="text-3xl font-bold sm:text-4xl">
+              Check Out Resent Reviews!
+            </h2>
+          </div>
+          {/* this is card */}
+
+          <Slider {...settings}>
+            {reviews?.map((review) => (
+              <ReviewsCard review={review} key={review?._id} />
+            ))}
+          </Slider>
         </div>
-    );
+      </section>
+    </div>
+  );
 };
 
 export default Review;

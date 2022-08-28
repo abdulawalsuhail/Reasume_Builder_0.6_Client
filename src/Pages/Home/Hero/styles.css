@@ -1,4 +1,7 @@
-#app { height: 100% }
+#app {
+  height: 100%
+}
+
 html,
 body {
   position: relative;
@@ -48,19 +51,19 @@ body {
 }
 
 .swiper-slide:nth-child(2n) {
-    background-color: none;
+  background-color: none;
 }
 
 .swiper-slide:nth-child(3n) {
-    background-color: none;
+  background-color: none;
 }
 
 .swiper-slide:nth-child(4n) {
-    background-color: none;
+  background-color: none;
 }
 
 .swiper-slide:nth-child(5n) {
-    background-color: none;
+  background-color: none;
 }
 
 .swiper-slide:nth-child(6n) {
@@ -68,17 +71,32 @@ body {
 }
 
 .swiper-slide:nth-child(7n) {
-    background-color: none;
+  background-color: none;
 }
 
 .swiper-slide:nth-child(8n) {
-    background-color: none;
+  background-color: none;
 }
 
 .swiper-slide:nth-child(9n) {
-    background-color: none;
+  background-color: none;
 }
 
 .swiper-slide:nth-child(10n) {
-    background-color: none;
+  background-color: none;
+}
+
+
+
+
+
+
+
+
+.heroBackground {
+  background-image: url(../../../assets/HeroBackground/wave.svg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center;
 }

@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.bold7{
+    font-size: 15px;
+    color: #fff;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.resume7{
+    width: 1000px;
+    display: flex;
+    margin: 50px auto;
+}
+.content7 li{
+    list-style: none;
+}
+.content7{
+    padding: 25px 25px;
+}
+.left-site7{
+    width: 350px;
+    background-color: rgb(70, 70, 70);
+}
+.profile7{
+    background-color: orange;
+    color: #fff;
+    padding: 25px 25px;
+}
+.profile7 ul{
+    margin-top: 20px;
+}
+.left-site7 ul li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.icon7{
+    position: relative;
+    margin-right: 15px;
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #0bb5f4;
+    margin-right: 15px;
+    font-size: 15px;
+}
+.icon7-7{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.date7{
+    color: #fff;
+}
+.data-structures7{
+    color: rgb(230, 226, 226);
+}
+.resume-skills7 ul li{
+    color: rgb(230, 226, 226);
+    justify-content: space-between;
+}
+.skill-progress7{
+    width: 40%;
+    margin: 0 5px;
+    height: 5px;
+    background-color: antiquewhite;
+    position: relative;
+}
+.skill-per7{
+    width: 15%;
+}
+.right-ite7{
+    width: 650px;
+    background-color: #fff;
+    padding: 0 25px;
+
+}
+.bold7-7{
+    color: #070808;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+.resume-item7-7:last-child{
+    border: none;
+}
+.exerience7{
+    display: flex;
+    margin-bottom: 20px;
+}
+.semi-bol7{
+    width: 500px;
+    margin-left: 20px;
+}
+.title7-7{
+    color: #0d9fd4;
+}
+.periodic7, .tu-simple7{
+    color: orange;
+    margin-top: 10px;
+}
+.year7{
+    display: flex;
+    gap: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.year-text-icons{
+    display: flex;
+    gap: 10px;
+}
+.icon-7{
+    font-size: 20px;
+    color: gray;
+}
+.info7-7{
+    margin-bottom: 15px;
+}
+.resume-hobby7 ul{
+    display: flex;
+}
+.resume-hobby7 li{
+ list-style: none;
+ margin: auto;
+}
+/* @media screen and (max-width: 720px){
+    .resume7{
+        width: 300px;
+        height: 100%;
+    }
+} */
