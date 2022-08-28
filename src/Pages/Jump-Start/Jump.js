@@ -30,7 +30,7 @@ const BuildResume = () => {
                 </div>
             </div>
             <div className='w-4/5 mx-auto'>
-                <div className='flex flex justify-between'>
+                <div className='flex justify-between'>
                     <div className='pt-20'>
                         <img className='w-4/5' src={Image7} alt='' />
                     </div>
