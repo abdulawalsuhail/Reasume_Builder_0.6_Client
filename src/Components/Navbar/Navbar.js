@@ -9,9 +9,13 @@ import demoUser from "../../assets/demo_user.png";
 import { useQuery } from "@tanstack/react-query";
 import axiosFetch from "../../Pages/Api/axiosFetch";
 import "./Navbar.css";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
+  useEffect(() => {
+    refetch();
+  }, [user]);
   const active = "text-primary mx-1 font-medium border-b-2 border-primary pb-1";
   const normal =
     "text-gray-700 mx-1 hover:text-primary font-medium focus:text-gray-700 p-0";
@@ -109,7 +113,7 @@ const Navbar = () => {
     </>
   );
 
-  const { data } = useQuery(["singleUser"], () =>
+  const { data, refetch } = useQuery(["singleUser"], () =>
     axiosFetch.get(`/user/${user?.email}`)
   );
 

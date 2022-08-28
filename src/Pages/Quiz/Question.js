@@ -71,7 +71,6 @@ const Question = () => {
     axiosPrivate.put(`quiz/${email}`, quizResult).then((res) => {
       console.log(res);
     });
-    console.log(quizResult);
   };
 
   if ((!crr, isLoading)) {
