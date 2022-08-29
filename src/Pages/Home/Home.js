@@ -14,10 +14,9 @@ import FAQ from "../FAQ/FAQ";
 
 import Jump from "../Jump-Start/Jump.js";
 
-
 const Home = () => {
   return (
-    <div className="">
+    <div style={{ minHeight: "100vh" }}>
       <Navbar />
       <Hero />
       <BusinessPartner />
@@ -27,8 +26,7 @@ const Home = () => {
       <WhyResumeBuilder />
       <Review />
 
-      <FAQ/>
-
+      <FAQ />
 
       <Jump />
 
