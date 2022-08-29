@@ -9,7 +9,11 @@ import Review from "./Review/Review";
 import Templates from "./Templates/Templates";
 import WhyResumeBuilder from "./WhyResumeBuilder/WhyResumeBuilder";
 import WriteResume from "./WriteResume/WriteResume";
+
+import FAQ from "../FAQ/FAQ";
+
 import Jump from "../Jump-Start/Jump.js";
+
 
 const Home = () => {
   return (
@@ -22,7 +26,12 @@ const Home = () => {
       <Guideline />
       <WhyResumeBuilder />
       <Review />
+
+      <FAQ/>
+
+
       <Jump />
+
       <Footer />
     </div>
   );
