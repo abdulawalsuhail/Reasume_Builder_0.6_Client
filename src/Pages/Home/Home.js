@@ -10,9 +10,13 @@ import Templates from "./Templates/Templates";
 import WhyResumeBuilder from "./WhyResumeBuilder/WhyResumeBuilder";
 import WriteResume from "./WriteResume/WriteResume";
 
+import FAQ from "../FAQ/FAQ";
+
+import Jump from "../Jump-Start/Jump.js";
+
 const Home = () => {
   return (
-    <div className="">
+    <div style={{ minHeight: "100vh" }}>
       <Navbar />
       <Hero />
       <BusinessPartner />
@@ -21,6 +25,11 @@ const Home = () => {
       <Guideline />
       <WhyResumeBuilder />
       <Review />
+
+      <FAQ />
+
+      <Jump />
+
       <Footer />
     </div>
   );

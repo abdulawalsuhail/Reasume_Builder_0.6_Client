@@ -35,7 +35,7 @@ const CoverLetterTemplate = () => {
         <div className="w-fit ml-auto mt-4 mb-2">
           <button
             onClick={handelDownload}
-            className="box-border relative z-30 inline-flex items-center justify-center w-auto px-5 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-rose-600 rounded-md cursor-pointer group ring-offset-2 ring-1 ring-rose-300 ring-offset-rose-200 hover:ring-offset-rose-500 ease focus:outline-none"
+            className="box-border relative z-30 inline-flex items-center justify-center w-auto px-5 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-blue-700 rounded-md cursor-pointer group ring-offset-2 ring-1 ring-blue-400 ring-offset-blue-300 hover:ring-offset-blue-600 ease focus:outline-none"
           >
             <span class="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
             <span class="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
@@ -46,7 +46,7 @@ const CoverLetterTemplate = () => {
           </button>
         </div>
       </div>
-      <div className="lg:w-[65%] md:w-[90%] w-[95%] mx-auto bg-white">
+      <div className="lg:w-[65%] md:w-[90%] w-[95%] mx-auto bg-white shadow-md">
         <div ref={componentRef} className="lg:p-16 md:p-12 p-5">
           <div
             contentEditable

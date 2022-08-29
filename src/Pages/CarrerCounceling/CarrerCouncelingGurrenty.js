@@ -15,10 +15,10 @@ const CarrerCouncelingGurrenty = () => {
                 alt=""
               />
             </div>
-            <p className="text-3xl text-center  ">The Enhancv Guarantee</p>
+            <p className="text-3xl text-center  ">The WritoRCC Guarantee</p>
           </div>
           <p className="text-center text-3xl py-4">
-            Confident and secured with Enhancv Career Counseling
+            Confident and secured with WritoRCC Career Counseling
           </p>
 
           <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 ">

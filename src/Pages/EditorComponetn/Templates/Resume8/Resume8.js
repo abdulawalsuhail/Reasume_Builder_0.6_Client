@@ -11,7 +11,7 @@ import { FiArrowDown } from 'react-icons/fi';
 
 const Resume8 = () => {
     const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
-    console.log(usersTemplateInfo);
+    // console.log(usersTemplateInfo);
 
     // download resume8 letter
     const componentRef = useRef();

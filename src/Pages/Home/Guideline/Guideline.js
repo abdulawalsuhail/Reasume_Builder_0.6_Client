@@ -29,7 +29,6 @@ const Guideline = () => {
                         <h1 className='text-center pt-4 pb-2 text-4xl text-accent'>Step 3</h1>
                         <p className='px-12 md:px-4 2xl:px-6 mx-auto text-md text-center'>After editing template you can download your Resume or CV by clicking Download Button</p>
                     </div>
-                    
                 </div>
             </div>
         </section>

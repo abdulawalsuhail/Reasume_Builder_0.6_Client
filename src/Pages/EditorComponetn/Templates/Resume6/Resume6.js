@@ -25,8 +25,8 @@ const Resume6 = () => {
             <div className='resume6 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2'>
                 <div className='resume-header6'>
                     <div className='header-text6'>
-                        <h2 className='resume-title6'>KARLIE BERKLEY</h2>
-                        <p className='resume-title6-2'>FRONT-END WEB DEVELOPER</p>
+                        <h2 className='resume-title6' style={{ letterSpacing: "4px" }}>{usersTemplateInfo?.contactDetails?.value?.firstName} {usersTemplateInfo?.contactDetails?.value?.lastName}</h2>
+                        <p className='resume-title6-2'>{usersTemplateInfo?.contactDetails?.value?.jobTitle}</p>
                     </div>
                 </div>
                 <div className='left-side6'>
@@ -35,162 +35,188 @@ const Resume6 = () => {
                         <ul>
                             <li>
                                 <div className='icon6'><MdEmail className='icon6-1'></MdEmail></div>
-                                <div className='date6'>karlieb@email.com</div>
+                                <div className='date6'>
+                                    {
+                                        usersTemplateInfo?.contactDetails?.value?.email
+                                            ?
+                                            <>
+                                                <div className='flex items-center gap-2'>
+                                                    <div className=''>
+                                                        {usersTemplateInfo?.contactDetails?.value?.email}
+                                                    </div>
+                                                </div>
+                                            </>
+                                            : ""
+                                    }
+                                </div>
                             </li>
                             <li>
                                 <div className='icon6'><AiTwotonePhone className='icon6-1'></AiTwotonePhone></div>
-                                <div className='date6'>(123) 456-7890
+                                <div className='date6'>
+                                    {
+                                        usersTemplateInfo?.contactDetails?.value?.email
+                                            ?
+                                            <>
+                                                <div className='flex items-center gap-2'>
+                                                    <div className=''>
+                                                        {usersTemplateInfo?.contactDetails?.value?.phoneNo}
+                                                    </div>
+                                                </div>
+                                            </>
+                                            : ""
+                                    }
                                 </div>
                             </li>
                             <li>
-                                <div className='icon6'><MdLocationCity className='icon6-1'></MdLocationCity></div>
-                                <div className='date6'>Houston, TX
-                                </div>
+                                {
+                                    usersTemplateInfo?.contactDetails?.value?.country
+                                        ?
+                                        <>
+                                            <div className='flex items-center gap-2'>
+                                                <div><MdLocationCity></MdLocationCity></div>
+                                                <div className='whitespace-pre-wrap'>
+                                                    {usersTemplateInfo?.contactDetails?.value?.country},
+                                                    {usersTemplateInfo?.contactDetails?.value?.city},
+                                                    {usersTemplateInfo?.contactDetails?.value?.state},
+                                                    {usersTemplateInfo?.contactDetails?.value?.zipCode}
+                                                </div>
+                                            </div>
+                                        </>
+                                        : ""
+                                }
                             </li>
                             <li>
-                                <div className='icon6'><BsLinkedin className='icon6-1'></BsLinkedin></div>
-                                <div className='date6'>linkedin.com/in/karlie-b
-                                </div>
-                            </li>
-                            <li>
-                                <div className='icon6'><BsGithub className='icon6-1'></BsGithub></div>
-                                <div className='date6'>github.com/karlieb
-                                </div>
+                                <div className='icon7'><BsLinkedin className='icon7-7'></BsLinkedin></div>
+                                <div className='date6'>{usersTemplateInfo?.socialLinks?.value?.linkedIn}</div>
                             </li>
                         </ul>
                     </div>
                     <div className='resume-education6'>
-                        <h3 className='title6-1'>EDUCATION</h3>
-                        <ul>
-                            <li>
-                                <div className='date6'>Bachelor of Science</div>
-                            </li>
-                            <li>
-                                <div className='date6'>Computer Science
-                                </div>
-                            </li>
-                            <li>
-                                <div className='date6'>University of Houston
-                                </div>
-                            </li>
-                            <li>
-                                <div className='date6'>2014 - 2018
-                                </div>
-                            </li>
-                            <li>
-                                <div className='date6'>Houston, TX
-                                </div>
-                            </li>
-                        </ul>
+                        <hr className='my-5'></hr>
+                        <h1 className='uppercase tracking-widest text-lg font-bold'>
+                            {
+                                usersTemplateInfo?.educationsDetails?.name
+                            }
+                        </h1>
+                        <hr className='mb-5 w-1/6'></hr>
+                        {
+                            usersTemplateInfo?.educationsDetails?.value?.map(edu => {
+                                return (
+                                    <>
+                                        <h1 className='text-sm font-semibold tracking-wider'>{edu?.name}</h1>
+                                        <h1 className='text-xs'>{edu?.value?.institutionName}</h1>
+                                        <h1 className='mb-2 text-md'>
+                                            {edu?.value?.startDate} - {edu?.value?.endDate}
+                                        </h1>
+                                    </>
+                                )
+                            })
+                        }
                     </div>
                     <div className='resume-skills6'>
-                        <h3 className='title6-1'>SKILLS</h3>
-                        <ul>
-                            <li>
-                                <div className='date6'>JavaScript</div>
-                            </li>
-                            <li>
-                                <div className='date6'>HTML
-                                </div>
-                            </li>
-                            <li>
-                                <div className='date6'>CSS
-                                </div>
-                            </li>
-                            <li>
-                                <div className='date6'>React
-                                </div>
-                            </li>
-                            <li>
-                                <div className='date6'>Angular
-                                </div>
-                            </li>
-                            <li>
-                                <div className='date6'>Flutter
-                                </div>
-                            </li>
-                            <li>
-                                <div className='date6'>Vue.js
-                                </div>
-                            </li>
-                            <li>
-                                <div className='date6'>BootStrap
-                                </div>
-                            </li>
-                            <li>
-                                <div className='date6'>Enzyme
-                                </div>
-                            </li>
-                            <li>
-                                <div className='date6'>MongoDB
-                                </div>
-                            </li>
-                        </ul>
+                        <h1 className='uppercase tracking-widest text-lg font-bold'>
+                            {
+                                usersTemplateInfo?.languages?.name
+                            }
+                        </h1>
+                        <hr className='mb-5 w-1/6'></hr>
+                        {
+                            usersTemplateInfo?.languages?.value?.map(language => {
+                                return <li className='py-2'>{language}</li>
+                            })
+                        }
+                    </div>
+
+                    <div>
+                        <h1 className='uppercase tracking-widest text-lg font-bold'>
+                            {
+                                usersTemplateInfo?.skills?.name
+                            }
+                        </h1>
+                        <hr className='mb-5 w-1/6'></hr>
+                        {
+                            usersTemplateInfo?.skills?.value?.map(skill => {
+                                return <li className='py-2'>{skill}</li>
+                            })
+                        }
                     </div>
                 </div>
                 <div className='right-site6'>
                     <div className='experience6'>
-                        <div className='experience-title6'>
-                            <h4>Front-End Developer</h4>
-                            <p className='instagram6'>Instagram</p>
-                            <p className='text6'>January 2020 - current/Remote</p>
-                            <ul>
-                                <li>
-                                    <div>Monitored social media and Google SEO analytics to adjust post time, location, and various media to grow target platform by 20,000+ followers in less than a year.</div>
-                                </li>
-                                <li>
-                                    <div>Created a Mobile Responsive User Experience with CSS Flexbox that allowed cross-platform accessibility to the website on any device with primary use on mobile. This increased the number of 5 star User Experience/User Interface reviews by 360%</div>
-                                </li>
-                                <li>
-                                    <div>Built API following RESTful standards to allow users to submit information by storing data in MongoDB.</div>
-                                </li>
-                                <li>
-                                    <div>Partnered with data scientists to develop the front end for a product recommendation engine that increased user engagement on page by over 200%.</div>
-                                </li>
-                                <li>
-                                    <div>Curated over 50 website changes to increase the user flow and understanding of all platform capabilities and features.</div>
-                                </li>
-                            </ul>
+                        <div className='resume-item7-7 resume-about7'>
+                            <div className='title7'>
+                                <p className='bold7-7 font-bold'>{usersTemplateInfo.careerObjective.name}</p>
+                            </div>
+                            <p>{usersTemplateInfo.careerObjective.value}</p>
                         </div>
-                    </div>
-                    <div className='intern6'>
-                        <div className='intern-title6'>
-                            <h4>Full Stack Software Engineer Intern</h4>
-                            <p className='zoom6'>Zoom</p>
-                            <p className='text6-1'>June 2018 - January 2020/Pittsburgh, PA</p>
-                            <ul>
-                                <li>
-                                    <div>Developed applications using React while managing the State through Redux and Redux-Forms saving 5+ hours of users' time.</div>
-                                </li>
-                                <li>
-                                    <div>Designed an integrated database using MongoDB that leveraged the React architecture to yield on-demand, detailed feedback.</div>
-                                </li>
-                                <li>
-                                    <div>Simplified reporting to deliver actionable information to servers, resulting in multiple servers achieving financial stability by coming in under budget by 2% or more.</div>
-                                </li>
-                            </ul>
+                        <div className='experience-title6  py-5'>
+                            <h1 style={{ letterSpacing: "5px" }} className='font-bold text-lg mb-5'>
+                                {
+                                    usersTemplateInfo?.projects?.name
+                                }
+                            </h1>
+                            {/* Project details */}
+                            {
+                                usersTemplateInfo?.projects?.value?.map(project => {
+                                    return (
+                                        <div className='mb-6'>
+                                            {/* Name and Link */}
+                                            <div className='mb-[-12px]'>
+                                                <h1 className='font-bold text-orange-700 text-md'>
+                                                    {
+                                                        project?.name
+                                                    }
+                                                </h1>
+                                                <div className='flex gap-3'>
+                                                    <h1>
+                                                        <a href={project?.value?.liveLink}>Live Site</a>
+                                                    </h1>
+                                                    <h1>
+                                                        <a href={project?.value?.clientSideLink}>Client Code</a>
+                                                    </h1>
+                                                    <h1>
+                                                        <a href={project?.value?.clientSideLink}>Server Code</a>
+                                                    </h1>
+                                                </div>
+                                            </div>
+                                            {/* Features and functionality */}
+                                            {
+                                                project?.value?.fnf
+                                                    ?
+                                                    <div className='mb-[-12px]'>
+                                                        <h1 className='mt-5 font-bold'>Features and Functionality</h1>
+                                                        {
+                                                            project?.value?.fnf.split(',').map(item => {
+                                                                return (<li>{item}</li>)
+                                                            })
+                                                        }
+                                                    </div>
+                                                    :
+                                                    ""
+                                            }
+                                            {/* Technology Used */}
+                                            {
+                                                project?.value?.technology
+                                                    ?
+                                                    <div>
+                                                        <h1 className='mt-5 font-bold'>Technology Used</h1>
+                                                        {
+                                                            project?.value?.technology.split(',').map(item => {
+                                                                return (<p className='inline-block mr-1'> {item},</p>)
+                                                            })
+                                                        }
+                                                    </div>
+                                                    :
+                                                    ""
+                                            }
+
+                                        </div>
+                                    )
+                                })
+                            }
+
                         </div>
-                    </div>
-                    <div className='barista6'>
-                        <div className='barista-title6'>
-                            <h4>Barista</h4>
-                            <p className='zoom6'>Sentient Bean</p>
-                            <p className='text6-2'>December 2014 - January 2018/Houston, TX</p>
-                            <ul>
-                                <li>
-                                    <div>Took 50+ customer orders and processed payments in a timely and cheerful manner each shift.</div>
-                                </li>
-                                <li>
-                                    <div>Kept service areas clear and sanitized, and restocked coffee bar 3 times each shift.</div>
-                                </li>
-                                <li>
-                                    <div>Responsible for scheduling of 10+ employees at all times.</div>
-                                </li>
-                                <li>
-                                    <div>Created a new system to order, receive, and sort domestic and international shipments of small-batch roasted coffee beans. This decreased shipment and reception time by 30%.</div>
-                                </li>
-                            </ul>
-                        </div>
+
                     </div>
                 </div>
             </div>

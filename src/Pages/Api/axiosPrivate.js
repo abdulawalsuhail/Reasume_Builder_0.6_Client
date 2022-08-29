@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const axiosPrivate = axios.create({
+  // baseURL: "https://writorcc-server-06.herokuapp.com/",
   baseURL: "http://localhost:5000/",
 });
 

@@ -67,15 +67,15 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
       try {
         axiosPrivate.post("/message", message).then((res) => {
           setNewMessages("");
-          try {
-            if (chat?._id) {
-              axiosPrivate.get(`/message/${chat?._id}`).then((res) => {
-                setMessages(res.data);
-              });
-            }
-          } catch (error) {
-            console.log(error);
-          }
+          // try {
+          //   if (chat?._id) {
+          //     axiosPrivate.get(`/message/${chat?._id}`).then((res) => {
+          //       setMessages(res.data);
+          //     });
+          //   }
+          // } catch (error) {
+          //   console.log(error);
+          // }
         });
       } catch (error) {
         console.log(error);
@@ -91,7 +91,6 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
   }, [receivedMessage]);
 
   const scroll = useRef();
-  const imageRef = useRef();
   return (
     <>
       <div className="ChatBox-container">
@@ -152,13 +151,6 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
               <div className="  text-white btn btn-primary cursor-pointer" onClick={handleSend}>
                 <AiOutlineSend className=""></AiOutlineSend>
               </div>
-              <input
-                type="file"
-                name=""
-                id=""
-                style={{ display: "none" }}
-                ref={imageRef}
-              />
             </div>{" "}
           </>
         ) : (

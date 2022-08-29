@@ -19,8 +19,8 @@ const Templates = () => {
       </div>
       <div className="flex justify-center items-center my-12 md:my-20">
         <div className="w-[600px] text-center text-slate-50 px-6 md:px-0">
-          <h1 className="text-4xl md:text-5xl mb-10 front-crimson">Our Creative Templates</h1>
-          <p className="text-sm md:text-md  text-justify text-slate-200">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, culpa? Suscipit ea delectus hic distinctio praesentium! Aliquam magni dolore cumque? Earum, omnis aut quam odit deleniti voluptas veritatis nemo sdolore cumque? Earum, omnis aut quam odit deleniti voluptas veritatis?</p>
+          <h1 className="text-4xl md:text-5xl mb-10 poppins-b">Our Creative Templates</h1>
+          <p className="text-sm md:text-md  text-justify text-slate-200 poppins-t">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, culpa? Suscipit ea delectus hic distinctio praesentium! Aliquam magni dolore cumque? Earum, omnis aut quam odit deleniti voluptas veritatis nemo sdolore cumque? Earum, omnis aut quam odit deleniti voluptas veritatis?</p>
         </div>
       </div>
       {/* template section */}

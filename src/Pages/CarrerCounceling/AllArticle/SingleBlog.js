@@ -11,9 +11,8 @@ import axiosPrivate from "../../Api/axiosPrivate";
 const SingleBlog = () => {
   const [user] = useAuthState(auth);
   const { id } = useParams();
-  const [users,setUsers] = useState({});
-  const [blog,setBlog] = useState({});
-  const [reload, setReload] = useState(false);
+  const [users, setUsers] = useState({});
+  const [blog, setBlog] = useState({});
 
   console.log(blog.likes);
   const { data, isLoading, refetch } = useQuery(["user"], () => {
@@ -30,53 +29,42 @@ const SingleBlog = () => {
         }
       });
   });
-  
+
   useEffect(() => {
-    axiosPrivate.get(`/blog/${id}`)
-    .then(res => {
-        setBlog(res.data)
-    })
-},[id])
+    axiosPrivate.get(`/blog/${id}`).then((res) => {
+      setBlog(res.data);
+    });
+  }, [id]);
 
   const handleLikes = (BlogId) => {
-    if(users?._id){
+    if (users?._id) {
       axiosPrivate.put(`/like/${users?._id}`, { id: BlogId }).then((res) => {
-        if(res.data.matchedCount > 0){
-          axiosPrivate.get(`/blog/${id}`)
-          .then(res => {
-              setBlog(res.data)
-          })
-          axiosPrivate
-          .get(`/single/user/${user?.email}`)
-          .then((res) => {
+        if (res.data.matchedCount > 0) {
+          axiosPrivate.get(`/blog/${id}`).then((res) => {
+            setBlog(res.data);
+          });
+          axiosPrivate.get(`/single/user/${user?.email}`).then((res) => {
             setUsers(res.data);
-          })
-         
+          });
         }
       });
     }
-  
   };
   const handleUnLikes = (blogId) => {
-    if(users?._id){
+    if (users?._id) {
       axiosPrivate.put(`/unlike/${users?._id}`, { id: blogId }).then((res) => {
         console.log(res.data);
-        if(res.data.matchedCount > 0){
-          axiosPrivate.get(`/blog/${id}`)
-          .then(res => {
-              setBlog(res.data)
-          })
-  
-          axiosPrivate
-          .get(`/single/user/${user?.email}`)
-          .then((res) => {
+        if (res.data.matchedCount > 0) {
+          axiosPrivate.get(`/blog/${id}`).then((res) => {
+            setBlog(res.data);
+          });
+
+          axiosPrivate.get(`/single/user/${user?.email}`).then((res) => {
             setUsers(res.data);
-          })
-         
+          });
         }
       });
     }
-    
   };
   return (
     <div class="card md:w-[70%] mx-auto min-h-screen bg-base-100 shadow-xl">
@@ -100,11 +88,22 @@ const SingleBlog = () => {
           <FaLinkedinIn className="text-2xl text-gray-500" />
         </div>
         <div className="flex">
-       <div className="flex items-center">
-       {
-          blog?.likes?.includes(users?._id) === true? <AiFillHeart className="text-4xl text-red-600" onClick={()=>handleUnLikes(blog?._id)}/>  : <AiOutlineHeart className="text-4xl" onClick={() =>handleLikes(blog?._id)} />
-        }<span className="text-[15px] font-bold">{blog?.likes?.length} likes</span>
-       </div>
+          <div className="flex items-center">
+            {blog?.likes?.includes(users?._id) === true ? (
+              <AiFillHeart
+                className="text-4xl text-red-600"
+                onClick={() => handleUnLikes(blog?._id)}
+              />
+            ) : (
+              <AiOutlineHeart
+                className="text-4xl"
+                onClick={() => handleLikes(blog?._id)}
+              />
+            )}
+            <span className="text-[15px] font-bold">
+              {blog?.likes?.length} likes
+            </span>
+          </div>
         </div>
       </div>
     </div>

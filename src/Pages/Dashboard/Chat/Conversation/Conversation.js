@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axiosPrivate from "../../../Api/axiosPrivate";
 
-const Conversation = ({ data, currentUserId,online}) => {
+const Conversation = ({ data, currentUserId}) => {
   const [userData, setUserData] = useState(null);
   useEffect(() => {
     const userId = data.members.find((id) => id !== currentUserId);
@@ -23,7 +23,6 @@ const Conversation = ({ data, currentUserId,online}) => {
     <>
       <div className="follower conversation">
         <div className="flex items-center">
-        {/* {online && <div className="online-dot"></div>} */}
           {userData?.img ? (
             <div class="avatar rounded-full">
               <div class="w-6 rounded-full">
@@ -38,7 +37,7 @@ const Conversation = ({ data, currentUserId,online}) => {
             </div>
           )}
           <div className=" text-[14px] ml-2 font-[500]" >
-            <span>{userData?.name}</span>
+            <span className="hidden md:block">{userData?.name}</span>
           </div>
         </div>
       </div>

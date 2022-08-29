@@ -27,7 +27,7 @@ const EditResume = () => {
   console.log("Data",JSON.stringify(usersTemplateInfo, undefined, 4));
   const editResumeSidebar = (
     <>
-      <li className="mb-2 hidden md:block">
+      <li className="mb-2 2xl:mb-10 2xl:mt-6 hidden md:block">
         <Link to="/" className="hover:bg-white">
           <div className="flex items-center">
             <img className="w-full" src={logo} alt="logo" />
