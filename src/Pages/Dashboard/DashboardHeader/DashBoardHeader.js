@@ -6,7 +6,7 @@ const DashBoardHeader = () => {
 
     
     return (
-        <div className="px-6 md:px-20 lg:px-24 bg-[#f4f7f8]">
+        <div className="px-6 md:px-20 sticky top-0 z-50 lg:px-24 bg-[#f4f7f8]">
       {/* Navbar start source code from Daisy UI */}
       <div className="navbar py-4">
         {/* Navbar left portion */}
