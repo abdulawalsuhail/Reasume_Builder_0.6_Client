@@ -108,6 +108,9 @@ function App() {
           <Route path="cv" element={<Cv />}></Route>
           <Route path="coverLetter" element={<CoverLetter />}></Route>
         </Route>
+        <Route path="/home" element={<Home />}>
+          <Route index element={<Resume />}></Route>
+        </Route>
         {/* End of Nested Routing for Templates Section of our Homepage */}
 
         <Route path="/home" element={<Home />}></Route>
