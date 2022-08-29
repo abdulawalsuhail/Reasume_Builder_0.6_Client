@@ -81,8 +81,7 @@ import Quiz from "./Pages/Quiz/Quiz";
 import QuizRules from "./Pages/Quiz/QuizRules";
 import QuizStart from "./Pages/Quiz/QuizStart";
 
-import { createContext } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { createContext, useState } from "react";
 import auth from "./firebase.init";
 import UserInformation from "./Hook/UserInformation";
 import AddProjects from "./Pages/EditorComponetn/CommonEditorComponent/AddProjects";
@@ -97,12 +96,12 @@ const stripePromise = loadStripe(
 
 export const userContext = createContext()
 function App() {
-  const [user] = useAuthState(auth)
-  const [users,isLoading,refetch] = UserInformation(user)
+  const [user] = useState(auth)
+  const [users,setUsers] = UserInformation()
   return (
     <div className="app">
-    <userContext.Provider value={[users,isLoading,refetch]}>
-    <Routes>
+    <userContext>
+        <Routes>
         {/* Nested Routing for Templates Section of our Homepage */}
         <Route path="/" element={<Home />}>
           <Route index element={<Resume />}></Route>
@@ -408,7 +407,7 @@ function App() {
         </Route>
         <Route path="/chat/expert" element={<Chat />}></Route>
       </Routes>
-    </userContext.Provider>
+    </userContext>
       {/* facebook live chat */}
       <MessengerCustomerChat
         pageId="105555438910537"

@@ -34,11 +34,14 @@ const Question = () => {
       }
     }, 1000);
   }, [lazy]);
+  const { data: users, refetch } = useQuery(["userQuizResult"], () =>
+    axiosFetch.get(`/user/${user?.email}`)
+  );
 
   const { data, isLoading, error } = useQuery(["reviews"], () =>
     axiosFetch.get("quiz")
   );
-
+  console.log("user", users);
   // some variable class name
   let crr = data?.data[current];
   let normal = `py-2 px-4 border-[1px] border-blue-200 bg-blue-100 rounded-md cursor-pointer hover:bg-blue-200 mb-3 my-3`;
@@ -66,12 +69,12 @@ const Question = () => {
   const handelQuizResult = () => {
     const email = user?.email;
     const name = user?.displayName;
-    const quizResult = { email, name, marks, totalQuestion };
+    const img = users?.data?.img;
+    const quizResult = { email, name, marks, totalQuestion, img };
     // post quiz result data
     axiosPrivate.put(`quiz/${email}`, quizResult).then((res) => {
       console.log(res);
     });
-    console.log(quizResult);
   };
 
   if ((!crr, isLoading)) {

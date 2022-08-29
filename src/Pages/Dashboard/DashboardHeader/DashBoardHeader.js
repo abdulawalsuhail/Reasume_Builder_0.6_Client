@@ -1,22 +1,10 @@
-import React, { useContext, useEffect } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { userContext } from '../../../App';
-import profile from '../../../assets/icon/profile.png';
 import logo from '../../../assets/logo.png';
-import auth from '../../../firebase.init';
-import Loading from '../../../Shared/Loading/Loading';
-
 
 const DashBoardHeader = () => {
-    const [user] = useAuthState(auth)
-    const [users,isLoading,refetch ] = useContext(userContext);
-    useEffect(()=> {
-        refetch()
-    },[user])
-    if(isLoading){
-        return <Loading/>
-    }
+
+    
     return (
         <div className="px-6 md:px-20 lg:px-24 bg-[#f4f7f8]">
       {/* Navbar start source code from Daisy UI */}
@@ -44,6 +32,7 @@ const DashBoardHeader = () => {
               tabindex="0"
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
+              {/* {navItem} */}
             </ul>
           </div>
           <Link to="/">
@@ -56,35 +45,11 @@ const DashBoardHeader = () => {
 
         {/* Navbar center portion */}
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal p-0"></ul>
+          {/* <ul className="menu menu-horizontal p-0">{navItem}</ul> */}
         </div>
         {/* End Navbar center portion */}
 
         {/* Navbar end portion */}
-        <div className="navbar-end">
-          {user ? (
-            <div className="dropdown dropdown-end ml-2">
-              {
-                users.img ? <label tabindex="0" className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src={users?.img} />
-                </div>
-              </label>: <label tabindex="0" className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src={profile} />
-                </div>
-              </label>
-              }
-            </div>
-          ) : (
-            <Link
-              to="/login"
-              className="btn btn-secondary btn-xs md:btn-md ml-2 modal-button"
-            >
-              Login
-            </Link>
-          )}
-        </div>
         {/* End navbar end portion */}
       </div>
     </div>

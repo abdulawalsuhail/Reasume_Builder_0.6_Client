@@ -1,20 +1,20 @@
 import axios from "axios";
 import { signOut } from "firebase/auth";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Navigate, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { userContext } from "../../../App";
 import profileImg from "../../../assets/icon/profile.png";
 import auth from "../../../firebase.init";
+import UserInformation from "../../../Hook/UserInformation";
 import Loading from "../../../Shared/Loading/Loading";
 import axiosPrivate from "../../Api/axiosPrivate";
 
 const EditProfile = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
-  const [users,isLoading,refetch ] = useContext(userContext);
+  const [users, isLoading, refetch] = UserInformation(user);
   const [updated, setUpdated] = useState({});
   const navigate = useNavigate();
 
