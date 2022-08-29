@@ -119,11 +119,11 @@ const Navbar = () => {
 
   return (
     <div
-      style={{
-        position: "sticky",
-        top: "0",
-        overflow: "hidden",
-      }}
+      // style={{
+      //   position: "sticky",
+      //   top: "0",
+      //   overflow: "hidden",
+      // }}
       className="px-4 md:pl-10  lg:px-24 bg-[#f4f7f8]"
     >
       {/* Navbar start source code from Daisy UI */}
