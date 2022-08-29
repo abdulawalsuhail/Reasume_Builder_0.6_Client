@@ -1,18 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo.png';
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../../../assets/logo.png";
 
 const DashBoardHeader = () => {
-
-    
-    return (
-        <div className="px-6 md:px-20 sticky top-0 z-50 lg:px-24 bg-[#f4f7f8]">
+  return (
+    <div className="px-6 md:px-20 sticky top-0 z-50 lg:px-24 bg-[#f4f7f8]">
       {/* Navbar start source code from Daisy UI */}
       <div className="navbar py-4">
         {/* Navbar left portion */}
         <div className="navbar-start">
           <div className="dropdown">
-            <label htmlFor='dashboard-nav' tabindex="0" className="btn btn-ghost lg:hidden">
+            <label
+              htmlFor="dashboard-nav"
+              tabindex="0"
+              className="btn btn-ghost lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -53,7 +55,7 @@ const DashBoardHeader = () => {
         {/* End navbar end portion */}
       </div>
     </div>
-    );
+  );
 };
 
 export default DashBoardHeader;
