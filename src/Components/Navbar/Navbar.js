@@ -118,7 +118,14 @@ const Navbar = () => {
   );
 
   return (
-    <div className="px-4 md:pl-10  lg:px-24 bg-[#f4f7f8]">
+    <div
+      style={{
+        position: "sticky",
+        top: "0",
+        overflow: "hidden",
+      }}
+      className="px-4 md:pl-10  lg:px-24 bg-[#f4f7f8]"
+    >
       {/* Navbar start source code from Daisy UI */}
       <div className="navbar py-4">
         {/* Navbar left portion */}
