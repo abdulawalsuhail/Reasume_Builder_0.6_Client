@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import { userContext } from "../../../App";
 import profileImg from "../../../assets/icon/profile.png";
 import auth from "../../../firebase.init";
-import UserInformation from "../../../Hook/UserInformation";
 
 const Profile = () => {
   const [user] = useAuthState(auth);
-  const [users] = UserInformation(user);
-
+  const [users,isLoading,refetch ] = useContext(userContext);
   return (
     <div className=" py-10 ">
       <div className="card bg-white  shadow-2xl p-6   border-primary rounded-lg mx-10  ">
