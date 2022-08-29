@@ -16,14 +16,18 @@ const UserRow = ({ result, position }) => {
     >
       <div className="flex items-center gap-2">
         <h1 className="text-lg font-bold md:mr-2">{position}.</h1>
-        <img className="w-10 rounded-full" src={dummy} alt="" />
+        <img
+          className="w-10 h-10 rounded-full"
+          src={result?.img ? result?.img : dummy}
+          alt=""
+        />
         <div className=" text-lg font-medium flex items-center gap-2">
           {name ? name : "unknown user"}{" "}
           {position < 4 && <GiQueenCrown className="text-yellow-400" />}
         </div>
       </div>
       <div className="text-primary text-lg font-medium">
-        {Math.floor(totalQuestion / marks)}%
+        {Math.round((marks * 100) / totalQuestion)}%
       </div>
     </div>
   );
