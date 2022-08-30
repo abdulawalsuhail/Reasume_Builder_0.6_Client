@@ -1,186 +1,219 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Resume1.css'
-import Image from '../Images/image.jpg';
+import { useOutletContext } from 'react-router-dom';
+import { MdEmail, MdLocationCity } from 'react-icons/md';
+import { AiTwotonePhone } from 'react-icons/ai';
+import { FiArrowDown } from 'react-icons/fi';
+import { useReactToPrint } from 'react-to-print';
 
 const Resume1 = () => {
+    const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
+
+    // download resume8 letter
+    const componentRef = useRef();
+    const handelDownload = useReactToPrint({
+        content: () => componentRef.current,
+    });
 
     return (
-        <div className='bg-slate-300'>
-            <div className='container grid grid-cols-2'>
+        <div className=''>
+            <div className='flex justify-end mr-40 mt-6'>
+                <button
+                    onClick={handelDownload}
+                    className="box-border relative z-30 inline-flex items-center justify-center w-auto px-5 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-primary rounded-md cursor-pointer group ring-offset-2 ring-1 hover:bg-secondary ease focus:outline-none"
+                >
+                    <span class="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
+                    <span class="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
+                    <span class="relative z-20 flex items-center gap-2 text-sm">
+                        <FiArrowDown className="animate-bounce font-extrabold text-[20px]" />
+                        Download
+                    </span>
+                </button>
+            </div>
+            <div ref={componentRef} className='container grid grid-cols-2'>
                 <div className='left-side'>
                     <div className='profile-text'>
-                        <div className='img-box'>
-                            <img src={Image} alt='' />
-                        </div>
-                        <h2>Nurul Huda<br /><span>Web Developer</span></h2>
+
+                        <h2>{usersTemplateInfo?.contactDetails?.value?.firstName} {usersTemplateInfo?.contactDetails?.value?.lastName}<br /><span>{usersTemplateInfo?.contactDetails?.value?.jobTitle}</span></h2>
                     </div>
                     <div className='contactInfo'>
                         <h3 className='title'>Contact Info</h3>
-                        <ul>
-                            <li>
-                                <span className='icon'></span>
-                                <span className='text'>+880 1779955946</span>
+                        <ul className='text-white'>
+                            <li className='flex gap-2 pt-2'>
+                                {
+                                    usersTemplateInfo?.contactDetails?.value?.email
+                                        ?
+                                        <>
+                                            <div className='flex items-center gap-2'>
+                                                <div><AiTwotonePhone></AiTwotonePhone></div>
+                                                <div className=''>
+                                                    {usersTemplateInfo?.contactDetails?.value?.phoneNo}
+                                                </div>
+                                            </div>
+                                        </>
+                                        : ""
+                                }
                             </li>
-                            <li>
-                                <span className='icon'></span>
-                                <span className='text'>nurulhuda22dev@gmail.com</span>
+                            <li className='flex gap-2'>
+                                {
+                                    usersTemplateInfo?.contactDetails?.value?.email
+                                        ?
+                                        <>
+                                            <div className='flex items-center gap-2'>
+                                                <div><MdEmail></MdEmail></div>
+                                                <div className=''>
+                                                    {usersTemplateInfo?.contactDetails?.value?.email}
+                                                </div>
+                                            </div>
+                                        </>
+                                        : ""
+                                }
                             </li>
-                            <li>
-                                <span className='icon'></span>
-                                <span className='text'>www.mywebsite.com</span>
-                            </li>
-                            <li>
-                                <span className='icon'></span>
-                                <span className='text'>www.linkedin.com</span>
-                            </li>
-                            <li>
-                                <span className='icon'></span>
-                                <span className='text'>Bangladesh</span>
+                            <li className='flex gap-2'>
+                                {
+                                    usersTemplateInfo?.contactDetails?.value?.country
+                                        ?
+                                        <>
+                                            <div className='flex items-center gap-2'>
+                                                <div><MdLocationCity></MdLocationCity></div>
+                                                <div className=''>
+                                                    {usersTemplateInfo?.contactDetails?.value?.country},
+                                                    {usersTemplateInfo?.contactDetails?.value?.city},
+                                                    {usersTemplateInfo?.contactDetails?.value?.state},
+                                                    {usersTemplateInfo?.contactDetails?.value?.zipCode}
+                                                </div>
+                                            </div>
+                                        </>
+                                        : ""
+                                }
                             </li>
                         </ul>
                     </div>
-                    <div className='contactInfo education'>
+                    <div className='mt-5'>
                         <h3 className='title'>Education</h3>
                         <ul>
-                            <li>
-                                <h5>2011-2012</h5>
-                                <h4>SSC</h4>
-                                <h4>School Name</h4>
-                            </li>
-                            <li>
-                                <h5>2013-2015</h5>
-                                <h4>Intermediate complete</h4>
-                                <h4>College name</h4>
-                            </li>
-                            <li>
-                                <h5>2019-2022</h5>
-                                <h4>BBS final year</h4>
-                                <h4>College name</h4>
-                            </li>
+                            {
+                                usersTemplateInfo?.educationsDetails?.value?.map(edu => {
+                                    return (
+                                        <>
+                                            <h1 className='text-sm font-semibold tracking-wider text-white'>{edu?.name}</h1>
+                                            <h1 className='text-xs text-white'>{edu?.value?.institutionName}</h1>
+                                            <h1 className='mb-2 text-md text-white'>
+                                                {edu?.value?.startDate} - {edu?.value?.endDate}
+                                            </h1>
+                                        </>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                     <div className='contactInfo languag'>
                         <h3 className='title'>Languag</h3>
                         <ul>
-                            <li>
-                                <span className='text'>English</span>
-                                <span className='percent'>
-                                    <div className='languag-skill1'></div>
-                                </span>
-                            </li>
-                            <li>
-                                <span className='text'>Bangla</span>
-                                <span className='percent'>
-                                    <div className='languag-skill2'></div>
-                                </span>
-                            </li>
-                            <li>
-                                <span className='text'>Hindi</span>
-                                <span className='percent'>
-                                    <div className='languag-skill3'></div>
-                                </span>
-                            </li>
+                            {
+                                usersTemplateInfo?.languages?.value?.map(language => {
+                                    return (
+                                        <>
+                                            <h1 className='text-sm font-semibold tracking-wider text-blue-100'>{language}</h1>
+
+                                        </>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                 </div>
                 <div className='right-side'>
                     <div className='about'>
-                        <h2 className='title2'>Profile</h2>
-                        <p className='profile-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br /><br /> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h2 className='title2'>{usersTemplateInfo?.careerObjective?.name}</h2>
+                        <p className='profile-description'>{usersTemplateInfo?.careerObjective?.value}</p>
                     </div>
                     <div className='about'>
-                        <h2 className='title2'>Experience</h2>
-                        <div className='box'>
-                            <div className='year-company'>
-                                <h5>2019 - Present</h5>
-                                <h5>Company Name</h5>
-                            </div>
-                            <div className='text'>
-                                <h4>Senior UX Designer</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                        </div>
-                        <div className='box'>
-                            <div className='year-company'>
-                                <h5>2016 - 2019</h5>
-                                <h5>Company Name</h5>
-                            </div>
-                            <div className='text'>
-                                <h4>UX/UI Designer</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                        </div>
-                        <div className='box'>
-                            <div className='year-company'>
-                                <h5>2014 - 2016</h5>
-                                <h5>Company Name</h5>
-                            </div>
-                            <div className='text'>
-                                <h4>Junior UX Designer</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                        </div>
+                        <h2 className='title2'>{usersTemplateInfo?.projects?.name}</h2>
+                        {
+                            usersTemplateInfo?.projects?.value?.map(project => {
+                                return (
+                                    <div className='mb-6'>
+                                        {/* Name and Link */}
+                                        <div className='mb-[-12px]'>
+                                            <h1 className='font-bold text-orange-700 text-md'>
+                                                {
+                                                    project?.name
+                                                }
+                                            </h1>
+                                            <div className='flex gap-3'>
+                                                <h1>
+                                                    <a href={project?.value?.liveLink}>Live Site</a>
+                                                </h1>
+                                                <h1>
+                                                    <a href={project?.value?.clientSideLink}>Client Code</a>
+                                                </h1>
+                                                <h1>
+                                                    <a href={project?.value?.clientSideLink}>Server Code</a>
+                                                </h1>
+                                            </div>
+                                        </div>
+                                        {/* Features and functionality */}
+                                        {
+                                            project?.value?.fnf
+                                                ?
+                                                <div className='mb-[-12px]'>
+                                                    <h1 className='mt-5 font-bold'>Features and Functionality</h1>
+                                                    {
+                                                        project?.value?.fnf.split(',').map(item => {
+                                                            return (<li>{item}</li>)
+                                                        })
+                                                    }
+                                                </div>
+                                                :
+                                                ""
+                                        }
+                                        {/* Technology Used */}
+                                        {
+                                            project?.value?.technology
+                                                ?
+                                                <div>
+                                                    <h1 className='mt-5 font-bold'>Technology Used</h1>
+                                                    {
+                                                        project?.value?.technology.split(',').map(item => {
+                                                            return (<p className='inline-block mr-1'> {item},</p>)
+                                                        })
+                                                    }
+                                                </div>
+                                                :
+                                                ""
+                                        }
+
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                     <div className='about skill'>
                         <h2 className='title2'>Professional Skill</h2>
-                        <div className='box'>
-                            <h4>Html</h4>
-                            <div className='percent'>
-                                <div className='work-skill1'></div>
-                            </div>
-                        </div>
-                        <div className='box'>
-                            <h4>Css</h4>
-                            <div className='percent'>
-                            <div className='work-skill2'></div>
-                            </div>
-                        </div>
-                        <div className='box'>
-                            <h4>Bootstrap 5</h4>
-                            <div className='percent'>
-                            <div className='work-skill3'></div>
-                            </div>
-                        </div>
-                        <div className='box'>
-                            <h4>Tailwind Css</h4>
-                            <div className='percent'>
-                            <div className='work-skill4'></div>
-                            </div>
-                        </div>
-                        <div className='box'>
-                            <h4>JavaScript</h4>
-                            <div className='percent'>
-                            <div className='work-skill5'></div>
-                            </div>
-                        </div>
-                        <div className='box'>
-                            <h4>React.js</h4>
-                            <div className='percent'>
-                            <div className='work-skill6'></div>
-                            </div>
-                        </div>
-                        <div className='box'>
-                            <h4>Node.jS</h4>
-                            <div className='percent'>
-                            <div className='work-skill7'></div>
-                            </div>
-                        </div>
-                        <div className='box'>
-                            <h4>Mongo DB</h4>
-                            <div className='percent'>
-                            <div className='work-skill8'></div>
-                            </div>
-                        </div>
+                        <ul>
+                            {
+                                usersTemplateInfo?.skills?.value?.map(skill => {
+                                    return <li className='text-black'>{skill}</li>
+                                })
+                            }
+                        </ul>
                     </div>
                     <div className='about interest'>
-                        <h2 className='title2'>Interest</h2>
+                        <h2 className='title2'>Reference</h2>
                         <ul>
-                            <li>Gaming</li>
-                            <li>Singing</li>
-                            <li>Reading</li>
-                            <li>Cooking</li>
+                            {
+                                usersTemplateInfo?.reference?.value?.map(ref => {
+                                    return (
+                                        <>
+                                            <h1 className='text-sm font-semibold pr-2 text-black'>{ref?.name}</h1>
+                                            <h1 className='text-xs text-black'>{ref?.value?.name}</h1>
+                                        </>
+                                    )
+                                })
+                            }
                         </ul>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -188,26 +221,3 @@ const Resume1 = () => {
 };
 
 export default Resume1;
-
-
-
-// import React, { useState } from 'react';
-
-// const Resume1 = () => {
-//     const [usersTemplateInfo, setUsersTemplateInfo] = useState({});
-    
-//   const setDataToTextArea = () => {
-//     const pretty = JSON.stringify(usersTemplateInfo, undefined, 4);
-//     document.getElementById("myTextArea").value = pretty;
-    
-//     };
-//     console.log(usersTemplateInfo);
-//   return (
-//     <div>
-//       <textarea className='border-2' name="" id="myTextArea" cols="100" rows="20"></textarea>
-//       <button onClick={setDataToTextArea} className='btn btn-primary'>get data</button>
-//     </div>
-//   );
-// };
-
-// export default Resume1;

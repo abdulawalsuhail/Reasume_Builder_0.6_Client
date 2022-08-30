@@ -101,7 +101,7 @@ const Navbar = () => {
     </>
   );
 
-  
+
 
   return (
     <div
@@ -153,7 +153,7 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <Link
-              to=""
+              to="/resume-builder/how-to-start"
               className="py-2 px-5 text-white rounded-full bg-primary hover:bg-blue-800 font-medium hidden md:flex"
             >
               GET STARTED
@@ -168,23 +168,23 @@ const Navbar = () => {
           )}
 
           <div className="dropdown dropdown-end ml-2">
-           {
-            users.img ?  <label tabindex="0" className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img
-                src={users?.img}
-                alt="user img"
-              />
-            </div>
-          </label>:<label tabindex="0" className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img
-                src={ demoUser}
-                alt="user img"
-              />
-            </div>
-          </label>
-           }
+            {
+              users.img ? <label tabindex="0" className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img
+                    src={users?.img}
+                    alt="user img"
+                  />
+                </div>
+              </label> : <label tabindex="0" className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img
+                    src={demoUser}
+                    alt="user img"
+                  />
+                </div>
+              </label>
+            }
             <ul
               tabindex="0"
               className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
