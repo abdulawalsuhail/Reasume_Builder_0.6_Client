@@ -323,6 +323,7 @@ function App() {
           >
             <Route index element={<Profile />}></Route>
             <Route path="edit-profile" element={<EditProfile />}></Route>
+            <Route path="leaderBoard" element={<LeaderBoard />}></Route>
             <Route
               path="all-user"
               element={
