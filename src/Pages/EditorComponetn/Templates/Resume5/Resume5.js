@@ -41,7 +41,7 @@ const Resume5 = () => {
                     </span>
                 </button>
             </div>
-            <div className='resume5 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2'>
+            <div ref={componentRef} className='resume5 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2'>
                 <div className='resume5-5'>
                     <div className='left-5'>
                         <div className='profile-text5'>
