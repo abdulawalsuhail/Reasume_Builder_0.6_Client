@@ -4,18 +4,14 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../src/assets/logo.png";
-import auth from "../../firebase.init";
 import demoUser from "../../assets/demo_user.png";
-import { useQuery } from "@tanstack/react-query";
-import axiosFetch from "../../Pages/Api/axiosFetch";
+import auth from "../../firebase.init";
+import UserInformation from "../../Hook/UserInformation";
 import "./Navbar.css";
-import { useEffect } from "react";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
-  useEffect(() => {
-    refetch();
-  }, [user]);
+  const [users] = UserInformation(user)
   const active = "text-primary mx-1 font-medium border-b-2 border-primary pb-1";
   const normal =
     "text-gray-700 mx-1 hover:text-primary font-medium focus:text-gray-700 p-0";
@@ -91,14 +87,6 @@ const Navbar = () => {
             <Link to="/career-counselling/cv-write">CV Writing</Link>
           </li>
           <li className="hover:bg-primary hover:text-white uppercase py-2 px-4 rounded-md">
-            <Link to="/career-counselling/examples">Examples</Link>
-          </li>
-          <li className="hover:bg-primary hover:text-white uppercase py-2 px-4 rounded-md">
-            <Link to="/career-counselling/personal-development">
-              Personal Development{" "}
-            </Link>
-          </li>
-          <li className="hover:bg-primary hover:text-white uppercase py-2 px-4 rounded-md">
             <Link to="/career-counselling/inspiring-stories">
               Inspiring Stories{" "}
             </Link>
@@ -113,21 +101,14 @@ const Navbar = () => {
     </>
   );
 
-  const { data, refetch } = useQuery(["singleUser"], () =>
-    axiosFetch.get(`/user/${user?.email}`)
-  );
+  
 
   return (
     <div
-      // style={{
-      //   position: "sticky",
-      //   top: "0",
-      //   overflow: "hidden",
-      // }}
-      className="px-4 md:pl-10  lg:px-24 bg-[#f4f7f8]"
+      className="sticky top-0 z-50 px-4 md:pl-10  lg:px-24 bg-[#f4f7f8]"
     >
       {/* Navbar start source code from Daisy UI */}
-      <div className="navbar py-4">
+      <div className="navbar  py-4">
         {/* Navbar left portion */}
         <div className="">
           <div className="dropdown">
@@ -172,7 +153,7 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <Link
-              to="/"
+              to=""
               className="py-2 px-5 text-white rounded-full bg-primary hover:bg-blue-800 font-medium hidden md:flex"
             >
               GET STARTED
@@ -187,14 +168,23 @@ const Navbar = () => {
           )}
 
           <div className="dropdown dropdown-end ml-2">
-            <label tabindex="0" className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img
-                  src={data?.data?.img ? data?.data?.img : demoUser}
-                  alt="user img"
-                />
-              </div>
-            </label>
+           {
+            users.img ?  <label tabindex="0" className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 rounded-full">
+              <img
+                src={users?.img}
+                alt="user img"
+              />
+            </div>
+          </label>:<label tabindex="0" className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 rounded-full">
+              <img
+                src={ demoUser}
+                alt="user img"
+              />
+            </div>
+          </label>
+           }
             <ul
               tabindex="0"
               className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"

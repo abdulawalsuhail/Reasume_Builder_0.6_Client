@@ -7,7 +7,7 @@ import UserInformation from "../../../Hook/UserInformation";
 
 const Profile = () => {
   const [user] = useAuthState(auth);
-  const [users] = UserInformation(user);
+  const [users,isLoading,refetch] = UserInformation(user);
 
   return (
     <div className=" py-10 ">

@@ -1,19 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
-import { signOut } from "firebase/auth";
-import { useState } from 'react';
+import { signOut } from 'firebase/auth';
+import React, { createContext, useState } from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Navigate } from "react-router-dom";
-import auth from "../firebase.init";
+import { Navigate } from 'react-router-dom';
+import auth from '../firebase.init';
 import axiosPrivate from '../Pages/Api/axiosPrivate';
-
-const UserInformation = () => {
-    const [users,setUsers]  = useState({})
+export const userContext = createContext()
+const UserContectProvider = (props) => {
     const [user] = useAuthState(auth)
+   
+    const [users, setUser] = useState({})
     const { data, isLoading, refetch } = useQuery(["user"], () => {
         axiosPrivate
           .get(`/single/user/${user?.email}`)
           .then((res) => {
-            setUsers(res.data);
+            setUser(res.data);
           })
           .catch((err) => {
             if (err.response.status === 401 || err.response.status === 403) {
@@ -23,7 +24,11 @@ const UserInformation = () => {
             }
           });
       });
-    return [users,isLoading,refetch]
+    return <userContext.Provider value={
+        {users:users}
+    }>
+       
+    </userContext.Provider>
 };
 
-export default UserInformation;
+export default UserContectProvider;

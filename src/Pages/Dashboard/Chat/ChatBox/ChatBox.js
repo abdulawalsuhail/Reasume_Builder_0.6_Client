@@ -67,15 +67,15 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
       try {
         axiosPrivate.post("/message", message).then((res) => {
           setNewMessages("");
-          // try {
-          //   if (chat?._id) {
-          //     axiosPrivate.get(`/message/${chat?._id}`).then((res) => {
-          //       setMessages(res.data);
-          //     });
-          //   }
-          // } catch (error) {
-          //   console.log(error);
-          // }
+          try {
+            if (chat?._id) {
+              axiosPrivate.get(`/message/${chat?._id}`).then((res) => {
+                setMessages(res.data);
+              });
+            }
+          } catch (error) {
+            console.log(error);
+          }
         });
       } catch (error) {
         console.log(error);
