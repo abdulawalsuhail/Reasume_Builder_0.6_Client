@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Resume5.css'
 import Image from '../Images/image02.jpg';
 import { FaMap } from "react-icons/fa"
@@ -14,12 +14,33 @@ import { FaGamepad } from "react-icons/fa"
 import { FaMusic } from "react-icons/fa"
 import { FaCanadianMapleLeaf } from "react-icons/fa"
 import { useOutletContext } from 'react-router-dom';
+import { useReactToPrint } from 'react-to-print';
+import { FiArrowDown } from 'react-icons/fi';
 
 const Resume5 = () => {
     const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
 
+    // download resume8 letter
+    const componentRef = useRef();
+    const handelDownload = useReactToPrint({
+        content: () => componentRef.current,
+    });
+
     return (
         <div className=''>
+            <div className='flex justify-end mr-40 mt-6'>
+                <button
+                    onClick={handelDownload}
+                    className="box-border relative z-30 inline-flex items-center justify-center w-auto px-5 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-primary rounded-md cursor-pointer group ring-offset-2 ring-1 hover:bg-secondary ease focus:outline-none"
+                >
+                    <span class="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
+                    <span class="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
+                    <span class="relative z-20 flex items-center gap-2 text-sm">
+                        <FiArrowDown className="animate-bounce font-extrabold text-[20px]" />
+                        Download
+                    </span>
+                </button>
+            </div>
             <div className='resume5 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2'>
                 <div className='resume5-5'>
                     <div className='left-5'>

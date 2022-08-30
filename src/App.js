@@ -77,24 +77,31 @@ import Chat from "./Pages/Dashboard/Chat/Chat/Chat";
 import Expert from "./Pages/Dashboard/Expert/Expert";
 import EditProfile from "./Pages/Dashboard/Profile/EditProfile";
 import Profile from "./Pages/Dashboard/Profile/Profile";
-import QuizStart from "./Pages/Quiz/QuizStart";
-import QuizRules from "./Pages/Quiz/QuizRules";
 import Quiz from "./Pages/Quiz/Quiz";
+import QuizRules from "./Pages/Quiz/QuizRules";
+import QuizStart from "./Pages/Quiz/QuizStart";
 
-import Test from "./Test";
-import Resume8 from "./Pages/EditorComponetn/Templates/Resume8/Resume8";
-import SocialNetwork from "./Pages/EditorComponetn/CommonEditorComponent/SocialNetwork";
+import { createContext, useState } from "react";
+import auth from "./firebase.init";
+import UserInformation from "./Hook/UserInformation";
 import AddProjects from "./Pages/EditorComponetn/CommonEditorComponent/AddProjects";
+import SocialNetwork from "./Pages/EditorComponetn/CommonEditorComponent/SocialNetwork";
+import Resume8 from "./Pages/EditorComponetn/Templates/Resume8/Resume8";
 import AddQuiz from "./Pages/Quiz/AddQuiz";
 import QuizResult from "./Pages/Quiz/QuizResult";
 
 const stripePromise = loadStripe(
   "pk_test_51L0e7DJVuUKdOSgodXlRxjzrt9f8fKWzD9Jum98GewskqXtaZ9Mx725bepiQ7zjAuEpcALdbkJEVHlNIG0RTIanM00m74yy2rn"
 );
+
+export const userContext = createContext()
 function App() {
+  const [user] = useState(auth)
+  const [users,setUsers] = UserInformation()
   return (
     <div className="app">
-      <Routes>
+    <userContext>
+        <Routes>
         {/* Nested Routing for Templates Section of our Homepage */}
         <Route path="/" element={<Home />}>
           <Route index element={<Resume />}></Route>
@@ -400,6 +407,7 @@ function App() {
         </Route>
         <Route path="/chat/expert" element={<Chat />}></Route>
       </Routes>
+    </userContext>
       {/* facebook live chat */}
       <MessengerCustomerChat
         pageId="105555438910537"
