@@ -52,7 +52,7 @@ const CoverLetterTemplate = () => {
             contentEditable
             className="p-3 border-0 focus:border-[1px] outline-none border-green-600 rounded-md focus:bg-gray-100"
           >
-            <h2 className="text-3xl poppins-r text-gray-700">{name}</h2>
+            <h2 className="text-3xl poppins-r text-blue-700">{name}</h2>
             <h4 className="text-lg poppins-r text-gray-600">{jobRole}</h4>
             <div className="md:flex flex-wrap gap-5 my-2 text-[13px] poppins-t">
               <p className="flex gap-1 place-items-center">
