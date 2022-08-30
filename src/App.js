@@ -84,6 +84,7 @@ import QuizStart from "./Pages/Quiz/QuizStart";
 import { createContext, useState } from "react";
 import auth from "./firebase.init";
 import UserInformation from "./Hook/UserInformation";
+import CarrerInvoice from "./Pages/CarrerCounceling/CerrerInvoice/CarrerInvoice";
 import AddProjects from "./Pages/EditorComponetn/CommonEditorComponent/AddProjects";
 import SocialNetwork from "./Pages/EditorComponetn/CommonEditorComponent/SocialNetwork";
 import Resume8 from "./Pages/EditorComponetn/Templates/Resume8/Resume8";
@@ -244,6 +245,7 @@ function App() {
               </Elements>
             }
           ></Route>
+           <Route path="download-invoice" element={<CarrerInvoice/>}></Route>
         </Route>
 
         {/* cover letter */}
@@ -406,7 +408,7 @@ function App() {
           ></Route>
         </Route>
         <Route path="/chat/expert" element={<Chat />}></Route>
-      </Routes>
+      </Routes> 
     </userContext>
       {/* facebook live chat */}
       <MessengerCustomerChat
