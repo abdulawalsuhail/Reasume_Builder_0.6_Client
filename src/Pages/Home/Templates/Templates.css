@@ -1,3 +1,118 @@
-.customDiv:hover .customButton{
+
+.homeTemplate{
+    background-image:
+    linear-gradient(to bottom, rgba(2, 12, 70, 0.95), rgba(180, 183, 178, 0.082));
+    
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+}
+.guidelineBackground{
+    /* background-image:
+    linear-gradient(to bottom,rgba(114, 117, 111, 0), rgb(52, 65, 41)); */
+    background-color: rgba(180, 183, 178, 0.071);
+}
+.templateContainer{
+    cursor: pointer;
+    position: relative;
+}
+.templateButton{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    background-color: rgba(246, 253, 246, 0);
+    bottom: 0;
+    height: 0;
+    opacity: 0;
+    transition:all .5s ease;
+}
+
+.templateImage{
+    transition: .5s ease;
+}
+
+.templateContainer:hover .templateButton{
+    height: 350px;
+    opacity: 1;
+}
+.templateContainer:hover .templateImage{
+    opacity: .6;
+}
+
+/* button */
+.customButton{
+    position: relative;
+    background: #444;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    /* font-size: 1.5em; */
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding: 15px 20px;
+    transition: 0.5s;
+    margin-bottom: 30px;
+}
+.customButton:hover{
+    letter-spacing: 0.25em;
+    background: var(--clr);
+    box-shadow: 0 0 35px var(--clr);
+}
+.customButton::before{
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #27282c;
+}
+.customButton span{
+    position: relative;
+    z-index: 1;
+}
+.customButton i{
+    position: absolute;
+    inset: 0;
     display: block;
 }
+.customButton i::before{
+    content: "";
+    position: absolute;
+    top: -9px;
+    left: 100%;
+    transform: translate(-50%);
+    width: 12px;
+    height: 12px;
+    background: #27282c;
+    border: 2px solid var(--clr);
+    transition: 0.5s;
+}
+
+.customButton:hover i::before{
+    left: 0%;
+    transform: translateX(-50%) rotate(45deg);
+    box-shadow: 40px 40px var(--clr);
+}
+
+.customButton i::after{
+    content: "";
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    transform: translate(-50%);
+    width: 12px;
+    height: 12px;
+    background: #27282c;
+    border: 2px solid var(--clr);
+    transition: 0.5s;
+}
+
+.customButton:hover i::after{
+    left: 100%;
+    transform: translateX(-50%) rotate(-45deg);
+    box-shadow: 38px -39px var(--clr);
+}
+

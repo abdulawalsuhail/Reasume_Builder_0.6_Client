@@ -6,9 +6,8 @@ const Footer = () => {
     <footer class="bg-[#f4f7f8]">
       <div class="max-w-screen-xl px-4  pb-6 mx-auto sm:px-6 lg:px-8">
         <div class="lg:items-center lg:justify-between lg:flex pt-5">
-          <div class="flex justify-center text-sky-600 sm:justify-start items-center">
-            <img src={logo} alt="logo" />
-            <h2 className="text-4xl">Resume builder</h2>
+          <div class="flex justify-center text-primary sm:justify-start items-center">
+            <img className="w-64" src={logo} alt="logo" />
           </div>
 
           <p class="max-w-md mx-auto mt-4 leading-relaxed text-center text-gray-500 sm:ml-0 lg:mr-0 sm:text-left lg:mt-0">
@@ -193,8 +192,8 @@ const Footer = () => {
                     </span>
 
                     <span class="relative flex w-2 h-2 -mr-2">
-                      <span class="absolute inline-flex w-full h-full bg-sky-400 rounded-full opacity-75 animate-ping"></span>
-                      <span class="relative inline-flex w-2 h-2 bg-sky-500 rounded-full"></span>
+                      <span class="absolute inline-flex w-full h-full bg-primary rounded-full opacity-75 animate-ping"></span>
+                      <span class="relative inline-flex w-2 h-2 bg-blue-800 rounded-full"></span>
                     </span>
                   </a>
                 </li>
@@ -224,7 +223,7 @@ const Footer = () => {
                   />
 
                   <button
-                    class="block px-8 py-3 font-medium text-white transition bg-sky-500 rounded-full hover:bg-sky-600"
+                    class="block px-8 py-3 font-medium text-white transition bg-primary rounded-full hover:bg-blue-800"
                     type="submit"
                   >
                     Subscribe
@@ -246,7 +245,7 @@ const Footer = () => {
                 href="/"
                 rel="noopener noreferrer"
                 target="_blank"
-                class="text-sky-700 transition hover:text-sky-700/75"
+                class="text-primary transition hover:text-blue-800"
               >
                 <span class="sr-only">Facebook</span>
                 <svg
@@ -269,7 +268,7 @@ const Footer = () => {
                 href="/"
                 rel="noopener noreferrer"
                 target="_blank"
-                class="text-sky-700 transition hover:text-sky-700/75"
+                class="text-primary transition hover:text-blue-800"
               >
                 <span class="sr-only">Instagram</span>
                 <svg
@@ -292,7 +291,7 @@ const Footer = () => {
                 href="/"
                 rel="noopener noreferrer"
                 target="_blank"
-                class="text-sky-700 transition hover:text-sky-700/75"
+                class="text-primary transition hover:text-blue-800"
               >
                 <span class="sr-only">Twitter</span>
                 <svg
@@ -311,7 +310,7 @@ const Footer = () => {
                 href="/"
                 rel="noopener noreferrer"
                 target="_blank"
-                class="text-sky-700 transition hover:text-sky-700/75"
+                class="text-primary transition hover:text-blue-800"
               >
                 <span class="sr-only">GitHub</span>
                 <svg
@@ -334,7 +333,7 @@ const Footer = () => {
                 href="/"
                 rel="noopener noreferrer"
                 target="_blank"
-                class="text-sky-700 transition hover:text-sky-700/75"
+                class="text-primary transition hover:text-blue-800"
               >
                 <span class="sr-only">Dribbble</span>
                 <svg

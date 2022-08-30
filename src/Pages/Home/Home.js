@@ -1,6 +1,8 @@
 import React from "react";
-import MessengerCustomerChat from "react-messenger-customer-chat";
 import Navbar from "../../Components/Navbar/Navbar";
+import BusinessPartner from "../../Shared/BusinessPartner";
+import Footer from "../../Shared/Footer/Footer";
+import Business from "./Business/Business";
 import Guideline from "./Guideline/Guideline";
 import Hero from "./Hero/Hero";
 import Review from "./Review/Review";
@@ -8,21 +10,27 @@ import Templates from "./Templates/Templates";
 import WhyResumeBuilder from "./WhyResumeBuilder/WhyResumeBuilder";
 import WriteResume from "./WriteResume/WriteResume";
 
+import FAQ from "../FAQ/FAQ";
+
+import Jump from "../Jump-Start/Jump.js";
+
 const Home = () => {
   return (
-    <div className="bg-[#f4f7f8]">
-      <Navbar/>
-      <Hero/>
-      <WriteResume/>
-      <WhyResumeBuilder />
-      <Templates/>
+    <div style={{ minHeight: "100vh" }}>
+      <Navbar />
+      <Hero />
+      <BusinessPartner />
+      <WriteResume />
+      <Templates />
       <Guideline />
+      <WhyResumeBuilder />
       <Review />
-      <MessengerCustomerChat
-        pageId="105555438910537"
-        appId="1225310258009219"
-      />
-      ,
+
+      <FAQ />
+
+      <Jump />
+
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+
+.blog_post {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2rem rgb(231, 246, 251);
+  position: relative;
+  margin: 0 auto;
+  transition: 0.6s;
+}
+
+.container_copy {
+}
+
+.img_pod {
+  height: 100px;
+  width: 100px;
+  background: #fff;
+  z-index: 10;
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  position: absolute;
+  left: -7%;
+  top: -10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blog_post:hover {
+  box-shadow: 1px 1px 2rem rgb(231, 246, 251);
+}
