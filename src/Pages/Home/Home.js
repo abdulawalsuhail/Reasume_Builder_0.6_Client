@@ -27,7 +27,7 @@ const Home = () => {
       <WhyResumeBuilder />
       <Review />
 
-      <FAQ/>
+      <FAQ />
 
 
       <Jump />
