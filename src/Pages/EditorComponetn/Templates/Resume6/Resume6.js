@@ -22,10 +22,12 @@ const Resume6 = () => {
 
     return (
         <div className=''>
-            <div className='resume6 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2'>
+            <div className='resume6 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 border'>
                 <div className='resume-header6'>
                     <div className='header-text6'>
-                        <h2 className='resume-title6' style={{ letterSpacing: "4px" }}>{usersTemplateInfo?.contactDetails?.value?.firstName} {usersTemplateInfo?.contactDetails?.value?.lastName}</h2>
+                        <h2 className='resume-title6' style={{ letterSpacing: "4px" }}>
+                            {usersTemplateInfo?.contactDetails?.value?.firstName} {usersTemplateInfo?.contactDetails?.value?.lastName}
+                        </h2>
                         <p className='resume-title6-2'>{usersTemplateInfo?.contactDetails?.value?.jobTitle}</p>
                     </div>
                 </div>
@@ -86,8 +88,8 @@ const Resume6 = () => {
                                 }
                             </li>
                             <li>
-                                <div className='icon7'><BsLinkedin className='icon7-7'></BsLinkedin></div>
-                                <div className='date6'>{usersTemplateInfo?.socialLinks?.value?.linkedIn}</div>
+                                <div><BsLinkedin></BsLinkedin></div>
+                                <div className='date6'><a href={usersTemplateInfo?.socialLinks?.value?.linkedIn}>LinkedIn</a></div>
                             </li>
                         </ul>
                     </div>
@@ -145,9 +147,9 @@ const Resume6 = () => {
                     <div className='experience6'>
                         <div className='resume-item7-7 resume-about7'>
                             <div className='title7'>
-                                <p className='bold7-7 font-bold'>{usersTemplateInfo.careerObjective.name}</p>
+                                <p className='bold7-7 font-bold'>{usersTemplateInfo?.careerObjective?.name}</p>
                             </div>
-                            <p>{usersTemplateInfo.careerObjective.value}</p>
+                            <p>{usersTemplateInfo?.careerObjective?.value}</p>
                         </div>
                         <div className='experience-title6  py-5'>
                             <h1 style={{ letterSpacing: "5px" }} className='font-bold text-lg mb-5'>

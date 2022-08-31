@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineSend } from "react-icons/ai";
 import InputEmoji from "react-input-emoji";
+import demoUser from '../../../../assets/demo_user.png';
 import axiosPrivate from "../../../Api/axiosPrivate";
 import "./Chatbox.css";
-
 const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
   const [userData, setUserData] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -67,15 +67,15 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
       try {
         axiosPrivate.post("/message", message).then((res) => {
           setNewMessages("");
-          // try {
-          //   if (chat?._id) {
-          //     axiosPrivate.get(`/message/${chat?._id}`).then((res) => {
-          //       setMessages(res.data);
-          //     });
-          //   }
-          // } catch (error) {
-          //   console.log(error);
-          // }
+          try {
+            if (chat?._id) {
+              axiosPrivate.get(`/message/${chat?._id}`).then((res) => {
+                setMessages(res.data);
+              });
+            }
+          } catch (error) {
+            console.log(error);
+          }
         });
       } catch (error) {
         console.log(error);
@@ -109,12 +109,12 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
                   ) : (
                     <div class="avatar rounded-full">
                       <div class="w-12 rounded-full">
-                        <img src="https://placeimg.com/192/192/people" alt="" />
+                        <img src={demoUser} alt="" />
                       </div>
                     </div>
                   )}
                   <div className=" ml-2" style={{ fontSize: "0.9rem" }}>
-                    <span>
+                    <span className="font-bold capitalize">
                       {userData?.name}
                     </span>
                   </div>

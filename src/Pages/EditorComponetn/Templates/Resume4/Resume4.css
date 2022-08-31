@@ -9,9 +9,9 @@
     margin-bottom: 10px;
 }
 .resume4{
-    width: 1000px;
+    max-width: 600px;
     display: flex;
-    margin: 50px auto;
+    margin: 60px;
 }
 .content4 li{
     list-style: none;

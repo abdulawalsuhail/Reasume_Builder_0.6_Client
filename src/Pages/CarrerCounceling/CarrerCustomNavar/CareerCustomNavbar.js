@@ -7,7 +7,7 @@ const CareerCustomNavbar = ({ children, to, ...props }) => {
     return (
         <div>
       <Link
-        style={{ borderBottom: match ? "3px  solid #3144d3" : "none",color:match?"black":""}}
+        style={{ borderBottom: match ? "2px  solid #3144d3" : "none",color:match?"#3346d3":""}}
         to={to}
         {...props}
       >

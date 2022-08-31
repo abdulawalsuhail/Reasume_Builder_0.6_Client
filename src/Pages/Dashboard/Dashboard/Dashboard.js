@@ -8,7 +8,6 @@ import { HiUserGroup } from "react-icons/hi";
 import { MdOutlineEdit, MdReviews } from "react-icons/md";
 import { RiAdminLine, RiFileUserLine } from "react-icons/ri";
 import { Outlet } from "react-router-dom";
-import Navbar from "../../../Components/Navbar/Navbar";
 import "../../../Css/CarrerCounceling.css";
 import auth from "../../../firebase.init";
 import useAdmin from "../../../Hook/useAdmin";
@@ -16,6 +15,7 @@ import useExpert from "../../../Hook/useExpert";
 import UserInformation from "../../../Hook/UserInformation";
 import "../Dashboard/Dashboard.css";
 import DashboardCustomLink from "../DashBoardCustomLink/DashboardCustomLink";
+import DashBoardHeader from "../DashboardHeader/DashBoardHeader";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
@@ -24,7 +24,7 @@ const Dashboard = () => {
   const [users] = UserInformation(user);
   return (
     <>
-      <Navbar/>
+    <DashBoardHeader/>
       <div class="drawer drawer-mobile  bg-[#f6f5f8]">
         <input id="dashboard-nav" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content no-scroll  ">
