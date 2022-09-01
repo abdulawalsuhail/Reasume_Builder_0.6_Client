@@ -10,7 +10,6 @@ const Conversation = ({ data, currentUserId}) => {
     const getUserData = async () => {
       try {
         axiosPrivate.get(`/conversationuser/${userId}`).then((res) => {
-          console.log(res.data);
           setUserData(res.data);
         });
       } catch (error) {
@@ -22,7 +21,7 @@ const Conversation = ({ data, currentUserId}) => {
   }, []);
   return (
     <>
-      <div className="follower conversation">
+      <div className="follower conversation shadow-sm">
         <div className="flex items-center">
           {userData?.img ? (
             <div class="avatar rounded-full">

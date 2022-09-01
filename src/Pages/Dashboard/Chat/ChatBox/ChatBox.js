@@ -4,7 +4,6 @@ import InputEmoji from "react-input-emoji";
 import demoUser from "../../../../assets/demo_user.png";
 import axiosPrivate from "../../../Api/axiosPrivate";
 import "./Chatbox.css";
-import bg from "../../../../assets/chatBox_bg.png";
 const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
   const [userData, setUserData] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -130,12 +129,8 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
               />
             </div>
             {/* chat-body */}
-            <div className="chat-body relative">
-              <img
-                class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-10"
-                src={bg}
-                alt="resume"
-              />
+            <div className="chat-body bg-[#efeae2] relative">
+             
               {messages.map((message) => (
                 <>
                   <div
