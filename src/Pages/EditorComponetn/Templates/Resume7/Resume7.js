@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Resume7.css'
 import Image from '../Images/image.jpg';
 import { FaMap } from "react-icons/fa"
@@ -14,15 +14,35 @@ import { FaGamepad } from "react-icons/fa"
 import { FaMusic } from "react-icons/fa"
 import { FaCanadianMapleLeaf } from "react-icons/fa"
 import { HiLocationMarker } from "react-icons/hi"
-import { GiCalendarHalfYear } from "react-icons/gi"
 import { useOutletContext } from 'react-router-dom';
+import { useReactToPrint } from 'react-to-print';
+import { FiArrowDown } from 'react-icons/fi';
 
 const Resume7 = () => {
     const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
+    // download resume8 letter
+    const componentRef = useRef();
+    const handelDownload = useReactToPrint({
+        content: () => componentRef.current,
+    });
 
     return (
         <div className=''>
-            <div className='resume7 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2'>
+
+            <div className='flex justify-end mr-40 mt-6 border'>
+                <button
+                    onClick={handelDownload}
+                    className="box-border relative z-30 inline-flex items-center justify-center w-auto px-5 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-primary rounded-md cursor-pointer group ring-offset-2 ring-1 hover:bg-secondary ease focus:outline-none"
+                >
+                    <span class="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
+                    <span class="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
+                    <span class="relative z-20 flex items-center gap-2 text-sm">
+                        <FiArrowDown className="animate-bounce font-extrabold text-[20px]" />
+                        Download
+                    </span>
+                </button>
+            </div>
+            <div ref={componentRef} className='resume7 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2'>
 
                 <div className='left-site7'>
                     <div className='profile7'>
@@ -49,7 +69,7 @@ const Resume7 = () => {
                             </li>
                             <li>
                                 <div className='icon7'><BsLinkedin className='icon7-7'></BsLinkedin></div>
-                                <div className='date7'>{usersTemplateInfo?.socialLinks?.value?.linkedIn}</div>
+                                <div className='date7'><a href={usersTemplateInfo?.socialLinks?.value?.linkedIn}>LinkedIn</a></div>
                             </li>
                         </ul>
                     </div>
@@ -96,9 +116,9 @@ const Resume7 = () => {
                 <div className='right-ite7'>
                     <div className='resume-item7-7 resume-about7'>
                         <div className='title7'>
-                            <p className='bold7-7 font-bold'>{usersTemplateInfo.careerObjective.name}</p>
+                            <p className='bold7-7 font-bold'>{usersTemplateInfo?.careerObjective?.name}</p>
                         </div>
-                        <p>{usersTemplateInfo.careerObjective.value}</p>
+                        <p>{usersTemplateInfo?.careerObjective?.value}</p>
                     </div>
                     <div className='right-site8 pt-3'>
                         <h1 className='font-bold text-lg mb-3'>
@@ -133,39 +153,39 @@ const Resume7 = () => {
                                         {/* Features and functionality */}
                                         {
                                             project?.value?.fnf
-                                            ?
-                                            <div className='mb-[-12px]'>
-                                                <h1 className='mt-5 font-bold'>Features and Functionality</h1>
-                                                {
-                                                    project?.value?.fnf.split(',').map(item => {
-                                                        return (<li>{item}</li>)
-                                                    }) 
-                                                }
-                                            </div>
-                                            :
-                                            ""
+                                                ?
+                                                <div className='mb-[-12px]'>
+                                                    <h1 className='mt-5 font-bold'>Features and Functionality</h1>
+                                                    {
+                                                        project?.value?.fnf.split(',').map(item => {
+                                                            return (<li>{item}</li>)
+                                                        })
+                                                    }
+                                                </div>
+                                                :
+                                                ""
                                         }
                                         {/* Technology Used */}
                                         {
                                             project?.value?.technology
-                                            ?
-                                            <div>
-                                                <h1 className='mt-5 font-bold'>Technology Used</h1>
-                                                {
-                                                    project?.value?.technology.split(',').map(item => {
-                                                        return (<p className='inline-block mr-1'> {item},</p>)
-                                                    }) 
-                                                }
-                                            </div>
-                                            :
-                                            ""
+                                                ?
+                                                <div>
+                                                    <h1 className='mt-5 font-bold'>Technology Used</h1>
+                                                    {
+                                                        project?.value?.technology.split(',').map(item => {
+                                                            return (<p className='inline-block mr-1'> {item},</p>)
+                                                        })
+                                                    }
+                                                </div>
+                                                :
+                                                ""
                                         }
 
                                     </div>
                                 )
                             })
                         }
-                        
+
                     </div>
                     <div>
                     </div>

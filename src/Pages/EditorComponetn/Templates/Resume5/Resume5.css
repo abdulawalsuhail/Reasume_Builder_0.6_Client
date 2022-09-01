@@ -8,10 +8,9 @@
     font-size: 16px;
 }
 .resume5{
-    width: 1000px;
+    max-width: 600px;
     height: auto;
     display: flex;
-    margin: 50px auto;
     position: relative;
 }
 .img-box5{
@@ -22,11 +21,10 @@
     overflow: hidden;
 }
 .resume5-5{
-    width: 100%;
+    width: 947px;
     height: 300px;
     background-color: rgb(149, 140, 119);
     position: absolute;
-    margin-top: 60px;
     padding: 50px;
     display: flex;
 }

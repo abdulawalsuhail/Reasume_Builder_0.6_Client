@@ -90,7 +90,6 @@ import Resume8 from "./Pages/EditorComponetn/Templates/Resume8/Resume8";
 import AddQuiz from "./Pages/Quiz/AddQuiz";
 import QuizResult from "./Pages/Quiz/QuizResult";
 import LeaderBoard from "./Pages/Quiz/LeaderBoard";
-import CoverLetterExample from "./Pages/CoverLatterTemplate/CoverLetter/CoverLetterExample";
 
 const stripePromise = loadStripe(
   "pk_test_51L0e7DJVuUKdOSgodXlRxjzrt9f8fKWzD9Jum98GewskqXtaZ9Mx725bepiQ7zjAuEpcALdbkJEVHlNIG0RTIanM00m74yy2rn"
@@ -265,14 +264,6 @@ function App() {
             element={
               <RequireAuth>
                 <CoverLetterTemplate />
-              </RequireAuth>
-            }
-          ></Route>
-          <Route
-            path="/coverLetter-example"
-            element={
-              <RequireAuth>
-                <CoverLetterExample />
               </RequireAuth>
             }
           ></Route>

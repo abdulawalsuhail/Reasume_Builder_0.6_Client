@@ -89,7 +89,7 @@ const CoverLetter = () => {
                                 <img style={{ width: "100%" }} className="templateImage" src={temp.image} alt="" />
                                 <div className='w-[95%] md:w-[95%] 2xl:w-[85%] templateButton p-4'>
                                     <div className='w-[90%] mx-auto flex flex-col justify-between'>
-                                        <Link className='customButton text-center' to="/resume-builder/how-to-start" style={{"--clr":"#6eff3e"}}><span>Edit Template</span><i></i></Link>
+                                        <Link className='customButton text-center' to="/how-write-cover-letter" style={{"--clr":"#6eff3e"}}><span>Edit Template</span><i></i></Link>
                                         
                                         <label
                                             onClick={()=>setTemplateModal(temp)}

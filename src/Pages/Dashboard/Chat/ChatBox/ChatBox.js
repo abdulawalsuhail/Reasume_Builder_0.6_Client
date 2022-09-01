@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineSend } from "react-icons/ai";
 import InputEmoji from "react-input-emoji";
+import demoUser from "../../../../assets/demo_user.png";
 import axiosPrivate from "../../../Api/axiosPrivate";
 import "./Chatbox.css";
-
+import bg from "../../../../assets/chatBox_bg.png";
 const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
   const [userData, setUserData] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -85,7 +86,7 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
 
   useEffect(() => {
     if (receivedMessage !== null && receivedMessage?.chatId === chat?._id) {
-        console.log(receivedMessage );
+      console.log(receivedMessage);
       setMessages([...messages, receivedMessage]);
     }
   }, [receivedMessage]);
@@ -109,12 +110,12 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
                   ) : (
                     <div class="avatar rounded-full">
                       <div class="w-12 rounded-full">
-                        <img src="https://placeimg.com/192/192/people" alt="" />
+                        <img src={demoUser} alt="" />
                       </div>
                     </div>
                   )}
                   <div className=" ml-2" style={{ fontSize: "0.9rem" }}>
-                    <span>
+                    <span className="font-bold capitalize">
                       {userData?.name}
                     </span>
                   </div>
@@ -129,11 +130,17 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
               />
             </div>
             {/* chat-body */}
-            <div className="chat-body">
+            <div className="chat-body relative">
+              <img
+                class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-10"
+                src={bg}
+                alt="resume"
+              />
               {messages.map((message) => (
                 <>
                   <div
                     ref={scroll}
+                    style={{ position: "relative" }}
                     className={
                       message?.senderId === currentUser
                         ? "message own"
@@ -148,7 +155,10 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
             {/* chat-sender */}
             <div className="chat-sender">
               <InputEmoji value={newMessage} onChange={handleChange} />
-              <div className="  text-white btn btn-primary cursor-pointer" onClick={handleSend}>
+              <div
+                className="  text-white btn btn-primary cursor-pointer"
+                onClick={handleSend}
+              >
                 <AiOutlineSend className=""></AiOutlineSend>
               </div>
             </div>{" "}

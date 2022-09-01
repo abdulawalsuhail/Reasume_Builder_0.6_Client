@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Resume4.css'
 import Image from '../Images/image04.jpg';
 import { FaMap } from "react-icons/fa"
 import { AiTwotonePhone } from "react-icons/ai"
-import { MdEmail } from "react-icons/md"
+import { MdEmail, MdLocationCity } from "react-icons/md"
 import { TbWorld } from "react-icons/tb"
 import { ImFacebook2 } from "react-icons/im"
-import { BsTwitter } from "react-icons/bs"
+import { BsGithub, BsTwitter } from "react-icons/bs"
 import { BsYoutube } from "react-icons/bs"
 import { BsLinkedin } from "react-icons/bs"
 import { BiBook } from "react-icons/bi"
@@ -14,131 +14,153 @@ import { FaGamepad } from "react-icons/fa"
 import { FaMusic } from "react-icons/fa"
 import { FaCanadianMapleLeaf } from "react-icons/fa"
 import { useOutletContext } from 'react-router-dom';
+import { FiArrowDown } from 'react-icons/fi';
+import { useReactToPrint } from 'react-to-print';
 
 const Resume4 = () => {
     const [usersTemplateInfo, setUsersTemplateInfo] = useOutletContext();
 
+
+    // download resume8 letter
+    const componentRef = useRef();
+    const handelDownload = useReactToPrint({
+        content: () => componentRef.current,
+    });
+
     return (
         <div className=''>
-            <div className='resume4 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2'>
+            <div className='flex justify-end mr-40 mt-6'>
+                <button
+                    onClick={handelDownload}
+                    className="box-border relative z-30 inline-flex items-center justify-center w-auto px-5 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-primary rounded-md cursor-pointer group ring-offset-2 ring-1 hover:bg-secondary ease focus:outline-none"
+                >
+                    <span class="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
+                    <span class="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
+                    <span class="relative z-20 flex items-center gap-2 text-sm">
+                        <FiArrowDown className="animate-bounce font-extrabold text-[20px]" />
+                        Download
+                    </span>
+                </button>
+            </div>
+            <div ref={componentRef} className='resume4 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2'>
                 <div className='left-site4'>
-                    <div className='profile4'>
-                        <img src={Image} alt='' />
-                    </div>
                     <div className='content4'>
-                        <div className='resume-item4 resume-info4'>
+                        <div className='resume-item4 resume-info4 pt-3 text-blue-100'>
                             <div className='title4'>
-                                <p className='bold4'>STEPHEN COLBERT</p>
+                                <h1 className='text-3xl'>{usersTemplateInfo?.contactDetails?.value?.firstName} {usersTemplateInfo?.contactDetails?.value?.lastName}</h1>
                             </div>
                             <ul>
-                                <li>
-                                    <div className='icon4'><FaMap className='icon4-4'></FaMap></div>
-                                    <div className='date4'>21 Street, Texas
-                                        USA</div>
+                                <li className='flex gap-2 pt-2'>
+                                    {
+                                        usersTemplateInfo?.contactDetails?.value?.email
+                                            ?
+                                            <>
+                                                <div className='flex items-center gap-2'>
+                                                    <div><AiTwotonePhone></AiTwotonePhone></div>
+                                                    <div className=''>
+                                                        {usersTemplateInfo?.contactDetails?.value?.phoneNo}
+                                                    </div>
+                                                </div>
+                                            </>
+                                            : ""
+                                    }
                                 </li>
-                                <li>
-                                    <div className='icon4'><AiTwotonePhone className='icon4-4'></AiTwotonePhone></div>
-                                    <div className='date4'>+324 4456899</div>
+                                <li className='flex gap-2'>
+                                    {
+                                        usersTemplateInfo?.contactDetails?.value?.email
+                                            ?
+                                            <>
+                                                <div className='flex items-center gap-2'>
+                                                    <div><MdEmail></MdEmail></div>
+                                                    <div className=''>
+                                                        {usersTemplateInfo?.contactDetails?.value?.email}
+                                                    </div>
+                                                </div>
+                                            </>
+                                            : ""
+                                    }
                                 </li>
-                                <li>
-                                    <div className='icon4'><MdEmail className='icon4-4'></MdEmail></div>
-                                    <div className='date4'>stephen@gmail.com</div>
-                                </li>
-                                <li>
-                                    <div className='icon4'><TbWorld className='icon4-4'></TbWorld></div>
-                                    <div className='date4'>www.stephen.com</div>
+                                <li className='flex gap-2'>
+                                    {
+                                        usersTemplateInfo?.contactDetails?.value?.country
+                                            ?
+                                            <>
+                                                <div className='flex items-center gap-2'>
+                                                    <div><MdLocationCity></MdLocationCity></div>
+                                                    <div className=''>
+                                                        {usersTemplateInfo?.contactDetails?.value?.country},
+                                                        {usersTemplateInfo?.contactDetails?.value?.city},
+                                                        {usersTemplateInfo?.contactDetails?.value?.state},
+                                                        {usersTemplateInfo?.contactDetails?.value?.zipCode}
+                                                    </div>
+                                                </div>
+                                            </>
+                                            : ""
+                                    }
                                 </li>
                             </ul>
                         </div>
                         <div className='resume-item4 resume-skills4'>
-                            <div className='title4'>
-                                <p className='bold4'>SKILLS</p>
-                            </div>
+                            <p className='bold4'>Certifications</p>
                             <ul>
-                                <li>
-                                    <div className='skill-name4'>HTML</div>
-                                    <div className='skill-progress4'>
-                                        <span className='progress4-1'></span>
-                                    </div>
-                                    <div className='skill-per4'>80%</div>
-                                </li>
-                                <li>
-                                    <div className='skill-name4'>CSS</div>
-                                    <div className='skill-progress4'>
-                                        <span className='progress4-2'></span>
-                                    </div>
-                                    <div className='skill-per4'>90%</div>
-                                </li>
-                                <li>
-                                    <div className='skill-name4'>JS</div>
-                                    <div className='skill-progress4'>
-                                        <span className='progress4-3'></span>
-                                    </div>
-                                    <div className='skill-per4'>60%</div>
-                                </li>
-                                <li>
-                                    <div className='skill-name4'>REACT.JS</div>
-                                    <div className='skill-progress4'>
-                                        <span className='progress4-4'></span>
-                                    </div>
-                                    <div className='skill-per4'>70%</div>
-                                </li>
-                                <li>
-                                    <div className='skill-name4'>FIREBASE</div>
-                                    <div className='skill-progress4'>
-                                        <span className='progress4-5'></span>
-                                    </div>
-                                    <div className='skill-per4'>60%</div>
-                                </li>
-                                <li>
-                                    <div className='skill-name4'>NODE JS</div>
-                                    <div className='skill-progress4'>
-                                        <span className='progress4-6'></span>
-                                    </div>
-                                    <div className='skill-per4'>60%</div>
-                                </li>
-                                <li>
-                                    <div className='skill-name4'>MONGO DB</div>
-                                    <div className='skill-progress4'>
-                                        <span className='progress4-7'></span>
-                                    </div>
-                                    <div className='skill-per4'>70%</div>
-                                </li>
+                                {
+                                    usersTemplateInfo?.certifications?.value?.map(item => {
+                                        return (
+                                            <>
+                                                <h1 className='text-sm font-semibold tracking-wider text-blue-100'>{item}</h1>
+
+                                            </>
+                                        )
+                                    })
+                                }
                             </ul>
                         </div>
-                        <div className='resume-item4 resume-social4'>
+                        <div className='resume-item4 resume-social4 text-blue-100'>
                             <div className='title4'>
                                 <p className='bold4'>SOCIAL</p>
                             </div>
                             <ul>
                                 <li>
-                                    <div className='icon4'><ImFacebook2 className='icon4-4'></ImFacebook2></div>
-                                    <div className='date4'>
-                                        <p className='semi-bold4'>Facebook</p>
-                                        <p>stephen@facebook</p>
-                                    </div>
+                                    {
+                                        usersTemplateInfo?.socialLinks?.value?.github
+                                            ?
+                                            <>
+                                                <div className='flex items-center gap-2'>
+                                                    <div><BsGithub></BsGithub></div>
+                                                    <div className=''><a href={usersTemplateInfo?.socialLinks?.value?.github}>Github</a></div>
+                                                </div>
+                                            </>
+                                            : ""
+                                    }
                                 </li>
-                                <li>
-                                    <div className='icon4'><BsTwitter className='icon4-4'></BsTwitter></div>
-                                    <div className='date4'>
-                                        <p className='semi-bold4'>Twitter</p>
-                                        <p>stephen@twitter</p>
-                                    </div>
+                                <li className='flex gap-2'>
+                                    {
+                                        usersTemplateInfo?.socialLinks?.value?.linkedIn
+                                            ?
+                                            <>
+                                                <div className='flex items-center gap-2'>
+                                                    <div><BsLinkedin></BsLinkedin></div>
+                                                    <div className=''><a href={usersTemplateInfo?.socialLinks?.value?.linkedIn}>LinkedIn</a></div>
+                                                </div>
+                                            </>
+                                            : ""
+                                    }
                                 </li>
-                                <li>
-                                    <div className='icon4'><BsYoutube className='icon4-4'></BsYoutube></div>
-                                    <div className='date4'>
-                                        <p className='semi-bold4'>YouTube</p>
-                                        <p>stephen@youtube</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className='icon4'><BsLinkedin className='icon4-4'></BsLinkedin></div>
-                                    <div className='date4'>
-                                        <p className='semi-bold4'>Linkedin</p>
-                                        <p>stephen@linkedin</p>
-                                    </div>
-                                </li>
+                            </ul>
+                        </div>
+                        <div className='resume-item4 resume-skills4'>
+
+                            <ul>
+                                <h1 className='uppercase bold4 tracking-widest text-lg font-bold text-blue-100'>
+                                    {
+                                        usersTemplateInfo?.skills?.name
+                                    }
+                                </h1>
+                                {
+                                    usersTemplateInfo?.skills?.value?.map(skill => {
+                                        return <li className=''>{skill}</li>
+                                    })
+                                }
                             </ul>
                         </div>
                     </div>
@@ -148,43 +170,71 @@ const Resume4 = () => {
                         <div className='title4'>
                             <p className='bold4-2'>About Me</p>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                        <p>{usersTemplateInfo?.careerObjective?.value}</p>
                     </div>
                     <div className='resume-item4-2 resume-exerience4'>
                         <div className='title4'>
                             <p className='bold4-2'>Work Exerience</p>
                         </div>
                         <ul>
-                            <li>
-                                <div className='exerience4'>
-                                    <div className='info4'>2019 - Present
-                                        Company Name</div>
-                                    <div className='semi-bol4'>
-                                        <p className='title4-3'>SENIOR UX DESIGNER</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className='exerience4'>
-                                    <div className='info4'>2016 - 2019
-                                        Company Name</div>
-                                    <div className='semi-bol4'>
-                                        <p className='title4-3'>UX/UI DESIGNER</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className='exerience4'>
-                                    <div className='info4'>2014 - 2016
-                                        Company Name</div>
-                                    <div className='semi-bol4'>
-                                        <p className='title4-3'>JUNIOR UX DESIGNER</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                </div>
-                            </li>
+                            {
+                                usersTemplateInfo?.projects?.value?.map(project => {
+                                    return (
+                                        <div className='mb-6'>
+                                            {/* Name and Link */}
+                                            <div className='mb-[-12px]'>
+                                                <h1 className='font-bold text-orange-700 text-md'>
+                                                    {
+                                                        project?.name
+                                                    }
+                                                </h1>
+                                                <div className='flex gap-3'>
+                                                    <h1>
+                                                        <a href={project?.value?.liveLink}>Live Site</a>
+                                                    </h1>
+                                                    <h1>
+                                                        <a href={project?.value?.clientSideLink}>Client Code</a>
+                                                    </h1>
+                                                    <h1>
+                                                        <a href={project?.value?.clientSideLink}>Server Code</a>
+                                                    </h1>
+                                                </div>
+                                            </div>
+                                            {/* Features and functionality */}
+                                            {
+                                                project?.value?.fnf
+                                                    ?
+                                                    <div className='mb-[-12px]'>
+                                                        <h1 className='mt-5 font-bold'>Features and Functionality</h1>
+                                                        {
+                                                            project?.value?.fnf.split(',').map(item => {
+                                                                return (<li>{item}</li>)
+                                                            })
+                                                        }
+                                                    </div>
+                                                    :
+                                                    ""
+                                            }
+                                            {/* Technology Used */}
+                                            {
+                                                project?.value?.technology
+                                                    ?
+                                                    <div>
+                                                        <h1 className='mt-5 font-bold'>Technology Used</h1>
+                                                        {
+                                                            project?.value?.technology.split(',').map(item => {
+                                                                return (<p className='inline-block mr-1'> {item},</p>)
+                                                            })
+                                                        }
+                                                    </div>
+                                                    :
+                                                    ""
+                                            }
+
+                                        </div>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                     <div className='resume-item4-2 resume-education4'>
@@ -192,33 +242,38 @@ const Resume4 = () => {
                             <p className='bold4-2'> Education</p>
                         </div>
                         <ul>
-                            <li>
-                                <div className='info4-3'>2010 - 2013</div>
-                                <div className='semi-bol4-3'>
-                                    <p className='title4-3'>Web Designing (Texas University)</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div className='info4-3'>2000 - 2010</div>
-                                <div className='semi-bol4-3'>
-                                    <p className='title4-3'>Texas International School</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                </div>
-                            </li>
+                            {
+                                usersTemplateInfo?.educationsDetails?.value?.map(edu => {
+                                    return (
+                                        <>
+                                            <h1 className='text-sm font-semibold tracking-wider text-black'>{edu?.name}</h1>
+                                            <h1 className='text-xs text-black'>{edu?.value?.institutionName}</h1>
+                                            <h1 className='mb-2 text-md text-black'>
+                                                {edu?.value?.startDate} - {edu?.value?.endDate}
+                                            </h1>
+                                        </>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                     <div className='resume-item4-2 resume-hobby4'>
                         <div className='title4'>
-                            <p className='bold4-2'>Hobby</p>
+                            <p className='bold4-2'>Reference</p>
                         </div>
                         <ul>
-                            <li><BiBook className='icon4'></BiBook></li>
-                            <li><FaGamepad className='icon4'></FaGamepad></li>
-                            <li><FaMusic className='icon4'></FaMusic></li>
-                            <li><FaCanadianMapleLeaf className='icon4'></FaCanadianMapleLeaf></li>
+                            {
+                                usersTemplateInfo?.reference?.value?.map(ref => {
+                                    return (
+                                        <>
+                                            <h1 className='text-sm font-semibold pr-2 text-black'>{ref?.name}</h1>
+                                            <h1 className='text-xs text-black'>{ref?.value?.name}</h1>
+                                        </>
+                                    )
+                                })
+                            }
                         </ul>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
