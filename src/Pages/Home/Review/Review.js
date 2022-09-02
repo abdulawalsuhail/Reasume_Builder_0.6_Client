@@ -69,11 +69,13 @@ const Review = () => {
           </div>
           {/* this is card */}
 
-          <Slider {...settings}>
-            {reviews?.map((review) => (
-              <ReviewsCard review={review} key={review?._id} />
-            ))}
-          </Slider>
+          <div>
+            <Slider {...settings}>
+              {reviews?.map((review) => (
+                <ReviewsCard review={review} key={review?._id} />
+              ))}
+            </Slider>
+          </div>
         </div>
       </section>
     </div>
