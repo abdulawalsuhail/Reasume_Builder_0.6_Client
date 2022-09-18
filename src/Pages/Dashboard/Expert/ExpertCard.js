@@ -30,7 +30,7 @@ const ExpertCard = ({ expert, currentUser }) => {
   return (
     <div className="block px-5 pt-5 pb-4 transition relative shadow-md rounded-xl hover:shadow-lg cursor-pointer">
       <img
-        class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-40 rounded-xl"
+        class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-30 rounded-xl"
         src={bg}
         alt="resume"
       />

@@ -90,6 +90,7 @@ import Resume8 from "./Pages/EditorComponetn/Templates/Resume8/Resume8";
 import AddQuiz from "./Pages/Quiz/AddQuiz";
 import QuizResult from "./Pages/Quiz/QuizResult";
 import LeaderBoard from "./Pages/Quiz/LeaderBoard";
+import NotFound from "./Components/Navbar/NotFound";
 
 const stripePromise = loadStripe(
   "pk_test_51L0e7DJVuUKdOSgodXlRxjzrt9f8fKWzD9Jum98GewskqXtaZ9Mx725bepiQ7zjAuEpcALdbkJEVHlNIG0RTIanM00m74yy2rn"
@@ -411,6 +412,7 @@ function App() {
             ></Route>
           </Route>
           <Route path="/chat/expert" element={<Chat />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </userContext>
       {/* facebook live chat */}
