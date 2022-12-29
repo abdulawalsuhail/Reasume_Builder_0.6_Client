@@ -19,11 +19,7 @@ const ReviewCard = ({ review }) => {
         </div>
       </div>
       <div className="mt-4">
-        <p className="poppins-r">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-          accusantium cumque tenetur ratione ea nobis dolore voluptas! Vel,
-          ipsam nisi?
-        </p>
+        <p className="poppins-r">{feedback.slice(0, 120)}</p>
         <div className="flex justify-start text-lg gap-1 mt-4 text-blue-800">
           <AiFillStar />
           <AiFillStar />
